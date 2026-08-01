@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('favourites', function (Blueprint $table) {
+        Schema::create('client_has_interests', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->foreignId("client_id")->constrained();
-            $table->enum('type',["resturant","hotel"/*"flight"*/]);
-            $table->string("parameter");
-            $table->string("payload");
+            $table->foreignId("interests_id")->constrained();
+
 
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('favourites');
+        Schema::dropIfExists('client_has_interests');
     }
 };
