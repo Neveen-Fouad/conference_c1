@@ -17,10 +17,9 @@ return new class extends Migration
             $table->foreignId("user_id")->constrained();
             $table->timestamps();
             $table->string("interest");
-            $table->int("age");
+            $table->date("birth_date");
             $table->string("location");
             $table->string("phone");
-            $table->string("favourite");
 
 
         });

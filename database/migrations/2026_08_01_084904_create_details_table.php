@@ -17,7 +17,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string("title");
             $table->decimal("expenses");
-            $table->text("details");
+            $table->text("plan");
             $table->int("day");
 
             $table->timestamps();

@@ -11,13 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->decimal("rating");
-            $table->string("description");
             $table->foreignId("client_id")->constrained();
-            $table->text("image");
+            $table->enum('type',["resturant","hotel","flight"]);
+            $table->int("number_of_days");
+            $table->int("number_of_bookings");
+            $table->enum('classses',["luxury","standard","economy"]);
+            $table->enum('status',["confirmed","pending","canceled"]);
+
+
+            
 
 
         });
@@ -28,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('bookings');
     }
 };

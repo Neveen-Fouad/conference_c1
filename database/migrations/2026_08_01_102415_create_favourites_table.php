@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('favourites', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->decimal("rating");
-            $table->string("description");
             $table->foreignId("client_id")->constrained();
-            $table->text("image");
-
-
+            $table->enum('type',["resturant","hotel"/*"flight"*/]);
+            $table->string("parameter");
         });
     }
 
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('favourites');
     }
 };
