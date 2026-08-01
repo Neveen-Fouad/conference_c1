@@ -16,14 +16,10 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId("client_id")->constrained();
             $table->enum('type',["resturant","hotel","flight"]);
-            $table->int("number_of_days");
-            $table->int("number_of_bookings");
+            $table->integer("number_of_days");
+            $table->integer("number_of_bookings");
             $table->enum('classses',["luxury","standard","economy"]);
             $table->enum('status',["confirmed","pending","canceled"]);
-
-
-            
-
 
         });
     }

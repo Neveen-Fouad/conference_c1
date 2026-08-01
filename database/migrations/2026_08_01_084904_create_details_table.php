@@ -16,9 +16,9 @@ return new class extends Migration
             $table->foreignId("trip_id")->constrained();
             $table->timestamps();
             $table->string("title");
-            $table->decimal("expenses");
+            $table->decimal("expenses", 10, 2);
             $table->text("plan");
-            $table->int("day");
+            $table->integer("day");
 
             $table->timestamps();
         });
