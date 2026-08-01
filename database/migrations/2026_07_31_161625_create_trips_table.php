@@ -23,6 +23,8 @@ return new class extends Migration
             $table->decimal("budget");
             $table->string("attractions");
             $table->int("days");
+            $table->date("start_date");
+
             //$table->string("style");
 
 
