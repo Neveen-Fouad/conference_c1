@@ -15,7 +15,7 @@ class details extends Model
        'title',
     
     ];
-    function trip_details(){
+    public function trip(){
         return $this->belongsTo($trip::class);
     }
 }

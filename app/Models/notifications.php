@@ -14,7 +14,7 @@ class notifications extends Model
        
        
     ];
-    function notifications(){
-        return $this->belongsTo($client::class);
+    public function client(){
+        return $this->belongsTo(Client::class);
     }
 }
