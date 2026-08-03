@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreignId("client_id")->constrained();
             $table->enum('type',["resturant","hotel"/*"flight"*/]);
             $table->string("parameter");
+            $table->string("payload");
+
         });
     }
 

@@ -17,15 +17,14 @@ return new class extends Migration
             $table->foreignId("client_id")->constrained();
             $table->string("classes");
             $table->string("destination");
-            $table->int("number_of_travels");
-            $table->decimal("estimated_expenses");
+            $table->integer("number_of_travels");
+            $table->decimal("estimated_expenses", 10, 2);
             //$table->string("transport_tips");
-            $table->decimal("budget");
-            $table->int("number_of_days");
+            $table->decimal("budget", 10, 2);
+            $table->integer("number_of_days");
             $table->date("start_date");
-            $table->int("is_fav");
+            $table->boolean("is_fav")->default(false);
             $table->string("style");
-
 
         });
     }

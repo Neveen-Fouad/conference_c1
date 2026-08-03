@@ -7,4 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class details extends Model
 {
     //
+     protected $fillable = [
+       'day',
+       'trip_id',
+       'day_expenses',
+       'day_plan',
+       'title',
+    
+    ];
+    public function trip(){
+        return $this->belongsTo($trip::class);
+    }
 }
