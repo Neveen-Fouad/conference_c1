@@ -31,4 +31,13 @@ use Illuminate\Database\Eloquent\Model;
 {
     return $this->hasMany(details::class);
 }
+
+    // public function favourites()
+    // {
+    //     return $this->belongsToMany(favourites::class, 'trip_have_favourite');
+    // }
+    // public function reviews()
+    // {
+    //     return $this->hasMany(review::class);
+    // }
 }

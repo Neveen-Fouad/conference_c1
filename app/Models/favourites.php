@@ -14,7 +14,11 @@ class favourites extends Model
        'client_id'
         ];
     public function client(){
-        return $this->belongsTo($Client::class);
+        return $this->belongsTo(client::class);
     }
+    // public function trip()
+    // {
+    //     return $this->belongsTo(trip::class);
+    // }
        
 }

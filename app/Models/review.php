@@ -18,4 +18,7 @@ class review extends Model
     public function interest(){
         return $this->belongsTo(interests::class,'interests_id');
     }
+    // public function trip(){
+    //     return $this->belongsTo(trip::class);
+    // }
 }
