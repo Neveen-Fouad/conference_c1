@@ -10,9 +10,9 @@ class Client extends Model
     protected $fillable = [
        'phone',
        'birth_date',
-       'location',
-       'booking_id',
-       
+       'long',
+       'latittude',
+       'user_id',
     ];
     public function user(){
         return $this->belongsTo(User::class);
