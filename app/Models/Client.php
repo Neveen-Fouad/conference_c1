@@ -12,11 +12,14 @@ class Client extends Model
        'birth_date',
        'location',
        'booking_id',
-       
+
     ];
 
     function clients(){
         return $this->hasMany($bookings::class);
 
+    }
+    public function notifications(){
+        return $this->hasMany(notifications::class);
     }
 }

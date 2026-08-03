@@ -11,10 +11,11 @@ class notifications extends Model
        'type',
        'description',
        'client_id',
-       
-       
+
+
     ];
     function notifications(){
-        return $this->belongsTo($client::class);
+        return $this->belongsTo(client::class);
+
     }
 }
