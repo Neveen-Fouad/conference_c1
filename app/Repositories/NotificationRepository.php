@@ -2,15 +2,60 @@
 
 namespace App\Repositories;
 
-use App\Models\notifications;
+use App\Interfaces\NotificationRepositoryInterface;
+use App\Models\Notification;
 
-class NotificationRepository implements NotificationRepositoryInterface
+class NotificationRepository extends BaseRepository implements NotificationRepositoryInterface
 {
-public function create(array $data){
-    return Notifications::create($data);
-}
-public function getByClient(int $clientId){
-    return Notifications::where('client_id',$clientId)->latest()->get();
+    public function __construct(Notification $notification)
+    {
+        parent::__construct($notification);
+    }
+
+    public function getByClient(int $clientId)
+    {
+        return $this->model
+            ->where('client_id', $clientId)
+            ->latest()
+            ->get();
+    }
+
+    public function getUnreadByClient(int $clientId)
+    {
+        return $this->model
+            ->where('client_id', $clientId)
+            ->whereNull('read_at')
+            ->latest()
+            ->get();
+    }
+
+    public function getUnreadCount(int $clientId)
+    {
+        return $this->model
+            ->where('client_id', $clientId)
+            ->whereNull('read_at')
+            ->count();
+    }
+
+    public function markAsRead(int $notificationId)
+    {
+        $notification = $this->findById($notificationId);
+
+        $notification->update([
+            'read_at' => now(),
+        ]);
+
+        return $notification;
+    }
+
+    public function markAllAsRead(int $clientId)
+    {
+        return $this->model
+            ->where('client_id', $clientId)
+            ->whereNull('read_at')
+            ->update([
+                'read_at' => now(),
+            ]);
+    }
 }
 
-}
