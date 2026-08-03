@@ -34,5 +34,17 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
-
+    // config/services.php
+'countries' => [
+    'base_url' => env('REST_COUNTRIES_BASE_URL', 'https://api.restcountries.com'),
+    'api_key' => env('REST_COUNTRIES_API_KEY'),
+],
+'weatherapi' => [
+    'base_url' => env('WEATHER_BASE_URL', 'https://api.weatherapi.com/v1'),
+    'key' => env('WEATHER_API_KEY'),
+],
+'rapidapi' => [
+    'key' => env('RAPIDAPI_KEY'),
+    'host' => env('RAPIDAPI_HOST', 'https://booking-com15.p.rapidapi.com/api/v1'),
+],
 ];
