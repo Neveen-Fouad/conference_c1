@@ -23,9 +23,7 @@ class StoreFavouriteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'type' => ['required', 'in:restaurant,hotel,destination,filght,trip'],
-            'parameter' => ['required', 'string'],
-            'payload' => ['required', 'string'],
+            
         ];
     }
 }

@@ -15,11 +15,7 @@ class FavouriteResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'type' => $this->type,
-            'parameter' => $this->parameter,
-            'payload' => $this->payload,
-            'created_at' => $this->created_at,
+            
         ];
     }
 }
