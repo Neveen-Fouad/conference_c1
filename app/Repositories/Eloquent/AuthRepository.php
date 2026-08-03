@@ -1,6 +1,7 @@
 <?php
 namespace App\Repositories\Eloquent;
 
+use App\Models\Client;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\DB;
@@ -20,8 +21,16 @@ class AuthRepository implements AuthRepositoryInterface{
             'last_name'  => $data['last_name'],
             'email'      => $data['email'],
             'password'   => Hash::make($data['password']),
-            'role' => 'client',
+            'role'       => 'user',
             'is_active'  => true,
+        ]);
+
+        $client = Client::create([
+            'latittude'  => $data['latittude'],
+            'long'       => $data['long'],
+            'phone'      => $data['phone'],
+            'birth_date' => $data['birth_date'],
+            'user_id'    => $user->id
         ]);
 
         event(new Registered($user));

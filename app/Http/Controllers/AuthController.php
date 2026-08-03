@@ -19,7 +19,7 @@ class AuthController extends Controller
         $this->authRepository = $authRepository;
     }
 
-    public function register(RegisterRequest $request): JsonResponse{
+    public function register(RegisterRequest $request): JsonResponse{    
         $user = $this->authRepository->register($request->validated());
 
         return response()->json([
