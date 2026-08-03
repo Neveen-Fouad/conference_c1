@@ -12,6 +12,7 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
         "predis/predis": "^3.5",
+        "lucianotonet/groq-laravel": "^1.0",
         "tymon/jwt-auth": "^2.3"
     },
     "require-dev": {
