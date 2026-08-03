@@ -19,7 +19,4 @@ class Client extends Model
         return $this->hasMany($bookings::class);
 
     }
-    public function notifications(){
-        return $this->hasMany(notifications::class);
-    }
 }
