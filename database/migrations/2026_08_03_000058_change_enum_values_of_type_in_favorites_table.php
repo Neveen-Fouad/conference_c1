@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('favorites', function (Blueprint $table) {
+        Schema::table('favourites', function (Blueprint $table) {
             $table->enum('type', ['restaurant', 'hotel', 'flight','trip','destination'])->change();
         });
     }
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('favorites', function (Blueprint $table) {
+        Schema::table('favourites', function (Blueprint $table) {
             //
         });
     }
