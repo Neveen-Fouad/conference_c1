@@ -17,14 +17,33 @@ class FavouritesController extends Controller
 
     
     public function index(Request $request){
-         $this->FavouriteRepository->index($request);
-         return response()->json(['message'=>'Favourites retrieved successfully'],200);
+        if($request->filled('type')){
+            $favourites=$this->FavouriteService->filter($request->type);
+        }else{
+            $favourites=$this->FavouriteService->index();
+        }
+         return response()->json([
+            'success'=>true,
+            'message'=>'Favourites retrieved successfully',
+            'data'=>$favourites,
+            ],200);
+
     }
-    public function store(StoreFavouriteRequest $request,$favouriteable_type,$favouriteable_id){
-        return $this->FavouriteRepository->store($request,$favouriteable_type,$favouriteable_id);
+    public function store(StoreFavouriteRequest $request){
+        $favourite=$this->FavouriteService->store($request->validated());
+         return response()->json([
+            'success'=>true,
+            'data'=>$favourite,
+            ],201);
+        
+
     }
     public function destroy($favouriteable_type,$favouriteable_id){
-        return $this->FavouriteRepository->destroy($favouriteable_type ,$favouriteable_id);
+         $this->FavouriteService->destroy($favouriteable_type ,$favouriteable_id);
+         return response()->json([
+            'success'=>true,
+            'message'=>'Favourite deleted successfully.'
+         ]);
     }
     
 

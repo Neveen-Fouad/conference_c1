@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use FavouriteType;
 use Illuminate\Database\Eloquent\Model;
 
     class trip extends Model
@@ -34,7 +35,8 @@ use Illuminate\Database\Eloquent\Model;
 
     public function favourites()
     {
-        return $this->hasMany(favourites::class, 'favouriteable_id');
+        return $this->hasMany(favourites::class, 'favouriteable_id')
+        ->where('type',FavouriteType::Trip->value);
     }
    
 }

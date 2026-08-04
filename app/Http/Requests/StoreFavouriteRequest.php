@@ -26,8 +26,8 @@ class StoreFavouriteRequest extends FormRequest
     {
         return [
             'favouriteable_id' => ['required','string'],
-            'type' => ['required'],
-            new Enum(FavouriteType::class),
+            'type' => ['required',
+            new Enum(FavouriteType::class)],
         ];
     }
 }

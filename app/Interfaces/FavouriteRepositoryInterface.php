@@ -1,7 +1,7 @@
 <?php
 namespace App\Interfaces;
 use App\Interfaces\BaseRepositoryInterface;
-use Illuminate\Database\Eloquent\Collection;
+
 interface FavouriteRepositoryInterface extends BaseRepositoryInterface
 {
     public function index();
@@ -10,6 +10,6 @@ interface FavouriteRepositoryInterface extends BaseRepositoryInterface
 
     public function destroy(string $type , string $favouriteable_id);
 
-    public function filter(string $type);
+    public function filter(string $type,int $client_id);
 
 }
