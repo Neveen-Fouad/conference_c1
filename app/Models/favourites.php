@@ -8,16 +8,16 @@ class favourites extends Model
 {
     //
     protected $fillable = [
-       'favouriteable_type',
+       'type',
        'favouriteable_id',
        'client_id'
         ];
     public function client(){
         return $this->belongsTo(client::class);
     }
-    public function favouriteable()
+    public function trip()
     {
-        return $this->morphTo();
+        return $this->belongsTo(trip::class, 'favouriteable_id');
 
     }
        

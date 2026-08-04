@@ -2,8 +2,10 @@
 
 namespace App\Http\Requests;
 
+use FavouriteType;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Enum;
 
 class StoreFavouriteRequest extends FormRequest
 {
@@ -23,7 +25,9 @@ class StoreFavouriteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            
+            'favouriteable_id' => ['required','string'],
+            'type' => ['required'],
+            new Enum(FavouriteType::class),
         ];
     }
 }

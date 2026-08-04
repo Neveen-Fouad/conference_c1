@@ -34,7 +34,7 @@ use Illuminate\Database\Eloquent\Model;
 
     public function favourites()
     {
-        return $this->morphMany(favourites::class, 'favouriteable');
+        return $this->hasMany(favourites::class, 'favouriteable_id');
     }
    
 }

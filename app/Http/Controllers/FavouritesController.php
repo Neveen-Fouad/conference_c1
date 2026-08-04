@@ -17,7 +17,8 @@ class FavouritesController extends Controller
 
     
     public function index(Request $request){
-        return $this->FavouriteRepository->index($request);
+         $this->FavouriteRepository->index($request);
+         return response()->json(['message'=>'Favourites retrieved successfully'],200);
     }
     public function store(StoreFavouriteRequest $request,$favouriteable_type,$favouriteable_id){
         return $this->FavouriteRepository->store($request,$favouriteable_type,$favouriteable_id);
