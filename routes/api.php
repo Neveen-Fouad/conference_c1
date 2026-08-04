@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TripController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -57,3 +58,5 @@ Route::prefix('admin/contact-messages')->group(function () {
     Route::patch('/{id}/status', [ComplaintController::class, 'changeStatus']);
 
 });
+Route::apiResource('/trips',TripController::class);
+Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
