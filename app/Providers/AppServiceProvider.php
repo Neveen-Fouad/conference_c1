@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\Interfaces\NotificationRepositoryInterface;
-use App\Repositories\NotificationRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,10 +11,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(
-            NotificationRepositoryInterface::class,
-            NotificationRepository::class
-        );
+        //
     }
 
     /**
