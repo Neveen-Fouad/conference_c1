@@ -12,8 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('clients', function (Blueprint $table) {
-        $table->dropColumn('location');
-        $table->dropColumn('interest');
         $table->string('long');
         $table->string('latittude');
         $table->date('birth_date')->change();

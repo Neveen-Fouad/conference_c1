@@ -6,6 +6,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\InterestsController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HotelBookingsController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -54,3 +55,5 @@ Route::get('/client/interests', [InterestsController::class, 'clientInterests'])
 Route::put('/client/interests', [InterestsController::class, 'updateClientInterests']);
 
 Route::get('/interests', [InterestsController::class, 'index']);
+Route::get('/hotels/search', [HotelBookingsController::class, 'search']);
+Route::post('/hotels/search', [HotelBookingsController::class, 'search']);

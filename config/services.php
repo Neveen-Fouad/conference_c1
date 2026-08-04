@@ -46,5 +46,8 @@ return [
 'rapidapi' => [
     'key' => env('RAPIDAPI_KEY'),
     'host' => env('RAPIDAPI_HOST', 'https://booking-com15.p.rapidapi.com/api/v1'),
+],'hotels_provider' => [
+    'key' => env('HOTELS_PROVIDER_API_KEY'),
+    'host' => env('HOTELS_PROVIDER_API_HOST', 'hotels4.p.rapidapi.com'),
 ],
 ];

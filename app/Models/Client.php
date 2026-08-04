@@ -37,10 +37,11 @@ class Client extends Model
     //     return $this->hasMany(client_has_ineterests::class);
     // }
     public function interests()
-    {
-        return $this->belongsToMany(
-            Interests::class
-        );
-    }
-
-}
+{
+    return $this->belongsToMany(
+        Interests::class,
+        'client_has_interests', // pivot table
+        'client_id',            // foreign key on pivot for Client
+        'interests_id'          // foreign key on pivot for Interests
+    );
+}}
