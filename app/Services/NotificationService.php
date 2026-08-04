@@ -85,6 +85,32 @@ class NotificationService
             'Your trip has been cancelled successfully. Any applicable refund will be processed according to the cancellation policy.'
         );
     }
+    public function sendPaymentSuccessNotification(Client $client)
+
+    {
+       $this->createNotification([
+           'client_id' => $client->id,
+           'type' => 'payment_success',
+           'description' => 'Your payment has been completed successfully.',
+       ]);
+       $this->sendEmail(
+           $client->email,
+           "payment success",
+           "Your payment has been completed successfully.your booking is now confirmed,you can now review and manage your trip plan from your account."
+       );
+    }
+    public function sendPaymentFailedNotification(Client $client){
+        $this->createNotification([
+            'client_id' => $client->id,
+            'type' => 'payment_failed',
+            'description' => 'Your payment failed could not be completed.',
+        ]);
+        $this->sendEmail(
+            $client->email,
+            "payment failed",
+            "Your payment failed could not be completed.Your payment failed could not be completed.please try again or use a different payment method."
+        );
+    }
 
     public function getClientNotifications(int $clientId)
     {

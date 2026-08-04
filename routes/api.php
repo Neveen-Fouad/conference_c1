@@ -6,9 +6,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\PaymentController;
 
 
-Route::prefix('admin')->group(function () {  // usermanagement 
+Route::prefix('admin')->group(function () {  // usermanagement
 
     Route::get('/users', [UserController::class, 'index']);
 
@@ -41,7 +42,7 @@ Route::prefix('admin/settings')->group(function (){
     Route::patch('/social-links', [SettingController::class, 'updateSocialLinks']);
 
     Route::post('/banner', [SettingController::class, 'setBanner']);
-    
+
     Route::patch('/banner', [SettingController::class, 'updateBanner']);
 
 });
@@ -60,3 +61,12 @@ Route::prefix('admin/contact-messages')->group(function () {
 });
 Route::apiResource('/trips',TripController::class);
 Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
+Route::post('/payments', [PaymentController::class, 'store']);
+
+Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
+
+Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
+
+Route::patch('/payments/{paymentId}/complete', [PaymentController::class, 'complete']);
+
+Route::patch('/payments/{paymentId}/fail', [PaymentController::class, 'fail']);
