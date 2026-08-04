@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TripController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -24,3 +25,5 @@ Route::prefix('auth')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
     });
 });
+Route::apiResource('/trips',TripController::class);
+Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);

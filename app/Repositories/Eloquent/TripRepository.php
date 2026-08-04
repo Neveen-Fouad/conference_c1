@@ -2,15 +2,16 @@
 
 namespace App\Repositories\Eloquent;
 
-use App\Interfaces\TripRepositoryInterface;
+
 use App\Models\trip;
+use App\Repositories\Contracts\TripRepositoryInterface;
 
 class TripRepository implements TripRepositoryInterface
 {
     /**
      * Create a new class instance.
      */
- public function __construct(protected trip $model) {}
+ public function __construct(protected Trip $model) {}
 
     public function findAll()
     {
@@ -29,14 +30,19 @@ class TripRepository implements TripRepositoryInterface
 
     public function update(int $id, array $data)
     {
-        $appointment = $this->findById($id);
-        $appointment->update($data);
+        $trip = $this->findById($id);
+        $trip->update($data);
 
-        return $appointment;
+        return $trip;
     }
 
     public function delete(int $id): bool
     {
         return $this->findById($id)->delete();
+    }
+
+    public function findByUserId(int $userId)
+    {
+        return $this->model->where('user_id', $userId)->get();
     }
 }
