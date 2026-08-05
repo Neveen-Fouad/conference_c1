@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('complaints', function (Blueprint $table) {
             //
-            $table->enum('status',['replied']);
+            $table->enum('status',['replied','read','unread'])->default('unread');
         });
     }
 

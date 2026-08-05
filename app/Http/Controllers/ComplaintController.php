@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreComplaintsRequest;
+use App\Http\Requests\UpdateComplaintStatusRequest;
 use Illuminate\Http\Request;
 use App\Interfaces\ComplaintRepositoryInterface;
-use App\Http\Requests\UpdateComplaintStatusRequest;
+
 
 class ComplaintController extends Controller
 {
