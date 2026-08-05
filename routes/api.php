@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\TripController;
 
 
 Route::prefix('admin')->group(function () {  // usermanagement 
@@ -57,3 +58,18 @@ Route::prefix('admin/contact-messages')->group(function () {
     Route::patch('/{id}/status', [ComplaintController::class, 'changeStatus']);
 
 });
+
+//trip management 
+Route::prefix('admin/trips')->group(function() {
+    
+    Route::get('/', [TripController::class, 'index']);
+
+    Route::patch('/{id}', [TripController::class, 'update']);
+
+    Route::delete('/{id}', [TripController::class, 'destroy']);
+
+    Route::get('/statistics', [TripController::class, 'statistics']);
+});
+
+
+
