@@ -14,6 +14,24 @@ return [
     |
     */
 
+
+'hotels_api' => [
+    'key' => env('HOTELS_API_KEY'),
+    'host' => env('HOTELS_API_HOST'),
+    'base_url' => 'https://hotels-com-provider.p.rapidapi.com',
+],
+'restaurants_api' => [
+    'key' => env('RESTAURANTS_API_KEY'),
+    'host' => env('RESTAURANTS_API_HOST'),
+    'base_url' => 'https://worldwide-restaurants.p.rapidapi.com',
+],
+'flights_api' => [
+    'key' => env('FLIGHTS_API_KEY'),
+    'host' => env('FLIGHTS_API_HOST'),
+    'base_url' => 'https://sky-scrapper.p.rapidapi.com/api/v1',
+],
+
+
     'postmark' => [
         'key' => env('POSTMARK_API_KEY'),
     ],
