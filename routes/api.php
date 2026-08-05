@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\AiTripController;
 use App\Http\Controllers\TripController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CountryController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -27,3 +29,7 @@ Route::prefix('auth')->group(function () {
 });
 Route::apiResource('/trips',TripController::class);
 Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
+Route::get('/countries', [CountryController::class, 'index']);
+Route::get('/countries/{country}', [CountryController::class, 'show']);
+
+Route::post('/ai/trips', [AiTripController::class, 'generateTrip']);

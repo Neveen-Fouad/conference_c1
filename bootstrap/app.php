@@ -14,6 +14,7 @@ use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use App\Http\Middleware\IsAdmin;
 
+
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
@@ -25,7 +26,7 @@ return Application::configure(basePath: dirname(__DIR__))
 		$middleware->alias([ 'isAdmin' => IsAdmin::class, ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        $exceptions->render(function(\Throwable $e,Request $request){
+        $exceptions->render(function(\Throwable $e, \Illuminate\Http\Request $request){
             Log::error($e->getMessage(),[
                 'exception'=>$e,
             ]);
