@@ -7,7 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\PaymentController;
-
+use App\Http\Controllers\PaymobWebhookController;
 
 Route::prefix('admin')->group(function () {  // usermanagement
 
@@ -64,9 +64,10 @@ Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
 Route::post('/payments', [PaymentController::class, 'store']);
 
 Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
-
 Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
+Route::post('/payments', [PaymentController::class, 'store']);
+Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
+Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
+Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
 
-Route::patch('/payments/{paymentId}/complete', [PaymentController::class, 'complete']);
 
-Route::patch('/payments/{paymentId}/fail', [PaymentController::class, 'fail']);

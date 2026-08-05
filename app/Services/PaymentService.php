@@ -4,21 +4,21 @@ namespace App\Services;
 
 use App\Interfaces\PaymentRepositoryInterface;
 use App\Models\Booking;
+use Illuminate\Support\Str;
 
 class PaymentService
 {
     protected $paymentRepository;
-    protected $fakeStripeService;
-    protected $notificationService;
+    protected $paymobPaymentService;
+
 
     public function __construct(
         PaymentRepositoryInterface $paymentRepository,
-        FakeStripePaymentService $fakeStripeService,
-        NotificationService $notificationService
+        PaymobPaymentService $paymobPaymentService,
     ) {
         $this->paymentRepository = $paymentRepository;
-        $this->fakeStripeService = $fakeStripeService;
-        $this->notificationService = $notificationService;
+        $this->paymobPaymentService = $paymobPaymentService;
+
     }
 
     public function createBookingPayment($clientId, $bookingId)
@@ -27,61 +27,54 @@ class PaymentService
             ->where('client_id', $clientId)
             ->firstOrFail();
 
-        $stripeSession = $this->fakeStripeService
-            ->createCheckoutSession();
-
-        return $this->paymentRepository->create([
+        $payment = $this->paymentRepository->create([
             'client_id' => $clientId,
             'booking_id' => $bookingId,
+            'payment_reference' => 'PAY-' . Str::upper(Str::random(12)),
             'payment_type' => 'booking',
             'amount' => $booking->total_price,
-            'currency' => $booking->currency,
+            'currency' => $booking->currency ,
             'status' => 'pending',
-            'stripe_checkout_session_id' => $stripeSession['session_id'],
-            'stripe_payment_intent_id' => $stripeSession['payment_intent_id'],
-            'payment_method' => 'test_card',
+            'gateway' => 'paymob',
+            'payment_method' => 'card',
         ]);
-    }
 
+        $paymobData = $this->paymobPaymentService
+            ->createIntention($payment);
+
+        $payment = $this->paymentRepository->update($payment->id, [
+            'gateway_reference' => $paymobData['gateway_reference'],
+            'gateway_response' => $paymobData['gateway_response'],
+        ]);
+
+        return [
+            'payment' => $payment,
+            'checkout_url' => $paymobData['checkout_url'],
+        ];
+    }
     public function completePayment($paymentId)
     {
-        $payment = $this->paymentRepository->update($paymentId, [
+        return $this->paymentRepository->update($paymentId, [
             'status' => 'paid',
-            'paid_at' => now(),
-            'failure_reason' => null,
+            "paid_at" => now(),
+            "failure_reason" => null,
+
+
         ]);
 
-        if ($payment->booking_id) {
-            Booking::where('id', $payment->booking_id)
-                ->update([
-                    'status' => 'confirmed',
-                ]);
-        }
 
-        $this->notificationService
-            ->sendPaymentSuccessNotification($payment->client);
-
-        return $payment;
     }
 
-    public function failPayment($paymentId)
-    {
-        $payment = $this->paymentRepository->update($paymentId, [
+    public function failPayment($paymentId){
+        return $this->paymentRepository->update($paymentId, [
             'status' => 'failed',
-            'failure_reason' => 'Test payment failed',
+            "failure_reason" => "Payment failed",
         ]);
-
-        $this->notificationService
-            ->sendPaymentFailedNotification($payment->client);
-
-        return $payment;
     }
-
     public function getPayment($paymentId)
     {
-        return $this->paymentRepository->findById($paymentId);
+        return $this->paymentRepository->findbyId($paymentId);
     }
-
     public function getClientPayments($clientId)
     {
         return $this->paymentRepository->getByClient($clientId);

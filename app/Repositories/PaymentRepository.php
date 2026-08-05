@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Repositories;
+
 use App\Interfaces\PaymentRepositoryInterface;
 use App\Models\Payment;
 
@@ -11,23 +12,24 @@ class PaymentRepository extends BaseRepository implements PaymentRepositoryInter
         parent::__construct($payment);
     }
 
-    public function getByClient($clientId){
-        return $this->model->where('client_id', $clientId)->latest()->get();
-    }
-
-    public function getByBooking($bookingId){
-        return $this->model
-            ->where('booking_id', $bookingId)->latest()->get();
-    }
-
-    public function findByStripeSessionId($sessionId)
+    public function getByClient($clientId)
     {
         return $this->model
-            ->where('stripe_checkout_session_id', $sessionId)->first();
+            ->where('client_id', $clientId)->latest()->get();
     }
 
+    public function getByBooking($bookingId)
+    {
+        return $this->model->where('booking_id', $bookingId)->latest()->get();
+    }
 
+    public function findByGatewayReference($reference)
+    {
+        return $this->model->where('gateway_reference', $reference)->first();
 
-
-
+    }
+    public function findByPaymentReference($reference)
+    {
+        return $this->model->where('payment_reference', $reference)->first();
+    }
 }
