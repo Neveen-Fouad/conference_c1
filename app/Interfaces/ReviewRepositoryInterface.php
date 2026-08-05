@@ -3,14 +3,11 @@ namespace App\Interfaces;
 use App\Interfaces\BaseRepositoryInterface;
 interface ReviewRepositoryInterface extends BaseRepositoryInterface
 {
-    public function addReview(array $data , $client_id);
+    public function getMyReviews();
+    public function filterReviewsByType(string $type,int $reviewable_id);
+    public function filterReviewsByStatus(string $status);
+    public function approveReview(int $review_id);
+    public function rejectReview(int $review_id);
 
-    public function getMyReviews(int $client_id);
-
-    public function filterReviewsByType(int $client_id,int $user_id,string $type);
-
-    public function removeReview(int $user_id, int $client_id,string $type ,string $parameter);
-
-    public function getAllReviews(int $user_id);
 
 }

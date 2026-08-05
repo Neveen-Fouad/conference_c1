@@ -6,7 +6,7 @@ use App\Models\favourites;
 use App\Repositories\BaseRepository;
 
 
-class FavoriteRepository extends BaseRepository implements FavouriteRepositoryInterface
+class FavouriteRepository extends BaseRepository implements FavouriteRepositoryInterface
 {
     public function __construct(favourites $model){
         parent::__construct($model);
@@ -14,28 +14,19 @@ class FavoriteRepository extends BaseRepository implements FavouriteRepositoryIn
     public function index()
     {
     
-        $query=$this->model
-        ->where('client_id',auth('api')->id());
-        
+        return $this->model
+        ->where('client_id',auth('api')->id())->get();
     
-        $query
-        ->latest()
-        ->paginate(10);
-        // external api
-      
     }
 
     public function store(array $data)
     {
-       
-        
-        // external api
-       
+        return $this->model->create($data);
     }
 
     public function destroy($type, $favouriteable_id)
     {
-        
+
         $favourite=$this->model
             ->where('client_id',auth('api')->id())
             ->where('type',$type)
@@ -44,7 +35,13 @@ class FavoriteRepository extends BaseRepository implements FavouriteRepositoryIn
             $favourite->delete();
         
     }
-    public function filter( $type){
+    public function filter( $type)
+    {
+        $query=$this->model
+        ->where('client_id',auth('api')->id())
+        ->where('type',$type)
+        ->get();
+   
 
     }
 }

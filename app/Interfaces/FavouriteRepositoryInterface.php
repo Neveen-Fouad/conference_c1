@@ -10,6 +10,6 @@ interface FavouriteRepositoryInterface extends BaseRepositoryInterface
 
     public function destroy(string $type , string $favouriteable_id);
 
-    public function filter(string $type,int $client_id);
+    public function filter(string $type);
 
 }

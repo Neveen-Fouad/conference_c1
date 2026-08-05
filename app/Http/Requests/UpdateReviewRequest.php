@@ -1,14 +1,11 @@
 <?php
 
 namespace App\Http\Requests;
-use App\Enum\FavouriteType;
-use Illuminate\Validation\Rules\Enum;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-
-class StoreFavouriteRequest extends FormRequest
+class UpdateReviewRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,9 +23,9 @@ class StoreFavouriteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'favouriteable_id' => ['required','string'],
-            'type' => ['required',
-            new Enum(FavouriteType::class)],
+            'rating' => ['requried'],
+            'description' => ['requried'],
+            'image' => ['']
         ];
     }
 }

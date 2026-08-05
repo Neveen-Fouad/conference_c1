@@ -1,11 +1,10 @@
 <?php
 namespace App\Enum;
-enum FavouriteType:string
+enum ReviewType:string
 {
     case Trip = 'trip';
     case Hotel = 'hotel';
     case Restaurant = 'restaurant';
-    case Destination = 'destination';
     case Flight = 'flight';
 
 }

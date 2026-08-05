@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreFavouriteRequest;
-use App\Interfaces\FavouriteRepositoryInterface;
+use App\Services\FavouriteService;
 use Illuminate\Http\Request;
 
 
 
 class FavouritesController extends Controller
 {
-    protected $FavouriteRepository;
-    public function __construct(FavouriteRepositoryInterface $FavouriteRepository){
-        $this->FavouriteRepository=$FavouriteRepository;
+    protected $FavouriteService;
+    public function __construct(FavouriteService $FavouriteService){
+        $this->FavouriteService=$FavouriteService;
     }
 
     
@@ -38,8 +38,8 @@ class FavouritesController extends Controller
         
 
     }
-    public function destroy($favouriteable_type,$favouriteable_id){
-         $this->FavouriteService->destroy($favouriteable_type ,$favouriteable_id);
+    public function destroy($type,$favouriteable_id){
+         $this->FavouriteService->destroy($type ,$favouriteable_id);
          return response()->json([
             'success'=>true,
             'message'=>'Favourite deleted successfully.'

@@ -19,8 +19,10 @@ class ReviewResource extends JsonResource
             'type' => $this->type,
             'description' => $this->description,
             'rating' => $this->rating,
-            'targetTypeId'=>$this->parameter,
+            'reviewable_id'=>$this->reviewable_id,
             'status'=>$this->status,
+            'image'=>$this->image,
+            'client_id'=>$this->client_id,
             'created_at' => $this->created_at,
             
 
