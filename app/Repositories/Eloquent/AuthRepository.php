@@ -17,27 +17,27 @@ class AuthRepository implements AuthRepositoryInterface{
 
         try{
             $user = User::create([
-            'first_name' => $data['first_name'],
-            'last_name'  => $data['last_name'],
-            'email'      => $data['email'],
-            'password'   => Hash::make($data['password']),
-            'role'       => 'user',
-            'is_active'  => true,
-        ]);
+                'first_name' => $data['first_name'],
+                'last_name'  => $data['last_name'],
+                'email'      => $data['email'],
+                'password'   => Hash::make($data['password']),
+                'role'       => 'user',
+                'is_active'  => true,
+            ]);
 
-        $client = Client::create([
-            'latittude'  => $data['latittude'],
-            'long'       => $data['long'],
-            'phone'      => $data['phone'],
-            'birth_date' => $data['birth_date'],
-            'user_id'    => $user->id
-        ]);
+            $client = Client::create([
+                'latittude'  => $data['latittude'],
+                'long'       => $data['long'],
+                'phone'      => $data['phone'],
+                'birth_date' => $data['birth_date'],
+                'user_id'    => $user->id
+            ]);
 
-        event(new Registered($user));
+            event(new Registered($user));
 
-        DB::commit();
+            DB::commit();
 
-        return $user;
+            return $user;
 
         }catch (\Exception $e){
             DB::rollBack();

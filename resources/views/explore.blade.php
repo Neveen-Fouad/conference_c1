@@ -68,17 +68,17 @@
             }
 
             const attractionsList = document.getElementById('attractions-list');
-            attractionsList.innerHTML = (data.attractions && data.attractions.length)
-                ? data.attractions.map(a => `
-                    <div class="card">
-                        <h5>${a.name}</h5>
-                        ${a.category ? `<p>${a.category}</p>` : ''}
-                        ${a.rating ? `<p>Rating: ${a.rating}</p>` : ''}
-                        ${a.address ? `<p>${a.address}</p>` : ''}
-                    </div>
-                `).join('')
-                : '<p>No attractions found for this city.</p>';
-
+attractionsList.innerHTML = (data.attractions && data.attractions.length)
+    ? data.attractions.map(a => `
+        <div class="card">
+            ${a.photo ? `<img src="${a.photo}" alt="${a.name}" style="max-width:100%">` : ''}
+            <h5>${a.name}</h5>
+            ${a.description ? `<p>${a.description}</p>` : ''}
+            ${a.rating ? `<p>Rating: ${a.rating}</p>` : ''}
+            ${a.categories && a.categories.length ? `<p><em>${a.categories.join(', ')}</em></p>` : ''}
+        </div>
+    `).join('')
+    : '<p>No attractions found for this city.</p>';
             const restaurantsList = document.getElementById('restaurants-list');
             restaurantsList.innerHTML = (data.restaurants && data.restaurants.length)
                 ? data.restaurants.map(r => `

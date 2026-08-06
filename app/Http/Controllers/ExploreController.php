@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Interests;
 use App\Services\CountryServices;
 use App\Services\PlaceServices;
 use App\Services\WeatherServices;
@@ -9,16 +10,6 @@ use Illuminate\Http\Request;
 
 class ExploreController extends Controller
 {
-    protected array $interests = [
-        ['slug' => 'hiking',     'name' => 'Hiking'],
-        ['slug' => 'beaches',    'name' => 'Beaches'],
-        ['slug' => 'camping',    'name' => 'Camping'],
-        ['slug' => 'museums',    'name' => 'Museums'],
-        ['slug' => 'historical', 'name' => 'Historical'],
-        ['slug' => 'shopping',   'name' => 'Shopping'],
-        ['slug' => 'adventure',  'name' => 'Adventure'],
-    ];
-
     public function __construct(
         protected CountryServices $countryApi,
         protected WeatherServices $weather,
@@ -28,11 +19,14 @@ class ExploreController extends Controller
     public function index()
     {
         $countries = $this->countryApi->getAllCountries();
-
-        return view('explore', [
+        return response()->json([
             'countries' => $countries,
-            'interests' => $this->interests,
+            'interests' => Interests::all(['id', 'name']),
         ]);
+        // return view('explore', [
+        //     'countries' => $countries,
+        //     'interests' => Interests::all(['id', 'name']),
+        // ]);
     }
 
     public function destinationData(Request $request)
