@@ -17,11 +17,10 @@ class FavouritesController extends Controller
 
     
     public function index(Request $request){
-        if($request->filled('type')){
-            $favourites=$this->FavouriteService->filter($request->type);
-        }else{
-            $favourites=$this->FavouriteService->index();
-        }
+        $favourites=$request->filled('type')
+        ? $this->FavouriteService->filterFavouriteByType($request->type)
+        : $this->FavouriteService->index();
+
          return response()->json([
             'success'=>true,
             'message'=>'Favourites retrieved successfully',
@@ -38,12 +37,12 @@ class FavouritesController extends Controller
         
 
     }
-    public function destroy($type,$favouriteable_id){
-         $this->FavouriteService->destroy($type ,$favouriteable_id);
+    public function destroy(int $favourite_id){
+         $this->FavouriteService->destroy($favourite_id);
          return response()->json([
             'success'=>true,
             'message'=>'Favourite deleted successfully.'
-         ]);
+         ],200);
     }
     
 

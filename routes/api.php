@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FavouritesController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -40,3 +41,9 @@ Route::middleware(['auth:api','isAdmin'])->prefix('admin')->group(function(){
     Route::post('/reviews/{review_id}/approve',[ReviewController::class,'approveReview']);
     Route::post('/reviews/{review_id}/reject',[ReviewController::class,'rejectReview']);
 });
+// favourite endpoint (user)
+Route::middleware('auth:api')->group(function(){
+    Route::get('/favourites',[FavouritesController::class,'index']);
+    Route::post('/favourites',[FavouritesController::class,'store']);
+    Route::
+})
