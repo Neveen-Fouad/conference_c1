@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Contracts;
 
+
 interface TripRepositoryInterface
 {
     public function findById(int $id);

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Interfaces\TripRepositoryInterface;
 use App\Http\Requests\UpdateTripRequest;
+use App\Http\Requests\StoreTripRequest;
+
 
 class TripController extends Controller
 {
@@ -38,6 +40,18 @@ class TripController extends Controller
             $this->tripRepository->statistics()
         );
     }
+
+    public function store(StoreTripRequest $request){
+        $trip = $this->tripRepository->create($request->validated());
+        return response()->json($trip, 201);
+
+    }
+
+    public function getTripsByUserId($userId){
+        $trips = $this->tripRepository->findByUserId($userId);
+        return response()->json($trips);
+    }
+
 }
 
 

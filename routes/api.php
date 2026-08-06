@@ -7,7 +7,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\PaymobWebhookController;use App\Http\Controllers\TripController;
+use App\Http\Controllers\PaymobWebhookController;
+
 
 
 Route::prefix('admin')->group(function () {  // usermanagement
@@ -23,6 +24,7 @@ Route::prefix('admin')->group(function () {  // usermanagement
     Route::patch('/admins/{id}', [UserController::class, 'updateAdmin']);
 
     Route::delete('/admins/{id}', [UserController::class, 'destroyAdmin']);
+    Route::get('/statistics', [UserController::class, 'statistics']);
 
 });
 
@@ -63,6 +65,16 @@ Route::prefix('admin/contact-messages')->group(function () {
 Route::apiResource('/trips',TripController::class);
 Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
 Route::post('/payments', [PaymentController::class, 'store']);
+Route::prefix('admin/trips')->group(function() {
+    
+    Route::get('/', [TripController::class, 'index']);
+
+    Route::patch('/{id}', [TripController::class, 'update']);
+
+    Route::delete('/{id}', [TripController::class, 'destroy']);
+
+    Route::get('/statistics', [TripController::class, 'statistics']);
+});
 
 Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
 Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
