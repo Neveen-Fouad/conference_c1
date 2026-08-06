@@ -25,7 +25,7 @@ class RepositoryServiceProvider extends ServiceProvider
         );
         $this->app->bind(
             ReviewRepositoryInterface::class,
-            ReviewRepository::class
+            ReviewRepository::class,
         );
 
     }

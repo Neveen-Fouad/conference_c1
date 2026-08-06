@@ -5,6 +5,8 @@ use App\Interfaces\ReviewRepositoryInterface;
 use App\Models\review;
 use Illuminate\Auth\Access\AuthorizationException;
 
+
+
 class ReviewRepository extends BaseRepository implements ReviewRepositoryInterface
 {
     public function __construct(review $model)

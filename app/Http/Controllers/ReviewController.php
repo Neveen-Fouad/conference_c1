@@ -66,7 +66,7 @@ class ReviewController extends Controller
 
     }
     public function AdminIndex(Request $request){
-        if($request->filled('type')){
+        if($request->filled('type') && $request->filled('reviewable_id')){
             $reviews=$this->reviewService->filterReviewByType(
                 $request->type,
                 $request->reviewable_id

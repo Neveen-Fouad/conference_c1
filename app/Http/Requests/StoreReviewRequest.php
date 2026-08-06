@@ -28,9 +28,9 @@ class StoreReviewRequest extends FormRequest
             'reviewable_id' => ['required','string'],
             'type' => ['required',
             new Enum(ReviewType::class)],
-            'rating' => ['required','decimal:2,1'],
+            'rating' => ['required','numeric','between:0,5'],
             'description' => ['required','string'],
-            'image' =>['required','text'],
+            'image' =>['nullable','string'],
 
         ];
     }

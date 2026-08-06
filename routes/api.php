@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReviewController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -23,4 +24,19 @@ Route::prefix('auth')->group(function () {
     Route::middleware('auth:api')->group(function (){
         Route::post('/logout', [AuthController::class, 'logout']);
     });
+});
+// review endpoint (user)
+Route::middleware('auth:api')->group(function (){
+    Route::get('/reviews' , [ReviewController::class,'UserIndex']);
+    Route::get('/reviews/my' , [ReviewController::class,'getMyReviews']);
+    Route::get('/reviews/{review_id}', [ReviewController::class,'show']);
+    Route::post('/reviews' , [ReviewController::class,'store']);
+    Route::put('/reviews/{review_id}' ,[ReviewController::class,'update']);
+    Route::delete('/reviews/{review_id}',[ReviewController::class, 'destroy']);
+});
+// review endpoint (admin)
+Route::middleware(['auth:api','isAdmin'])->prefix('admin')->group(function(){
+    Route::get('/reviews',[ReviewController::class,'AdminIndex']);
+    Route::post('/reviews/{review_id}/approve',[ReviewController::class,'approveReview']);
+    Route::post('/reviews/{review_id}/reject',[ReviewController::class,'rejectReview']);
 });
