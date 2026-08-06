@@ -11,9 +11,19 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
     {
         parent::__construct($model);
     }
+    protected function currentClientId(){
+        return auth('api')->user()?->client?->id;
+    }
+    protected function isAdmin():bool{
+        return auth('api')->user()?->role ==='admin';
+
+    }
+    
     public function getAll()
     {
-        
+        if($this->isAdmin()){
+            return $this->model->paginate(10);
+        }
         return $this->model
         ->where('status', ReviewStatus::Approved->value)
         ->paginate(10);
@@ -21,25 +31,20 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
 
     public function findById($id)
     {
-        $review = $this->model
-            ->where('id', $id)
-            ->where('client_id',auth('api')->id())
-            ->firstOrFail();
-
-        if($review->status !== ReviewStatus::Approved->value
-        && $review->client_id !== auth('api')->id()){ {
-            throw new AuthorizationException('You are not authorized to view this review.');
+        $review= $this->model->findOrFail($id);
+        if(! $this->isAdmin()
+        && $review->status !== ReviewStatus::Approved->value
+        && $review->client_id !== $this->currentClientId()){
+            throw new AuthorizationException('Not authorized to view this review.');
         }
         return $review;
-     
-    }
     }
 
     public function create(array $data)
     {
-        $review = $this->model
-        ->where('client_id', auth('api')->id())
-        ->where('status', ReviewStatus::pending->value);
+        // 
+        $data['client_id']=$this->currentClientId();
+        $data['status']=ReviewStatus::pending->value;
         return $this->model->create($data);
         
         
@@ -48,7 +53,7 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
     public function delete($id)
     {
         $review = $this->model
-            ->where('client_id', auth('api')->id())
+            ->where('client_id', $this->currentClientId())
             ->firstOrFail($id);
         return $review->delete();
     }
@@ -56,7 +61,7 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
     public function updateReview($id, array $data)
     {
         $review = $this->model
-            ->where('client_id', auth('api')->id())
+            ->where('client_id', $this->currentClientId())
             ->firstOrFail($id);
         if($review->status !== ReviewStatus::pending->value) {
             throw new AuthorizationException('You can only update pending reviews.');
@@ -68,22 +73,29 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
     public function getMyReviews()
     {
         return $this->model
-            ->where('client_id', auth('api')->id())
+            ->where('client_id', $this->currentClientId())
             ->paginate(10);
     }
 
     public function filterReviewsByType(string $type, int $reviewable_id)
     {
-        return $this->model
-            ->where('type', $type)
-            ->where('reviewable_id', $reviewable_id)
-            ->paginate(10);
-    }
-
-    public function adminIndex()
-    {
-        return $this->model
-            ->paginate(10);
+        $query =$this->model
+        ->where('type', $type)
+        ->where('reviewable_id', $reviewable_id);
+        if($this->isAdmin()){
+            return $query->paginate(10);
+        }
+        $client_id = $this->currentClientId();
+        if($client_id){
+            $query->where(function ($q) use ($client_id){
+                $q->where('status',ReviewStatus::Approved->value)
+                ->orWhere('client_id', $client_id);
+            });
+        }else{
+            $query->where('status', ReviewStatus::Approved->value);
+        }
+        return $query->paginate(10);
+        
     }
 
     public function filterReviewsByStatus(string $status)
@@ -95,9 +107,7 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
 
     public function approveReview(int $review_id)
     {
-        $review = $this->model
-            ->where('id', $review_id)
-            ->firstOrFail();
+        $review = $this->model->firstOrFail($review_id);
         $review->update(['status' => ReviewStatus::Approved->value]);
         return $review;
         
@@ -105,9 +115,7 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
 
     public function rejectReview(int $review_id)
     {
-        $review = $this->model
-            ->where('id', $review_id)
-            ->firstOrFail();
+        $review = $this->model->firstOrFail($review_id);
         $review->update(['status' => ReviewStatus::Rejected->value]);
         return $review;
     }

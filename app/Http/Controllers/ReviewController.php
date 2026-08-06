@@ -13,9 +13,20 @@ class ReviewController extends Controller
     {
         $this->reviewService = $reviewService;
     }
-    public function index (Request $request){
-        
-
+    public function UserIndex (Request $request){
+        if($request->filled('type') && $request->filled('reviewable_id')){
+            $reviews=$this->reviewService->filterReviewByType(
+                $request->type,
+                $request->reviewable_id
+            );
+        }else{
+            $reviews=$this->reviewService->UserIndex();
+        }
+        return response()->json([
+            'success'=>true,
+            'message'=>'Reviews retrieved successfully.',
+            'data'=>$reviews,
+        ],200);
     }
     public function show(int $review_id){
         $review = $this->reviewService->show($review_id);
@@ -50,6 +61,26 @@ class ReviewController extends Controller
         $reviews=$this->reviewService->getMyReviews();
         return response()->json([
             'success'=>true,
+            'data'=>$reviews,
+        ],200);
+
+    }
+    public function AdminIndex(Request $request){
+        if($request->filled('type')){
+            $reviews=$this->reviewService->filterReviewByType(
+                $request->type,
+                $request->reviewable_id
+                );
+
+        }elseif($request->filled('status')){
+            $reviews=$this->reviewService->filterReviewByStatus($request->status);
+        
+        }else{
+            $reviews=$this->reviewService->AdminIndex();
+        }
+        return response()->json([
+            'success'=>true,
+            'message'=>'Reviews retrieved successfully.',
             'data'=>$reviews,
         ],200);
 
