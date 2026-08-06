@@ -75,4 +75,10 @@ return [
     'locale'   => env('FLIGHTS_API_LOCALE', 'en_GB'),
     'domain'   => env('FLIGHTS_API_DOMAIN', 'GB'),
 ],
+'tripgo' => [
+    'key' => env('TRIPGO_API_KEY'),
+],
+'tripgo' => [
+    'key' => env('TRIPGO_API_KEY'),
+],
 ];
