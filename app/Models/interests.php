@@ -7,9 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Interests extends Model
 {
     protected $fillable = [
-        'slug',
         'name',
-        'description',
     ];
 
     public function clients()

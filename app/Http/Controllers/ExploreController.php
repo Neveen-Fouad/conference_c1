@@ -19,11 +19,14 @@ class ExploreController extends Controller
     public function index()
     {
         $countries = $this->countryApi->getAllCountries();
-
-        return view('explore', [
+        return response()->json([
             'countries' => $countries,
-            'interests' => Interests::all(['id', 'slug', 'name']),
+            'interests' => Interests::all(['id', 'name']),
         ]);
+        // return view('explore', [
+        //     'countries' => $countries,
+        //     'interests' => Interests::all(['id', 'name']),
+        // ]);
     }
 
     public function destinationData(Request $request)
