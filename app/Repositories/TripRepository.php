@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Models\trip;
 use App\Interfaces\TripRepositoryInterface;
-
+use App\Models\Payment;
 class TripRepository extends BaseRepository implements TripRepositoryInterface
 {
     public function __construct(trip $trip)
@@ -20,6 +20,7 @@ class TripRepository extends BaseRepository implements TripRepositoryInterface
             'favorite_trips' => trip::where('is_fav', true)->count(),
             'average_budget' => trip::avg('budget'),
             'average_trip_duration' => trip::avg('number_of_days'),
+            'total_revenue' => Payment::where('paid', true)->sum('amount')
         ];
     }
 

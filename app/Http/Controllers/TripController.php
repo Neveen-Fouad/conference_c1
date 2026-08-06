@@ -20,11 +20,12 @@ class TripController extends Controller
         );
     }
 
-    public function update(UpdateTripRequest $request, $id){
-        return response()->json(
-            $this->tripRepository->update($id, $request->validated())
-        );
-    }
+   public function update(UpdateTripRequest $request, $id)
+{
+    return response()->json(
+        $this->tripRepository->update($id, $request->validated())
+    );
+}
 
     public function destroy($id){
         return response()->json(
