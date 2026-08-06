@@ -45,5 +45,5 @@ Route::middleware(['auth:api','isAdmin'])->prefix('admin')->group(function(){
 Route::middleware('auth:api')->group(function(){
     Route::get('/favourites',[FavouritesController::class,'index']);
     Route::post('/favourites',[FavouritesController::class,'store']);
-    Route::
-})
+    Route::delete('/favourites/{favourite_id}',[FavouritesController::class,'destroy']);
+});
