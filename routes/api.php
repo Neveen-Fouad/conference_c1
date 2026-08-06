@@ -1,14 +1,16 @@
 <?php
 
+use App\Http\Controllers\TripController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ComplaintController;
-use App\Http\Controllers\TripController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PaymobWebhookController;use App\Http\Controllers\TripController;
 
 
-Route::prefix('admin')->group(function () {  // usermanagement 
+Route::prefix('admin')->group(function () {  // usermanagement
 
     Route::get('/users', [UserController::class, 'index']);
 
@@ -41,7 +43,7 @@ Route::prefix('admin/settings')->group(function (){
     Route::patch('/social-links', [SettingController::class, 'updateSocialLinks']);
 
     Route::post('/banner', [SettingController::class, 'setBanner']);
-    
+
     Route::patch('/banner', [SettingController::class, 'updateBanner']);
 
 });
@@ -58,40 +60,15 @@ Route::prefix('admin/contact-messages')->group(function () {
     Route::patch('/{id}/status', [ComplaintController::class, 'changeStatus']);
 
 });
+Route::apiResource('/trips',TripController::class);
+Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
+Route::post('/payments', [PaymentController::class, 'store']);
 
-//trip management 
-Route::prefix('admin/trips')->group(function() {
-    
-    Route::get('/', [TripController::class, 'index']);
-
-    Route::patch('/{id}', [TripController::class, 'update']);
-
-    Route::delete('/{id}', [TripController::class, 'destroy']);
-
-    Route::get('/statistics', [TripController::class, 'statistics']);
-});
+Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
+Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
+Route::post('/payments', [PaymentController::class, 'store']);
+Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
+Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
+Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
 
 
-
-use App\Http\Controllers\AuthController;
-
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
-
-
-
-Route::prefix('auth')->group(function () {
-    Route::post('/register', [AuthController::class, 'register']);
-    Route::post('/login', [AuthController::class, 'login']);
-    Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);
-    Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.reset');
-    Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmail'])
-        ->name('verification.verify');
-    Route::post('/email/verification-notification', [AuthController::class, 'resendVerificationEmail'])
-        ->middleware('auth:api')
-        ->name('verification.send');
-    Route::middleware('auth:api')->group(function (){
-        Route::post('/logout', [AuthController::class, 'logout']);
-    });
-});
