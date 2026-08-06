@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use App\Http\Middleware\IsAdmin;
+use App\Http\Middleware\IsActive;
+use App\Http\Middleware\VerifiedEmail;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -22,7 +24,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-		$middleware->alias([ 'isAdmin' => IsAdmin::class, ]);
+		$middleware->alias([ 'isAdmin' => IsAdmin::class, 'IsActive' => IsActive::class , 'VerifiedEmail' => VerifiedEmail::class]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->render(function(\Throwable $e,Request $request){
@@ -68,9 +70,15 @@ return Application::configure(basePath: dirname(__DIR__))
             }
             if ($e instanceof RuntimeException){
                 return response()->json([
-                    'message'=>'Service unavaliable',
+                    'message'=>'Service unavailable',
                     'error' =>  $e->getMessage(),
                 ],503);
+            }
+            if( $e instanceof \InvalidArgumentException){
+                return response()->json([
+                    'message'=>'Bad request',
+                    'error' =>  $e->getMessage(),
+                ],400);
             }
             $status = $e instanceof HttpExceptionInterface ? $e->getStatusCode() : 500;
             return response()->json([

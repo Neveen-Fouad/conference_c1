@@ -27,7 +27,7 @@ Route::prefix('auth')->group(function () {
     });
 });
 // review endpoint (user)
-Route::middleware('auth:api')->group(function (){
+Route::middleware(['auth:api','IsActive','VerifiedEmail'])->group(function (){
     Route::get('/reviews' , [ReviewController::class,'UserIndex']);
     Route::get('/reviews/my' , [ReviewController::class,'getMyReviews']);
     Route::get('/reviews/{review_id}', [ReviewController::class,'show']);
@@ -36,13 +36,13 @@ Route::middleware('auth:api')->group(function (){
     Route::delete('/reviews/{review_id}',[ReviewController::class, 'destroy']);
 });
 // review endpoint (admin)
-Route::middleware(['auth:api','isAdmin'])->prefix('admin')->group(function(){
+Route::middleware(['auth:api','isAdmin','IsActive', 'VerifiedEmail'])->prefix('admin')->group(function(){
     Route::get('/reviews',[ReviewController::class,'AdminIndex']);
     Route::post('/reviews/{review_id}/approve',[ReviewController::class,'approveReview']);
     Route::post('/reviews/{review_id}/reject',[ReviewController::class,'rejectReview']);
 });
 // favourite endpoint (user)
-Route::middleware('auth:api')->group(function(){
+Route::middleware(['auth:api','IsActive','VerifiedEmail'])->group(function(){
     Route::get('/favourites',[FavouritesController::class,'index']);
     Route::post('/favourites',[FavouritesController::class,'store']);
     Route::delete('/favourites/{favourite_id}',[FavouritesController::class,'destroy']);
