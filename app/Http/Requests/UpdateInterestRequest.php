@@ -2,12 +2,11 @@
 
 namespace App\Http\Requests;
 
-use App\Enum\ReviewType;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules\Enum;
+use Illuminate\Validation\Rule;
 
-class StoreReviewRequest extends FormRequest
+class UpdateInterestRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,13 +24,8 @@ class StoreReviewRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'reviewable_id' => ['required','string'],
-            'type' => ['required',
-            new Enum(ReviewType::class)],
-            'rating' => ['required','numeric','between:0,5'],
-            'description' => ['required','string'],
-            'image' =>['nullable','image','mimes:jpg,jpeg,png','max:2048'],
-
+            'name' =>['required','string',
+            Rule::unique('interest','name')->ignore($this->route('id'))],
         ];
     }
 }

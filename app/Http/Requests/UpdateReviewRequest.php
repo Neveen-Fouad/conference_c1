@@ -25,7 +25,7 @@ class UpdateReviewRequest extends FormRequest
         return [
             'rating' => ['required','numeric','between:0,5'],
             'description' => ['required','string'],
-            'image' =>['nullable','string'],
+            'image' =>['nullable','image','mimes:jpg,jpeg,png','max:2048'],
         ];
     }
 }

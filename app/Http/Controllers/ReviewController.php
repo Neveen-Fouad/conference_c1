@@ -36,7 +36,7 @@ class ReviewController extends Controller
         ],200);
     }
     public function store(StoreReviewRequest $request){
-        $review=$this->reviewService->store($request->validated());
+        $review=$this->reviewService->store($request);
         return response()->json([
             'success'=>true,
             'data'=>$review,

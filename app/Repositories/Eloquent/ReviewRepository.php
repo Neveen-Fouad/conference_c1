@@ -44,7 +44,7 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
 
     public function create(array $data)
     {
-        // 
+        
         $data['client_id']=$this->currentClientId();
         $data['status']=ReviewStatus::pending->value;
         return $this->model->create($data);

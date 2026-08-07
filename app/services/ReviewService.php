@@ -3,6 +3,7 @@ namespace App\Services;
 use App\Enum\ReviewType;
 use App\Interfaces\ReviewRepositoryInterface;
 use App\Models\trip;
+use Illuminate\Http\Request;
 
 
 
@@ -33,12 +34,18 @@ class ReviewService
     {
         return $this->reviewRepository->findById($review_id);
     }
-    public function store(array $data)
+    public function store(Request $request)
     {
+        $data=$request->validated();
         $exists = $this->reviewableExists($data['type'],$data['reviewable_id']);
         if(! $exists){
             throw new \InvalidArgumentException('The item being reviewed does not exist.');
         }
+        if($request->hasFile('image')){
+            $imagePath = $request->file('image')->store('reviews', 'public');
+            $data['image'] = $imagePath;
+        }
+        
         return $this->reviewRepository->create($data);
     }
     public function update(int $review_id , array $data)
