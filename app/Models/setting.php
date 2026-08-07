@@ -12,7 +12,7 @@ class setting extends Model
         "email",
         "slogan",
         "logo",
-        "facebook_link",
-        "instagram_link",
+        "facebook",
+        "instagram",
     ];
 }

@@ -15,6 +15,7 @@ class UpdateSiteNameRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
+
         ];
     }
 
@@ -24,6 +25,7 @@ class UpdateSiteNameRequest extends FormRequest
             'name.required' => 'Site name is required.',
             'name.string' => 'Site name must be a string.',
             'name.max' => 'Site name cannot exceed 255 characters.',
+            
         ];
     }
 }

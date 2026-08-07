@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TripController;
+use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -11,7 +12,7 @@ use App\Http\Controllers\PaymobWebhookController;
 
 
 
-Route::prefix('admin')->group(function () {  // usermanagement
+Route::prefix('admin')->middleware('isAdmin')->group(function () {  // usermanagement
 
     Route::get('/users', [UserController::class, 'index']);
 
@@ -29,31 +30,20 @@ Route::prefix('admin')->group(function () {  // usermanagement
 });
 
 //website settings
-Route::prefix('admin/settings')->group(function (){
+Route::prefix('admin/settings')->middleware('isAdmin')->group(function () {
      Route::get('/', [SettingController::class, 'index']);
 
-    Route::post('/logo', [SettingController::class, 'setLogo']);
-    Route::patch('/logo', [SettingController::class, 'updateLogo']);
+    Route::post('/', [SettingController::class, 'storeSettings']);
+    Route::patch('/{id}', [SettingController::class, 'updateSettings']);
 
-    Route::post('/site-name', [SettingController::class, 'setSiteName']);
-    Route::patch('/site-name', [SettingController::class, 'updateSiteName']);
-
-    Route::post('/contact-info', [SettingController::class, 'setContactInfo']);
-    Route::patch('/contact-info', [SettingController::class, 'updateContactInfo']);
-
-    Route::post('/social-links', [SettingController::class, 'setSocialLinks']);
-    Route::patch('/social-links', [SettingController::class, 'updateSocialLinks']);
-
-    Route::post('/banner', [SettingController::class, 'setBanner']);
-
-    Route::patch('/banner', [SettingController::class, 'updateBanner']);
-
+   
+    
 });
 
 //complaint
 Route::post('/contact', [ComplaintController::class, 'store']);
 
-Route::prefix('admin/contact-messages')->group(function () {
+Route::prefix('admin/contact-messages')->middleware('isAdmin')->group(function () {
 
     Route::get('/', [ComplaintController::class, 'index']);
 
@@ -65,7 +55,7 @@ Route::prefix('admin/contact-messages')->group(function () {
 Route::apiResource('/trips',TripController::class);
 Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
 Route::post('/payments', [PaymentController::class, 'store']);
-Route::prefix('admin/trips')->group(function() {
+Route::prefix('admin/trips')->middleware('isAdmin')->group(function() {
     
     Route::get('/', [TripController::class, 'index']);
 
