@@ -13,7 +13,8 @@ class RestaurantSearchRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'city' => 'nullable|string|max:100',
+            'city' => 'required|string|max:100',
+            'page' => 'nullable|integer|min:0',
         ];
     }
 }

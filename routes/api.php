@@ -5,22 +5,14 @@ use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\TripController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CountryController;
-
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
-
-
 use App\Http\Controllers\InterestsController;
-
 use App\Http\Controllers\HotelBookingsController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\SearchController;
-
+use App\Http\Controllers\AuthController;
 
 
 Route::prefix('auth')->group(function () {
@@ -37,12 +29,11 @@ Route::prefix('auth')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
     });
 });
+
 Route::apiResource('/trips',TripController::class);
 Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
 Route::post('/ai/trips', [AiTripController::class, 'generateTrip']);
 
-Route::get('/countries', [CountryController::class, 'index']);
-Route::get('/countries/{country}', [CountryController::class, 'show']);
 
 Route::post('/ai/trips', [AiTripController::class, 'generateTrip']);
 
@@ -67,9 +58,10 @@ Route::get('/hotels', [HotelController::class, 'show']);
 
 Route::get('/hotels/search', [SearchController::class, 'searchHotels']);
 
+// restaurants endpoint
 Route::get('/restaurants', [RestaurantController::class, 'index']);
-Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'show']);
+Route::get('/restaurants/details', [RestaurantController::class, 'show']);
 
+// flights endpoint
 Route::get('/flights', [FlightController::class, 'index']);
 Route::get('/flights/{flight}', [FlightController::class, 'show']);
-
