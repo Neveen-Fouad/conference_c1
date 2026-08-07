@@ -51,10 +51,11 @@ Route::get('/hotels/search', [HotelBookingsController::class, 'search']);
 
 Route::middleware('auth:api')->group(function () {
     Route::post('/hotels/bookings', [HotelBookingsController::class, 'store']);
+    Route::post('/flights/bookings', [FlightBookingController::class, 'store']);
 });
 
 Route::get('/hotels', [HotelController::class, 'index']);
-Route::get('/hotels', [HotelController::class, 'show']);
+Route::get('/hotels/{hotel}', [HotelController::class, 'show']);
 
 Route::get('/hotels/search', [SearchController::class, 'searchHotels']);
 

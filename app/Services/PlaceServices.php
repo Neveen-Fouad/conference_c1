@@ -5,6 +5,7 @@ namespace App\Services;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
 class PlaceServices
 {
@@ -25,32 +26,49 @@ class PlaceServices
             'x-rapidapi-host' => $this->host,
         ];
     }
-  protected function getLocationId(string $city): ?string
+    
+protected function getLocationId(string $city): ?string
 {
-    return Cache::remember('booking_location_' . md5($city), now()->addWeek(), function () use ($city) {
-        $response = Http::withHeaders($this->headers())
-            ->get("{$this->baseUrl}/attraction/searchLocation", [
-                'query' => $city,
-                'languagecode' => 'en-us',
-            ]);
+    $key = 'booking_location_' . md5($city);
 
-        if (!$response->successful()) {
-            Log::info('searchLocation failed', ['status' => $response->status(), 'body' => $response->json()]);
-            return null;
-        }
+    $cached = Cache::get($key);
+    if ($cached !== null) {
+        return $cached;
+    }
 
-        $destinations = collect($response->json('data.destinations', []));
+    $response = Http::withHeaders($this->headers())
+        ->get("{$this->baseUrl}/attraction/searchLocation", [
+            'query' => $city,
+            'languagecode' => 'en-us',
+        ]);
 
-        $match = $destinations->first(fn ($d) =>
-            strcasecmp($d['cityName'] ?? '', $city) === 0
-        ) ?? $destinations->first();
+    if (!$response->successful()) {
+        Log::warning('searchLocation failed', ['status' => $response->status(), 'body' => $response->json()]);
+        return null;
+    }
+    if ($response->status() === 429) {
+    Log::error('RapidAPI quota exceeded for Booking.com15', ['body' => $response->body()]);
+    return null; 
+}
 
-        if (!$match) {
-            Log::info('No destination match found for city', ['city' => $city]);
-        }
+    $destinations = collect($response->json('data.destinations', []));
 
-        return $match['id'] ?? null;   
-    });
+    $match = $destinations->first(fn ($d) =>
+        strcasecmp($d['cityName'] ?? '', $city) === 0
+    ) ?? $destinations->first();
+
+    if (!$match) {
+        Log::warning('No destination match found for city', ['city' => $city]);
+        return null;
+    }
+
+    $id = $match['id'] ?? null;
+
+    if ($id) {
+        Cache::put($key, $id, now()->addWeek()); 
+    }
+
+    return $id;
 }
     protected array $interestKeywords = [
     'adventure'   => ['adventure', 'thrill', 'extreme', 'zipline', 'diving'],
@@ -66,17 +84,19 @@ class PlaceServices
     'photography' => ['photo', 'photography', 'scenic', 'viewpoint'],
     'relaxation'  => ['spa', 'relax', 'wellness', 'massage', 'yoga'],
 ];
-public function getAttractions(string $city, ?string $interestSlug = null): array
+ public function getAttractions(string $city, ?string $interestSlug = null): array
 {
     $locationId = $this->getLocationId($city);
     if (!$locationId) {
         return ['results' => []];
     }
 
-    $all = Cache::remember('booking_attractions_' . $locationId, now()->addHours(6), function () use ($city, $locationId) {
+    $cacheKey = 'booking_attractions_' . $locationId;
+    $all = Cache::get($cacheKey);
+
+    if ($all === null) {
         $products = collect();
 
-        
         for ($page = 1; $page <= 5; $page++) {
             $response = Http::withHeaders($this->headers())
                 ->get("{$this->baseUrl}/attraction/searchAttractions", [
@@ -88,20 +108,24 @@ public function getAttractions(string $city, ?string $interestSlug = null): arra
                 ]);
 
             if (!$response->successful()) {
-                Log::info('searchAttractions failed', ['page' => $page, 'status' => $response->status()]);
+                Log::warning('searchAttractions failed', [
+                    'page' => $page,
+                    'status' => $response->status(),
+                    'body' => $response->json(),
+                ]);
                 break;
             }
 
             $pageProducts = $response->json('data.products', []);
 
             if (empty($pageProducts)) {
-                break; 
+                break;
             }
 
             $products = $products->merge($pageProducts);
         }
 
-        return $products->map(function ($place) {
+        $all = $products->map(function ($place) {
             return [
                 'name' => $place['name'] ?? null,
                 'description' => $place['shortDescription'] ?? '',
@@ -109,7 +133,12 @@ public function getAttractions(string $city, ?string $interestSlug = null): arra
                 'photo' => $place['primaryPhoto']['small'] ?? null,
             ];
         })->filter(fn ($p) => $p['name'])->unique('name')->values()->toArray();
-    });
+
+        if (!empty($all)) {
+            Cache::put($cacheKey, $all, now()->addHours(6));
+        }
+    }
+      $interestSlug = strtolower($interestSlug);
 
     if (!$interestSlug || !isset($this->interestKeywords[$interestSlug])) {
         return ['results' => $all];
@@ -129,7 +158,6 @@ public function getAttractions(string $city, ?string $interestSlug = null): arra
 
     return ['results' => $filtered];
 }
-
     public function getRestaurants(string $city): array
     {
         return ['results' => []];

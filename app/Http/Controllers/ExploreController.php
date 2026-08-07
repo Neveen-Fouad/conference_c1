@@ -13,7 +13,8 @@ class ExploreController extends Controller
     public function __construct(
         protected CountryServices $countryApi,
         protected WeatherServices $weather,
-        protected PlaceServices $places
+        protected PlaceServices $places,
+        protected PlaceServices $restaurants
     ) {}
 
     public function index()

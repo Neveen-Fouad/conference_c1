@@ -15,7 +15,7 @@ class FlightBookingController extends Controller
     public function store(CreateFlightBookingRequest $request)
     {
         try{
-            $booking = $this->bookingService->createBooking($request->validated());
+           $booking = $this->bookingService->createBooking(auth('api')->user(), $request->validated());
             return response()->json($booking, 201);
         }catch(\Exception $e){
             Log::error('Error creating flight booking', ['exception' => $e]);

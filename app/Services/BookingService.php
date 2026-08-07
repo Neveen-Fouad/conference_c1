@@ -58,9 +58,11 @@ class BookingService
         $total_price = data_get($priceDetails, 'lodgingPrepareCheckout.totalPrice.amount');
         $currency = data_get($priceDetails, 'lodgingPrepareCheckout.totalPrice.currencyInfo.code', 'USD');
         $roomName = data_get($room, 'header.name');
+        $checkIn = Carbon::parse($data['check_in_date']);
+        $checkOut = Carbon::parse($data['check_out_date']);
+        $number_of_days = $checkIn->diffInDays($checkOut);
 
-        $number_of_days = Carbon::parse($data['check_out_date'])->diffInDays(Carbon::parse($data['check_in_date']));
-
+       
         $booking = [
             'client_id' => $user->client->id,
             'type' => 'hotel',

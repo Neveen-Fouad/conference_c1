@@ -60,9 +60,9 @@ return [
         'key' => env('WEATHER_API_KEY'),
     ],
     'rapidapi' => [
-        'key' => env('RAPIDAPI_KEY'),
-        'host' => env('RAPIDAPI_HOST', 'https://booking-com15.p.rapidapi.com/api/v1'),
-    ],
+    'key' => env('RAPIDAPI_KEY'),
+    'host' => env('RAPIDAPI_HOST', 'booking-com15.p.rapidapi.com'), 
+],
     'hotels' => [
 
         'base_url' => env('HOTELS_API_URL'),
