@@ -10,26 +10,51 @@ class PaymobPaymentService
     public function createIntention(Payment $payment)
     {
         $client = $payment->client;
-        $nameParts = explode(' ', trim($client->name), 2);
 
-        $firstName = $nameParts[0] ?? 'Test';
+        $nameParts = explode(
+            ' ',
+            trim((string) $client->name),
+            2
+        );
+
+        $firstName = $nameParts[0] ?: 'Test';
         $lastName = $nameParts[1] ?? 'Customer';
 
-        $amountCents = (int) round($payment->amount * 100);
+        $amountCents = (int) round(
+            $payment->amount * 100
+        );
 
         $response = Http::withHeaders([
-            'Authorization' => 'Token ' . config('services.paymob.secret_key'),
+            'Authorization' => 'Token ' .
+                config('services.paymob.secret_key'),
 
-            'Content-Type' => 'application/json',])->post(config('services.paymob.base_url') . '/v1/intention/',
-            ['amount' => $amountCents, 'currency' => $payment->currency,
+            'Content-Type' => 'application/json',
+        ])->post(
+            config('services.paymob.base_url') .
+            '/v1/intention/',
+            [
+                'amount' => $amountCents,
 
-                'payment_methods' => [(int) config('services.paymob.integration_id'),
+                'currency' => strtoupper(
+                    $payment->currency ?? 'EGP'
+                ),
+
+                'payment_methods' => [
+                    (int) config(
+                        'services.paymob.integration_id'
+                    ),
                 ],
+
                 'items' => [
                     [
-                        'name' => 'Booking #' . $payment->booking_id,
+                        'name' =>
+                            'Booking #' . $payment->booking_id,
+
                         'amount' => $amountCents,
-                        'description' => 'Travel booking payment',
+
+                        'description' =>
+                            'Travel booking payment',
+
                         'quantity' => 1,
                     ],
                 ],
@@ -39,7 +64,8 @@ class PaymobPaymentService
                     'last_name' => $lastName,
                     'email' => $client->email,
 
-                    'phone_number' => $client->phone
+                    'phone_number' =>
+                        $client->phone
                         ?? $client->phone_number
                             ?? '+201000000000',
 
@@ -54,7 +80,6 @@ class PaymobPaymentService
                     'state' => 'Cairo',
                 ],
 
-
                 'customer' => [
                     'first_name' => $firstName,
                     'last_name' => $lastName,
@@ -63,9 +88,14 @@ class PaymobPaymentService
 
                 'special_reference' =>
                     $payment->payment_reference,
-                'notification_url' => config('services.paymob.notification_url'),
 
-                'redirection_url' => config('services.paymob.redirection_url'),
+                'notification_url' => config(
+                    'services.paymob.notification_url'
+                ),
+
+                'redirection_url' => config(
+                    'services.paymob.redirection_url'
+                ),
 
                 'extras' => [
                     'payment_id' => $payment->id,
@@ -74,7 +104,11 @@ class PaymobPaymentService
             ]
         );
 
-        $response->throw();
+        if ($response->failed()) {
+            throw new \Exception(
+                'Paymob Error: ' . $response->body()
+            );
+        }
 
         $data = $response->json();
 

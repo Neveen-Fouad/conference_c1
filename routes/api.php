@@ -66,8 +66,6 @@ Route::post('/payments', [PaymentController::class, 'store']);
 Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
 Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
 Route::post('/payments', [PaymentController::class, 'store']);
-Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
-Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
 Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
 
 
