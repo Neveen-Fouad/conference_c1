@@ -1,8 +1,13 @@
 <?php
 
+namespace App\Services;
+
 use App\Enum\FavouriteType;
 use App\Interfaces\FavouriteRepositoryInterface;
 use App\Models\trip;
+use App\Services\FlightService;
+use App\Services\HotelService;
+use App\Services\RestaurantService;
 
 
 
@@ -13,7 +18,7 @@ class FavouriteService
     protected $restaurantService;
     protected $flightService;
 
-public function __construct(
+    public function __construct(
         FavouriteRepositoryInterface $favouriteRepository,
         HotelService $hotelService,
         RestaurantService $restaurantService,
@@ -35,7 +40,7 @@ public function __construct(
     public function store(array $data)
     {
         $details = $this->getItemDetails($data['type'],$data['favouriteable_id']);
-        if($details === null){
+        if(empty($details)){
             throw new \InvalidArgumentException('The item being added to favourites does not exist.');
         }
         return $this->favouriteRepository->create($data);
@@ -55,7 +60,7 @@ public function __construct(
         });
         return $favourites;
     }
-    protected function getItemDetails(string $type , int $favouriteable_id):?object
+    protected function getItemDetails(string $type , string $favouriteable_id):mixed
     {
         return match ($type){
             FavouriteType::Trip->value => trip::find($favouriteable_id),

@@ -25,7 +25,7 @@ class FavouritesController extends Controller
             'success'=>true,
             'message'=>'Favourites retrieved successfully',
             'data'=>$favourites,
-            ],200);
+        ],200);
 
     }
     public function store(StoreFavouriteRequest $request){
@@ -33,19 +33,16 @@ class FavouritesController extends Controller
          return response()->json([
             'success'=>true,
             'data'=>$favourite,
-            ],201);
+        ],201);
         
 
     }
     public function destroy(int $favourite_id){
-         $this->FavouriteService->destroy($favourite_id);
-         return response()->json([
+        $this->FavouriteService->destroy($favourite_id);
+        return response()->json([
             'success'=>true,
             'message'=>'Favourite deleted successfully.'
-         ],200);
+        ],200);
     }
-    
-
-
 
 }

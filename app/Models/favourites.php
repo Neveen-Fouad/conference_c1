@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enum\FavouriteType;
 use Illuminate\Database\Eloquent\Model;
 
 class favourites extends Model
@@ -11,7 +12,11 @@ class favourites extends Model
        'type',
        'favouriteable_id',
        'client_id'
-        ];
+    ];
+
+    protected $casts = [
+        'type' => FavouriteType::class,
+    ];
     public function client(){
         return $this->belongsTo(client::class);
     }
