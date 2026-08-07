@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\FlightSearchRequest;
+use App\Http\Requests\FlightDetailsRequest;
 use App\Services\FlightService;
 use Illuminate\Http\Request;
 
@@ -16,9 +17,15 @@ class FlightController extends Controller
         return response()->json($this->flightService->searchFlights($request->validated()));
     }
 
-    public function show(string $flight)
-    {
-        $details = $this->flightService->getFlightDetails($flight);
-        return $details ? response()->json($details) : response()->json(['message' => 'Not found'], 404);
-    }
+    public function show(FlightDetailsRequest $request)
+{
+    $results = $this->flightService->searchFlights([
+        'origin' => $request->origin,
+        'destination' => $request->destination,
+        'date' => $request->date,
+        'adults' => $request->adults ?? 1,
+    ]);
+
+    return $results ? response()->json($results) : response()->json(['message' => 'No flights found'], 404);
+}
 }

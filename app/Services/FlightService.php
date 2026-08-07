@@ -3,6 +3,7 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 
 class FlightService
 {
@@ -38,6 +39,12 @@ class FlightService
             'X-RapidAPI-Key' => $this->apiKey,
             'X-RapidAPI-Host' => $this->apiHost,
         ])->get($this->baseUrl . '/flightDetails', ['id' => $id]);
+         if ($response->failed()) {
+        Log::error('Sky Scrapper flight details failed', [
+            'status' => $response->status(),
+            'body' => $response->body(),
+        ]);
+    }
 
         return $response->failed() ? null : $response->json();
     }

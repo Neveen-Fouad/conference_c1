@@ -26,11 +26,11 @@ class InterestSeeder extends Seeder
             'Photography',
             'Relaxation',
        ];
-       foreach ($interests as $interest){
+     foreach ($interests as $interest) {
+    Interests::updateOrCreate([
+        'name' => $interest,
+    ]);
+}
 
-        Interests::updateOrCreate(
-            ['name' => $interest]
-        );
-       }
     }
 }
