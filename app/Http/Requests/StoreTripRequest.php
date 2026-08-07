@@ -24,10 +24,12 @@ class StoreTripRequest extends FormRequest
     {
         return [
             'destination' => 'required|string|max:255',
-            'start_date' => 'required|date',
-            'number_of_days' => 'required|integer|min:1',
-            'budget' => 'required|numeric|min:0',
-
+            'start_date' => 'required|date|after_or_equal:today',
+            'end_date' => 'required|date|after:start_date',
+            'budget' => 'required|numeric|min:100',
+            'number_of_travels' => 'required|integer|min:1',
+            'estimated_expenses' => 'required|numeric|min:0',
+            'style' => 'required|string|max:255',
         ];
     }
 }

@@ -8,12 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 {
     //
      protected $fillable = [
-        'name',
-        'phone',
-        "estimated_price",
+        "estimated_expenses",
         "style",
-        "number_of_days",
-        "number_of_travellers",
+        "number_of_travels",
         "classes",
         "destination",
         "start_date",

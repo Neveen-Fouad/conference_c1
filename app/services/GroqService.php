@@ -16,17 +16,21 @@ class GroqService
     //     //
     // }
 
-    public function MakeTrip($TripRequest, $city, $weatherForecast, $places)
+    public function MakeTrip($TripRequest, $weatherForecast, $hotel)
     {
        
-        $days = $TripRequest['number_of_days'] ?? $TripRequest->number_of_days;
+    $StartDate = $TripRequest['start_date']?? $TripRequest->start_date;
+        $EndDate = $TripRequest['end_date'] ?? $TripRequest->end_date;
+        $days = (new \DateTime($EndDate))->diff(new \DateTime($StartDate))->days + 1;
         $destination = $TripRequest['destination'] ?? $TripRequest->destination;
         $budget = $TripRequest['budget'] ?? $TripRequest->budget;
+        $guests = $TripRequest['number_of_travels'] ?? $TripRequest->number_of_travels;
         
         $contextData = json_encode([
-            'city' => $city,
+            // 'city' => $city,
             'weather_forecast' => $weatherForecast,
-            'available_attractions' => $places
+            'hotel_info' => $hotel,
+            // 'available_attractions' => $places
         ]);
 
         try {
@@ -35,31 +39,31 @@ class GroqService
                 "messages" => [
                     [
                         "role" => "system",
-                        "content" => "You are an expert travel planner. You must output your response strictly in JSON format. 
-        Generate a daily itinerary for {$days} days to {$destination} with a budget of {$budget}.
+                        "content" => "You are an expert travel planner. You must output your response in a good readable format with proper formatting and structure.
+        Generate a daily itinerary for {$days} days to {$destination} with a budget of {$budget} and for {$guests} guests.
         
         CRITICAL RULES: 
-        1. You MUST build the trip using ONLY the attractions provided in the 'Context Data' below. Do not invent places.
-        2. Look at the weather forecast in the Context Data. Plan indoor activities on rainy days and outdoor activities on sunny days.
+        1. You MUST build the trip realistically and keep in mind the hotel information in the context data.
+        2. Look at the weather forecast provided in the context data. Plan indoor activities on rainy days and outdoor activities on sunny days.
         3. Factor in the budget.
 
         Context Data:
         {$contextData}
         
-        You must use this exact JSON schema:
+        You must include these data:
         {
-            \"trip\": [
-                {
-                    \"day\": 1,
-                    \"weather_note\": \"Brief note on today's weather\",
-                    \"morning\": \"Attraction Name and description\",
-                    \"lunch\": \"Restaurant suggestion\",
-                    \"afternoon\": \"Attraction Name and description\",
-                    \"dinner\": \"Restaurant suggestion\",
-                    \"daily_cost\": 0
+           trip: [
+                {   best hotel for all days based on the hotel information in the context data and budget and the number of guests and days,
+                    day: 1,
+                    weather_note: Brief note on today's weather in the destination,
+                    morning: Attraction Name and description,
+                    lunch: Restaurant suggestion based on the Attraction address and budget,
+                    afternoon: Attraction Name and description,
+                    dinner: Restaurant suggestion based on the Attraction address and budget,
+                    daily_cost: 0
                 }
             ],
-            \"total_estimated_cost\": 0
+            total_estimated_cost: 0
         }"
                     ],
                     [
@@ -74,7 +78,6 @@ class GroqService
             Log::error('groq error ', ["message" => $e->getMessage()]);
             throw new \RuntimeException('Failed to generate trip plan. Please try again later.');
         }
-        
-        return $response->choices[0]->message->content ?? 'error';
+        return $response['choices'][0]['message']['content'];
     }
 }

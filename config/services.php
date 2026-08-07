@@ -77,8 +77,5 @@ return [
 ],
 'tripgo' => [
     'key' => env('TRIPGO_API_KEY'),
-],
-'tripgo' => [
-    'key' => env('TRIPGO_API_KEY'),
-],
+]
 ];
