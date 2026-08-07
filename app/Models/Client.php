@@ -10,15 +10,15 @@ class Client extends Model
     protected $fillable = [
        'phone',
        'birth_date',
-       'long',
-       'latittude',
-       'user_id',
+       'location',
+       'booking_id',
+
     ];
     public function user(){
         return $this->belongsTo(User::class);
     }
 
-     public function bookings(){
+     public function Bookings(){
         return $this->hasMany(bookings::class);
 
     }
@@ -37,5 +37,8 @@ class Client extends Model
     public function client_has_ineterests(){
         return $this->hasMany(client_has_ineterests::class);
     }
-
+    public function getEmailAttribute()
+    {
+        return $this->user?->email;
+    }
 }

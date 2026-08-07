@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-    class trip extends Model
+class trip extends Model
 {
-    //
-     protected $fillable = [
+    protected $fillable = [
         'name',
         'phone',
         "estimated_price",
