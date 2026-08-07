@@ -35,7 +35,7 @@ Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
 Route::post('/ai/trips', [AiTripController::class, 'generateTrip']);
 
 
-Route::post('/ai/trips', [AiTripController::class, 'generateTrip']);
+
 
 
 Route::get('/countries', [CountryController::class, 'index']);
@@ -66,3 +66,4 @@ Route::get('/restaurants/details', [RestaurantController::class, 'show']);
 // flights endpoint
 Route::get('/flights', [FlightController::class, 'index']);
 Route::get('/flights/{flight}', [FlightController::class, 'show']);
+ 

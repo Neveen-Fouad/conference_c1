@@ -16,7 +16,7 @@ class GroqService
     //     //
     // }
 
-    public function MakeTrip($TripRequest, $weatherForecast, $hotel)
+    public function MakeTrip($TripRequest, $weatherForecast, $hotel, $places)
     {
        
     $StartDate = $TripRequest['start_date']?? $TripRequest->start_date;
@@ -30,7 +30,7 @@ class GroqService
             // 'city' => $city,
             'weather_forecast' => $weatherForecast,
             'hotel_info' => $hotel,
-            // 'available_attractions' => $places
+            'available_attractions' => $places
         ]);
 
         try {
@@ -46,6 +46,7 @@ class GroqService
         1. You MUST build the trip realistically and keep in mind the hotel information in the context data.
         2. Look at the weather forecast provided in the context data. Plan indoor activities on rainy days and outdoor activities on sunny days.
         3. Factor in the budget.
+        4. suggest attractions based on the available attractions in the context data.
 
         Context Data:
         {$contextData}
@@ -61,6 +62,8 @@ class GroqService
                     afternoon: Attraction Name and description,
                     dinner: Restaurant suggestion based on the Attraction address and budget,
                     daily_cost: 0
+                    Attractions based on the available attractions in the context data.
+                    Routes between the hotel and attractions and restaurants based on the available transportation options in the context data. and if there is none tell
                 }
             ],
             total_estimated_cost: 0

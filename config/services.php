@@ -21,10 +21,10 @@ return [
     'base_url' => 'https://hotels-com-provider.p.rapidapi.com',
 ],
 'restaurants_api' => [
-    'key' => env('RESTAURANTS_API_KEY'),
-    'host' => env('RESTAURANTS_API_HOST'),
-    'base_url' => 'https://tripadvisor16.p.rapidapi.com/api/v1/restaurant',
-],
+        'key' => env('RESTAURANTS_API_KEY'),
+        'host' => env('RESTAURANTS_API_HOST', 'tripadvisor-scraper.p.rapidapi.com'),
+        'base_url' => 'https://tripadvisor-scraper.p.rapidapi.com',
+    ],
 'flights_api' => [
     'key' => env('FLIGHTS_API_KEY'),
     'host' => env('FLIGHTS_API_HOST', 'sky-scrapper.p.rapidapi.com'),
