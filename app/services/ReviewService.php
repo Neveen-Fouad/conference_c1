@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Services;
 use App\Enum\ReviewType;
 use App\Interfaces\ReviewRepositoryInterface;
 use App\Models\trip;

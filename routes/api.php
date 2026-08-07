@@ -28,7 +28,7 @@ Route::prefix('auth')->group(function () {
 });
 // review endpoint (user)
 Route::middleware(['auth:api','IsActive','VerifiedEmail'])->group(function (){
-    Route::get('/reviews' , [ReviewController::class,'UserIndex']);
+    Route::get('/reviews' , [ReviewController::class,'Index']);
     Route::get('/reviews/my' , [ReviewController::class,'getMyReviews']);
     Route::get('/reviews/{review_id}', [ReviewController::class,'show']);
     Route::post('/reviews' , [ReviewController::class,'store']);
@@ -37,9 +37,9 @@ Route::middleware(['auth:api','IsActive','VerifiedEmail'])->group(function (){
 });
 // review endpoint (admin)
 Route::middleware(['auth:api','isAdmin','IsActive', 'VerifiedEmail'])->prefix('admin')->group(function(){
-    Route::get('/reviews',[ReviewController::class,'AdminIndex']);
-    Route::post('/reviews/{review_id}/approve',[ReviewController::class,'approveReview']);
-    Route::post('/reviews/{review_id}/reject',[ReviewController::class,'rejectReview']);
+    Route::get('/reviews',[ReviewController::class,'Index']);
+    Route::post('/reviews/{review_id}/approve',[ReviewController::class,'approve']);
+    Route::post('/reviews/{review_id}/reject',[ReviewController::class,'reject']);
 });
 // favourite endpoint (user)
 Route::middleware(['auth:api','IsActive','VerifiedEmail'])->group(function(){

@@ -20,7 +20,7 @@ class ReviewController extends Controller
                 $request->reviewable_id
             );
         }else{
-            $reviews=$this->reviewService->UserIndex();
+            $reviews=$this->reviewService->index();
         }
         return response()->json([
             'success'=>true,
@@ -76,7 +76,7 @@ class ReviewController extends Controller
             $reviews=$this->reviewService->filterReviewByStatus($request->status);
         
         }else{
-            $reviews=$this->reviewService->AdminIndex();
+            $reviews=$this->reviewService->index();
         }
         return response()->json([
             'success'=>true,

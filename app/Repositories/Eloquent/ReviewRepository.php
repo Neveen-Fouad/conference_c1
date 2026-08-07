@@ -109,7 +109,7 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
 
     public function approveReview(int $review_id)
     {
-        $review = $this->model->firstOrFail($review_id);
+        $review = $this->model->findOrFail($review_id);
         $review->update(['status' => ReviewStatus::Approved->value]);
         return $review;
         
@@ -117,7 +117,7 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
 
     public function rejectReview(int $review_id)
     {
-        $review = $this->model->firstOrFail($review_id);
+        $review = $this->model->findOrFail($review_id);
         $review->update(['status' => ReviewStatus::Rejected->value]);
         return $review;
     }
