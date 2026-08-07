@@ -13,6 +13,9 @@ use App\Repositories\PaymentRepository;
 use Illuminate\Support\ServiceProvider;
 use App\Interfaces\BaseRepositoryInterface;
 use App\Repositories\BaseRepository;
+use App\Repositories\RevenueRepository;
+use App\Interfaces\Repositories\Contracts\RevenueRepositoryInterface;
+
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -34,6 +37,12 @@ class RepositoryServiceProvider extends ServiceProvider
             NotificationRepositoryInterface::class,
             NotificationRepository::class
         );
+
+        $this->app->bind(
+            RevenueRepositoryInterface::class,
+            RevenueRepository::class
+        );
+
     }
 
     public function boot(): void

@@ -8,6 +8,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymobWebhookController;
+use App\Http\Controllers\RevenueController;
 
 Route::prefix('admin')->group(function () {  // usermanagement
 
@@ -44,6 +45,7 @@ Route::prefix('admin/settings')->group(function (){
     Route::post('/banner', [SettingController::class, 'setBanner']);
 
     Route::patch('/banner', [SettingController::class, 'updateBanner']);
+    Route::get('/revenue/total', [RevenueController::class, 'totalRevenue']);
 
 });
 
