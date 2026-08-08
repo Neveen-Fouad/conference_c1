@@ -14,17 +14,19 @@ use Illuminate\Http\JsonResponse;
 class AuthController extends Controller
 {
     protected AuthRepositoryInterface $authRepository;
-    
+
     public function __construct(AuthRepositoryInterface $authRepository){
         $this->authRepository = $authRepository;
     }
 
-    public function register(RegisterRequest $request): JsonResponse{    
+    public function register(RegisterRequest $request): JsonResponse{
         $user = $this->authRepository->register($request->validated());
 
         return response()->json([
             'message' => 'User registered successfully. Please verify your email.',
-            'user' => $user,
+            'data' => [
+                'token' => $user->token,
+            ],
         ], 201);
     }
 
@@ -38,7 +40,9 @@ class AuthController extends Controller
 
         return response()->json([
             'message' => 'Login successful.',
-            'data' => $data,
+            'data' => [
+                'token' => $data->token,
+            ],
         ]);
     }
 

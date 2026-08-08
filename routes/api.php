@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\TripController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+<<<<<<< HEAD
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 
@@ -17,11 +17,15 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymobWebhookController;
 
 
+=======
+>>>>>>> 625b6b274766883776dca73882d7412dc2bf7197
 
-Route::prefix('admin')->group(function () {  // usermanagement
+Route::get('/user', function (Request $request) {
+    return $request->user();
+})->middleware('auth:sanctum');
 
-    Route::get('/users', [UserController::class, 'index']);
 
+<<<<<<< HEAD
     Route::get('/users/{id}', [UserController::class, 'show']);
 
     Route::patch('/users/{id}/status', [UserController::class, 'changeStatus']);
@@ -32,8 +36,24 @@ Route::prefix('admin')->group(function () {  // usermanagement
 
     Route::delete('/admins/{id}', [UserController::class, 'destroyAdmin']);
     Route::get('/statistics', [UserController::class, 'statistics']);
+=======
+>>>>>>> 625b6b274766883776dca73882d7412dc2bf7197
 
+Route::prefix('auth')->group(function () {
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);
+    Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.reset');
+    Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmail'])
+        ->name('verification.verify');
+    Route::post('/email/verification-notification', [AuthController::class, 'resendVerificationEmail'])
+        ->middleware('auth:api')
+        ->name('verification.send');
+    Route::middleware('auth:api')->group(function (){
+        Route::post('/logout', [AuthController::class, 'logout']);
+    });
 });
+<<<<<<< HEAD
 
 //Profile
 
@@ -109,3 +129,5 @@ Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
 Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
 
 
+=======
+>>>>>>> 625b6b274766883776dca73882d7412dc2bf7197

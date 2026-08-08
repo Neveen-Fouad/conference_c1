@@ -24,29 +24,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(
             AuthRepositoryInterface::class,
-            AuthRepository::class);
-
-        $this->app->bind(
-            TripRepositoryInterface::class,
-            TripRepository::class);
-
-        $this->app->bind(
-            PaymentRepositoryInterface::class,
-            PaymentRepository::class);
-
-        $this->app->bind(
-            NotificationRepositoryInterface::class,
-            NotificationRepository::class
-        );
-
-        $this->app->bind(
-            ProfileRepositoryInterface::class,
-            ProfileRepository::class
-        );
-
-        $this->app->bind(
-            DashboardRepositoryInterface::class,
-            DashboardRepository::class
+            AuthRepository::class
         );
     }
 

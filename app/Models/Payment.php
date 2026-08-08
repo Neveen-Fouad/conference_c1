@@ -22,17 +22,29 @@ class Payment extends Model
         'gateway_response',
         'paid_at',
     ];
+
     protected $casts = [
         'amount' => 'decimal:2',
         'gateway_response' => 'array',
         'paid_at' => 'datetime',
     ];
-    public function client(){
-        return $this->belongsTo(Client::class);
+
+    public function client()
+    {
+        return $this->belongsTo(
+            Client::class,
+            'client_id'
+        );
 
     }
-    public function booking(){
-        return $this->belongsTo(Booking::class);
 
+
+    public function bookings()
+    {
+        return $this->belongsTo(
+            Bookings::class,
+            'booking_id'
+        );
     }
 }
+

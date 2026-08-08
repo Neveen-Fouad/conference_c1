@@ -9,8 +9,9 @@ class PaymentController extends Controller
 {
     protected $paymentService;
 
-    public function __construct(PaymentService $paymentService)
-    {
+    public function __construct(
+        PaymentService $paymentService
+    ) {
         $this->paymentService = $paymentService;
     }
 
@@ -21,10 +22,11 @@ class PaymentController extends Controller
             'client_id' => 'required|exists:clients,id',
         ]);
 
-        $result = $this->paymentService->createBookingPayment(
-            $data['client_id'],
-            $data['booking_id']
-        );
+        $result = $this->paymentService
+            ->createBookingPayment(
+                $data['client_id'],
+                $data['booking_id']
+            );
 
         return response()->json([
             'payment' => $result['payment'],
@@ -33,16 +35,23 @@ class PaymentController extends Controller
         ], 201);
     }
 
-    public function show($paymentId){
-        $payment = $this->paymentService->getPayment($paymentId);
+    public function show($paymentId)
+    {
+        $payment = $this->paymentService
+            ->getPayment($paymentId);
 
         return response()->json([
-            'data' => $payment,]);
+            'data' => $payment,
+        ]);
     }
-    public function clientPayments($clientId){
-        $payments = $this->paymentService->getClientPayments($clientId);
+
+    public function clientPayments($clientId)
+    {
+        $payments = $this->paymentService
+            ->getClientPayments($clientId);
 
         return response()->json([
-            'data' => $payments,]);
+            'data' => $payments,
+        ]);
     }
 }

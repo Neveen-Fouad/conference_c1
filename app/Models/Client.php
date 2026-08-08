@@ -18,7 +18,7 @@ class Client extends Model
         return $this->belongsTo(User::class);
     }
 
-     public function bookings(){
+     public function Bookings(){
         return $this->hasMany(bookings::class);
 
     }
@@ -37,5 +37,8 @@ class Client extends Model
     public function client_has_ineterests(){
         return $this->hasMany(client_has_ineterests::class);
     }
-
+    public function getEmailAttribute()
+    {
+        return $this->user?->email;
+    }
 }

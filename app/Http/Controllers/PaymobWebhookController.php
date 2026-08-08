@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Interfaces\PaymentRepositoryInterface;
-use App\Models\Booking;
+use App\Models\Bookings;
 use App\Services\NotificationService;
 use Illuminate\Http\Request;
 
@@ -30,7 +30,10 @@ class PaymobWebhookController extends Controller
             ], 400);
         }
 
-        if (!$this->checkHmac($data, $request->query('hmac'))) {
+        if (!$this->checkHmac(
+            $data,
+            $request->query('hmac')
+        )) {
             return response()->json([
                 'message' => 'Invalid HMAC',
             ], 401);
@@ -50,7 +53,7 @@ class PaymobWebhookController extends Controller
             ], 404);
         }
 
-        if (in_array($payment->status, ['paid', 'failed'])) {
+        if ($payment->status === 'paid') {
             return response()->json([
                 'message' => 'Payment already processed',
             ]);
@@ -58,27 +61,30 @@ class PaymobWebhookController extends Controller
 
         $status = $this->getPaymentStatus($data);
 
-        $payment = $this->paymentRepository->update($payment->id, [
-            'status' => $status,
+        $payment = $this->paymentRepository->update(
+            $payment->id,
+            [
+                'status' => $status,
 
-            'gateway_transaction_id' =>
-                $data['id'] ?? null,
+                'gateway_transaction_id' =>
+                    $data['id'] ?? null,
 
-            'payment_method' => data_get(
-                $data,
-                'source_data.sub_type'
-            ),
+                'payment_method' => data_get(
+                    $data,
+                    'source_data.sub_type'
+                ),
 
-            'gateway_response' => $request->all(),
+                'gateway_response' => $request->all(),
 
-            'failure_reason' => $status === 'failed'
-                ? 'Payment failed'
-                : null,
+                'failure_reason' => $status === 'failed'
+                    ? 'Payment failed'
+                    : null,
 
-            'paid_at' => $status === 'paid'
-                ? now()
-                : null,
-        ]);
+                'paid_at' => $status === 'paid'
+                    ? now()
+                    : null,
+            ]
+        );
 
         if ($status === 'paid') {
             $this->handleSuccessfulPayment($payment);
@@ -86,7 +92,9 @@ class PaymobWebhookController extends Controller
 
         if ($status === 'failed') {
             $this->notificationService
-                ->sendPaymentFailedNotification($payment->client);
+                ->sendPaymentFailedNotification(
+                    $payment->client
+                );
         }
 
         return response()->json([
@@ -110,18 +118,24 @@ class PaymobWebhookController extends Controller
     private function handleSuccessfulPayment($payment)
     {
         if ($payment->booking_id) {
-            Booking::where('id', $payment->booking_id)
-                ->update([
-                    'status' => 'confirmed',
-                ]);
+            Bookings::where(
+                'id',
+                $payment->booking_id
+            )->update([
+                'status' => 'confirmed',
+            ]);
         }
 
         $this->notificationService
-            ->sendPaymentSuccessNotification($payment->client);
+            ->sendPaymentSuccessNotification(
+                $payment->client
+            );
     }
 
-    private function checkHmac($data, $receivedHmac)
-    {
+    private function checkHmac(
+        $data,
+        $receivedHmac
+    ) {
         if (!$receivedHmac) {
             return false;
         }
@@ -155,7 +169,9 @@ class PaymobWebhookController extends Controller
             $value = data_get($data, $field);
 
             if (is_bool($value)) {
-                $value = $value ? 'true' : 'false';
+                $value = $value
+                    ? 'true'
+                    : 'false';
             }
 
             $text .= $value;
