@@ -1,0 +1,220 @@
+[1mdiff --git a/app/Http/Controllers/DashboardController.php b/app/Http/Controllers/DashboardController.php[m
+[1mdeleted file mode 100644[m
+[1mindex 2671642..0000000[m
+[1m--- a/app/Http/Controllers/DashboardController.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,56 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace App\Http\Controllers;[m
+[31m-[m
+[31m-use Illuminate\Http\Request;[m
+[31m-use App\Http\Requests\UpdateProfileSettingsRequest;[m
+[31m-use App\Repositories\Contracts\DashboardRepositoryInterface;[m
+[31m-[m
+[31m-class DashboardController extends Controller[m
+[31m-{[m
+[31m-    protected DashboardRepositoryInterface $dashboardRepository;[m
+[31m-[m
+[31m-    public function __construct(DashboardRepositoryInterface $dashboardRepository){[m
+[31m-        $this->dashboardRepository = $dashboardRepository;[m
+[31m-    }[m
+[31m-[m
+[31m-    public function getSavedTrips(Request $request){[m
+[31m-        return response()->json([m
+[31m-            $this->dashboardRepository->getSavedTrips($request->user()->id)[m
+[31m-        );[m
+[31m-    }[m
+[31m-[m
+[31m-    public function getFavouriteDestinations(Request $request){[m
+[31m-        return response()->json([m
+[31m-            $this->dashboardRepository->getFavouriteDestinations($request->user()->id)[m
+[31m-        );[m
+[31m-    }[m
+[31m-[m
+[31m-    public function getBookingHistory(Request $request){[m
+[31m-        return response()->json([m
+[31m-            $this->dashboardRepository->getBookingHistory($request->user()->id)[m
+[31m-        );[m
+[31m-    }[m
+[31m-[m
+[31m-    public function getProfileSettings(Request $request){[m
+[31m-        return response()->json([m
+[31m-            $this->dashboardRepository->getProfileSettings($request->user()->id)[m
+[31m-        );[m
+[31m-    }[m
+[31m-[m
+[31m-    public function updateProfileSettings(UpdateProfileSettingsRequest $request){[m
+[31m-        return response()->json([m
+[31m-            $this->dashboardRepository->updateProfileSettings([m
+[31m-                $request->user()->id,[m
+[31m-                $request->all()[m
+[31m-            )[m
+[31m-        );[m
+[31m-    }[m
+[31m-[m
+[31m-    public function getStatistics(Request $request){[m
+[31m-        return response()->json([m
+[31m-            $this->dashboardRepository->getStatistics($request->user()->id)[m
+[31m-        );[m
+[31m-    }[m
+[31m-}[m
+[31m-[m
+[1mdiff --git a/app/Http/Controllers/ProfileController.php b/app/Http/Controllers/ProfileController.php[m
+[1mdeleted file mode 100644[m
+[1mindex 54929ed..0000000[m
+[1m--- a/app/Http/Controllers/ProfileController.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,52 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace App\Http\Controllers;[m
+[31m-[m
+[31m-use Illuminate\Http\Request;[m
+[31m-use Illuminate\Http\JsonResponse;[m
+[31m-use App\Http\Requests\UpdateProfileRequest;[m
+[31m-use App\Http\Requests\UpdatePasswordRequest;[m
+[31m-use App\Repositories\Contracts\ProfileRepositoryInterface;[m
+[31m-[m
+[31m-class ProfileController extends Controller[m
+[31m-{[m
+[31m-    protected ProfileRepositoryInterface $profileRepository;[m
+[31m-    [m
+[31m-    public function __construct(ProfileRepositoryInterface $profileRepository){[m
+[31m-        $this->profileRepository = $profileRepository;[m
+[31m-    }[m
+[31m-    public function getProfile(): JsonResponse{[m
+[31m-        $profile = $this->profileRepository->getProfile(auth()->user());[m
+[31m-[m
+[31m-        return response()->json([[m
+[31m-            'success' => true,[m
+[31m-            'message' => 'Profile retrieved successfully.',[m
+[31m-            'data' => $profile,[m
+[31m-        ]);[m
+[31m-    }[m
+[31m-[m
+[31m-    public function updateProfile(UpdateProfileRequest $request): JsonResponse{[m
+[31m-         $profile = $this->profileRepository->updateProfile([m
+[31m-            auth()->user(),[m
+[31m-            $request->validated()[m
+[31m-         );[m
+[31m-[m
+[31m-         return response()->json([[m
+[31m-            'success' => true,[m
+[31m-            'message' => 'Profile updated successfully.',[m
+[31m-            'data' => $profile,[m
+[31m-         ]);[m
+[31m-    }[m
+[31m-[m
+[31m-    public function updatePassword(UpdatePasswordRequest $request): JsonResponse{[m
+[31m-        $this->profileRepository->updatePassword([m
+[31m-            auth()->user(),[m
+[31m-            $request->validated()[m
+[31m-        );[m
+[31m-[m
+[31m-        return response()->json([[m
+[31m-            'success' => true,[m
+[31m-            'message' => 'Password updated successfully.',[m
+[31m-         ]);[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/app/Http/Controllers/RevenueController.php b/app/Http/Controllers/RevenueController.php[m
+[1mdeleted file mode 100644[m
+[1mindex 6c6b3ed..0000000[m
+[1m--- a/app/Http/Controllers/RevenueController.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,23 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace App\Http\Controllers;[m
+[31m-[m
+[31m-use Illuminate\Http\Request;[m
+[31m-use App\Services\RevenueService;[m
+[31m-[m
+[31m-class RevenueController extends Controller[m
+[31m-{[m
+[31m-    protected RevenueService $revenueService;[m
+[31m-[m
+[31m-    public function __construct(RevenueService $revenueService)[m
+[31m-    {[m
+[31m-        $this->revenueService = $revenueService;[m
+[31m-    }[m
+[31m-    public function totalRevenue()[m
+[31m-    {[m
+[31m-        $revenue = $this->revenueService->getTotalRevenue();[m
+[31m-        return response()->json([[m
+[31m-            'total_revenue' => $revenue[m
+[31m-        ]);[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/app/Http/Requests/UpdatePasswordRequest.php b/app/Http/Requests/UpdatePasswordRequest.php[m
+[1mdeleted file mode 100644[m
+[1mindex ced01fd..0000000[m
+[1m--- a/app/Http/Requests/UpdatePasswordRequest.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,22 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace App\Http\Requests;[m
+[31m-[m
+[31m-use Illuminate\Contracts\Validation\ValidationRule;[m
+[31m-use Illuminate\Foundation\Http\FormRequest;[m
+[31m-[m
+[31m-class UpdatePasswordRequest extends FormRequest[m
+[31m-{[m
+[31m-    public function authorize(): bool[m
+[31m-    {[m
+[31m-        return true;[m
+[31m-    }[m
+[31m-[m
+[31m-    public function rules(): array[m
+[31m-    {[m
+[31m-        return [[m
+[31m-            'current_password' => 'required|string',[m
+[31m-            'password' => 'required|string|min:8|confirmed',[m
+[31m-        ];[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/app/Http/Requests/UpdateProfileRequest.php b/app/Http/Requests/UpdateProfileRequest.php[m
+[1mdeleted file mode 100644[m
+[1mindex 8bc1ea5..0000000[m
+[1m--- a/app/Http/Requests/UpdateProfileRequest.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,23 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace App\Http\Requests;[m
+[31m-[m
+[31m-use Illuminate\Contracts\Validation\ValidationRule;[m
+[31m-use Illuminate\Foundation\Http\FormRequest;[m
+[31m-[m
+[31m-class UpdateProfileRequest extends FormRequest[m
+[31m-{[m
+[31m-    public function authorize(): bool[m
+[31m-    {[m
+[31m-        return true;[m
+[31m-    }[m
+[31m-[m
+[31m-    public function rules(): array[m
+[31m-    {[m
+[31m-        return [[m
+[31m-            'first_name' => 'sometimes|string|max:255',[m
+[31m-            'last_name'  => 'sometimes|string|max:255',[m
+[31m-            'email'      => 'sometimes|email|unique:users,email,' . auth()->id(),[m
+[31m-        ];[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/app/Http/Requests/UpdateProfileSettingsRequest.php b/app/Http/Requests/UpdateProfileSettingsRequest.php[m
+[1mdeleted file mode 100644[m
+[1mindex cee65e3..0000000[m
+[1m--- a/app/Http/Requests/UpdateProfileSettingsRequest.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,27 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace App\Http\Requests;[m
+[31m-[m
+[31m-use Illuminate\Contracts\Validation\ValidationRule;[m
+[31m-use Illuminate\Foundation\Http\FormRequest;[m
+[31m-[m
+[31m-class UpdateProfileSettingsRequest ext
