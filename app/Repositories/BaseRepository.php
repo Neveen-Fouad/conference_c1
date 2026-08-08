@@ -7,7 +7,7 @@ use App\Interfaces\BaseRepositoryInterface;
 class BaseRepository implements BaseRepositoryInterface{ 
     protected $model;
     public function __construct(Model $model){
-      $this->model=$model;
+        $this->model=$model;
     }
 
     public function getAll(){
@@ -23,18 +23,18 @@ class BaseRepository implements BaseRepositoryInterface{
     }
 
     public function update($id, array $data)
-{
-    $record = $this->findById($id);
+    {
+        $record = $this->findById($id);
 
-    $record->update($data);
+        $record->update($data);
 
-    return $record;
-}
+        return $record;
+    }
 
-public function delete($id)
-{
-    $record = $this->findById($id);
+    public function delete($id)
+    {
+        $record = $this->findById($id);
 
-    return $record->delete();
-}
+        return $record->delete();
+    }
 }

@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateComplaintStatusRequest extends FormRequest
+class RestaurantDetailRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,21 +16,14 @@ class UpdateComplaintStatusRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules.
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, ValidationRule|array<mixed>|string>
      */
     public function rules(): array
     {
         return [
-            'status' => 'required|in:replied',
-        ];
-    }
-
-    public function messages(): array
-    {
-        return [
-            'status.required' => 'Status is required.',
-            'status.in' => 'Status must be replied.',
+            'id' => 'required|string|max:255',
         ];
     }
 }
-

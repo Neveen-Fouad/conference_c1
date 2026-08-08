@@ -16,6 +16,9 @@ return new class extends Migration
         $table->decimal('longtude');
         $table->decimal('latittude');
         $table->date('birth_date')->change();
+            $table->string('long');
+            $table->string('latittude');
+            $table->date('birth_date')->change();
         });
     }
 
@@ -25,11 +28,11 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('clients', function (Blueprint $table) {
-        $table->string('location');
-        $table->string('interest');
-        $table->dropColumn('long');
-        $table->dropColumn('latittude');
-        $table->dateTime('birth_date')->change();
+            $table->string('location');
+            $table->string('interest');
+            $table->dropColumn('long');
+            $table->dropColumn('latittude');
+            $table->dateTime('birth_date')->change();
         });
     }
 };

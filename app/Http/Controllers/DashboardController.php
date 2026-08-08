@@ -32,19 +32,19 @@ class DashboardController extends Controller
     }
 
     public function getFavouriteDestinations(Request $request){
-        $getFavouritDestination= $this->dashboardRepository->getFavouriteDestinations($request->user()->id)
+        $getFavouriteDestinations= $this->dashboardRepository->getFavouriteDestinations($request->user()->id);
 
         return response()->json([
             "message" => "data",
                 "data" => [
-                    "favouriteDestinations" => $getFavouritDestinations
+                    "favouriteDestinations" => $getFavouriteDestinations
                 ]
             ]
         );
     }
 
     public function getBookingHistory(Request $request){
-        $getBookingHistory= $this->dashboardRepository->getBookingHistory($request->user()->id)
+        $getBookingHistory= $this->dashboardRepository->getBookingHistory($request->user()->id);
 
         return response()->json([
             "message" => "data",
@@ -56,7 +56,7 @@ class DashboardController extends Controller
     }
 
     public function getProfileSettings(Request $request){
-        $getProfileSettings= $this->dashboardRepository->getProfileSettings($request->user()->id)
+        $getProfileSettings= $this->dashboardRepository->getProfileSettings($request->user()->id);
         return response()->json([
             "message" => "data",
                 "data" => [
@@ -76,11 +76,11 @@ class DashboardController extends Controller
                 ]
             ]
             )
-        );
+        ;
     }
 
     public function getStatistics(Request $request){
-        $GetStatistics = $this->dashboardRepository->getStatistics($request->user()->id)
+        $GetStatistics = $this->dashboardRepository->getStatistics($request->user()->id);
         return response()->json([
             "message" => "data",
                 "data" => [

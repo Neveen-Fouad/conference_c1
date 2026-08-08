@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('clients', function (Blueprint $table) {
-            $table->dropColumn('interest');
+        Schema::table('favourites', function (Blueprint $table) {
+        
+            $table->dropColumn('parameter');
+            $table->dropColumn('payload');
+            $table->string('favouriteable_id');
+            
+            $table->unique(['client_id','type','favouriteable_id']);
+
         });
     }
 
@@ -21,7 +27,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('clients', function (Blueprint $table) {
+        Schema::table('favourites', function (Blueprint $table) {
             //
         });
     }

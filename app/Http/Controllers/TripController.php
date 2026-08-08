@@ -2,40 +2,56 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTripRequest;
+use App\Interfaces\TripRepositoryInterface;
 use App\Http\Requests\UpdateTripRequest;
-use App\Repositories\Contracts\TripRepositoryInterface;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreTripRequest;
+
 
 class TripController extends Controller
 {
-      public function __construct(
-        protected TripRepositoryInterface $trips 
-    ) {}
+    //
+    protected $tripRepository;
+    public function __construct(TripRepositoryInterface $tripRepository){
+        $this->tripRepository = $tripRepository;
+    
+    }
 
     public function index(){
-        $trips = $this->trips->findAll();
-        return response()->json($trips);
+        return response()->json(
+            $this->tripRepository->getAll()
+        );
+    }
+
+   public function update(UpdateTripRequest $request, $id)
+{
+    return response()->json(
+        $this->tripRepository->update($id, $request->validated())
+    );
+}
+
+    public function destroy($id){
+        return response()->json(
+            $this->tripRepository->delete($id)
+        );
+    }
+
+    public function statistics(){
+        return response()->json(
+            $this->tripRepository->statistics()
+        );
     }
 
     public function store(StoreTripRequest $request){
-        $trip = $this->trips->create($request->validated());
+        $trip = $this->tripRepository->create($request->validated());
         return response()->json($trip, 201);
+
     }
-    public function show($id){
-        $trip = $this->trips->findById($id);
-        return response()->json($trip);
-    }
-    public function update(UpdateTripRequest $request, $id){
-        $trip = $this->trips->update($id, $request->validated());
-        return response()->json($trip);
-    }
-    public function destroy($id){
-        $this->trips->delete($id);
-        return response()->json(null, 204);
-    }
+
     public function getTripsByUserId($userId){
-        $trips = $this->trips->findByUserId($userId);
+        $trips = $this->tripRepository->findByUserId($userId);
         return response()->json($trips);
     }
+
 }
+
+

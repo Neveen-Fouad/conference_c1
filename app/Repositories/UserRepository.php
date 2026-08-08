@@ -25,4 +25,19 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
         return $this->create($data);
     }
+
+    public function statistics()
+{
+    return [
+        'total_users' => User::count(),
+
+        'monthly_users' => User::whereMonth('created_at', now()->month)
+            ->whereYear('created_at', now()->year)
+            ->count(),
+
+        'verified_users' => User::whereNotNull('email_verified_at')->count(),
+
+        'unverified_users' => User::whereNull('email_verified_at')->count(),
+    ];
+}
 }

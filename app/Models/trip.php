@@ -2,33 +2,49 @@
 
 namespace App\Models;
 
+
+use App\Enum\FavouriteType;
+use App\Enum\ReviewType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class trip extends Model
 {
-    protected $fillable = [
-        'name',
-        'phone',
-        "estimated_price",
-        "style",
-        "number_of_days",
-        "number_of_travellers",
-        "classes",
-        "destination",
-        "start_date",
-        "end_date",
-        "budget",
+    //
+     protected $fillable = [
 
+    'client_id',
+    'classes',
+    'destination',
+    'number_of_travels',
+    'estimated_expenses',
+    'budget',
+    'number_of_days',
+    'start_date',
+    'is_fav',
+    'style',
+];
 
-    ];
+    
     public function client()
     {
-        return $this->belongsTo(client::class);
+        return $this->belongsTo(Client::class);
     }
     public function details()
 
 {
     return $this->hasMany(details::class);
 }
+
+    public function favourites()
+    {
+        return $this->hasMany(favourites::class, 'favouriteable_id')
+        ->where('type',FavouriteType::Trip->value);
+    }
+    public function reviews()
+    {
+        return $this->hasMany(review::class,'reviewable_id')
+        ->where('type' , ReviewType::Trip->value);
+    }
+   
 }
