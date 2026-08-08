@@ -80,7 +80,7 @@ Route::prefix('dashboard')->middleware('auth:api')->group(function () {
     Route::get('/profile-settings', [DashboardController::class, 'getProfileSettings']);
     Route::patch('/profile-settings', [DashboardController::class, 'updateProfileSettings']);
     Route::get('/statistics', [DashboardController::class, 'getStatistics']);
-    Route::get('/revenue/total', [RevenueController::class, 'totalRevenue']);
+
 });
 //website settings
 Route::prefix('admin/settings')->group(function () {
@@ -179,3 +179,6 @@ Route::middleware('auth:api')->group(function(){
     Route::post('/favourites',[FavouritesController::class,'store']);
     Route::delete('/favourites/{favourite_id}',[FavouritesController::class,'destroy']);
 });
+Route::get('/revenue/total', [RevenueController::class, 'totalRevenue']);
+
+
