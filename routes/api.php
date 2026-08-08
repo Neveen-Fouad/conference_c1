@@ -12,6 +12,7 @@ use App\Http\Controllers\InterestsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RevenueController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -79,6 +80,7 @@ Route::prefix('dashboard')->middleware('auth:api')->group(function () {
     Route::get('/profile-settings', [DashboardController::class, 'getProfileSettings']);
     Route::patch('/profile-settings', [DashboardController::class, 'updateProfileSettings']);
     Route::get('/statistics', [DashboardController::class, 'getStatistics']);
+    Route::get('/revenue/total', [RevenueController::class, 'totalRevenue']);
 });
 //website settings
 Route::prefix('admin/settings')->group(function () {
@@ -87,8 +89,8 @@ Route::prefix('admin/settings')->group(function () {
     Route::post('/', [SettingController::class, 'storeSettings']);
     Route::patch('/{id}', [SettingController::class, 'UpdateSettings']);
 
-   
-    
+
+
 });
 
 //complaint
@@ -107,7 +109,7 @@ Route::apiResource('/trips',TripController::class);
 Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
 Route::post('/payments', [PaymentController::class, 'store']);
 Route::prefix('admin/trips')->middleware('isAdmin')->group(function() {
-    
+
     Route::get('/', [TripController::class, 'index']);
 
     Route::patch('/{id}', [TripController::class, 'update']);
