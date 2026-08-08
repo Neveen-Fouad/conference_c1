@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+
 use Illuminate\Support\ServiceProvider;
 use App\Interfaces\UserRepositoryInterface;
 use App\Interfaces\ComplaintRepositoryInterface;
@@ -38,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
     TripRepositoryInterface::class,
     TripRepository::class
 );
+        
     }
 
     /**
