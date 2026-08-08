@@ -45,7 +45,7 @@ class InterestsController extends Controller
 
         return response()->json([
             'message' => 'Interests updated successfully.',
-            'interests' => $interests,
+            'interests' => $interests
         ]);
     }
 }
