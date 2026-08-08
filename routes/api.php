@@ -81,11 +81,11 @@ Route::prefix('dashboard')->middleware('auth:api')->group(function () {
     Route::get('/statistics', [DashboardController::class, 'getStatistics']);
 });
 //website settings
-Route::prefix('admin/settings')->middleware('isAdmin')->group(function () {
+Route::prefix('admin/settings')->group(function () {
      Route::get('/', [SettingController::class, 'index']);
 
     Route::post('/', [SettingController::class, 'storeSettings']);
-    Route::patch('/{id}', [SettingController::class, 'updateSettings']);
+    Route::patch('/{id}', [SettingController::class, 'UpdateSettings']);
 
    
     
