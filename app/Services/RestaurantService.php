@@ -1,9 +1,9 @@
 <?php
-
 namespace App\Services;
 
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 
 class RestaurantService
 {
@@ -14,76 +14,59 @@ class RestaurantService
     public function __construct()
     {
         $this->baseUrl = config('services.restaurants_api.base_url');
-        $this->apiKey = config('services.restaurants_api.key');
+        $this->apiKey  = config('services.restaurants_api.key');
         $this->apiHost = config('services.restaurants_api.host');
     }
 
-    private function headers()
+    public function listRestaurants(array $filters)
     {
-        return [
-            'Content-Type' => 'application/json',
-            'X-RapidAPI-Key' => $this->apiKey,
-            'X-RapidAPI-Host' => $this->apiHost,
-        ];
+        $cacheKey = 'restaurants_list_' . md5(json_encode($filters));
+
+        return Cache::remember($cacheKey, now()->addMinutes(30), function () use ($filters) {
+            try{
+                $response = Http::withHeaders([
+                    'X-RapidAPI-Key' => $this->apiKey,
+                    'X-RapidAPI-Host' => $this->apiHost,
+                ])->get($this->baseUrl . '/restaurants/list', [
+                    'query' => $filters['city'] ?? '',
+                    'page' => $filters['page'] ?? 1,
+                    'min_rating' => $filters['min_rating'] ?? null,
+                ]);
+
+                if ($response->failed()) {
+                    Log::error('Failed to fetch restaurants: ' . $response->body());
+                    throw new \Exception('Failed to fetch restaurants: ' . $response->body());
+                }
+
+                return $response->json();
+            }catch(\Exception $e){
+                throw new \Exception('Error fetching restaurants: ' . $e->getMessage());
+            }
+        });
     }
 
-    public function listRestaurants(array $filters = [])
+    public function getRestaurantDetails(string $query)
     {
-        return Cache::remember(
-            'restaurants_' . md5(json_encode($filters)),
-            now()->addMinutes(30),
-            function () use ($filters) {
+        $cacheKey = 'restaurant_details_' . md5($query);
 
-                // Step 1: Search Location
-                $locationResponse = Http::withHeaders($this->headers())
-                    ->get($this->baseUrl . '/searchLocation', [
-                        'query' => $filters['city']
-                    ]);
+        return Cache::remember($cacheKey, now()->addHours(1), function () use ($query) {
+            try {
+                $response = Http::withHeaders([
+                    'X-RapidAPI-Key' => $this->apiKey,
+                    'X-RapidAPI-Host' => $this->apiHost,
+                ])->get($this->baseUrl . '/restaurants/detail', [
+                    'query' => $query
+                ]);
 
-                if ($locationResponse->failed()) {
-                    return [];
+                if ($response->failed()) {
+                    Log::error('Failed to fetch restaurant details for query {query}', ['query' => $query, 'status' => $response->status(), 'body' => $response->body()]);
+                    throw new \Exception('Failed to fetch restaurant details for query ' . $query . ': ' . $response->body());
                 }
 
-                $location = $locationResponse->json();
-
-                // عدلي السطر ده حسب شكل الـ response الحقيقي
-                $locationId = data_get($location, 'data.0.locationId');
-
-                if (!$locationId) {
-                    return [];
-                }
-
-                // Step 2: Search Restaurants
-                $restaurants = Http::withHeaders($this->headers())
-                    ->get($this->baseUrl . '/searchRestaurants', [
-                        'locationId' => $locationId,
-                        'page' => $filters['page'] ?? 0
-                    ]);
-
-                if ($restaurants->failed()) {
-                    return [];
-                }
-
-                return $restaurants->json();
+                return $response->json();
+            } catch (\Exception $e) {
+                throw new \Exception('Error fetching restaurant details: ' . $e->getMessage());
             }
-        );
-    }
-
-    public function getRestaurantDetails(string $id)
-    {
-        return Cache::remember(
-            'restaurant_' . $id,
-            now()->addHour(),
-            function () use ($id) {
-
-                $response = Http::withHeaders($this->headers())
-                    ->get($this->baseUrl . '/getRestaurantDetailsV2', [
-                        'restaurantsId' => $id,
-                        'currencyCode' => 'USD'
-                    ]);
-
-                return $response->failed() ? null : $response->json();
-            }
-        );
+        });
     }
 }
