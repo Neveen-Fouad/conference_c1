@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clients', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId("user_id")->constrained();
-            $table->timestamps();
-            $table->date("birth_date");
-            $table->string("phone");
+        Schema::table('reviews', function (Blueprint $table) {
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->string('reviewable_id');
+            $table->unique(['client_id','type','reviewable_id']);
         });
     }
 
@@ -25,6 +23,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('clients');
+        Schema::table('reviews', function (Blueprint $table) {
+            //
+        });
     }
 };

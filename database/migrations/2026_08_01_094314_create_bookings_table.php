@@ -18,7 +18,6 @@ return new class extends Migration
             $table->enum('type',["resturant","hotel","flight"]);
             $table->integer("number_of_days");
             $table->integer("number_of_bookings");
-            $table->enum('classses',["luxury","standard","economy"]);
             $table->enum('status',["confirmed","pending","canceled"]);
 
         });
