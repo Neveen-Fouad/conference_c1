@@ -40,46 +40,51 @@ class NotificationsController extends Controller
             'success' => true,
         ], 201);
     }
-    public function unread(int $clientId, int $notificationId){
-        $notification = $this->notificationService->getUnreadNotifications($clientId);
+
+    public function unread(int $clientId)
+    {
+        $notifications =
+            $this->notificationService->getUnreadNotifications($clientId);
+
+        return response()->json([
+            'data' => $notifications,
+            'success' => true,
+        ]);
+    }
+
+    public function unreadCount(int $clientId)
+    {
+        $count =
+            $this->notificationService->getUnreadCount($clientId);
+
+        return response()->json([
+            'unread_count' => $count,
+            'success' => true,
+        ]);
+    }
+
+    public function markAsRead(int $notificationId)
+    {
+        $notification =
+            $this->notificationService->markAsRead($notificationId);
+
         return response()->json([
             'data' => $notification,
+            'message' => 'Notification marked as read',
             'success' => true,
-
-        ],201);
-
-        }
-        public function unreadCount(int $clientId)
-        {
-            $count=$this->notificationService->getUnreadNotifications($clientId);
-            return response()->json([
-                "unreadCount" => $count,
-                'success' => true,
-
-            ]);
-
-        }
-        public function markAsRead(int $notificationId){
-        $this->notificationService->markAsRead($notificationId);
-        return response()->json([
-            'success' => true,
-            "message" => "Notification marked as read",
-
-
         ]);
+    }
 
-        }
-        public function markAllAsRead(int $clientId){
-        $this->notificationService->markAllAsRead($clientId);
+    public function markAllAsRead(int $clientId)
+    {
+        $updatedCount =
+            $this->notificationService->markAllAsRead($clientId);
+
         return response()->json([
+            'updated_count' => $updatedCount,
+            'message' => 'All notifications marked as read',
             'success' => true,
-            "message" => "Notification marked as read",
-            "updated_count" =>"updated_count",
         ]);
-        }
-
-
-
-
+    }
 }
 
