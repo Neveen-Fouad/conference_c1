@@ -35,16 +35,13 @@ Route::get('/countries', [CountryController::class, 'index']);
 Route::get('/countries/{country}', [CountryController::class, 'show']);
 Route::get('/explore', [ExploreController::class, 'index'])->name('explore.index');
 Route::get('/destination-data', [ExploreController::class, 'destinationData']);
-
-Route::get('/client/interests', [InterestsController::class, 'clientInterests']);
-Route::put('/client/interests', [InterestsController::class, 'updateClientInterests']);
-
-Route::get('/interests', [InterestsController::class, 'index']);
 Route::get('/hotels/search', [HotelBookingsController::class, 'search']);
 
 Route::middleware('auth:api')->group(function () {
     Route::post('/hotels/bookings', [HotelBookingsController::class, 'store']);
     Route::post('/flights/bookings', [FlightBookingController::class, 'store']);
+    Route::get('/client/interests', [InterestsController::class, 'clientInterests']);
+    Route::put('/client/interests', [InterestsController::class, 'updateClientInterests']);
 });
 
 Route::get('/hotels', [HotelController::class, 'index']);
@@ -57,3 +54,6 @@ Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'show']);
 
 Route::get('/flights', [FlightController::class, 'index']);
 Route::get('/flights/{flight}', [FlightController::class, 'show']);
+
+Route::get('/interests', [InterestsController::class, 'index']);
+
