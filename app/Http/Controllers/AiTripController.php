@@ -82,16 +82,13 @@ class AiTripController extends Controller
 
         $attractionsResponse = $this->placeServices->getAttractions($validated['destination']);
         
-        // (Looking at ExploreController, the data is inside the 'results' key or the main array)
+        
         $rawAttractions = $attractionsResponse['results'] ?? $attractionsResponse ?? [];
 
-        // 2. Trim the data using a Collection map
         $simplifiedAttractions = collect($rawAttractions)->take(15)->map(function ($a) {
             return [
-                // Left side (our labels) => Right side (where it is in the JSON you pasted)
                 'name' => data_get($a, 'name', 'Unknown Attraction'),
                 'rating' => data_get($a, 'rating', 'No rating'),
-                // We use substr() to cut the description to 150 characters so it doesn't waste AI tokens!
                 'description' => substr(data_get($a, 'description', 'No description'), 0, 150) ,
 
                 'lat' => data_get($a, 'latitude') ?? data_get($a, 'lat'),
