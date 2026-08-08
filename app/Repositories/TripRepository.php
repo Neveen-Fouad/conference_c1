@@ -28,8 +28,6 @@ class TripRepository extends BaseRepository implements TripRepositoryInterface
 
         'average_budget' => trip::avg('budget'),
 
-        'average_trip_duration' => trip::avg('number_of_days'),
-
         'total_revenue' => Payment::where('status', 'paid')
             ->sum('amount'),
 
@@ -37,6 +35,10 @@ class TripRepository extends BaseRepository implements TripRepositoryInterface
             ->whereMonth('paid_at', now()->month)
             ->whereYear('paid_at', now()->year)
             ->sum('amount'),
+
+
+            'most_popular_destination' => trip::select('destination')->groupBy('destination') ->orderByRaw('COUNT(*) DESC')
+            ->first(),
     ];
 }
 }

@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\TripController;
+use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-<<<<<<< HEAD
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 
@@ -17,15 +18,13 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymobWebhookController;
 
 
-=======
->>>>>>> 625b6b274766883776dca73882d7412dc2bf7197
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
+Route::prefix('admin')->middleware('isAdmin')->group(function () {  // usermanagement
 
 
-<<<<<<< HEAD
     Route::get('/users/{id}', [UserController::class, 'show']);
 
     Route::patch('/users/{id}/status', [UserController::class, 'changeStatus']);
@@ -36,9 +35,7 @@ Route::get('/user', function (Request $request) {
 
     Route::delete('/admins/{id}', [UserController::class, 'destroyAdmin']);
     Route::get('/statistics', [UserController::class, 'statistics']);
-=======
->>>>>>> 625b6b274766883776dca73882d7412dc2bf7197
-
+});
 Route::prefix('auth')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
@@ -53,7 +50,6 @@ Route::prefix('auth')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
     });
 });
-<<<<<<< HEAD
 
 //Profile
 
@@ -74,31 +70,20 @@ Route::prefix('dashboard')->middleware('auth:api')->group(function () {
     Route::get('/statistics', [DashboardController::class, 'getStatistics']);
 });
 //website settings
-Route::prefix('admin/settings')->group(function (){
+Route::prefix('admin/settings')->middleware('isAdmin')->group(function () {
      Route::get('/', [SettingController::class, 'index']);
 
-    Route::post('/logo', [SettingController::class, 'setLogo']);
-    Route::patch('/logo', [SettingController::class, 'updateLogo']);
+    Route::post('/', [SettingController::class, 'storeSettings']);
+    Route::patch('/{id}', [SettingController::class, 'updateSettings']);
 
-    Route::post('/site-name', [SettingController::class, 'setSiteName']);
-    Route::patch('/site-name', [SettingController::class, 'updateSiteName']);
-
-    Route::post('/contact-info', [SettingController::class, 'setContactInfo']);
-    Route::patch('/contact-info', [SettingController::class, 'updateContactInfo']);
-
-    Route::post('/social-links', [SettingController::class, 'setSocialLinks']);
-    Route::patch('/social-links', [SettingController::class, 'updateSocialLinks']);
-
-    Route::post('/banner', [SettingController::class, 'setBanner']);
-
-    Route::patch('/banner', [SettingController::class, 'updateBanner']);
-
+   
+    
 });
 
 //complaint
 Route::post('/contact', [ComplaintController::class, 'store']);
 
-Route::prefix('admin/contact-messages')->group(function () {
+Route::prefix('admin/contact-messages')->middleware('isAdmin')->group(function () {
 
     Route::get('/', [ComplaintController::class, 'index']);
 
@@ -110,7 +95,7 @@ Route::prefix('admin/contact-messages')->group(function () {
 Route::apiResource('/trips',TripController::class);
 Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
 Route::post('/payments', [PaymentController::class, 'store']);
-Route::prefix('admin/trips')->group(function() {
+Route::prefix('admin/trips')->middleware('isAdmin')->group(function() {
     
     Route::get('/', [TripController::class, 'index']);
 
@@ -129,5 +114,3 @@ Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
 Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
 
 
-=======
->>>>>>> 625b6b274766883776dca73882d7412dc2bf7197
