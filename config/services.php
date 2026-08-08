@@ -34,5 +34,14 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
-
+    'paymob' => [
+        'api_key' => env('PAYMOB_API_KEY'),
+        'public_key' => env('PAYMOB_PUBLIC_KEY'),
+        'secret_key' => env('PAYMOB_SECRET_KEY'),
+        'hmac_secret' => env('PAYMOB_HMAC_SECRET'),
+        'integration_id' => env('PAYMOB_INTEGRATION_ID'),
+        'base_url' => 'https://accept.paymob.com',
+        'notification_url' => env('PAYMOB_NOTIFICATION_URL'),
+        'redirection_url' => env('PAYMOB_REDIRECTION_URL'),
+    ],
 ];
