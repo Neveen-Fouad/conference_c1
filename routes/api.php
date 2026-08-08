@@ -180,6 +180,7 @@ Route::middleware('auth:api')->group(function(){
     Route::delete('/favourites/{favourite_id}',[FavouritesController::class,'destroy']);
 });
 Route::get('/revenue/total', [RevenueController::class, 'totalRevenue']);
+
 Route::post('/notifications', [NotificationsController::class, 'store']);
 Route::get('/notifications/client/{clientId}', [NotificationsController::class, 'index']);
 Route::get('/notifications/client/{clientId}/unread', [NotificationsController::class, 'unread']);

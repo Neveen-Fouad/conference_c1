@@ -51,8 +51,8 @@ class NotificationService
 
         $this->sendEmail(
             $client->email,
-            'Your Booking Is Confirmed',
-            'Your booking has been successfully confirmed. You can review the booking details from your account.'
+            'Your Booking Has Been Created',
+            'Your booking has been created successfully. You can review the booking details from your account.'
         );
     }
 
@@ -85,30 +85,34 @@ class NotificationService
             'Your trip has been cancelled successfully. Any applicable refund will be processed according to the cancellation policy.'
         );
     }
-    public function sendPaymentSuccessNotification(Client $client)
 
+    public function sendPaymentSuccessNotification(Client $client)
     {
-       $this->createNotification([
-           'client_id' => $client->id,
-           'type' => 'payment_success',
-           'description' => 'Your payment has been completed successfully.',
-       ]);
-       $this->sendEmail(
-           $client->email,
-           "payment success",
-           "Your payment has been completed successfully.your booking is now confirmed,you can now review and manage your trip plan from your account."
-       );
+        $this->createNotification([
+            'client_id' => $client->id,
+            'type' => 'payment_success',
+            'description' => 'Your payment has been completed successfully.',
+        ]);
+
+        $this->sendEmail(
+            $client->email,
+            'Payment Successful',
+            'Your payment has been completed successfully. Your booking is now confirmed.'
+        );
     }
-    public function sendPaymentFailedNotification(Client $client){
+
+    public function sendPaymentFailedNotification(Client $client)
+    {
         $this->createNotification([
             'client_id' => $client->id,
             'type' => 'payment_failed',
-            'description' => 'Your payment failed could not be completed.',
+            'description' => 'Your payment could not be completed.',
         ]);
+
         $this->sendEmail(
             $client->email,
-            "payment failed",
-            "Your payment failed could not be completed.Your payment failed could not be completed.please try again or use a different payment method."
+            'Payment Failed',
+            'Your payment could not be completed. Please try again or use a different payment method.'
         );
     }
 
@@ -116,22 +120,18 @@ class NotificationService
     {
         return $this->notificationRepository->getByClient($clientId);
     }
-
     public function getUnreadNotifications(int $clientId)
     {
         return $this->notificationRepository->getUnreadByClient($clientId);
     }
-
     public function getUnreadCount(int $clientId)
     {
         return $this->notificationRepository->getUnreadCount($clientId);
     }
-
     public function markAsRead(int $notificationId)
     {
         return $this->notificationRepository->markAsRead($notificationId);
     }
-
     public function markAllAsRead(int $clientId)
     {
         return $this->notificationRepository->markAllAsRead($clientId);

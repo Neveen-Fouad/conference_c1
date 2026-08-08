@@ -15,47 +15,32 @@ class NotificationRepository extends BaseRepository implements NotificationRepos
     public function getByClient(int $clientId)
     {
         return $this->model
-            ->where('client_id', $clientId)
-            ->latest()
-            ->get();
+            ->where('client_id', $clientId)->latest()->get();
     }
 
     public function getUnreadByClient(int $clientId)
     {
         return $this->model
-            ->where('client_id', $clientId)
-            ->whereNull('read_at')
-            ->latest()
-            ->get();
+            ->where('client_id', $clientId)->whereNull('read_at')->latest()->get();
     }
 
     public function getUnreadCount(int $clientId)
     {
-        return $this->model
-            ->where('client_id', $clientId)
-            ->whereNull('read_at')
-            ->count();
+        return $this->model->where('client_id', $clientId)->whereNull('read_at')->count();
     }
 
     public function markAsRead(int $notificationId)
     {
         $notification = $this->findById($notificationId);
 
-        $notification->update([
-            'read_at' => now(),
-        ]);
+        $notification->update(['read_at' => now(),]);
 
         return $notification;
     }
 
     public function markAllAsRead(int $clientId)
     {
-        return $this->model
-            ->where('client_id', $clientId)
-            ->whereNull('read_at')
-            ->update([
-                'read_at' => now(),
-            ]);
+        return $this->model->where('client_id', $clientId)->whereNull('read_at')->update(['read_at' => now(),]);
     }
 }
 
