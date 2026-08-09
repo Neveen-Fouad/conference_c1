@@ -21,6 +21,13 @@ return new class extends Migration
             $table->enum('classses',["luxury","standard","economy"]);
             $table->enum('status',["confirmed","pending","canceled"]);
 
+
+            $table->string("booking_type");
+            $table->string("provider_name");
+
+
+
+
         });
     }
 

@@ -6,17 +6,25 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::table('complaints', function (Blueprint $table) {
-            //
-            $table->enum('status',['replied','read','unread'])->default('unread');
+        Schema::table('favourites', function (Blueprint $table) {
+            $table->enum('type', ['restaurant', 'hotel', 'flight','trip','destination'])->change();
+        Schema::table('favourites', function (Blueprint $table) {
+            $table->enum('type', ['restaurant', 'hotel', 'flight','trip','destination'])->change();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::table('clients', function (Blueprint $table) {
+        Schema::table('favourites', function (Blueprint $table) {
+        Schema::table('favourites', function (Blueprint $table) {
             //
         });
     }

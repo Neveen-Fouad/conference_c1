@@ -2,12 +2,11 @@
 
 namespace App\Providers;
 
+
 use Illuminate\Support\ServiceProvider;
 use App\Interfaces\UserRepositoryInterface;
 use App\Interfaces\ComplaintRepositoryInterface;
 use App\Interfaces\SettingRepositoryInterface;
-use App\Interfaces\TripRepositoryInterface;
-use App\Repositories\TripRepository;
 
 use App\Repositories\UserRepository;
 use App\Repositories\ComplaintRepository;
