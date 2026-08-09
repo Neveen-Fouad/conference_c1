@@ -22,15 +22,7 @@ class RepositoryServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->app->bind(
-            AuthRepositoryInterface::class,
-            AuthRepository::class
-        );
 
-        $this->app->bind(
-            TripRepositoryInterface::class,
-            TripRepository::class
-        );
 
         $this->app->bind(
             PaymentRepositoryInterface::class,

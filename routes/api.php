@@ -10,64 +10,34 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymobWebhookController;
 use App\Http\Controllers\RevenueController;
 
-Route::prefix('admin')->group(function () {  // usermanagement
 
-    Route::get('/users', [UserController::class, 'index']);
 
-    Route::get('/users/{id}', [UserController::class, 'show']);
 
-    Route::patch('/users/{id}/status', [UserController::class, 'changeStatus']);
 
-    Route::post('/admins', [UserController::class, 'storeAdmin']);
 
-    Route::patch('/admins/{id}', [UserController::class, 'updateAdmin']);
+Route::get('/revenue/total', [RevenueController::class, 'totalRevenue']);
 
-    Route::delete('/admins/{id}', [UserController::class, 'destroyAdmin']);
 
-});
 
-//website settings
-Route::prefix('admin/settings')->group(function (){
-     Route::get('/', [SettingController::class, 'index']);
 
-    Route::post('/logo', [SettingController::class, 'setLogo']);
-    Route::patch('/logo', [SettingController::class, 'updateLogo']);
-
-    Route::post('/site-name', [SettingController::class, 'setSiteName']);
-    Route::patch('/site-name', [SettingController::class, 'updateSiteName']);
-
-    Route::post('/contact-info', [SettingController::class, 'setContactInfo']);
-    Route::patch('/contact-info', [SettingController::class, 'updateContactInfo']);
-
-    Route::post('/social-links', [SettingController::class, 'setSocialLinks']);
-    Route::patch('/social-links', [SettingController::class, 'updateSocialLinks']);
-
-    Route::post('/banner', [SettingController::class, 'setBanner']);
-
-    Route::patch('/banner', [SettingController::class, 'updateBanner']);
-    Route::get('/revenue/total', [RevenueController::class, 'totalRevenue']);
-
-});
-
-//complaint
-Route::post('/contact', [ComplaintController::class, 'store']);
-
-Route::prefix('admin/contact-messages')->group(function () {
-
-    Route::get('/', [ComplaintController::class, 'index']);
-
-    Route::delete('/{id}', [ComplaintController::class, 'destroy']);
-
-    Route::patch('/{id}/status', [ComplaintController::class, 'changeStatus']);
-
-});
-Route::apiResource('/trips',TripController::class);
-Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
 Route::post('/payments', [PaymentController::class, 'store']);
 
 Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
 Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
 Route::post('/payments', [PaymentController::class, 'store']);
 Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
+use App\Http\Controllers\NotificationsController;
+
+Route::post('/notifications', [NotificationsController::class, 'store']);
+
+Route::get('/notifications/client/{clientId}', [NotificationsController::class, 'index']);
+
+Route::get('/notifications/client/{clientId}/unread', [NotificationsController::class, 'unread']);
+
+Route::get('/notifications/client/{clientId}/unread-count', [NotificationsController::class, 'unreadCount']);
+
+Route::patch('/notifications/{notificationId}/read', [NotificationsController::class, 'markAsRead']);
+
+Route::patch('/notifications/client/{clientId}/read-all', [NotificationsController::class, 'markAllAsRead']);
 
 

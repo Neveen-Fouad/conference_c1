@@ -15,9 +15,7 @@ class NotificationRepository extends BaseRepository implements NotificationRepos
     public function getByClient(int $clientId)
     {
         return $this->model
-            ->where('client_id', $clientId)
-            ->latest()
-            ->get();
+            ->where('client_id', $clientId)->latest()->get();
     }
 
     public function getUnreadByClient(int $clientId)
