@@ -11,7 +11,7 @@ use App\Repositories\Contracts\ProfileRepositoryInterface;
 class ProfileController extends Controller
 {
     protected ProfileRepositoryInterface $profileRepository;
-    
+
     public function __construct(ProfileRepositoryInterface $profileRepository){
         $this->profileRepository = $profileRepository;
     }
@@ -19,9 +19,11 @@ class ProfileController extends Controller
         $profile = $this->profileRepository->getProfile(auth()->user());
 
         return response()->json([
-            'success' => true,
+
             'message' => 'Profile retrieved successfully.',
-            'data' => $profile,
+            'data' => [
+                'profile' => $profile
+            ],
         ]);
     }
 
@@ -32,9 +34,11 @@ class ProfileController extends Controller
          );
 
          return response()->json([
-            'success' => true,
+
             'message' => 'Profile updated successfully.',
-            'data' => $profile,
+            'data' => [
+                'profile' => $profile
+            ],
          ]);
     }
 
@@ -45,7 +49,6 @@ class ProfileController extends Controller
         );
 
         return response()->json([
-            'success' => true,
             'message' => 'Password updated successfully.',
          ]);
     }

@@ -14,42 +14,77 @@ class DashboardController extends Controller
         $this->dashboardRepository = $dashboardRepository;
     }
 
+
+
+
+
     public function getSavedTrips(Request $request){
-        return response()->json(
-            $this->dashboardRepository->getSavedTrips($request->user()->id)
-        );
+        $SavedTrips = $this->dashboardRepository->getSavedTrips($request->user()->id);
+
+        return response()->json([
+            "message" => "data",
+                "data" => [
+                    "savedTrips" => $SavedTrips
+                ]
+            ]
+
+      );
     }
 
     public function getFavouriteDestinations(Request $request){
-        return response()->json(
-            $this->dashboardRepository->getFavouriteDestinations($request->user()->id)
-        );
-    }
+    $getFavouriteDestinations = $this->dashboardRepository
+        ->getFavouriteDestinations($request->user()->id);
+
+    return response()->json([
+        'message' => 'Data retrieved successfully.',
+        'data' => [
+            'favouriteDestinations' => $getFavouriteDestinations
+        ]
+    ]);
+}
 
     public function getBookingHistory(Request $request){
-        return response()->json(
-            $this->dashboardRepository->getBookingHistory($request->user()->id)
+        $getBookingHistory= $this->dashboardRepository->getBookingHistory($request->user()->id);
+
+        return response()->json([
+            "message" => "data",
+                "data" => [
+                    "bookingHistory" => $getBookingHistory
+                ]
+            ]
         );
     }
 
     public function getProfileSettings(Request $request){
-        return response()->json(
-            $this->dashboardRepository->getProfileSettings($request->user()->id)
+        $getProfileSettings= $this->dashboardRepository->getProfileSettings($request->user()->id);
+        return response()->json([
+            "message" => "data",
+                "data" => [
+                    "profileSettings" => $getProfileSettings
+                ]
+            ]
+
         );
     }
 
     public function updateProfileSettings(UpdateProfileSettingsRequest $request){
-        return response()->json(
-            $this->dashboardRepository->updateProfileSettings(
-                $request->user()->id,
-                $request->all()
-            )
-        );
-    }
+        $updateProfileSettings = $this->dashboardRepository->updateProfileSettings($request->user()->id, $request->all());
+        return response()->json([
+    'message' => 'Profile settings updated successfully.',
+    'data' => [
+        'profileSettings' => $updateProfileSettings
+    ]
+]);
+}
 
     public function getStatistics(Request $request){
-        return response()->json(
-            $this->dashboardRepository->getStatistics($request->user()->id)
+        $GetStatistics = $this->dashboardRepository->getStatistics($request->user()->id);
+        return response()->json([
+            "message" => "data",
+                "data" => [
+                    "statistics" => $GetStatistics
+                ]
+            ]
         );
     }
 }
