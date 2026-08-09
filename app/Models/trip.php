@@ -16,13 +16,19 @@ use Illuminate\Database\Eloquent\Model;
         "start_date",
         "end_date",
         "budget",
+        "is_ai_generated"
 
 
     ];
-    public function client()
-    {
-        return $this->belongsTo(client::class);
-    }
+    public function clients()
+{
+    return $this->belongsToMany(
+        client::class,
+        'client_has_trips',
+        'trips_id',  
+        'client_id'   
+    );
+}
     public function details()
 
 {

@@ -41,8 +41,10 @@ class TripRepository implements TripRepositoryInterface
         return $this->findById($id)->delete();
     }
 
-    public function findByUserId(int $userId)
-    {
-        return $this->model->where('user_id', $userId)->get();
-    }
+  public function findByUserId(int $userId)
+{
+    return $this->model->whereHas('clients', function ($query) use ($userId) {
+        $query->where('clients.id', $userId);
+    })->with('details')->get();
+}
 }

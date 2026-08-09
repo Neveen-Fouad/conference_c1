@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTripRequest;
+use App\Models\Client;
+use App\Repositories\Contracts\TripRepositoryInterface;
 use App\Services\GroqService;
 use App\Services\CountryServices;
 use App\Services\PlaceServices;
@@ -10,6 +12,7 @@ use App\Services\SearchService;
 use App\Services\TransportationService;
 use App\Services\WeatherServices;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
 
 class AiTripController extends Controller
 {
@@ -19,7 +22,8 @@ class AiTripController extends Controller
         protected PlaceServices $placeServices,
         protected WeatherServices $weatherServices,
         protected SearchService $searchService,
-        protected TransportationService $transportationService
+        protected TransportationService $transportationService,
+        protected TripRepositoryInterface $trips
     ) {}
 
     public function generateTrip(StoreTripRequest $request): JsonResponse
@@ -96,9 +100,28 @@ class AiTripController extends Controller
             ];
         })->toArray();
      
-        $trip = $this->groqService->MakeTrip($validated, $weatherForecast, $simplifiedHotels, $simplifiedAttractions);
+        
+        $tripData = $this->groqService->MakeTrip($validated, $weatherForecast, $simplifiedHotels, $simplifiedAttractions);
 
+        $trip = DB::transaction(function () use ($validated, $tripData, $request) {
+        $client = Client::where('user_id', $request->user()->id)->firstOrFail();
+         $tripRecord= $this->trips->create($validated);
+         $tripRecord->clients()->attach($client->id);
 
-        return response()->json($trip);
-    }
+      foreach ($tripData['trip'] ?? [] as $day) {
+    $tripRecord->details()->create([
+        'day'      => $day['day'],
+        'title'    => $day['weather_note'] ?? ('Day ' . $day['day']), 
+        'expenses' => $day['daily_cost'] ?? 0,
+        'plan'     => json_encode($day), 
+        'is_ai_generated' => true,
+    ]);
+}
+
+        return $tripRecord->load('details', 'clients');
+    });
+
+    return response()->json($trip, 201);
+}
+
 }

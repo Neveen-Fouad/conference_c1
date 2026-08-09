@@ -35,7 +35,8 @@ class GroqService
 
         try {
             $response = Groq::chat()->completions()->create([
-                "model" => config("groq.model"), 
+                "model" => config("groq.model"),
+                "response_format" => ["type" => "json_object"], 
                 "messages" => [
                     [
                         "role" => "system",
@@ -50,24 +51,23 @@ class GroqService
 
         Context Data:
         {$contextData}
-        
-        You must include these data:
-        {
-           trip: [
-                {   best hotel for all days based on the hotel information in the context data and budget and the number of guests and days,
-                    day: 1,
-                    weather_note: Brief note on today's weather in the destination,
-                    morning: Attraction Name and description,
-                    lunch: Restaurant suggestion based on the Attraction address and budget,
-                    afternoon: Attraction Name and description,
-                    dinner: Restaurant suggestion based on the Attraction address and budget,
-                    daily_cost: 0
-                    Attractions based on the available attractions in the context data.
-                    Routes between the hotel and attractions and restaurants based on the available transportation options in the context data. and if there is none tell
-                }
-            ],
-            total_estimated_cost: 0
-        }"
+       Respond with ONLY valid JSON (no markdown, no commentary) in exactly this shape:
+{
+  \"best_hotel\": \"name of best hotel for the whole stay, chosen from hotel_info based on budget and guest count\",
+  \"trip\": [
+    {
+      \"day\": 1,
+      \"weather_note\": \"brief note on today's weather\",
+      \"morning\": \"attraction name and description\",
+      \"lunch\": \"restaurant suggestion near the morning attraction, within budget\",
+      \"afternoon\": \"attraction name and description\",
+      \"dinner\": \"restaurant suggestion near the afternoon attraction, within budget\",
+      \"route_notes\": \"how to get between hotel and attractions, based on available transportation; say if none available\",
+      \"daily_cost\": 0
+    }
+  ],
+  \"total_estimated_cost\": 0
+}"
                     ],
                     [
                         "role" => "user",
@@ -81,6 +81,16 @@ class GroqService
             Log::error('groq error ', ["message" => $e->getMessage()]);
             throw new \RuntimeException('Failed to generate trip plan. Please try again later.');
         }
-        return $response['choices'][0]['message']['content'];
+        $content = $response['choices'][0]['message']['content'];
+
+$decoded = json_decode($content, true);
+
+if (json_last_error() !== JSON_ERROR_NONE) {
+    Log::error('Groq returned invalid JSON', ['content' => $content, 'error' => json_last_error_msg()]);
+    throw new \RuntimeException('AI returned an unexpected format. Please try again.');
+}
+
+return $decoded;
+ 
     }
 }

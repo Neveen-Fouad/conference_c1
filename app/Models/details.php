@@ -10,12 +10,12 @@ class details extends Model
      protected $fillable = [
        'day',
        'trip_id',
-       'day_expenses',
-       'day_plan',
+       'expenses',
+       'plan',
        'title',
     
     ];
     public function trip(){
-        return $this->belongsTo($trip::class);
+        return $this->belongsTo(trip::class);
     }
 }

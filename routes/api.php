@@ -32,7 +32,7 @@ Route::prefix('auth')->group(function () {
 
 Route::apiResource('/trips',TripController::class);
 Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
-Route::post('/ai/trips', [AiTripController::class, 'generateTrip']);
+Route::post('/ai/trips', [AiTripController::class, 'generateTrip'])->middleware('auth:api');
 
 
 
