@@ -105,6 +105,11 @@ class RepositoryServiceProvider extends ServiceProvider
         //     FlightsRepository::class
             
         // );
+
+        $this->app->bind(
+            AuthRepositoryInterface::class,
+            AuthRepository::class
+        );
     }
 
     public function boot(): void

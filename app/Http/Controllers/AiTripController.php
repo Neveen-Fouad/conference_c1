@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTripRequest;
 use App\Models\Client;
-use App\Repositories\Contracts\TripRepositoryInterface;
+
+use App\Repositories\Eloquent\TripRepository;
 use App\Services\GroqService;
 use App\Services\CountryServices;
 use App\Services\PlaceServices;
@@ -23,7 +24,7 @@ class AiTripController extends Controller
         protected WeatherServices $weatherServices,
         protected SearchService $searchService,
         protected TransportationService $transportationService,
-        protected TripRepositoryInterface $trips
+        protected TripRepository $trips
     ) {}
 
     public function generateTrip(StoreTripRequest $request): JsonResponse
