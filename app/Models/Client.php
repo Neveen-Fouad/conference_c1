@@ -51,6 +51,11 @@ class Client extends Model
         'client_has_interests', // pivot table
         'client_id',            // foreign key on pivot for Client
         'interests_id'          // foreign key on pivot for Interests
-    );
+    );}
 
-}}
+    public function getEmailAttribute()
+    {
+        return $this->user?->email;
+    }
+
+}
