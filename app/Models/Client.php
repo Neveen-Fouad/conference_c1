@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-    //
     protected $fillable = [
        'phone',
        'birth_date',
@@ -35,6 +34,7 @@ class Client extends Model
         return $this->hasMany(favourites::class);
     }
     public function client_has_ineterests(){
+        return $this->hasMany(client_has_interests::class);
         return $this->hasMany(client_has_interests::class);
     }
     public function getEmailAttribute()

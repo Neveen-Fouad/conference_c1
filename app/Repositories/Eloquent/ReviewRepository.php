@@ -1,5 +1,7 @@
 <?php
-namespace App\Repositories;
+namespace App\Repositories\Eloquent;
+
+use App\Repositories\BaseRepository;
 use App\Enum\ReviewStatus;
 use App\Interfaces\ReviewRepositoryInterface;
 use App\Models\review;
@@ -44,7 +46,7 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
 
     public function create(array $data)
     {
-        
+        // 
         $data['client_id']=$this->currentClientId();
         $data['status']=ReviewStatus::pending->value;
         return $this->model->create($data);
@@ -56,18 +58,22 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
     {
         $review = $this->model
             ->where('client_id', $this->currentClientId())
-            ->firstOrFail($id);
+            ->where('id', $id)
+            ->firstOrFail();
         return $review->delete();
     }
 
-    public function updateReview($id, array $data)
+    public function update($id, array $data)
     {
         $review = $this->model
             ->where('client_id', $this->currentClientId())
-            ->firstOrFail($id);
-        if($review->status !== ReviewStatus::pending->value) {
+            ->where('id', $id)
+            ->firstOrFail();
+
+        if ($review->status !== ReviewStatus::pending->value) {
             throw new AuthorizationException('You can only update pending reviews.');
         }
+
         $review->update($data);
         return $review;
     }

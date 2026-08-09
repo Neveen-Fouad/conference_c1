@@ -9,6 +9,10 @@ use App\Repositories\Eloquent\FavouriteRepository;
 use App\Repositories\Eloquent\ReviewRepository;
 
 use App\Repositories\Eloquent\InterestRepository;
+use App\Interfaces\FavouriteRepositoryInterface;
+use App\Interfaces\ReviewRepositoryInterface;
+use App\Repositories\Eloquent\FavouriteRepository;
+use App\Repositories\Eloquent\ReviewRepository;
 use Illuminate\Support\ServiceProvider;
 
 use App\Interfaces\NotificationRepositoryInterface;
@@ -29,6 +33,9 @@ use App\Repositories\Eloquent\TripRepository;
 use App\Repositories\NotificationRepository;
 use App\Repositories\PaymentRepository;
 use App\Repositories\RevenueRepository;
+use App\Repositories\Contracts\BookingRepositoryInterface;
+use App\Repositories\Eloquent\BookingRepository;
+
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -71,6 +78,20 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
           InterestRepositoryInterface::class,
           InterestRepository::class
+        );
+
+
+        $this->app->bind(
+            BookingRepositoryInterface::class,
+            BookingRepository::class
+        );
+        $this->app->bind(
+            FavouriteRepositoryInterface::class,
+            FavouriteRepository::class
+        );
+        $this->app->bind(
+            ReviewRepositoryInterface::class,
+            ReviewRepository::class,
         );
 
     }

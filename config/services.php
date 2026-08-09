@@ -14,6 +14,18 @@ return [
     |
     */
 
+    'restaurants_api' => [
+        'key' => env('RESTAURANTS_API_KEY'),
+        'host' => env('RESTAURANTS_API_HOST', 'tripadvisor-scraper.p.rapidapi.com'),
+        'base_url' => 'https://tripadvisor-scraper.p.rapidapi.com',
+    ],
+    'flights_api' => [
+        'key' => env('FLIGHTS_API_KEY'),
+        'host' => env('FLIGHTS_API_HOST', 'sky-scrapper.p.rapidapi.com'),
+        'base_url' => env('FLIGHTS_API_BASE_URL', 'https://sky-scrapper.p.rapidapi.com'),
+    ],
+
+
     'postmark' => [
         'key' => env('POSTMARK_API_KEY'),
     ],
@@ -34,7 +46,34 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
-    'paymob' => [
+    // config/services.php
+    'countries' => [
+        'base_url' => env('REST_COUNTRIES_BASE_URL', 'https://api.restcountries.com'),
+        'api_key' => env('REST_COUNTRIES_API_KEY'),
+    ],
+    'weatherapi' => [
+        'base_url' => env('WEATHER_BASE_URL', 'https://api.weatherapi.com/v1'),
+        'key' => env('WEATHER_API_KEY'),
+    ],
+    'rapidapi' => [
+        'key' => env('RAPIDAPI_KEY'),
+        'host' => env('RAPIDAPI_HOST', 'booking-com15.p.rapidapi.com'),
+    ],
+    'hotels' => [
+
+        'base_url' => env('HOTELS_API_URL'),
+
+        'key' => env('HOTELS_API_KEY'),
+
+        'host' => env('HOTELS_API_HOST'),
+
+        'locale' => env('HOTELS_API_LOCALE', 'en_GB'),
+
+        'domain' => env('HOTELS_API_DOMAIN', 'GB'),
+
+        'cache_ttl' => 60 * 60 * 24,
+
+    ],    'paymob' => [
         'api_key' => env('PAYMOB_API_KEY'),
         'public_key' => env('PAYMOB_PUBLIC_KEY'),
         'secret_key' => env('PAYMOB_SECRET_KEY'),
