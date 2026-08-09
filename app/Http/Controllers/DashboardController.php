@@ -19,12 +19,12 @@ class DashboardController extends Controller
 
 
     public function getSavedTrips(Request $request){
-        $savedTrips =$this->dashboardRepository->getSavedTrips($request);
+        $SavedTrips = $this->dashboardRepository->getSavedTrips($request->user()->id);
 
         return response()->json([
             "message" => "data",
                 "data" => [
-                    "savedTrips" => $savedTrips
+                    "savedTrips" => $SavedTrips
                 ]
             ]
 
@@ -32,19 +32,19 @@ class DashboardController extends Controller
     }
 
     public function getFavouriteDestinations(Request $request){
-        $getFavouritDestination= $this->dashboardRepository->getFavouriteDestinations($request->user()->id)
+    $getFavouriteDestinations = $this->dashboardRepository
+        ->getFavouriteDestinations($request->user()->id);
 
-        return response()->json([
-            "message" => "data",
-                "data" => [
-                    "favouriteDestinations" => $getFavouritDestinations
-                ]
-            ]
-        );
-    }
+    return response()->json([
+        'message' => 'Data retrieved successfully.',
+        'data' => [
+            'favouriteDestinations' => $getFavouriteDestinations
+        ]
+    ]);
+}
 
     public function getBookingHistory(Request $request){
-        $getBookingHistory= $this->dashboardRepository->getBookingHistory($request->user()->id)
+        $getBookingHistory= $this->dashboardRepository->getBookingHistory($request->user()->id);
 
         return response()->json([
             "message" => "data",
@@ -56,7 +56,7 @@ class DashboardController extends Controller
     }
 
     public function getProfileSettings(Request $request){
-        $getProfileSettings= $this->dashboardRepository->getProfileSettings($request->user()->id)
+        $getProfileSettings= $this->dashboardRepository->getProfileSettings($request->user()->id);
         return response()->json([
             "message" => "data",
                 "data" => [
@@ -70,17 +70,15 @@ class DashboardController extends Controller
     public function updateProfileSettings(UpdateProfileSettingsRequest $request){
         $updateProfileSettings = $this->dashboardRepository->updateProfileSettings($request->user()->id, $request->all());
         return response()->json([
-            "message" => "data",
-                "data" => [
-                    "profileSettings" => $updateProfileSettings
-                ]
-            ]
-            )
-        );
-    }
+    'message' => 'Profile settings updated successfully.',
+    'data' => [
+        'profileSettings' => $updateProfileSettings
+    ]
+]);
+}
 
     public function getStatistics(Request $request){
-        $GetStatistics = $this->dashboardRepository->getStatistics($request->user()->id)
+        $GetStatistics = $this->dashboardRepository->getStatistics($request->user()->id);
         return response()->json([
             "message" => "data",
                 "data" => [
