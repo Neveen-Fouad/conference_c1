@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTripRequest extends FormRequest
+class CreateFlightBookingRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,13 +23,11 @@ class StoreTripRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'destination' => 'required|string|max:255',
-            'start_date' => 'required|date|after_or_equal:today',
-            'end_date' => 'required|date|after:start_date',
-            'budget' => 'required|numeric|min:100',
-            'number_of_travels' => 'required|integer|min:1',
-            'estimated_expenses' => 'required|numeric|min:0',
-            'style' => 'required|string|max:255',
+            'flight_id' => ['required', 'integer', 'min:1'],
+            'departure_date' => ['required', 'date', 'after_or_equal:today'],
+            'return_date' => ['nullable', 'date', 'after:departure_date'],
+            'passengers' => ['required', 'integer', 'min:1'],
+            'cabin_class' => ['nullable', 'string', 'in:economy,premium_economy,business,first'],
         ];
     }
 }

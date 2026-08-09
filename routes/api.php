@@ -3,6 +3,8 @@
 use App\Http\Controllers\FavouritesController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AdminInterestController;
+use App\Http\Controllers\AiTripController;
+use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\FavouritesController;
 use App\Http\Controllers\ReviewController;
@@ -68,6 +70,14 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\FlightBookingController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\InterestsController;
+use App\Http\Controllers\HotelBookingsController;
+use App\Http\Controllers\HotelController;
+use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\FlightController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\AuthController;
 
 
 Route::prefix('auth')->group(function () {
@@ -159,6 +169,39 @@ Route::get('/hotels/details', [HotelController::class, 'show']);
 
 Route::get('/hotels/search', [SearchController::class, 'searchHotels']);
 
+Route::middleware('auth:api')->group(function () {
+   Route::apiResource('/trips',TripController::class);
+   Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
+   Route::post('/ai/trips', [AiTripController::class, 'generateTrip'])
+;
+});
+
+
+
+
+
+
+Route::get('/countries', [CountryController::class, 'index']);
+Route::get('/countries/{country}', [CountryController::class, 'show']);
+Route::get('/explore', [ExploreController::class, 'index'])->name('explore.index');
+Route::get('/destination-data', [ExploreController::class, 'destinationData']);
+
+Route::get('/client/interests', [InterestsController::class, 'clientInterests']);
+Route::put('/client/interests', [InterestsController::class, 'updateClientInterests']);
+
+Route::get('/interests', [InterestsController::class, 'index']);
+Route::get('/hotels/search', [HotelBookingsController::class, 'search']);
+
+Route::middleware('auth:api')->group(function () {
+    Route::post('/hotels/bookings', [HotelBookingsController::class, 'store']);
+    Route::post('/flights/bookings', [FlightBookingController::class, 'store']);
+});
+
+Route::get('/hotels', [HotelController::class, 'index']);
+Route::get('/hotels/{hotel}', [HotelController::class, 'show']);
+
+Route::get('/hotels/search', [SearchController::class, 'searchHotels']);
+
 // restaurants endpoint
 Route::get('/restaurants', [RestaurantController::class, 'index']);
 Route::get('/restaurants/details', [RestaurantController::class, 'show']);
@@ -190,3 +233,6 @@ Route::middleware('auth:api')->group(function(){
     Route::post('/favourites',[FavouritesController::class,'store']);
     Route::delete('/favourites/{favourite_id}',[FavouritesController::class,'destroy']);
 });
+Route::get('/flights', [FlightController::class, 'index']);
+Route::get('/flights/{flight}', [FlightController::class, 'show']);
+ 

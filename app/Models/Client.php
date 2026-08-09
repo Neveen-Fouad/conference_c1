@@ -27,18 +27,30 @@ class Client extends Model
     public function reviews(){
         return $this->hasMany(review::class);
     }
-    public function trips(){
-        return $this->hasMany(favourites::class);
-    }
+    // public function trips(){
+    //     return $this->hasMany(favourites::class);
+    // }
     public function favourites(){
         return $this->hasMany(favourites::class);
     }
-    public function client_has_ineterests(){
-        return $this->hasMany(client_has_interests::class);
-        return $this->hasMany(client_has_interests::class);
-    }
-    public function getEmailAttribute()
-    {
-        return $this->user?->email;
-    }
-}
+    // public function client_has_ineterests(){
+    //     return $this->hasMany(client_has_ineterests::class);
+    // }
+    public function trips()
+{
+    return $this->belongsToMany(
+        trip::class,
+        'client_has_trips',
+        'client_id',
+        'trips_id'
+    );}
+    public function interests()
+{
+    return $this->belongsToMany(
+        Interests::class,
+        'client_has_interests', // pivot table
+        'client_id',            // foreign key on pivot for Client
+        'interests_id'          // foreign key on pivot for Interests
+    );
+
+}}

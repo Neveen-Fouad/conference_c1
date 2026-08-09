@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 
+use App\Models\trip;
+use App\Policies\TripPolicy;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use App\Interfaces\UserRepositoryInterface;
 use App\Interfaces\ComplaintRepositoryInterface;
@@ -37,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
     TripRepositoryInterface::class,
     TripRepository::class
 );
+        Gate::policy(trip::class, TripPolicy::class);
     }
 
     /**

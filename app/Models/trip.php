@@ -11,24 +11,27 @@ use Illuminate\Database\Eloquent\Model;
 {
     //
      protected $fillable = [
+        "estimated_expenses",
+        "style",
+        "number_of_travels",
+        "classes",
+        "destination",
+        "start_date",
+        "end_date",
+        "budget",
+        "is_ai_generated"
 
-    'client_id',
-    'classes',
-    'destination',
-    'number_of_travels',
-    'estimated_expenses',
-    'budget',
-    'number_of_days',
-    'start_date',
-    'is_fav',
-    'style',
-];
 
-    
-    public function client()
-    {
-        return $this->belongsTo(Client::class);
-    }
+    ];
+    public function clients()
+{
+    return $this->belongsToMany(
+        client::class,
+        'client_has_trips',
+        'trips_id',  
+        'client_id'   
+    );
+}
     public function details()
 
 {

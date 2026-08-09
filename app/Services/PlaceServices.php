@@ -128,7 +128,6 @@ public function getAttractions(string $city, ?string $interestSlug = null): arra
 
     return ['results' => $filtered];
 }
-
     public function getRestaurants(string $city): array
     {
         return ['results' => []];
