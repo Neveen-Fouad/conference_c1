@@ -44,7 +44,7 @@ class HotelService
                     ]);
                     return null;
                 }
-                $hotel = $response->json('data');
+                $hotel = $response->json();
 
                 return $hotel;
             } catch (\Throwable $e) {
