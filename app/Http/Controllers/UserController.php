@@ -56,9 +56,11 @@ public function updateAdmin(UpdateAdminRequest $request, $id)
 }
 public function destroyAdmin($id)
 {
-    return response()->json(
-        $this->userRepository->delete($id)
-    );
+    $this->userRepository->delete($id);
+
+    return response()->json([
+        'message' => 'Admin deleted successfully'
+    ]);
 }
 
 public function statistics()
