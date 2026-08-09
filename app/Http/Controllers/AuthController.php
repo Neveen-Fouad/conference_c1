@@ -20,15 +20,12 @@ class AuthController extends Controller
         $this->authRepository = $authRepository;
     }
 
-    public function register(RegisterRequest $request): JsonResponse{
-    public function register(RegisterRequest $request): JsonResponse{
+   
+    function register(RegisterRequest $request): JsonResponse{
         $user = $this->authRepository->register($request->validated());
 
         return response()->json([
             'message' => 'User registered successfully. Please verify your email.',
-            'data' => [
-                'token' => $user->token,
-            ],
             'data' => [
                 'token' => $user->token,
             ],
@@ -47,7 +44,7 @@ class AuthController extends Controller
             'message' => 'Login successful.',
             'data' => [
                 'token' => [
-                'token' => $data->token,
+                'token' => $data['token'],
             ]['token'],
             ],
         ]);

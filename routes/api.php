@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ComplaintController;
-use App\Http\Controllers\TripController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymobWebhookController;
 use App\Http\Controllers\RevenueController;
@@ -19,7 +18,6 @@ use App\Http\Controllers\RevenueController;
 
 
 
-Route::get('/revenue/total', [RevenueController::class, 'totalRevenue']);
 
 
 
@@ -36,11 +34,11 @@ Route::post('/notifications', [NotificationsController::class, 'store']);
 
 Route::get('/notifications/client/{clientId}', [NotificationsController::class, 'index']);
 
-    Route::delete('/{id}', [ComplaintController::class, 'destroy']);
+ Route::delete('/{id}', [ComplaintController::class, 'destroy']);
 
-    Route::patch('/{id}/status', [ComplaintController::class, 'changeStatus']);
+ Route::patch('/{id}/status', [ComplaintController::class, 'changeStatus']);
 
-});
+
 
 //trip management 
 Route::prefix('admin/trips')->group(function() {
@@ -125,3 +123,12 @@ Route::middleware(['auth:api','isAdmin','IsActive'])->prefix('admin')->group(fun
     Route::put('/interests/{interest_id}',[AdminInterestController::class,'update']);
     Route::delete('/interests/{interest_id}',[AdminInterestController::class,'destroy']);
 });
+
+
+
+
+Route::get('/revenue/total', [RevenueController::class, 'totalRevenue']);
+
+Route::post('/notifications', [NotificationsController::class, 'store']);
+Route::get('/notifications/client/{clientId}', [NotificationsController::class, 'index']);
+Route::get('/notifications/client/{clientId}/unread', [NotificationsController::class, 'unread']);
