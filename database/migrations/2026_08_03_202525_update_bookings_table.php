@@ -22,8 +22,6 @@ return new class extends Migration
             $table->date('booking_date')->nullable(); // restaurant reservation date / flight departure date; not applicable to hotel
             $table->enum('classes', ['luxury', 'standard', 'economy'])->nullable(); // flight only; not applicable to hotel/restaurant
             $table->enum('status', ['confirmed', 'pending', 'canceled'])->default('pending')->change();
-
-            $table->decimal('total_price', 10, 2);
             $table->char('currency', 3); // ISO currency code, e.g. USD, EGP
 
             $table->json('details'); // type-specific snapshot from the external API

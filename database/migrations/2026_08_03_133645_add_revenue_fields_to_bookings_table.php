@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->decimal('total_price', 12, 2)->nullable()->default(0.00);
             $table->decimal("commisssion_rate", 5, 2)->nullable()->default(0.00);
             $table->decimal("commisssion_amount", 12, 2)->nullable()->default(0.00);
-            $table->string("currency")->nullable()->default("USD");
+            // $table->string("currency")->nullable()->default("USD");
             $table->timestamp("booked_at")->nullable();
         });
     }
