@@ -8,23 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 {
     //
      protected $fillable = [
-        'name',
-        'phone',
-        "estimated_price",
-        "style",
-        "number_of_days",
-        "number_of_travellers",
-        "classes",
-        "destination",
-        "start_date",
-        "end_date",
-        "budget",
 
+    'client_id',
+    'classes',
+    'destination',
+    'number_of_travels',
+    'estimated_expenses',
+    'budget',
+    'number_of_days',
+    'start_date',
+    'is_fav',
+    'style',
+];
 
-    ];
+    
     public function client()
     {
-        return $this->belongsTo(client::class);
+        return $this->belongsTo(Client::class);
     }
     public function details()
 
