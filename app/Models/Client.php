@@ -35,7 +35,7 @@ class Client extends Model
         return $this->hasMany(favourites::class);
     }
     public function client_has_ineterests(){
-        return $this->hasMany(client_has_ineterests::class);
+        return $this->hasMany(client_has_interests::class);
     }
 
 }

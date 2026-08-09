@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\FavouritesController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\AdminInterestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -115,4 +118,30 @@ Route::prefix('dashboard')->middleware('auth:api')->group(function () {
     Route::get('/profile-settings', [DashboardController::class, 'getProfileSettings']);
     Route::patch('/profile-settings', [DashboardController::class, 'updateProfileSettings']);
     Route::get('/statistics', [DashboardController::class, 'getStatistics']);
+});// review endpoint (user)
+Route::middleware(['auth:api','IsActive','VerifiedEmail'])->group(function (){
+    Route::get('/reviews' , [ReviewController::class,'Index']);
+    Route::get('/reviews/my' , [ReviewController::class,'getMyReviews']);
+    Route::get('/reviews/{review_id}', [ReviewController::class,'show']);
+    Route::post('/reviews' , [ReviewController::class,'store']);
+    Route::put('/reviews/{review_id}' ,[ReviewController::class,'update']);
+    Route::delete('/reviews/{review_id}',[ReviewController::class, 'destroy']);
+});
+// review endpoint (admin)
+Route::middleware(['auth:api','isAdmin','IsActive', 'VerifiedEmail'])->prefix('admin')->group(function(){
+    Route::get('/reviews',[ReviewController::class,'Index']);
+    Route::post('/reviews/{review_id}/approve',[ReviewController::class,'approve']);
+    Route::post('/reviews/{review_id}/reject',[ReviewController::class,'reject']);
+});
+// favourite endpoint (user)
+Route::middleware(['auth:api','IsActive','VerifiedEmail'])->group(function(){
+    Route::get('/favourites',[FavouritesController::class,'index']);
+    Route::post('/favourites',[FavouritesController::class,'store']);
+    Route::delete('/favourites/{favourite_id}',[FavouritesController::class,'destroy']);
+});
+Route::middleware(['auth:api','isAdmin','IsActive'])->prefix('admin')->group(function(){
+    Route::get('/interests',[AdminInterestController::class,'index']);
+    Route::post('/interests',[AdminInterestController::class,'store']);
+    Route::put('/interests/{interest_id}',[AdminInterestController::class,'update']);
+    Route::delete('/interests/{interest_id}',[AdminInterestController::class,'destroy']);
 });

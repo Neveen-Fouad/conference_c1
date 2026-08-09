@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+
+use App\Enum\FavouriteType;
+use App\Enum\ReviewType;
 use Illuminate\Database\Eloquent\Model;
 
     class trip extends Model
@@ -31,4 +34,16 @@ use Illuminate\Database\Eloquent\Model;
 {
     return $this->hasMany(details::class);
 }
+
+    public function favourites()
+    {
+        return $this->hasMany(favourites::class, 'favouriteable_id')
+        ->where('type',FavouriteType::Trip->value);
+    }
+    public function reviews()
+    {
+        return $this->hasMany(review::class,'reviewable_id')
+        ->where('type' , ReviewType::Trip->value);
+    }
+   
 }
