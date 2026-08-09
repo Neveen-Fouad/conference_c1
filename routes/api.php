@@ -6,8 +6,7 @@ use App\Http\Controllers\AdminInterestController;
 use App\Http\Controllers\AiTripController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\TripController;
-use App\Http\Controllers\FavouritesController;
-use App\Http\Controllers\ReviewController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -59,7 +58,7 @@ Route::prefix('admin/trips')->group(function() {
 
 
 use App\Http\Controllers\CountryController;
-use App\Http\Controllers\ExploreController;
+
 use App\Http\Controllers\InterestsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
@@ -70,15 +69,6 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\FlightBookingController;
-use App\Http\Controllers\CountryController;
-use App\Http\Controllers\InterestsController;
-use App\Http\Controllers\HotelBookingsController;
-use App\Http\Controllers\HotelController;
-use App\Http\Controllers\RestaurantController;
-use App\Http\Controllers\FlightController;
-use App\Http\Controllers\SearchController;
-use App\Http\Controllers\AuthController;
-
 
 Route::prefix('auth')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);

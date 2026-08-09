@@ -9,10 +9,7 @@ use App\Repositories\Eloquent\FavouriteRepository;
 use App\Repositories\Eloquent\ReviewRepository;
 
 use App\Repositories\Eloquent\InterestRepository;
-use App\Interfaces\FavouriteRepositoryInterface;
-use App\Interfaces\ReviewRepositoryInterface;
-use App\Repositories\Eloquent\FavouriteRepository;
-use App\Repositories\Eloquent\ReviewRepository;
+
 use Illuminate\Support\ServiceProvider;
 
 use App\Interfaces\NotificationRepositoryInterface;
@@ -36,8 +33,7 @@ use App\Repositories\RevenueRepository;
 use App\Repositories\Contracts\BookingRepositoryInterface;
 use App\Repositories\Eloquent\BookingRepository;
 
-use App\Repositories\Contracts\BookingRepositoryInterface;
-use App\Repositories\Eloquent\BookingRepository;
+
 use App\Repositories\Contracts\FlightsRepositoryInterface;
 use App\Repositories\Eloquent\FlightsRepository;
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Interfaces\TripRepositoryInterface;
 use App\Http\Requests\UpdateTripRequest;
 use App\Models\trip;
-use App\Repositories\Contracts\TripRepositoryInterface;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
