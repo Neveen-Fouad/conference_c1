@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::table('clients', function (Blueprint $table) {
         $table->dropColumn('location');
-        $table->dropColumn('interest');
         $table->string('long');
         $table->string('latittude');
         $table->date('birth_date')->change();
@@ -27,7 +26,6 @@ return new class extends Migration
     {
         Schema::table('clients', function (Blueprint $table) {
         $table->string('location');
-        $table->string('interest');
         $table->dropColumn('long');
         $table->dropColumn('latittude');
         $table->dateTime('birth_date')->change();
