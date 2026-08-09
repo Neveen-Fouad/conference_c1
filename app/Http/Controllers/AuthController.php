@@ -22,12 +22,16 @@ class AuthController extends Controller
 
    
     function register(RegisterRequest $request): JsonResponse{
-        $user = $this->authRepository->register($request->validated());
+        $data = $this->authRepository->register($request->validated());
+
+        $data->sendEmailVerificationNotification();
+
+        $token = auth('api')->login($data);
 
         return response()->json([
             'message' => 'User registered successfully. Please verify your email.',
             'data' => [
-                'token' => $user->token,
+                'token' => $token,
             ],
         ], 201);
     }
