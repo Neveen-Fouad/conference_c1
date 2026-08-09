@@ -25,7 +25,7 @@ class UpdateInterestRequest extends FormRequest
     {
         return [
             'name' =>['required','string',
-            Rule::unique('interest','name')->ignore($this->route('id'))],
+            Rule::unique('interests','name')->ignore($this->route('id'))],
         ];
     }
 }

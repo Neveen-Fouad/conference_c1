@@ -48,7 +48,7 @@ Route::middleware(['auth:api','IsActive','VerifiedEmail'])->group(function(){
     Route::post('/favourites',[FavouritesController::class,'store']);
     Route::delete('/favourites/{favourite_id}',[FavouritesController::class,'destroy']);
 });
-Route::middleware(['auth:api','isAdmin','IsActive', 'VerifiedEmail'])->prefix('admin')->group(function(){
+Route::middleware(['auth:api','isAdmin','IsActive'])->prefix('admin')->group(function(){
     Route::get('/interests',[AdminInterestController::class,'index']);
     Route::post('/interests',[AdminInterestController::class,'store']);
     Route::put('/interests/{interest_id}',[AdminInterestController::class,'update']);

@@ -15,6 +15,6 @@ class interests extends Model
     
     ];
     function interests(){
-     return $this->belongsTo($client::class);
+     return $this->belongsTo(client::class);
     }
 }
