@@ -194,7 +194,7 @@ Route::get('/interests', [InterestsController::class, 'index']);
  
 
 
-use GuzzleHttp\Middleware;
+
 
 
 Route::prefix('admin')->middleware(['isAdmin', 'auth:api'])->group(function () {  // usermanagement
