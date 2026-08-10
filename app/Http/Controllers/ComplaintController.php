@@ -30,6 +30,13 @@ class ComplaintController extends Controller
         );
     }
 
+    // get single contact message
+    public function show(int $id){
+        return response()->json(
+            $this->ComplaintRepository->findById($id)
+        );
+    }
+
     //delete contact messages 
     public function destroy(int $id){
         return response()->json(
