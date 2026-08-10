@@ -5,8 +5,10 @@ namespace App\Providers;
 use App\Interfaces\FavouriteRepositoryInterface;
 use App\Interfaces\InterestRepositoryInterface;
 use App\Interfaces\ReviewRepositoryInterface;
+use App\Interfaces\TripRepositoryInterface;
 use App\Repositories\Eloquent\FavouriteRepository;
 use App\Repositories\Eloquent\ReviewRepository;
+use App\Repositories\Eloquent\TripRepository;
 
 use App\Repositories\Eloquent\InterestRepository;
 

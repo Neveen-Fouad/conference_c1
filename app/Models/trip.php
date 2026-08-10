@@ -6,6 +6,8 @@ namespace App\Models;
 use App\Enum\FavouriteType;
 use App\Enum\ReviewType;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
     class trip extends Model
 {
@@ -23,7 +25,7 @@ use Illuminate\Database\Eloquent\Model;
 
 
     ];
-    public function clients()
+    public function clients(): BelongsToMany
 {
     return $this->belongsToMany(
         client::class,
@@ -32,7 +34,7 @@ use Illuminate\Database\Eloquent\Model;
         'client_id'   
     );
 }
-    public function details()
+    public function details(): HasMany
 
 {
     return $this->hasMany(details::class);
