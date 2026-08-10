@@ -36,6 +36,13 @@ use App\Repositories\Eloquent\BookingRepository;
 
 use App\Repositories\Contracts\FlightsRepositoryInterface;
 use App\Repositories\Eloquent\FlightsRepository;
+use App\Interfaces\UserRepositoryInterface;
+use App\Interfaces\ComplaintRepositoryInterface;
+use App\Interfaces\SettingRepositoryInterface;
+use App\Repositories\Contracts\DashboardReportRepositoryInterface;
+use App\Repositories\Eloquent\DashboardReportRepository;
+use App\Repositories\UserRepository;
+use App\Services\DashboardReportService;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -94,12 +101,6 @@ class RepositoryServiceProvider extends ServiceProvider
             ReviewRepository::class,
         );
 
-
-        $this->app->bind(
-            BookingRepositoryInterface::class,
-            BookingRepository::class
-
-        );
         // $this->app->bind(
         //     FlightsRepositoryInterface::class,
         //     FlightsRepository::class
@@ -110,6 +111,28 @@ class RepositoryServiceProvider extends ServiceProvider
             AuthRepositoryInterface::class,
             AuthRepository::class
         );
+         $this->app->bind(
+            UserRepositoryInterface::class,
+            UserRepository::class
+        );
+        $this->app->bind(
+            ComplaintRepositoryInterface::class,
+            ComplaintRepository::class
+        );
+
+        $this->app->bind(
+            SettingRepositoryInterface::class,
+            SettingRepositry::class
+        );
+        $this->app->bind(
+            TripRepositoryInterface::class,
+            TripRepository::class
+        );
+
+        $this->app->bind(
+           DashboardReportRepositoryInterface::class,
+           DashboardReportRepository::class
+);
     }
 
     public function boot(): void

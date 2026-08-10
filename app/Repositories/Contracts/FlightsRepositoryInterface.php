@@ -5,7 +5,7 @@ namespace App\Repositories\Contracts;
 use App\Models\bookings;
 use Illuminate\Support\Collection;
 
-interface BookingRepositoryInterface
+interface FlightsRepositoryInterface
 {
 
     public function create(array $data): bookings;

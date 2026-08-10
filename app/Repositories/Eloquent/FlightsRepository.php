@@ -6,7 +6,7 @@ use App\Repositories\Contracts\BookingRepositoryInterface;
 use App\Models\bookings;
 use Illuminate\Support\Collection;
 
-class BookingRepository implements BookingRepositoryInterface
+class FlightsRepository implements BookingRepositoryInterface
 {
     /*
      * Create a new booking.

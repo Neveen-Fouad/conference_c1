@@ -62,39 +62,42 @@ class BookingService
         $checkOut = Carbon::parse($data['check_out_date']);
         $number_of_days = $checkIn->diffInDays($checkOut);
 
-       
-        $booking = [
-            'client_id' => $user->client->id,
-            'type' => 'hotel',
-            'provider' => 'hotels_com',
-            'external_reference_id' => $data['hotel_id'],
-            'number_of_days' => $number_of_days,
-            'number_of_bookings' => $data['rooms'],
-            'status' => 'pending',
-            'check_in_date' => $data['check_in_date'],
-            'check_out_date' => $data['check_out_date'],
-            'booking_date' => now()->toDateString(),
-            'total_price' => round($total_price, 2),
-            'currency' => $currency,
-            'details' => [
-                'hotel' => [
-                    'id' => $data['hotel_id'],
-                    'name' => data_get($hotel, 'summary.name'),
-                    'address' => data_get($hotel, 'summary.location.address'),
-                ],
-                'room' => [
-                    'name' => $roomName,
-                ],
-                'guest' => [
-                    'first_name' => $user->first_name,
-                    'last_name' => $user->last_name,
-                    'email' => $user->email,
-                    'phone' => $user->phone,
-                ],
-                'rooms' => $data['rooms'],
-                'guests' => $data['guests'],
-            ],
-        ];
+       $booking = [
+    'client_id' => $user->client->id,
+    'type' => 'hotel',
+    'booking_type' => 'hotel',
+    'provider' => 'hotels_com',
+    'provider_name' => 'hotels_com',
+    'external_reference_id' => $data['hotel_id'],
+    'number_of_days' => $number_of_days,
+    'number_of_bookings' => $data['rooms'],
+    'status' => 'pending',
+    'check_in_date' => $data['check_in_date'],
+    'check_out_date' => $data['check_out_date'],
+    'booking_date' => now()->toDateString(),
+    'total_price' => round($total_price, 2),
+    'currency' => $currency,
+    'details' => [
+        'hotel' => [
+            'id' => $data['hotel_id'],
+            'name' => data_get($hotel, 'summary.name'),
+            'address' => data_get($hotel, 'summary.location.address'),
+        ],
+        'room' => [
+            'name' => $roomName,
+        ],
+        'guest' => [
+            'first_name' => $user->first_name,
+            'last_name' => $user->last_name,
+            'email' => $user->email,
+            'phone' => $user->phone,
+        ],
+        'rooms' => $data['rooms'],
+        'guests' => $data['guests'],
+    ],
+];
+      
+            
 
         return $this->bookingRepository->create($booking);
     }

@@ -81,28 +81,28 @@ class SearchService
      * Search available hotels.
      */
     public function searchHotels(array $filters): array
-    {
-        $regionId = $this->resolveRegion($filters['destination']);
+{
+    $regionId = $this->resolveRegion($filters['destination']);
 
-        if (!$regionId) {
-            return [
-                'message' => 'Unable to resolve destination.',
-                'hotels' => [],
-            ];
-        }
-
-        $requestFilters = [
-            'destination' => $filters['destination'],
-            'budget' => $filters['budget'],
-            'available_filter' => 'SHOW_AVAILABLE_ONLY',
-            'region_id' => $regionId,
-            'checkin_date' => $filters['start_date'],
-            'checkout_date' => $filters['end_date'],
-            'adults_number' => $filters['number_of_travels'],
-            'locale' => $this->locale,
-            'domain' => $this->domain,
-            'sort_order' => 'REVIEW',
+    if (!$regionId) {
+        return [
+            'message' => 'Unable to resolve destination.',
+            'hotels' => [],
         ];
+    }
+
+    $requestFilters = [
+        'destination'       => $filters['destination'],
+        'budget'            => $filters['budget'],
+        'available_filter'  => 'SHOW_AVAILABLE_ONLY',
+        'region_id'         => $regionId,
+        'checkin_date'      => $filters['check_in'],
+        'checkout_date'     => $filters['check_out'],
+        'adults_number'     => $filters['guests'],
+        'locale'            => $this->locale,
+        'domain'            => $this->domain,
+        'sort_order'        => 'REVIEW',
+    ];
 
         $cacheKey = 'hotel_search:' . md5(json_encode($requestFilters));
 

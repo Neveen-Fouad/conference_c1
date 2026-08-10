@@ -11,21 +11,26 @@ class bookings extends Model
     use HasFactory;
 
     protected $fillable = [
-        'client_id',
-        'type',
-        'provider',
-        'external_reference_id',
-        'number_of_days',
-        'check_in_date',
-        'check_out_date',
-        'booking_date',
-        'number_of_bookings',
-        'classes',
-        'status',
-        'total_price',
-        'currency',
-        'details',
-    ];
+    'client_id',
+    'type',                  
+    'booking_type',
+    'provider',              
+    'provider_name',
+    'external_reference_id',
+    'number_of_days',
+    'check_in_date',
+    'check_out_date',
+    'booking_date',
+    'number_of_bookings',
+    'classes',
+    'status',
+    'total_price',
+    'currency',
+    'details',
+    'commisssion_rate',
+    'commisssion_amount',
+    'booked_at'
+];
 
     
     protected $casts = [
