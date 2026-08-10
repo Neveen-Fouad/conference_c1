@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminInterestController;
 use App\Http\Controllers\AiTripController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\TripController;
+use GuzzleHttp\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -39,10 +40,8 @@ use App\Http\Controllers\DashboardReportController;
 
 
 Route::post('/payments', [PaymentController::class, 'store']);
-
 Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
 Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
-Route::post('/payments', [PaymentController::class, 'store']);
 Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
 use App\Http\Controllers\NotificationsController;
 
@@ -80,7 +79,6 @@ Route::prefix('auth')->group(function () {
     Route::post('/refresh', [AuthController::class, 'refresh'])
         ->middleware('auth:api');
 });
-
 //Profile
 
 Route::middleware('auth:api')->group(function (){
@@ -98,28 +96,15 @@ Route::prefix('dashboard')->middleware('auth:api')->group(function () {
     Route::get('/profile-settings', [DashboardController::class, 'getProfileSettings']);
     Route::patch('/profile-settings', [DashboardController::class, 'updateProfileSettings']);
     Route::get('/statistics', [DashboardController::class, 'getStatistics']);
-});// review endpoint (user)
-Route::middleware(['auth:api','IsActive','VerifiedEmail'])->group(function (){
-    Route::get('/reviews' , [ReviewController::class,'Index']);
-    Route::get('/reviews/my' , [ReviewController::class,'getMyReviews']);
-    Route::get('/reviews/{review_id}', [ReviewController::class,'show']);
-    Route::post('/reviews' , [ReviewController::class,'store']);
-    Route::put('/reviews/{review_id}' ,[ReviewController::class,'update']);
-    Route::delete('/reviews/{review_id}',[ReviewController::class, 'destroy']);
 });
-// review endpoint (admin)
-Route::middleware(['auth:api','isAdmin','IsActive', 'VerifiedEmail'])->prefix('admin')->group(function(){
-    Route::get('/reviews',[ReviewController::class,'Index']);
-    Route::post('/reviews/{review_id}/approve',[ReviewController::class,'approve']);
-    Route::post('/reviews/{review_id}/reject',[ReviewController::class,'reject']);
-});
+// Review endpoints (broken duplicated versions removed)
 // favourite endpoint (user)
 Route::middleware(['auth:api','IsActive','VerifiedEmail'])->group(function(){
     Route::get('/favourites',[FavouritesController::class,'index']);
     Route::post('/favourites',[FavouritesController::class,'store']);
     Route::delete('/favourites/{favourite_id}',[FavouritesController::class,'destroy']);
 });
-Route::middleware(['auth:api','isAdmin','IsActive'])->prefix('admin')->group(function(){
+Route::middleware(['auth:api','isAdmin'])->prefix('admin')->group(function(){
     Route::get('/interests',[AdminInterestController::class,'index']);
     Route::post('/interests',[AdminInterestController::class,'store']);
     Route::put('/interests/{interest_id}',[AdminInterestController::class,'update']);
@@ -201,12 +186,7 @@ Route::middleware(['auth:api','isAdmin'])->prefix('admin')->group(function(){
     Route::post('/reviews/{review_id}/reject',[ReviewController::class,'reject']);
 });
 
-// favorite endpoint (user)
-Route::middleware('auth:api')->group(function(){
-    Route::get('/favourites',[FavouritesController::class,'index']);
-    Route::post('/favourites',[FavouritesController::class,'store']);
-    Route::delete('/favourites/{favourite_id}',[FavouritesController::class,'destroy']);
-});
+// Duplicated user favorites endpoint removed
 Route::get('/flights', [FlightController::class, 'index']);
 Route::get('/flights/{flight}', [FlightController::class, 'show']);
 
@@ -246,27 +226,21 @@ Route::prefix('admin/settings')->middleware(['isAdmin', 'auth:api'])->group(func
 });
 
 //complaint
-Route::post('/contact', [ComplaintController::class, 'store']);
-
-Route::prefix('admin/contact-messages')->middleware('isAdmin')->group(function () {
-
-    Route::get('/', [ComplaintController::class, 'index']);
-
-    Route::delete('/{id}', [ComplaintController::class, 'destroy']);
-
-    Route::patch('/{id}/status', [ComplaintController::class, 'changeStatus']);
-
+Route::middleware('auth:api')->group(function () {
+    Route::post('/contact', [ComplaintController::class, 'store']);
 });
-Route::post('/payments', [PaymentController::class, 'store']);
+
+Route::prefix('admin/contact-messages')->middleware(['isAdmin', 'auth:api'])->group(function () {
+    Route::get('/', [ComplaintController::class, 'index']);
+    Route::get('/{id}', [ComplaintController::class, 'show']);
+    Route::delete('/{id}', [ComplaintController::class, 'destroy']);
+    Route::patch('/{id}/status', [ComplaintController::class, 'changeStatus']);
+});
 Route::prefix('admin/trips')->middleware(['isAdmin','auth:api'])->group(function() {
     // Only statistics is needed here since index, update, and destroy are handled by apiResource('/trips') for both admins and users.
     Route::get('/statistics', [TripController::class, 'statistics']);
 });
 
-Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
-Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
-Route::post('/payments', [PaymentController::class, 'store']);
-Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
-Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
+// Duplicated payment routes removed
 Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
 

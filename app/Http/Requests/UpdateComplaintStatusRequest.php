@@ -20,7 +20,7 @@ class UpdateComplaintStatusRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'status' => 'required',
+            'status' => 'required|in:pending,replied',
         ];
     }
 
