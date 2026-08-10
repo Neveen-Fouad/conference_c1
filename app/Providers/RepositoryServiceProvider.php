@@ -33,7 +33,10 @@ use App\Repositories\Eloquent\BookingRepository;
 
 use App\Repositories\Contracts\FlightsRepositoryInterface;
 use App\Repositories\Eloquent\FlightsRepository;
-
+use App\Repositories\Contracts\ChatConversationRepositoryInterface;
+use App\Repositories\Contracts\ChatMessageRepositoryInterface;
+use App\Repositories\Eloquent\ChatConversationRepository;
+use App\Repositories\Eloquent\ChatMessageRepository;
 class RepositoryServiceProvider extends ServiceProvider
 {
     public function register(): void
@@ -100,14 +103,30 @@ class RepositoryServiceProvider extends ServiceProvider
         // $this->app->bind(
         //     FlightsRepositoryInterface::class,
         //     FlightsRepository::class
-            
+
         // );
+        $this->app->bind(
+            ChatConversationRepositoryInterface::class,
+            ChatConversationRepository::class
+        );
+
+        $this->app->bind(
+            ChatMessageRepositoryInterface::class,
+            ChatMessageRepository::class
+        );
 
         $this->app->bind(
             AuthRepositoryInterface::class,
             AuthRepository::class
         );
     }
+
+
+
+
+
+
+
 
     public function boot(): void
     {

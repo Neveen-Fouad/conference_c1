@@ -6,7 +6,7 @@ use App\Http\Controllers\AdminInterestController;
 use App\Http\Controllers\AiTripController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\TripController;
-
+use App\Http\Controllers\ChatbotController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -215,7 +215,7 @@ Route::middleware('auth:api')->group(function(){
 });
 Route::get('/flights', [FlightController::class, 'index']);
 Route::get('/flights/{flight}', [FlightController::class, 'show']);
- 
+
 
 
 use GuzzleHttp\Middleware;
@@ -245,8 +245,8 @@ Route::prefix('admin/settings')->middleware(['isAdmin', 'auth:api'])->group(func
     Route::post('/', [SettingController::class, 'storeSettings']);
     Route::patch('/{id}', [SettingController::class, 'UpdateSettings']);
 
-   
-    
+
+
 });
 
 //complaint
@@ -274,3 +274,21 @@ Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPaym
 Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
 Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
 
+Route::middleware('auth:api')
+    ->prefix('chat')
+    ->group(function () {
+        Route::get('/conversations', [
+            ChatbotController::class,
+            'index',
+        ]);
+
+        Route::get('/conversations/{conversationId}', [
+            ChatbotController::class,
+            'show',
+        ]);
+
+        Route::post('/messages', [
+            ChatbotController::class,
+            'sendMessage',
+        ]);
+    });
