@@ -93,4 +93,8 @@ class AuthRepository implements AuthRepositoryInterface{
             }
         );
     }
+    
+    public function refresh(){
+    return JWTAuth::refresh(JWTAuth::getToken());
+}
 }
