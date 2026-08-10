@@ -28,16 +28,24 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
         if($this->isAdmin()){
             return $this->model->paginate(10);
         }
-        return $this->model
-        ->where('status', ReviewStatus::Approved->value)
-        ->paginate(10);
+        $query = $this->model->newQuery();
+        $client_id = $this->currentClientId();
+        if($client_id){
+            $query->where(function ($q) use ($client_id){
+                $q->where('status', ReviewStatus::Approved->value)
+                  ->orWhere('client_id', $client_id);
+            });
+        } else {
+            $query->where('status', ReviewStatus::Approved->value);
+        }
+        return $query->paginate(10);
     }
 
     public function findById($id)
     {
         $review= $this->model->findOrFail($id);
         if(! $this->isAdmin()
-        && $review->status !== ReviewStatus::Approved->value
+        && $review->status !== ReviewStatus::Approved
         && $review->client_id !== $this->currentClientId()){
             throw new AuthorizationException('Not authorized to view this review.');
         }
@@ -56,10 +64,11 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
 
     public function delete($id)
     {
-        $review = $this->model
-            ->where('client_id', $this->currentClientId())
-            ->where('id', $id)
-            ->firstOrFail();
+        $query = $this->model->where('id', $id);
+        if (!$this->isAdmin()) {
+            $query->where('client_id', $this->currentClientId());
+        }
+        $review = $query->firstOrFail();
         return $review->delete();
     }
 
@@ -70,7 +79,7 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
             ->where('id', $id)
             ->firstOrFail();
 
-        if ($review->status !== ReviewStatus::pending->value) {
+        if ($review->status !== ReviewStatus::pending) {
             throw new AuthorizationException('You can only update pending reviews.');
         }
 
@@ -85,7 +94,7 @@ class ReviewRepository extends BaseRepository implements ReviewRepositoryInterfa
             ->paginate(10);
     }
 
-    public function filterReviewsByType(string $type, int $reviewable_id)
+    public function filterReviewsByType(string $type, string $reviewable_id)
     {
         $query =$this->model
         ->where('type', $type)

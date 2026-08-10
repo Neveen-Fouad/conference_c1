@@ -176,7 +176,7 @@ Route::middleware('auth:api')->group(function (){
     Route::get('/reviews/my' , [ReviewController::class,'getMyReviews']);
     Route::get('/reviews/{review_id}', [ReviewController::class,'show']);
     Route::post('/reviews' , [ReviewController::class,'store']);
-    Route::put('/reviews/{review_id}' ,[ReviewController::class,'update']);
+    Route::post('/reviews/{review_id}', [ReviewController::class, 'update']);
     Route::delete('/reviews/{review_id}',[ReviewController::class, 'destroy']);
 });
 // review endpoint (admin)

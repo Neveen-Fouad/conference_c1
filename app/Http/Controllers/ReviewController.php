@@ -36,14 +36,29 @@ class ReviewController extends Controller
         ],200);
     }
     public function store(StoreReviewRequest $request){
-        $review=$this->reviewService->store($request->validated());
-        return response()->json([
-            'success'=>true,
-            'data'=>$review,
-        ],201);
+        $validated = $request->validated();
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('reviews', 'public');
+        }
+        try {
+            $review=$this->reviewService->store($validated);
+            return response()->json([
+                'success'=>true,
+                'data'=>$review,
+            ],201);
+        } catch (\InvalidArgumentException $e) {
+            return response()->json([
+                'success'=>false,
+                'message'=>$e->getMessage(),
+            ],400);
+        }
     }
     public function update(UpdateReviewRequest $request , int $review_id){
-        $review = $this->reviewService->update($review_id,$request->validated());
+        $validated = $request->validated();
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('reviews', 'public');
+        }
+        $review = $this->reviewService->update($review_id, $validated);
         return response()->json([
             'success'=>true,
             'data'=>$review,
