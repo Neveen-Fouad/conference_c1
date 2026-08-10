@@ -103,5 +103,17 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'Password reset successfully.',
         ]);
-    }
+    
+}
+
+public function refresh(): JsonResponse{
+    $token = $this->authRepository->refresh();
+
+    return response()->json([
+        'message' => 'Token refreshed successfully.',
+        'data' => [
+            'token' => $token,
+        ],
+    ]);
+}
 }

@@ -11,4 +11,5 @@ interface AuthRepositoryInterface{
     public function resendVerificationEmail(User $user);
     public function forgotPassword(array $data);
     public function resetPassword(array $data);
+    public function refresh();
 }
