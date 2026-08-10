@@ -41,6 +41,7 @@ use App\Interfaces\SettingRepositoryInterface;
 use App\Repositories\Contracts\DashboardReportRepositoryInterface;
 use App\Repositories\Eloquent\DashboardReportRepository;
 use App\Repositories\UserRepository;
+use App\Repositories\ComplaintRepository;
 use App\Services\DashboardReportService;
 
 class RepositoryServiceProvider extends ServiceProvider

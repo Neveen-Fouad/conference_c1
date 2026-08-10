@@ -91,4 +91,11 @@ return [
             'https://generativelanguage.googleapis.com/v1beta'
         ),
     ],
+
+    'ors' => [
+    'base_url' => env('ORS_BASE_URL', 'https://api.openrouteservice.org'),
+    'api_key' => env('ORS_API_KEY'),
+    'cache_ttl_days' => env('ORS_CACHE_TTL_DAYS', 7),
+],
+ 
 ];

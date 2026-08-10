@@ -34,7 +34,7 @@ use App\Http\Controllers\BookingListController;
 use App\Http\Controllers\DashboardReportController;
 
 
-
+use App\Http\Controllers\TransportationController;
 
 
 
@@ -49,9 +49,7 @@ Route::post('/notifications', [NotificationsController::class, 'store']);
 
 Route::get('/notifications/client/{clientId}', [NotificationsController::class, 'index']);
 
- Route::delete('/{id}', [ComplaintController::class, 'destroy']);
 
- Route::patch('/{id}/status', [ComplaintController::class, 'changeStatus']);
 
 
 
@@ -226,9 +224,7 @@ Route::prefix('admin/settings')->middleware(['isAdmin', 'auth:api'])->group(func
 });
 
 //complaint
-Route::middleware('auth:api')->group(function () {
-    Route::post('/contact', [ComplaintController::class, 'store']);
-});
+Route::post('/contact', [ComplaintController::class, 'store']);
 
 Route::prefix('admin/contact-messages')->middleware(['isAdmin', 'auth:api'])->group(function () {
     Route::get('/', [ComplaintController::class, 'index']);
@@ -243,4 +239,10 @@ Route::prefix('admin/trips')->middleware(['isAdmin','auth:api'])->group(function
 
 // Duplicated payment routes removed
 Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
+
+
+
+ 
+Route::post('/transportation/tips', [TransportationController::class, 'tips']);
+ 
 
