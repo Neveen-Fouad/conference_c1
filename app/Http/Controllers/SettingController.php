@@ -24,8 +24,14 @@ class SettingController extends Controller
     }
 
     function storeSettings(StoreSettingsRequest $request){
+        $validated = $request->validated();
+        
+        if ($request->hasFile('logo')) {
+            $validated['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
         return response()->json(
-            $this->SettingRepository->create($request->validated())
+            $this->SettingRepository->create($validated)
         );
     }
     //site setting 
@@ -37,9 +43,14 @@ class SettingController extends Controller
     }
 
     function UpdateSettings(UpdateSettingsRequest $request, $id){
+        $validated = $request->validated();
+        
+        if ($request->hasFile('logo')) {
+            $validated['logo'] = $request->file('logo')->store('logos', 'public');
+        }
 
         return response()->json(
-            $this->SettingRepository->update($id, $request->validated())
+            $this->SettingRepository->update($id, $validated)
         );
     }
   

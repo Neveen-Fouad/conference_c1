@@ -54,18 +54,6 @@ Route::get('/notifications/client/{clientId}', [NotificationsController::class, 
 
 
 
-//trip management 
-Route::prefix('admin/trips')->group(function() {
-    
-    Route::get('/', [TripController::class, 'index']);
-
-    Route::patch('/{id}', [TripController::class, 'update']);
-
-    Route::delete('/{id}', [TripController::class, 'destroy']);
-
-    Route::get('/statistics', [TripController::class, 'statistics']);
-});
-
 
 
 
@@ -231,7 +219,7 @@ Route::get('/flights/{flight}', [FlightController::class, 'show']);
 use GuzzleHttp\Middleware;
 
 
-Route::prefix('admin')->middleware('isAdmin')->group(function () {  // usermanagement
+Route::prefix('admin')->middleware(['isAdmin', 'auth:api'])->group(function () {  // usermanagement
 
     Route::get('/users', [UserController::class, 'index']);
 
@@ -249,11 +237,11 @@ Route::prefix('admin')->middleware('isAdmin')->group(function () {  // usermanag
 });
 
 //website settings
-Route::prefix('admin/settings')->middleware('isAdmin')->group(function () {
+Route::prefix('admin/settings')->middleware(['isAdmin', 'auth:api'])->group(function () {
      Route::get('/', [SettingController::class, 'index']);
 
     Route::post('/', [SettingController::class, 'storeSettings']);
-    Route::patch('/{id}', [SettingController::class, 'updateSettings']);
+    Route::patch('/{id}', [SettingController::class, 'UpdateSettings']);
 
    
     
@@ -271,17 +259,9 @@ Route::prefix('admin/contact-messages')->middleware('isAdmin')->group(function (
     Route::patch('/{id}/status', [ComplaintController::class, 'changeStatus']);
 
 });
-Route::apiResource('/trips',TripController::class);
-Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
 Route::post('/payments', [PaymentController::class, 'store']);
-Route::prefix('admin/trips')->middleware('isAdmin')->group(function() {
-    
-    Route::get('/', [TripController::class, 'index']);
-
-    Route::patch('/{id}', [TripController::class, 'update']);
-
-    Route::delete('/{id}', [TripController::class, 'destroy']);
-
+Route::prefix('admin/trips')->middleware(['isAdmin','auth:api'])->group(function() {
+    // Only statistics is needed here since index, update, and destroy are handled by apiResource('/trips') for both admins and users.
     Route::get('/statistics', [TripController::class, 'statistics']);
 });
 

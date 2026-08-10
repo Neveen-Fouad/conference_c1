@@ -46,7 +46,7 @@ class TripPolicy
      */
     public function createViaAi(User $user): bool
     {
-        return !$this->isAdmin($user);
+        return true; // Allowing both admins and regular users
     }
 
     /**
@@ -57,24 +57,28 @@ class TripPolicy
      */
     public function update(User $user, trip $trip): bool
     {
-        if ($this->isAdmin($user)) {
-            return !$trip->is_ai_generated;
+        // If the trip belongs to a client, only that specific owner can edit it.
+        if ($trip->clients()->exists()) {
+            return $this->isOwner($user, $trip);
         }
 
-        return $this->isOwner($user, $trip) && $trip->is_ai_generated;
+        // If the trip has NO owner (global manual trip), only admins can edit it.
+        return $this->isAdmin($user);
     }
 
     /**
      * Delete a trip.
      * - Owner can delete their own trip (any of their trips).
-     * - Admin can delete only manually-created trips.
+     * - Admin can delete only manually-created trips or their own trips.
      */
     public function delete(User $user, trip $trip): bool
     {
-        if ($this->isAdmin($user)) {
-            return !$trip->is_ai_generated;
+        // If the trip belongs to a client, only that specific owner can delete it.
+        if ($trip->clients()->exists()) {
+            return $this->isOwner($user, $trip);
         }
-
-        return $this->isOwner($user, $trip);
+        
+        // If the trip has NO owner (global manual trip), only admins can delete it.
+        return $this->isAdmin($user);
     }
 }

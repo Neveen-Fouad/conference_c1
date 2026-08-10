@@ -17,7 +17,6 @@ class UpdateProfileSettingsRequest extends FormRequest
         return [
             'first_name' => 'sometimes|string|max:255',
             'last_name'  => 'sometimes|string|max:255',
-            'email'      => 'sometimes|email|max:255|unique:users,email,' . auth()->id(),
             'phone'      => 'sometimes|string|max:20',
             'birth_date' => 'sometimes|date',
             'latittude'  => 'sometimes|numeric',

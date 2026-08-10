@@ -10,17 +10,14 @@ use App\Repositories\Contracts\DashboardRepositoryInterface;
 
 class DashboardRepository implements DashboardRepositoryInterface{
     public function getSavedTrips(int $userId){
-        return Cache::remember("user_{$userId}_saved_trips", now()->addMinutes(30), function () use ($userId){
-            $client = Client::where('user_id', $userId)->first();
-
-             if (!$client){
-                return null;
-             }
-
-             return trip::where('client_id', $client->id)
+        $client = Client::where('user_id', $userId)->first();
+        if (!$client){
+            return null;
+        }
+        
+        return $client->trips()
             ->latest()
             ->paginate(10);
-        });
     }
 
     public function getFavouriteDestinations(int $userId){
@@ -86,7 +83,6 @@ class DashboardRepository implements DashboardRepositoryInterface{
             $client->user->update([
                 'first_name' => $data['first_name'] ?? $client->user->first_name,
                 'last_name'  => $data['last_name'] ?? $client->user->last_name,
-                'email'      => $data['email'] ?? $client->user->email,
             ]);
 
             $client->update([
@@ -102,26 +98,22 @@ class DashboardRepository implements DashboardRepositoryInterface{
     }
 
     public function getStatistics(int $userId){
-        return Cache::remember("user_{$userId}_statistics", now()->addMinutes(30), function () use ($userId){
-            $client = Client::where('user_id', $userId)->first();
-
-            if (!$client){
-                return null;
-            }
-            
-            return[
-                'total_trips' => trip::where('client_id', $client->id)->count(),
-                'favorite_trips' => trip::where('client_id', $client->id)
+        $client = Client::where('user_id', $userId)->first();
+        if (!$client){
+            return null;
+        }
+        
+        return [
+            'total_trips' => $client->trips()->count(),
+            'favorite_trips' => $client->trips()
                 ->where('is_fav', true)
                 ->count(),
 
-                'total_bookings' => bookings::where('client_id', $client->id)->count(),
-                'total_favourites' => favourites::where('client_id', $client->id)->count(),
-                'total_budget' => trip::where('client_id', $client->id)->sum('budget'),
-                'total_estimated_expenses' => trip::where('client_id', $client->id)
+            'total_bookings' => bookings::where('client_id', $client->id)->count(),
+            'total_favourites' => favourites::where('client_id', $client->id)->count(),
+            'total_budget' => $client->trips()->sum('budget'),
+            'total_estimated_expenses' => $client->trips()
                 ->sum('estimated_expenses'),
-            ];
-        });
-
+        ];
     }
 }
