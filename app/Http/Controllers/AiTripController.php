@@ -14,6 +14,8 @@ use App\Services\TransportationService;
 use App\Services\WeatherServices;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
+use App\Models\trip;
 
 class AiTripController extends Controller
 {
@@ -29,6 +31,7 @@ class AiTripController extends Controller
 
     public function generateTrip(StoreTripRequest $request): JsonResponse
     {
+        Gate::authorize('createViaAi', trip::class);
         $validated = $request->validated();
 
         $hotelResult = $this->searchService->searchHotels($validated);
@@ -106,6 +109,7 @@ class AiTripController extends Controller
 
         $trip = DB::transaction(function () use ($validated, $tripData, $request) {
         $client = Client::where('user_id', $request->user()->id)->firstOrFail();
+         $validated['is_ai_generated'] = true;
          $tripRecord= $this->trips->create($validated);
          $tripRecord->clients()->attach($client->id);
 
@@ -115,7 +119,6 @@ class AiTripController extends Controller
         'title'    => $day['weather_note'] ?? ('Day ' . $day['day']), 
         'expenses' => $day['daily_cost'] ?? 0,
         'plan'     => json_encode($day), 
-        'is_ai_generated' => true,
     ]);
 }
 

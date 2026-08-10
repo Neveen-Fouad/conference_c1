@@ -17,15 +17,12 @@ use App\Interfaces\PaymentRepositoryInterface;
 use App\Interfaces\RevenueRepositoryInterface;
 
 use App\Repositories\Contracts\AuthRepositoryInterface;
-use App\Repositories\Contracts\TripRepositoryInterface;
 
 use App\Repositories\Eloquent\AuthRepository;
 use App\Repositories\Contracts\ProfileRepositoryInterface;
 use App\Repositories\Eloquent\ProfileRepository;
 use App\Repositories\Contracts\DashboardRepositoryInterface;
 use App\Repositories\Eloquent\DashboardRepository;
-
-use App\Repositories\Eloquent\TripRepository;
 
 use App\Repositories\NotificationRepository;
 use App\Repositories\PaymentRepository;

@@ -22,12 +22,16 @@ class AuthController extends Controller
 
    
     function register(RegisterRequest $request): JsonResponse{
-        $user = $this->authRepository->register($request->validated());
+        $data = $this->authRepository->register($request->validated());
+
+        $data->sendEmailVerificationNotification();
+
+        $token = auth('api')->login($data);
 
         return response()->json([
             'message' => 'User registered successfully. Please verify your email.',
             'data' => [
-                'token' => $user->token,
+                'token' => $token,
             ],
         ], 201);
     }
@@ -99,5 +103,17 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'Password reset successfully.',
         ]);
-    }
+    
+}
+
+public function refresh(): JsonResponse{
+    $token = $this->authRepository->refresh();
+
+    return response()->json([
+        'message' => 'Token refreshed successfully.',
+        'data' => [
+            'token' => $token,
+        ],
+    ]);
+}
 }

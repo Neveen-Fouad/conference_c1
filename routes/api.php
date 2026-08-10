@@ -56,18 +56,6 @@ Route::get('/notifications/client/{clientId}', [NotificationsController::class, 
 
 
 
-//trip management 
-Route::prefix('admin/trips')->group(function() {
-    
-    Route::get('/', [TripController::class, 'index']);
-
-    Route::patch('/{id}', [TripController::class, 'update']);
-
-    Route::delete('/{id}', [TripController::class, 'destroy']);
-
-    Route::get('/statistics', [TripController::class, 'statistics']);
-});
-
 Route::middleware('auth:api')->group(function () {
     Route::get('/bookings', [BookingListController::class, 'all']);
     Route::get('/bookings/hotels', [BookingListController::class, 'hotels']);
@@ -89,6 +77,8 @@ Route::prefix('auth')->group(function () {
     Route::middleware('auth:api')->group(function (){
         Route::post('/logout', [AuthController::class, 'logout']);
     });
+    Route::post('/refresh', [AuthController::class, 'refresh'])
+        ->middleware('auth:api');
 });
 
 //Profile
@@ -221,4 +211,62 @@ Route::get('/flights', [FlightController::class, 'index']);
 Route::get('/flights/{flight}', [FlightController::class, 'show']);
 
 Route::get('/interests', [InterestsController::class, 'index']);
+ 
+
+
+use GuzzleHttp\Middleware;
+
+
+Route::prefix('admin')->middleware(['isAdmin', 'auth:api'])->group(function () {  // usermanagement
+
+    Route::get('/users', [UserController::class, 'index']);
+
+    Route::get('/users/{id}', [UserController::class, 'show']);
+
+    Route::patch('/users/{id}/status', [UserController::class, 'changeStatus']);
+
+    Route::post('/admins', [UserController::class, 'storeAdmin']);
+
+    Route::patch('/admins/{id}', [UserController::class, 'updateAdmin']);
+
+    Route::delete('/admins/{id}', [UserController::class, 'destroyAdmin']);
+    Route::get('/statistics', [UserController::class, 'statistics']);
+
+});
+
+//website settings
+Route::prefix('admin/settings')->middleware(['isAdmin', 'auth:api'])->group(function () {
+     Route::get('/', [SettingController::class, 'index']);
+
+    Route::post('/', [SettingController::class, 'storeSettings']);
+    Route::patch('/{id}', [SettingController::class, 'UpdateSettings']);
+
+   
+    
+});
+
+//complaint
+Route::post('/contact', [ComplaintController::class, 'store']);
+
+Route::prefix('admin/contact-messages')->middleware('isAdmin')->group(function () {
+
+    Route::get('/', [ComplaintController::class, 'index']);
+
+    Route::delete('/{id}', [ComplaintController::class, 'destroy']);
+
+    Route::patch('/{id}/status', [ComplaintController::class, 'changeStatus']);
+
+});
+Route::post('/payments', [PaymentController::class, 'store']);
+Route::prefix('admin/trips')->middleware(['isAdmin','auth:api'])->group(function() {
+    // Only statistics is needed here since index, update, and destroy are handled by apiResource('/trips') for both admins and users.
+    Route::get('/statistics', [TripController::class, 'statistics']);
+});
+
+Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
+Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
+Route::post('/payments', [PaymentController::class, 'store']);
+Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPayments']);
+Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
+Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
 
