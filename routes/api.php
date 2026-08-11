@@ -143,8 +143,10 @@ Route::middleware('auth:api')->group(function () {
    Route::post('/ai/trips', [AiTripController::class, 'generateTrip'])
 ;
 });
-Route::get('/admin/dashboard/export-pdf', [DashboardReportController::class, 'exportPdf']);
-Route::get('/admin/dashboard/statistics', [DashboardReportController::class, 'statistics']);
+Route::middleware(['auth:api', 'isAdmin'])->group(function () {
+    Route::get('/admin/dashboard/export-pdf', [DashboardReportController::class, 'exportPdf']);
+    Route::get('/admin/dashboard/statistics', [DashboardReportController::class, 'statistics']);
+});
 
 
 
@@ -194,7 +196,7 @@ Route::get('/interests', [InterestsController::class, 'index']);
  
 
 
-use GuzzleHttp\Middleware;
+
 
 
 Route::prefix('admin')->middleware(['isAdmin', 'auth:api'])->group(function () {  // usermanagement
