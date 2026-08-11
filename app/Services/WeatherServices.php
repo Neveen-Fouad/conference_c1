@@ -31,7 +31,7 @@ public function __construct()
         $query = $countryCode ? "{$city},{$countryCode}" : $city;
 
         return Cache::remember("weather_forecast_" . md5($query), now()->addHours(1), function () use ($query) {
-               $response = Http::get("{$this->baseUrl}/forecast.json", ['key' => $this->key,'q' => $query,'days' => 5,'aqi' => 'no','alerts' => 'no',]);
+               $response = Http::get("{$this->baseUrl}/forecast.json", ['key' => $this->key,'q' => $query,'days' => 14,'aqi' => 'no','alerts' => 'no',]);
 
             return $response->successful() ? $response->json() : null;
         });

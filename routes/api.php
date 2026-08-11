@@ -34,7 +34,7 @@ use App\Http\Controllers\BookingListController;
 use App\Http\Controllers\DashboardReportController;
 
 
-
+use App\Http\Controllers\TransportationController;
 
 
 
@@ -49,9 +49,7 @@ Route::post('/notifications', [NotificationsController::class, 'store']);
 
 Route::get('/notifications/client/{clientId}', [NotificationsController::class, 'index']);
 
- Route::delete('/{id}', [ComplaintController::class, 'destroy']);
 
- Route::patch('/{id}/status', [ComplaintController::class, 'changeStatus']);
 
 
 
@@ -178,7 +176,7 @@ Route::middleware('auth:api')->group(function (){
     Route::get('/reviews/my' , [ReviewController::class,'getMyReviews']);
     Route::get('/reviews/{review_id}', [ReviewController::class,'show']);
     Route::post('/reviews' , [ReviewController::class,'store']);
-    Route::put('/reviews/{review_id}' ,[ReviewController::class,'update']);
+    Route::post('/reviews/{review_id}', [ReviewController::class, 'update']);
     Route::delete('/reviews/{review_id}',[ReviewController::class, 'destroy']);
 });
 // review endpoint (admin)
@@ -228,9 +226,7 @@ Route::prefix('admin/settings')->middleware(['isAdmin', 'auth:api'])->group(func
 });
 
 //complaint
-Route::middleware('auth:api')->group(function () {
-    Route::post('/contact', [ComplaintController::class, 'store']);
-});
+Route::post('/contact', [ComplaintController::class, 'store']);
 
 Route::prefix('admin/contact-messages')->middleware(['isAdmin', 'auth:api'])->group(function () {
     Route::get('/', [ComplaintController::class, 'index']);
@@ -245,4 +241,10 @@ Route::prefix('admin/trips')->middleware(['isAdmin','auth:api'])->group(function
 
 // Duplicated payment routes removed
 Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
+
+
+
+ 
+Route::post('/transportation/tips', [TransportationController::class, 'tips']);
+ 
 

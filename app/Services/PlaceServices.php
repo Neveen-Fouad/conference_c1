@@ -106,6 +106,9 @@ public function getAttractions(string $city, ?string $interestSlug = null): arra
                 'description' => $place['shortDescription'] ?? '',
                 'rating' => $place['reviewsStats']['combinedNumericStats']['average'] ?? null,
                 'photo' => $place['primaryPhoto']['small'] ?? null,
+                'lat' => $place['latLng']['latitude'] ?? $place['latitude'] ?? null,
+                'lng' => $place['latLng']['longitude'] ?? $place['longitude'] ?? null,
+                'price' => $place['representativePrice']['chargeAmount'] ?? $place['price'] ?? 'Price not available',
             ];
         })->filter(fn ($p) => $p['name'])->unique('name')->values()->toArray();
     });

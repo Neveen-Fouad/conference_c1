@@ -5,8 +5,10 @@ namespace App\Providers;
 use App\Interfaces\FavouriteRepositoryInterface;
 use App\Interfaces\InterestRepositoryInterface;
 use App\Interfaces\ReviewRepositoryInterface;
+use App\Interfaces\TripRepositoryInterface;
 use App\Repositories\Eloquent\FavouriteRepository;
 use App\Repositories\Eloquent\ReviewRepository;
+use App\Repositories\Eloquent\TripRepository;
 
 use App\Repositories\Eloquent\InterestRepository;
 
@@ -39,6 +41,7 @@ use App\Interfaces\SettingRepositoryInterface;
 use App\Repositories\Contracts\DashboardReportRepositoryInterface;
 use App\Repositories\Eloquent\DashboardReportRepository;
 use App\Repositories\UserRepository;
+use App\Repositories\ComplaintRepository;
 use App\Services\DashboardReportService;
 
 class RepositoryServiceProvider extends ServiceProvider

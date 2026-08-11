@@ -4,16 +4,16 @@ namespace App\Repositories\Eloquent;
 
 
 use App\Models\trip;
-use App\Repositories\Contracts\TripRepositoryInterface;
+use App\Interfaces\TripRepositoryInterface;
 
 class TripRepository implements TripRepositoryInterface
 {
     /**
      * Create a new class instance.
      */
- public function __construct(protected Trip $model) {}
+ public function __construct(protected trip $model) {}
 
-    public function findAll()
+    public function getAll()
     {
         return $this->model->all();
     }
@@ -47,4 +47,12 @@ class TripRepository implements TripRepositoryInterface
         $query->where('clients.id', $userId);
     })->with('details')->get();
 }
+
+    public function statistics()
+    {
+        return [
+            'total_trips' => $this->model->count(),
+            'ai_generated_trips' => $this->model->where('is_ai_generated', true)->count()
+        ];
+    }
 }
