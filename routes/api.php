@@ -29,10 +29,9 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\FlightBookingController;
-
-
-
-
+use App\Http\Controllers\BookingListController;
+use App\Http\Controllers\DashboardReportController;
+use App\Http\Controllers\TripMemoryController;
 
 
 
@@ -150,12 +149,15 @@ Route::get('/hotels/details', [HotelController::class, 'show']);
 Route::get('/hotels/search', [SearchController::class, 'searchHotels']);
 
 Route::middleware('auth:api')->group(function () {
-   Route::apiResource('/trips',TripController::class);
-   Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
-   Route::post('/ai/trips', [AiTripController::class, 'generateTrip'])
-;
-});
+    Route::apiResource('/trips',TripController::class);
+    Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
 
+    Route::post('/ai/trips', [AiTripController::class, 'generateTrip']);
+
+    Route::post('/trips/{trip}/memories', [TripMemoryController::class, 'store']);
+    Route::get('/trips/{trip}/memories', [TripMemoryController::class, 'index']);
+    Route::delete('/trips/{trip}/memories/{memory}', [TripMemoryController::class, 'destroy']);
+});
 
 
 

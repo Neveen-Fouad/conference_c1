@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
-
 use App\Enum\FavouriteType;
 use App\Enum\ReviewType;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-    class trip extends Model
+
+class trip extends Model
 {
-    //
-     protected $fillable = [
+    protected $fillable = [
         "estimated_expenses",
         "style",
         "number_of_travels",
@@ -20,33 +21,47 @@ use Illuminate\Database\Eloquent\Model;
         "end_date",
         "budget",
         "is_ai_generated"
-
-
     ];
-    public function clients()
-{
-    return $this->belongsToMany(
-        client::class,
-        'client_has_trips',
-        'trips_id',  
-        'client_id'   
-    );
-}
-    public function details()
 
-{
-    return $this->hasMany(details::class);
-}
+    protected $casts = [
+        'start_date' => 'date',
+        'end_date' => 'date',
+    ];
+
+    public function clients(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            client::class,
+            'client_has_trips',
+            'trips_id',
+            'client_id'
+        );
+    }
+
+    public function details(): HasMany
+    {
+        return $this->hasMany(details::class);
+    }
 
     public function favourites()
     {
         return $this->hasMany(favourites::class, 'favouriteable_id')
-        ->where('type',FavouriteType::Trip->value);
+            ->where('type', FavouriteType::Trip->value);
     }
+
     public function reviews()
     {
-        return $this->hasMany(review::class,'reviewable_id')
-        ->where('type' , ReviewType::Trip->value);
+        return $this->hasMany(review::class, 'reviewable_id')
+            ->where('type', ReviewType::Trip->value);
     }
-   
+
+    public function participants(): BelongsToMany
+    {
+        return $this->belongsToMany(client::class, 'trip_participants');
+    }
+
+    public function memories(): HasMany
+    {
+        return $this->hasMany(TripMemory::class);
+    }
 }
