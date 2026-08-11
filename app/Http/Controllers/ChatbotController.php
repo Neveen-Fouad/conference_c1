@@ -13,45 +13,55 @@ class ChatbotController extends Controller
     ) {
     }
 
+    private function getClientId(Request $request): int
+    {
+        $clientId = $request->user()?->client?->id;
+
+        abort_unless(
+            $clientId,
+            404,
+            'Client profile not found.'
+        );
+
+        return $clientId;
+    }
+
     public function index(Request $request)
     {
         $conversations = $this->chatbotService
-            ->getClientConversations($request->user()->id);
+            ->getClientConversations(
+                $this->getClientId($request)
+            );
 
         return response()->json([
-
             'data' => $conversations,
         ]);
     }
 
-    public function show(
-        Request $request,
-        int $conversationId
-    ) {
-        $conversation = $this->chatbotService->getConversation(
-            $conversationId,
-            $request->user()->id
-        );
+    public function show(Request $request, int $conversationId)
+    {
+        $conversation = $this->chatbotService
+            ->getConversation(
+                $conversationId,
+                $this->getClientId($request)
+            );
 
         return response()->json([
-
             'data' => $conversation,
         ]);
     }
 
-    public function sendMessage(
-        SendChatMessageRequest $request
-    ) {
+    public function sendMessage(SendChatMessageRequest $request)
+    {
         $data = $request->validated();
 
         $result = $this->chatbotService->sendMessage(
             $data['message'],
-            $request->user()->id,
+            $this->getClientId($request),
             $data['conversation_id'] ?? null
         );
 
         return response()->json([
-
             'data' => $result,
         ], 201);
     }

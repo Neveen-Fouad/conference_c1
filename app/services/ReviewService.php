@@ -1,9 +1,9 @@
 <?php
 namespace App\Services;
-
 use App\Enum\ReviewType;
 use App\Interfaces\ReviewRepositoryInterface;
 use App\Models\trip;
+use Illuminate\Http\Request;
 
 
 
@@ -34,13 +34,18 @@ class ReviewService
     {
         return $this->reviewRepository->findById($review_id);
     }
-    public function store(array $data)
+    public function store(Request $request)
     {
+        $data=$request->validated();
         $exists = $this->reviewableExists($data['type'],$data['reviewable_id']);
         if(! $exists){
             throw new \InvalidArgumentException('The item being reviewed does not exist.');
         }
-        
+        if($request->hasFile('image')){
+            $imagePath = $request->file('image')->store('reviews', 'public');
+            $data['image'] = $imagePath;
+        }
+
         return $this->reviewRepository->create($data);
     }
     public function update(int $review_id , array $data)
@@ -55,7 +60,7 @@ class ReviewService
     {
         return $this->reviewRepository->getMyReviews();
     }
-    public function filterReviewByType(string $type , string $reviewable_id)
+    public function filterReviewByType(string $type , int $reviewable_id)
     {
         return $this->reviewRepository->filterReviewsByType($type,$reviewable_id);
     }
@@ -71,14 +76,13 @@ class ReviewService
     {
         return $this->reviewRepository->rejectReview($review_id);
     }
-    protected function reviewableExists(string $type , string $reviewable_id):bool
+    protected function reviewableExists(string $type , int $reviewable_id):bool
     {
         return match ($type){
             ReviewType::Trip->value => trip::find($reviewable_id) !== null,
             ReviewType::Hotel->value => $this->hotelService->getHotelDetails((string) $reviewable_id) !== null,
             ReviewType::Restaurant->value => $this->restaurantService->getRestaurantDetails((string) $reviewable_id) !==null,
             ReviewType::Flight->value => $this->flightService->getFlightDetails((string) $reviewable_id) !== null,
-            default => false,
         };
 
     }
