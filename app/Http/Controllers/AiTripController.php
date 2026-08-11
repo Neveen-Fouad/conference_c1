@@ -112,8 +112,7 @@ class AiTripController extends Controller
                 'lng' => data_get($a, 'longitude') ?? data_get($a, 'lng'),
             ];
         })->toArray();
-     
-        // Bug 5 fix: wrap restaurant fetch in try/catch so a failing API never kills trip generation
+
         try {
             $restaurantsResponse = $this->restaurantService->listRestaurants(['city' => $validated['destination'], 'page' => 1]);
             $rawRestaurants = $restaurantsResponse['data'] ?? $restaurantsResponse['results'] ?? $restaurantsResponse ?? [];
@@ -138,7 +137,6 @@ class AiTripController extends Controller
             // Bug 2 fix: origin must be associative ['lat' => ..., 'lng' => ...]
             $origin = ['lat' => (float)$simplifiedHotels[0]['lat'], 'lng' => (float)$simplifiedHotels[0]['lng']];
             
-            // Bug 3 + 6 fix: destinations must have 'id', 'lat', 'lng' keys, and filter out nulls
             $attractionDestinations = collect($simplifiedAttractions)
                 ->filter(fn ($a) => $a['lat'] !== null && $a['lng'] !== null)
                 ->map(fn ($a) => ['id' => $a['name'], 'lat' => (float)$a['lat'], 'lng' => (float)$a['lng']])
@@ -152,10 +150,9 @@ class AiTripController extends Controller
             $allDestinations = array_merge($attractionDestinations, $restaurantDestinations);
 
             if (!empty($allDestinations)) {
-                // Bug 1 fix: method is getTravelTimes, not calculateTravelTimes
-                $travelTimes = $this->transportationService->getTravelTimes($origin, $allDestinations, 'foot-walking');
 
-                // Bug 4 fix: results are keyed by destination id (name), extract 'label' string
+                $travelTimes = $this->transportationService->getTravelTimes($origin, $allDestinations);
+
                 foreach ($simplifiedAttractions as &$attraction) {
                     $key = $attraction['name'];
                     $attraction['travel_time_from_hotel'] = isset($travelTimes[$key]) ? $travelTimes[$key]['label'] : 'Unknown';
@@ -172,9 +169,6 @@ class AiTripController extends Controller
         
         $tripData = $this->groqService->MakeTrip($validated, $weatherForecast, $simplifiedHotels, $simplifiedAttractions, $simplifiedRestaurants);
 
-        // --- STRICT PHP MATH OVERRIDE ---
-        // LLMs are notoriously bad at strict mathematical constraints. We let the AI pick the places and estimate the individual costs, 
-        // but we override its final 'daily_cost' and 'total_estimated_cost' by doing the actual arithmetic strictly in PHP.
         $strictTotalCost = 0;
         $guestsCount = (int)($validated['number_of_travels'] ?? 1);
         
@@ -182,8 +176,7 @@ class AiTripController extends Controller
             foreach ($tripData['trip'] as &$day) {
                 $hotelPerNight = (float)($day['hotel_per_night'] ?? 0);
                 $perPersonMealsActivities = (float)($day['activities_and_meals_cost_per_person'] ?? 0);
-                
-                // Strict formula: Hotel (shared) + (Activities & Meals * Number of Travelers)
+            
                 $strictDailyCost = $hotelPerNight + ($perPersonMealsActivities * $guestsCount);
                 
                 $day['daily_cost'] = $strictDailyCost;
@@ -193,9 +186,6 @@ class AiTripController extends Controller
         }
         $tripData['total_estimated_cost'] = $strictTotalCost;
 
-        // --- STRICT BUDGET CAP SCALING ---
-        // If the AI's selected/estimated prices mathematically exceed the budget, scale them down proportionally 
-        // to guarantee the total never exceeds the user's strict limit.
         if ($tripData['total_estimated_cost'] > $validated['budget'] && $tripData['total_estimated_cost'] > 0) {
             $ratio = $validated['budget'] / $tripData['total_estimated_cost'];
             $scaledTotalCost = 0;
