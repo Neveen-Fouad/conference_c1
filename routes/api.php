@@ -196,7 +196,7 @@ Route::get('/flights', [FlightController::class, 'index']);
 Route::get('/flights/{flight}', [FlightController::class, 'show']);
 
 Route::get('/interests', [InterestsController::class, 'index']);
- 
+
 
 
 
@@ -267,7 +267,13 @@ Route::middleware('auth:api')
     });
 
 
- 
+Route::middleware('auth:api')->group(function () {
 Route::post('/transportation/tips', [TransportationController::class, 'tips']);
- 
+
+Route::get('/notifications/client/{clientId}/unread-count', [NotificationsController::class, 'unreadCount']);
+
+Route::patch('/notifications/{notificationId}/read', [NotificationsController::class, 'markAsRead']);
+
+Route::patch('/notifications/client/{clientId}/read-all', [NotificationsController::class, 'markAllAsRead']);
+});
 
