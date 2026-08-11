@@ -2,9 +2,10 @@
 
 use App\Providers\AppServiceProvider;
 use App\Providers\RepositoryServiceProvider;
+use CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider;
 
 return [
-    App\Providers\AppServiceProvider::class,
-    App\Providers\RepositoryServiceProvider::class,
-    
+    AppServiceProvider::class,
+    RepositoryServiceProvider::class,
+    CloudinaryServiceProvider::class,
 ];
