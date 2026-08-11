@@ -276,21 +276,8 @@ Route::get('/payments/client/{clientId}', [PaymentController::class, 'clientPaym
 Route::get('/payments/{paymentId}', [PaymentController::class, 'show']);
 Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
 
-Route::middleware('auth:api')
-    ->prefix('chat')
-    ->group(function () {
-        Route::get('/conversations', [
-            ChatbotController::class,
-            'index',
-        ]);
+Route::middleware('auth:api')->prefix('chat')->group(function () {Route::get('/conversations', [ChatbotController::class, 'index',]);
 
-        Route::get('/conversations/{conversationId}', [
-            ChatbotController::class,
-            'show',
-        ]);
+        Route::get('/conversations/{conversationId}', [ChatbotController::class, 'show',]);
 
-        Route::post('/messages', [
-            ChatbotController::class,
-            'sendMessage',
-        ]);
-    });
+        Route::post('/messages', [ChatbotController::class, 'sendMessage',]);});
