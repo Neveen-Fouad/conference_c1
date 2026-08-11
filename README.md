@@ -1,59 +1,112 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Smart AI Travel Planner
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A Laravel-based travel planning platform built as a case study for the Backend Development Council. Users can plan trips, search and book hotels/restaurants/flights, get AI-generated trip suggestions, and manage everything through a personal dashboard — with a full admin panel behind it.
 
-## About Laravel
+## Tech Stack
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Framework:** Laravel 12
+- **Language:** PHP 8+
+- **Database:** MySQL
+- **Auth:** Laravel Passport (`auth:api`)
+- **Frontend:** Bootstrap 5
+- **Media Storage:** Cloudinary
+- **External APIs:** RapidAPI (hotels, restaurants, flights), Countries API, Weather API
+- **Payments:** Paymob (webhook-based)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Team
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Built by **Team3** as part of a shared case study — three teams are independently building the same project brief.
 
-## Learning Laravel
+## Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Core
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Auth** — register, login, logout, token refresh, forgot/reset password, email verification
+- **Profile** — view/update profile, change password
+- **Trips** — full CRUD, AI-generated trip suggestions (`/ai/trips`), per-user trip history, day-by-day trip details
+- **Hotels / Restaurants / Flights** — search, details, and booking, sourced from external APIs rather than stored locally
+- **Interests & Favourites** — users tag interests and favourite destinations/hotels/etc., used to personalize results
+- **Reviews** — users leave reviews on trips; admins approve or reject before they go public
+- **Notifications** — per-client notification feed, including unread state
+- **Payments** — Paymob integration with webhook handling for payment confirmation
+- **Contact / Complaints** — public contact form; admins view, respond to, and manage status
+- **Dashboard** — saved trips, favourite destinations, booking history, profile settings, personal statistics
+- **Admin Panel** — user & admin management, site settings, interests management, revenue tracking, PDF statistics export
+- **Countries & Explore** — destination data to support trip planning and discovery
 
-## Laravel Sponsors
+### New: Trip Time Capsule 🎁
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+A feature built specifically to give the app a "family" angle no other team is likely to have.
 
-### Premium Partners
+Any client on a shared trip can quietly add a photo, note, or voice memo to the trip at any point — but nobody, including the person who added it, can see anyone else's contributions until the trip actually ends. Once the end date passes, the whole capsule unlocks at once: every photo and note from every family member, revealed together, like a small shared movie of the trip nobody saw being made.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+**How it works:**
+- Media (photos/voice notes) is uploaded directly to **Cloudinary** — nothing is stored on the app's own server.
+- Access is scoped to actual trip members, using the existing `client_has_trips` relationship — no separate invite system needed.
+- The "unlock" isn't a manual action; it's simply time-gated (`start_date + number_of_days`), so it happens naturally with no extra step for the user.
 
-## Contributing
+**Endpoints:**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/trips/{trip}/memories` | Add a photo, note, or voice memo to a trip's capsule |
+| `GET` | `/trips/{trip}/memories` | View the capsule — own contributions + a teaser count before unlock, full capsule after |
+| `DELETE` | `/trips/{trip}/memories/{memory}` | Remove your own contribution before the trip ends |
 
-## Code of Conduct
+All three require authentication and trip membership.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## API Documentation
 
-## Security Vulnerabilities
+Full endpoint-by-endpoint reference (request bodies, params, response codes) is generated from the project's OpenAPI spec — see `Conference1_API_Documentation.md`.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+> ⚠️ **Known spec issue:** two Complaint routes (`DELETE`/`PATCH status`) currently show up without their `/admin/contact-messages` prefix in the generated spec, due to a route-naming collision. The actual routes in `routes/api.php` are correctly prefixed — this only affects the auto-generated documentation, not the live API.
 
-## License
+## Getting Started
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+git clone <repo-url>
+cd conference_c1
+composer install
+cp .env.example .env
+php artisan key:generate
+```
+
+Configure your `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_DATABASE=your_database
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+
+CLOUDINARY_URL=cloudinary://API_KEY:API_SECRET@CLOUD_NAME
+```
+
+Then:
+
+```bash
+php artisan migrate
+php artisan passport:install
+php artisan serve
+```
+
+Base URL (local): `http://127.0.0.1:8000/api`
+
+## Project Structure Highlights
+
+```
+app/
+  Http/Controllers/   → thin controllers, one per resource
+  Models/              → Eloquent models (Trip, Client, Booking, TripMemory, ...)
+  Services/            → business logic layer (e.g. TripMemoryService)
+database/migrations/   → schema history
+routes/api.php         → all API routes
+config/filesystems.php → includes the 'cloudinary' disk for media uploads
+```
+
+## Notes for Contributors
+
+- Auth middleware is `auth:api` (Passport) throughout — not Sanctum.
+- Admin-only routes are additionally protected with an `isAdmin` middleware.
+- File uploads (photos/voice notes) go through the `cloudinary` filesystem disk, not local storage — use `$file->store($path, 'cloudinary')`, not `Storage::disk('public')`.
+- The `trips` table currently ties a trip to a single `client_id`; multi-participant trips (used by Time Capsule) go through the separate `client_has_trips` pivot table.
