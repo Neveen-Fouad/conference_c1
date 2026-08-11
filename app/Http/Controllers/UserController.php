@@ -60,4 +60,11 @@ public function destroyAdmin($id)
         $this->userRepository->delete($id)
     );
 }
+
+public function statistics()
+{
+    return response()->json(
+        $this->userRepository->statistics()
+    );
+}
 }

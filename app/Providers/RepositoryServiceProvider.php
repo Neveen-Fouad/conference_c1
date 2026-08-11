@@ -12,6 +12,7 @@ use App\Repositories\Eloquent\TripRepository;
 
 use App\Repositories\Eloquent\InterestRepository;
 
+use App\Repositories\SettingRepository;
 use Illuminate\Support\ServiceProvider;
 
 use App\Interfaces\NotificationRepositoryInterface;
