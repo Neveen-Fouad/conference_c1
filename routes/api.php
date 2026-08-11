@@ -6,7 +6,7 @@ use App\Http\Controllers\AdminInterestController;
 use App\Http\Controllers\AiTripController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\TripController;
-use GuzzleHttp\Middleware;
+use App\Http\Controllers\ChatbotController;use GuzzleHttp\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +36,7 @@ use App\Http\Controllers\DashboardReportController;
 
 use App\Http\Controllers\TransportationController;
 
+use App\Http\Controllers\TripMemoryController;
 
 
 
@@ -95,7 +96,7 @@ Route::prefix('dashboard')->middleware('auth:api')->group(function () {
     Route::patch('/profile-settings', [DashboardController::class, 'updateProfileSettings']);
     Route::get('/statistics', [DashboardController::class, 'getStatistics']);
 });
-// Review endpoints (broken duplicated versions removed)
+
 // favourite endpoint (user)
 Route::middleware(['auth:api','IsActive','VerifiedEmail'])->group(function(){
     Route::get('/favourites',[FavouritesController::class,'index']);
@@ -136,10 +137,14 @@ Route::get('/hotels/details', [HotelController::class, 'show']);
 Route::get('/hotels/search', [SearchController::class, 'searchHotels']);
 
 Route::middleware('auth:api')->group(function () {
-   Route::apiResource('/trips',TripController::class);
-   Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
-   Route::post('/ai/trips', [AiTripController::class, 'generateTrip'])
-;
+    Route::apiResource('/trips',TripController::class);
+    Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
+
+    Route::post('/ai/trips', [AiTripController::class, 'generateTrip']);
+
+    Route::post('/trips/{trip}/memories', [TripMemoryController::class, 'store']);
+    Route::get('/trips/{trip}/memories', [TripMemoryController::class, 'index']);
+    Route::delete('/trips/{trip}/memories/{memory}', [TripMemoryController::class, 'destroy']);
 });
 Route::middleware(['auth:api', 'isAdmin'])->group(function () {
     Route::get('/admin/dashboard/export-pdf', [DashboardReportController::class, 'exportPdf']);
@@ -221,8 +226,8 @@ Route::prefix('admin/settings')->middleware(['isAdmin', 'auth:api'])->group(func
     Route::post('/', [SettingController::class, 'storeSettings']);
     Route::patch('/{id}', [SettingController::class, 'UpdateSettings']);
 
-   
-    
+
+
 });
 
 //complaint
@@ -242,6 +247,24 @@ Route::prefix('admin/trips')->middleware(['isAdmin','auth:api'])->group(function
 // Duplicated payment routes removed
 Route::post('/paymob/webhook', [PaymobWebhookController::class, 'handle']);
 
+Route::middleware('auth:api')
+    ->prefix('chat')
+    ->group(function () {
+        Route::get('/conversations', [
+            ChatbotController::class,
+            'index',
+        ]);
+
+        Route::get('/conversations/{conversationId}', [
+            ChatbotController::class,
+            'show',
+        ]);
+
+        Route::post('/messages', [
+            ChatbotController::class,
+            'sendMessage',
+        ]);
+    });
 
 
  

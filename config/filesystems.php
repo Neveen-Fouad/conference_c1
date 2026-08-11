@@ -36,6 +36,7 @@ return [
             'serve' => true,
             'throw' => false,
             'report' => false,
+            
         ],
 
         'public' => [
@@ -46,6 +47,10 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        'cloudinary' => [
+           'driver' => 'cloudinary',
+           'url' => env('CLOUDINARY_URL'),
+     ],
 
         's3' => [
             'driver' => 's3',

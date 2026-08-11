@@ -35,7 +35,10 @@ use App\Repositories\Eloquent\BookingRepository;
 
 use App\Repositories\Contracts\FlightsRepositoryInterface;
 use App\Repositories\Eloquent\FlightsRepository;
-use App\Interfaces\UserRepositoryInterface;
+use App\Repositories\Contracts\ChatConversationRepositoryInterface;
+use App\Repositories\Contracts\ChatMessageRepositoryInterface;
+use App\Repositories\Eloquent\ChatConversationRepository;
+use App\Repositories\Eloquent\ChatMessageRepository;use App\Interfaces\UserRepositoryInterface;
 use App\Interfaces\ComplaintRepositoryInterface;
 use App\Interfaces\SettingRepositoryInterface;
 use App\Repositories\Contracts\DashboardReportRepositoryInterface;
@@ -104,14 +107,24 @@ class RepositoryServiceProvider extends ServiceProvider
         // $this->app->bind(
         //     FlightsRepositoryInterface::class,
         //     FlightsRepository::class
-            
+
         // );
+        $this->app->bind(
+            ChatConversationRepositoryInterface::class,
+            ChatConversationRepository::class
+        );
+
+        $this->app->bind(
+            ChatMessageRepositoryInterface::class,
+            ChatMessageRepository::class
+        );
 
         $this->app->bind(
             AuthRepositoryInterface::class,
             AuthRepository::class
         );
-         $this->app->bind(
+
+              $this->app->bind(
             UserRepositoryInterface::class,
             UserRepository::class
         );
@@ -122,7 +135,7 @@ class RepositoryServiceProvider extends ServiceProvider
 
         $this->app->bind(
             SettingRepositoryInterface::class,
-            SettingRepositry::class
+            SettingRepository::class
         );
         $this->app->bind(
             TripRepositoryInterface::class,
@@ -134,6 +147,16 @@ class RepositoryServiceProvider extends ServiceProvider
            DashboardReportRepository::class
 );
     }
+    
+
+    
+
+
+
+
+
+
+
 
     public function boot(): void
     {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Interfaces\TripRepositoryInterface;
 use App\Http\Requests\UpdateTripRequest;
 use App\Http\Requests\StoreTripRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use App\Models\trip;
 
@@ -17,7 +18,7 @@ class TripController extends Controller
     }
 
     public function index(){
-        $user = auth()->user();
+        $user = Auth::user();
         if ($user->role === 'admin') {
             $trips = $this->tripRepository->getAll();
         } else {
@@ -58,7 +59,7 @@ class TripController extends Controller
     }
 
     public function getTripsByUserId($userId){
-        $user = auth()->user();
+        $user = Auth::user();
         if ($user->role !== 'admin' && $user->id != $userId) {
             abort(403, 'Unauthorized action.');
         }
