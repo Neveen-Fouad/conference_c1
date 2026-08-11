@@ -25,6 +25,7 @@ class GroqService
         $destination = $TripRequest['destination'] ?? $TripRequest->destination;
         $budget = $TripRequest['budget'] ?? $TripRequest->budget;
         $guests = $TripRequest['number_of_travels'] ?? $TripRequest->number_of_travels;
+        $style = $TripRequest['style'] ?? $TripRequest->style;
         
         $contextData = json_encode([
             // 'city' => $city,
@@ -51,6 +52,8 @@ class GroqService
         4. suggest attractions based on the available attractions in the context data.
         5. suggest lunch and dinner options based on the available_restaurants in the context data.
         6. You MUST explicitly use the 'travel_time_from_hotel' data provided in both the available_attractions and available_restaurants context when generating the route_notes for each day.
+        7. You MUST NOT suggest any attractions or restaurants that are NOT in the context data.
+        8. you SHOULD keep in mind the 'style' of the trip when suggesting attractions and restaurants.
 
         Context Data:
         {$contextData}
@@ -60,6 +63,7 @@ class GroqService
   \"trip\": [
     {
       \"day\": 1,
+      \"day_title\": \"a catchy and descriptive title for this day's itinerary\",
       \"weather_note\": \"brief note on today's weather based on logical climate estimation\",
       \"weather_temperature\": \"estimated average degrees (C or F)\",
       \"hotel_name\": \"name of the hotel\",

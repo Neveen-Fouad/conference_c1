@@ -13,6 +13,7 @@ use App\Services\SearchService;
 use App\Services\TransportationService;
 use App\Services\RestaurantService;
 use App\Services\WeatherServices;
+use App\Services\NotificationService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
@@ -28,6 +29,7 @@ class AiTripController extends Controller
         protected SearchService $searchService,
         protected TransportationService $transportationService,
         protected RestaurantService $restaurantService,
+        protected NotificationService $notificationService,
         protected TripRepository $trips
     ) {}
 
@@ -41,7 +43,8 @@ class AiTripController extends Controller
             'budget'      => $validated['budget'],
             'check_in'    => $validated['start_date'],
             'check_out'   => $validated['end_date'],
-            'guests'      => $validated['number_of_travels']
+            'guests'      => $validated['number_of_travels'],
+            'style'       => $validated['style'],
         ];
         $hotelResult = $this->searchService->searchHotels($hotelFilters);
         
@@ -134,7 +137,7 @@ class AiTripController extends Controller
         })->toArray();
 
         if (!empty($simplifiedHotels) && isset($simplifiedHotels[0]) && $simplifiedHotels[0]['lat'] && $simplifiedHotels[0]['lng']) {
-            // Bug 2 fix: origin must be associative ['lat' => ..., 'lng' => ...]
+
             $origin = ['lat' => (float)$simplifiedHotels[0]['lat'], 'lng' => (float)$simplifiedHotels[0]['lng']];
             
             $attractionDestinations = collect($simplifiedAttractions)
@@ -204,19 +207,22 @@ class AiTripController extends Controller
         // --------------------------------
 
         $trip = DB::transaction(function () use ($validated, $tripData, $request) {
-        $client = Client::where('user_id', $request->user()->id)->firstOrFail();
+        $client = Client::where('user_id', $request->user()->id)->first();
         $validated['is_ai_generated'] = true;
         $validated['estimated_expenses'] = $tripData['total_estimated_cost'] ?? 0;
         
         $tripRecord = $this->trips->create($validated);
-        $tripRecord->clients()->attach($client->id);
+        if ($client) {
+            $tripRecord->clients()->attach($client->id);
+            $this->notificationService->sendTripCreatedNotification($client);
+        }
 
         foreach ($tripData['trip'] ?? [] as $day) {
             $day['hotel'] = $tripData['best_hotel'] ?? 'Not specified';
             
             $tripRecord->details()->create([
                 'day'      => $day['day'],
-                'title'    => $day['weather_note'] ?? ('Day ' . $day['day']), 
+                'title'    => $day['day_title'] ?? $day['weather_note'] ?? ('Day ' . $day['day']), 
                 'expenses' => $day['daily_cost'] ?? 0,
                 'plan'     => json_encode($day), 
             ]);
