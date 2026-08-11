@@ -70,12 +70,16 @@ class AuthRepository implements AuthRepositoryInterface{
         return true;
     }
 
-    public function resendVerificationEmail(User $user){
-        if (!$user->hasVerifiedEmail()){
-            $user->sendEmailVerificationNotification();
+    public function resetPassword(array $data){
+    return Password::reset(
+        $data,
+        function (User $user, string $password) {
+            $user->forceFill([
+                'password' => Hash::make($password),
+            ])->save();
         }
-        return true;
-    }
+    );
+}
 
     public function forgotPassword(array $data){
         return Password::sendResetLink([

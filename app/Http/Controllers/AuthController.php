@@ -10,6 +10,7 @@ use App\Http\Requests\ForgotPasswordRequest;
 use App\Http\Requests\ResetPasswordRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Password;
 
 class AuthController extends Controller
 {
@@ -93,17 +94,22 @@ class AuthController extends Controller
     }
 
     public function resetPassword(ResetPasswordRequest $request): JsonResponse{
-        $this->authRepository->resetPassword($request->only(
-            'email',
-            'token',
-            'password',
-            'password_confirmation'
-        ));
+        $status = $this->authRepository->resetPassword($request->only(
+    'email',
+    'token',
+    'password',
+    'password_confirmation'
+));
 
-        return response()->json([
-            'message' => 'Password reset successfully.',
-        ]);
-    
+if ($status !== Password::PASSWORD_RESET) {
+    return response()->json([
+        'message' => __($status),
+    ], 400);
+}
+
+return response()->json([
+    'message' => 'Password reset successfully.',
+]);
 }
 
 public function refresh(): JsonResponse{
