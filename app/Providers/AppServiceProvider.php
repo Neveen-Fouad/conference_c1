@@ -17,8 +17,6 @@ use App\Services\DashboardReportService;
 use App\Repositories\UserRepository;
 use App\Repositories\ComplaintRepository;
 use App\Repositories\SettingRepository;
-use App\Interfaces\TripRepositoryInterface;
-use App\Repositories\TripRepository;
 
 class AppServiceProvider extends ServiceProvider
 {

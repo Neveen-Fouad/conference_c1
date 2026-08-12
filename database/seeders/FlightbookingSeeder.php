@@ -21,8 +21,8 @@ class FlightbookingSeeder extends Seeder
             return;
         }
 
-        $cabinClasses = ['economy', 'premium_economy', 'business', 'first'];
-        $statuses = ['pending', 'confirmed', 'cancelled'];
+        $cabinClasses = ['luxury', 'standard', 'economy'];
+        $statuses = ['pending', 'confirmed', 'canceled'];
         $providers = ['Amadeus', 'Skyscanner', 'Sabre'];
 
         for ($i = 0; $i < 20; $i++) {
@@ -31,10 +31,14 @@ class FlightbookingSeeder extends Seeder
             $cabinClass = $cabinClasses[array_rand($cabinClasses)];
             $passengers = rand(1, 4);
 
+            $provider = $providers[array_rand($providers)];
+
             bookings::create([
                 'client_id' => $clientIds->random(),
                 'type' => 'flight',
-                'provider' => $providers[array_rand($providers)],
+                'booking_type' => 'flight',
+                'provider' => $provider,
+                'provider_name' => $provider,
                 'external_reference_id' => (string) rand(100000, 999999),
                 'number_of_days' => $departureDate->diffInDays($returnDate),
                 'check_in_date' => $departureDate,

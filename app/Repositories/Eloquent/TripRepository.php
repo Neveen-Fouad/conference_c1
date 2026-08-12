@@ -57,7 +57,15 @@ class TripRepository implements TripRepositoryInterface
     {
         return [
             'total_trips' => $this->model->count(),
-            'ai_generated_trips' => $this->model->where('is_ai_generated', true)->count()
+            'monthly_trips' => $this->model->whereMonth('created_at', now()->month)->whereYear('created_at', now()->year)->count(),
+            'favorite_trips' => $this->model->where('is_fav', true)->count(),
+            'average_budget' => $this->model->avg('budget'),
+            'average_trip_duration' => $this->model->selectRaw('AVG(DATEDIFF(end_date, start_date)) as avg_duration')->value('avg_duration'),
         ];
     }
+
+    public function getPreMadeTrips()
+{
+    return $this->model->doesntHave('clients')->with('details')->get();
+}
 }

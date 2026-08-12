@@ -21,8 +21,8 @@ class HotelbookingSeeder extends Seeder
             return;
         }
 
-        $roomClasses = ['standard', 'deluxe', 'suite', 'executive'];
-        $statuses = ['pending', 'confirmed', 'cancelled'];
+        $roomClasses = ['luxury', 'standard', 'economy'];
+        $statuses = ['pending', 'confirmed', 'canceled'];
         $providers = ['Hotels.com', 'Booking.com', 'Expedia'];
 
         for ($i = 0; $i < 20; $i++) {
@@ -31,10 +31,13 @@ class HotelbookingSeeder extends Seeder
             $roomClass = $roomClasses[array_rand($roomClasses)];
             $guests = rand(1, 4);
 
+            $provider = $providers[array_rand($providers)];
             bookings::create([
                 'client_id' => $clientIds->random(),
                 'type' => 'hotel',
-                'provider' => $providers[array_rand($providers)],
+                'booking_type' => 'hotel',
+                'provider' => $provider,
+                'provider_name' => $provider,
                 'external_reference_id' => (string) rand(100000, 999999),
                 'number_of_days' => $checkInDate->diffInDays($checkOutDate),
                 'check_in_date' => $checkInDate,

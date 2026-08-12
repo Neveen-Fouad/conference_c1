@@ -81,4 +81,10 @@ class TripController extends Controller
             $this->tripRepository->statistics()
         );
     }
+
+    public function getPreMadeTrips()
+    {
+        $trips = $this->tripRepository->getPreMadeTrips();
+        return response()->json($trips);
+    }
 }
