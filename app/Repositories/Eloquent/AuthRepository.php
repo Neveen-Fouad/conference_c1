@@ -87,16 +87,16 @@ class AuthRepository implements AuthRepositoryInterface{
         ]);
     }
 
-    public function resetPassword(array $data){
-        return Password::reset(
-            $data,
-            function (User $user, string $password){
-                $user->forceFill([
-                    'password' => Hash::make($password),
-                ])->save();
-            }
-        );
-    }
+    // public function resetPassword(array $data){
+    //     return Password::reset(
+    //         $data,
+    //         function (User $user, string $password){
+    //             $user->forceFill([
+    //                 'password' => Hash::make($password),
+    //             ])->save();
+    //         }
+    //     );
+    // }
     
     public function refresh(){
     return JWTAuth::refresh(JWTAuth::getToken());
