@@ -238,3 +238,9 @@ Route::middleware('auth:api')->group(function () {
     Route::patch('/notifications/{notificationId}/read', [NotificationsController::class, 'markAsRead']);
     Route::patch('/notifications/client/{clientId}/read-all', [NotificationsController::class, 'markAllAsRead']);
 });
+//admin listbooking
+Route::middleware(['auth:api', 'isAdmin'])->prefix('admin/bookings')->group(function () {
+    Route::get('/{clientId}', [BookingListController::class, 'adminAll']);
+    Route::get('/{clientId}/hotels', [BookingListController::class, 'adminHotels']);
+    Route::get('/{clientId}/flights', [BookingListController::class, 'adminFlights']);
+});

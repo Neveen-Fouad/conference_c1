@@ -8,6 +8,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\ForgotPasswordRequest;
 use App\Http\Requests\ResetPasswordRequest;
+use App\Services\NotificationService;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Password;
@@ -15,26 +16,11 @@ use Illuminate\Support\Facades\Password;
 class AuthController extends Controller
 {
     protected AuthRepositoryInterface $authRepository;
+    protected NotificationService $notificationService;
 
-
-    public function __construct(AuthRepositoryInterface $authRepository){
+    public function __construct(AuthRepositoryInterface $authRepository, NotificationService $notificationService){
         $this->authRepository = $authRepository;
-    }
-
-   
-    function register(RegisterRequest $request): JsonResponse{
-        $data = $this->authRepository->register($request->validated());
-
-        $data->sendEmailVerificationNotification();
-
-        $token = auth('api')->login($data);
-
-        return response()->json([
-            'message' => 'User registered successfully. Please verify your email.',
-            'data' => [
-                'token' => $token,
-            ],
-        ], 201);
+        $this->notificationService = $notificationService;
     }
 
     public function login(LoginRequest $request): JsonResponse{
@@ -45,6 +31,12 @@ class AuthController extends Controller
             ], 401);
         }
 
+        $this->notificationService->createNotification([
+            'client_id'   => auth('api')->id(),
+            'type'        => 'login',
+            'description' => 'A new login to your account was detected.',
+        ]);
+
         return response()->json([
             'message' => 'Login successful.',
             'data' => [
@@ -54,7 +46,6 @@ class AuthController extends Controller
             ],
         ]);
     }
-
     public function logout(): JsonResponse{
         $this->authRepository->logout();
 
@@ -123,3 +114,6 @@ public function refresh(): JsonResponse{
     ]);
 }
 }
+
+ 
+    
