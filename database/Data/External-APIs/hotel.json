@@ -1,0 +1,7160 @@
+[
+  {
+    "name": "white swan hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 17.0,
+    "rating": 5.0,
+    "review_count": 11,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hazel Spaces Heliopolis",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 31.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "GA PLUS",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 53.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Brassbell Downtown Maspero",
+    "city": "Cairo",
+    "neighborhood": "Downtown Cairo",
+    "distance_km": null,
+    "price_per_night": 92.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Prime Select One Kattameya",
+    "city": "Cairo",
+    "neighborhood": "Nasr City",
+    "distance_km": null,
+    "price_per_night": 29.0,
+    "rating": 5.0,
+    "review_count": 3,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Cairo Soul ",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 54.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hibiscus Haven Suite ",
+    "city": "Cairo",
+    "neighborhood": "Maadi",
+    "distance_km": null,
+    "price_per_night": 57.0,
+    "rating": 5.0,
+    "review_count": 2,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Prime Select Kattameya Bavaria",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 29.0,
+    "rating": 5.0,
+    "review_count": 4,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Champollion Hostel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 46.0,
+    "rating": 5.0,
+    "review_count": 13,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Cozy apartment Maadi Ring Road &smart TV",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 26.0,
+    "rating": 5.0,
+    "review_count": 2,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Landmark Hostel Cairo",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 37.0,
+    "rating": 5.0,
+    "review_count": 4,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "paris east hostel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 51.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "HEAVEN HOSTEL",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 51.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Mazaya Pyramids View Inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 35.0,
+    "rating": 5.0,
+    "review_count": 5,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "PALMERAS PYRAMIDS HOTEL",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 49.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [
+      "Breakfast included",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Night Pyramids Inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 28.0,
+    "rating": 5.0,
+    "review_count": 2,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "King Pyramids View Hotel",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 63.0,
+    "rating": 5.0,
+    "review_count": 7,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "NOMA New Cairo",
+    "city": "Cairo",
+    "neighborhood": "New Cairo",
+    "distance_km": null,
+    "price_per_night": 43.0,
+    "rating": 5.0,
+    "review_count": 4,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pyramids Land View",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 26.0,
+    "rating": 5.0,
+    "review_count": 4,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Alashrafia Smart Residence",
+    "city": "Cairo",
+    "neighborhood": "Al Duqqi",
+    "distance_km": null,
+    "price_per_night": 90.0,
+    "rating": 5.0,
+    "review_count": 3,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pyramids Pavilion Boutique Hotel",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 51.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Mak Pyramids View",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 25.0,
+    "rating": 5.0,
+    "review_count": 3,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Zayed Plaza",
+    "city": "Cairo",
+    "neighborhood": "Sheikh Zayed City",
+    "distance_km": null,
+    "price_per_night": 39.0,
+    "rating": 5.0,
+    "review_count": 5,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pyramids On The Spot Inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 22.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Noya By Dhara Hotels",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 55.0,
+    "rating": 5.0,
+    "review_count": 4,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Brassbell l Sheikh Zayed l Aeon Towers ",
+    "city": "Cairo",
+    "neighborhood": "6th of October City",
+    "distance_km": null,
+    "price_per_night": 68.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Crown Hotel ",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 42.0,
+    "rating": 4.9,
+    "review_count": 48,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Gamaleya Boutique Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 62.0,
+    "rating": 4.9,
+    "review_count": 9,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The Kmt collection Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 6.0,
+    "rating": 4.9,
+    "review_count": 6,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Galaxy Pyramids View INN",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 142.0,
+    "rating": 4.9,
+    "review_count": 51,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Three Pyramids Boutique Hotel",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 40.0,
+    "rating": 4.9,
+    "review_count": 17,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Waldorf Astoria Cairo Heliopolis",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 230.0,
+    "rating": 4.8,
+    "review_count": 208,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Sama Hotel Sherif Bash",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 39.0,
+    "rating": 4.8,
+    "review_count": 105,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The St. Regis Cairo",
+    "city": "Cairo",
+    "neighborhood": "Downtown Cairo",
+    "distance_km": null,
+    "price_per_night": 343.0,
+    "rating": 4.8,
+    "review_count": 219,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hathor House",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 16.0,
+    "rating": 4.8,
+    "review_count": 46,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Mazeej Balad - Boutique Hotel - Adult Only",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 397.0,
+    "rating": 4.8,
+    "review_count": 5,
+    "amenities": [
+      "Breakfast included",
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Layla Hostel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 12.0,
+    "rating": 4.8,
+    "review_count": 19,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Crowne Plaza West Cairo Arkan by IHG",
+    "city": "Cairo",
+    "neighborhood": "Sheikh Zayed City",
+    "distance_km": null,
+    "price_per_night": 181.0,
+    "rating": 4.8,
+    "review_count": 77,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Topview Pyramids And Museum",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 35.0,
+    "rating": 4.8,
+    "review_count": 30,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Life Pyramids Inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 52.0,
+    "rating": 4.8,
+    "review_count": 33,
+    "amenities": [
+      "Breakfast included",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Khan Duidar Inn - Pyramids View Rooftop",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 26.0,
+    "rating": 4.8,
+    "review_count": 124,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pyramids planet hotel",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 14.0,
+    "rating": 4.8,
+    "review_count": 16,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Brassbell  Giza l Near Saudi Embassy ",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 54.0,
+    "rating": 4.8,
+    "review_count": 4,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Méridien Cairo Airport",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 113.0,
+    "rating": 4.7,
+    "review_count": 1170,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Soft Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 27.0,
+    "rating": 4.7,
+    "review_count": 37,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Ocean Apartments",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 163.0,
+    "rating": 4.7,
+    "review_count": 63,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "El Otel Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 24.0,
+    "rating": 4.7,
+    "review_count": 11,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The Expert",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 82.0,
+    "rating": 4.7,
+    "review_count": 3,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Boutique Residence Layal-Lemon Spaces",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 92.0,
+    "rating": 4.7,
+    "review_count": 3,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Cairo Hub Hostel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 11.0,
+    "rating": 4.7,
+    "review_count": 3,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Four Seasons Hotel Cairo at First Residence",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 449.0,
+    "rating": 4.7,
+    "review_count": 574,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Neom Pyramids Valley Boutique hotel",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 50.0,
+    "rating": 4.7,
+    "review_count": 52,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Jimmy Pyramids Hotel ",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 45.0,
+    "rating": 4.7,
+    "review_count": 23,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Gold's Pyramids Hotel",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 23.0,
+    "rating": 4.7,
+    "review_count": 24,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Royal pyramids Inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 13.0,
+    "rating": 4.7,
+    "review_count": 96,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Valencia Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 19.0,
+    "rating": 4.6,
+    "review_count": 1000,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Four Seasons Hotel Cairo at Nile Plaza",
+    "city": "Cairo",
+    "neighborhood": "Garden City",
+    "distance_km": null,
+    "price_per_night": 381.0,
+    "rating": 4.6,
+    "review_count": 460,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Veda HOTEL",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 30.0,
+    "rating": 4.6,
+    "review_count": 49,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hilton Cairo Nile Maadi",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 140.0,
+    "rating": 4.6,
+    "review_count": 120,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Royal Cairo Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 16.0,
+    "rating": 4.6,
+    "review_count": 17,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Staybridge Suites Cairo Citystars by IHG",
+    "city": "Cairo",
+    "neighborhood": "Nasr City",
+    "distance_km": null,
+    "price_per_night": 144.0,
+    "rating": 4.6,
+    "review_count": 132,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Kemet Hotel TS",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 147.0,
+    "rating": 4.6,
+    "review_count": 5,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Villa Belle Epoque",
+    "city": "Cairo",
+    "neighborhood": "Maadi",
+    "distance_km": null,
+    "price_per_night": 129.0,
+    "rating": 4.6,
+    "review_count": 205,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Holiday Inn Hotel & Suites Cairo Maadi by IHG",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 151.0,
+    "rating": 4.6,
+    "review_count": 60,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The Nile Ritz-Carlton, Cairo",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 341.0,
+    "rating": 4.6,
+    "review_count": 581,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Philo Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 32.0,
+    "rating": 4.6,
+    "review_count": 38,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Prime Residence Heliopolis",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 44.0,
+    "rating": 4.6,
+    "review_count": 107,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Atum",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 42.0,
+    "rating": 4.6,
+    "review_count": 40,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Holy Sheet Hostel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 6.0,
+    "rating": 4.6,
+    "review_count": 41,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Cairo Crown Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 25.0,
+    "rating": 4.6,
+    "review_count": 5,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Heritage Hostel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 6.0,
+    "rating": 4.6,
+    "review_count": 9,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Great Pyramid Inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 104.0,
+    "rating": 4.6,
+    "review_count": 1002,
+    "amenities": [
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hyatt Regency Cairo West",
+    "city": "Cairo",
+    "neighborhood": "6th of October City",
+    "distance_km": null,
+    "price_per_night": 140.0,
+    "rating": 4.6,
+    "review_count": 233,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Nut Pyramids View",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 35.0,
+    "rating": 4.6,
+    "review_count": 46,
+    "amenities": [
+      "Breakfast included",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Marriott Mena House Cairo",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 362.0,
+    "rating": 4.6,
+    "review_count": 884,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Mazar Pyramids Hotel",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 62.0,
+    "rating": 4.6,
+    "review_count": 71,
+    "amenities": [
+      "Breakfast included",
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pyramids View inn Bed & Breakfast",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 69.0,
+    "rating": 4.6,
+    "review_count": 1003,
+    "amenities": [
+      "Breakfast included",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Cairo Taj Hotels & Suites - Dokki",
+    "city": "Cairo",
+    "neighborhood": "Al Duqqi",
+    "distance_km": null,
+    "price_per_night": 52.0,
+    "rating": 4.6,
+    "review_count": 10,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "A pyramids view",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 70.0,
+    "rating": 4.6,
+    "review_count": 29,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Prime Residence New Cairo",
+    "city": "Cairo",
+    "neighborhood": "New Cairo",
+    "distance_km": null,
+    "price_per_night": 42.0,
+    "rating": 4.6,
+    "review_count": 85,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "King Khafren View INN",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 28.0,
+    "rating": 4.6,
+    "review_count": 116,
+    "amenities": [
+      "Breakfast included",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Giza Palace  Hotel & Spa – The Leading Hotels of the World",
+    "city": "Cairo",
+    "neighborhood": "Sheikh Zayed City",
+    "distance_km": null,
+    "price_per_night": 276.0,
+    "rating": 4.6,
+    "review_count": 19,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "New Museum Guest House Pyramids View",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 35.0,
+    "rating": 4.6,
+    "review_count": 310,
+    "amenities": [
+      "Breakfast included",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Guardian Guest House",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 41.0,
+    "rating": 4.6,
+    "review_count": 578,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Kempinski Nile Hotel Cairo",
+    "city": "Cairo",
+    "neighborhood": "Garden City",
+    "distance_km": null,
+    "price_per_night": 137.0,
+    "rating": 4.5,
+    "review_count": 1000,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "New President Hotel Cairo",
+    "city": "Cairo",
+    "neighborhood": "Zamalek",
+    "distance_km": null,
+    "price_per_night": 58.0,
+    "rating": 4.5,
+    "review_count": 164,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Cairo casa inn",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 15.0,
+    "rating": 4.5,
+    "review_count": 42,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Sofitel Cairo Downtown Nile",
+    "city": "Cairo",
+    "neighborhood": "Downtown Cairo",
+    "distance_km": null,
+    "price_per_night": 175.0,
+    "rating": 4.5,
+    "review_count": 347,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Future Hostel ",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 26.0,
+    "rating": 4.5,
+    "review_count": 12,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Brassbell | DT | Hannaux | Tahrir Sq",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 37.0,
+    "rating": 4.5,
+    "review_count": 2,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "YOU Cairo Nile View Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 71.0,
+    "rating": 4.5,
+    "review_count": 10,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Nile Suites Plaza Apartments",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 89.0,
+    "rating": 4.5,
+    "review_count": 23,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Longchamps Hotel",
+    "city": "Cairo",
+    "neighborhood": "Zamalek",
+    "distance_km": null,
+    "price_per_night": 72.0,
+    "rating": 4.5,
+    "review_count": 8,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Brassbell Zamalek Om Kolthoom",
+    "city": "Cairo",
+    "neighborhood": "Zamalek",
+    "distance_km": null,
+    "price_per_night": 117.0,
+    "rating": 4.5,
+    "review_count": 4,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "jordan hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 24.0,
+    "rating": 4.5,
+    "review_count": 2,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The Australian Hostel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 19.0,
+    "rating": 4.5,
+    "review_count": 2,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Castle Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 15.0,
+    "rating": 4.5,
+    "review_count": 2,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "JW Marriott Hotel Cairo",
+    "city": "Cairo",
+    "neighborhood": "New Cairo",
+    "distance_km": null,
+    "price_per_night": 216.0,
+    "rating": 4.5,
+    "review_count": 551,
+    "amenities": [
+      "Pool",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Mamlouk Pyramids Hotel ",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 49.0,
+    "rating": 4.5,
+    "review_count": 393,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pyramids Spiritual Gate ",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 35.0,
+    "rating": 4.3,
+    "review_count": 7,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Renaissance Cairo Mirage City Hotel",
+    "city": "Cairo",
+    "neighborhood": "New Cairo",
+    "distance_km": null,
+    "price_per_night": 164.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The Villa 604 Powered by look ",
+    "city": "Cairo",
+    "neighborhood": "New Cairo",
+    "distance_km": null,
+    "price_per_night": 24.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hyatt Centric Cairo West",
+    "city": "Cairo",
+    "neighborhood": "6th of October City",
+    "distance_km": null,
+    "price_per_night": 134.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The Westin Cairo Golf Resort & Spa, Katameya Dunes",
+    "city": "Cairo",
+    "neighborhood": "New Cairo",
+    "distance_km": null,
+    "price_per_night": 253.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Jasmine Pyramids Hotel ",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 36.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included",
+      "Pool",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The Palace Pyramids inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 25.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Royal Regency Hotel EG",
+    "city": "Cairo",
+    "neighborhood": "New Cairo",
+    "distance_km": null,
+    "price_per_night": 57.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Seven Stays Zayed",
+    "city": "Cairo",
+    "neighborhood": "Sheikh Zayed City",
+    "distance_km": null,
+    "price_per_night": 38.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pyraking Pyramids View Inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 26.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "solima pyramids inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 41.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Elite Pyramids Boutique Hotel",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 70.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included",
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Prime Residence Point 90",
+    "city": "Cairo",
+    "neighborhood": "New Cairo",
+    "distance_km": null,
+    "price_per_night": 45.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "pyramids gate hotel",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 29.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Queen of Pyramids Hotel",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 9.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Sky Hotel Pyramids View INN",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 26.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Cairo Taj Mohandessn Hotels & Suites",
+    "city": "Cairo",
+    "neighborhood": "Al Duqqi",
+    "distance_km": null,
+    "price_per_night": 54.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Passage Cairo Hotel & Casino",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 66.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Steigenberger Hotel El Tahrir Cairo",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 113.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Fairmont Nile City, Cairo",
+    "city": "Cairo",
+    "neighborhood": "Downtown Cairo",
+    "distance_km": null,
+    "price_per_night": 200.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Concorde El Salam Cairo Hotel & Casino",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 133.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "InterContinental Cairo Citystars by IHG",
+    "city": "Cairo",
+    "neighborhood": "Nasr City",
+    "distance_km": null,
+    "price_per_night": 190.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Sama hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 30.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "el masaadya hotel ",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 45.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "EL Farida Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 59.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Eileen Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 45.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Cairo Plaza Manchester Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 28.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Royal Maadi Hotel",
+    "city": "Cairo",
+    "neighborhood": "Maadi",
+    "distance_km": null,
+    "price_per_night": 73.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Tahrir Plaza Suites",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 35.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Central Cairo Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 34.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Parkside Boutique Serviced Apartments",
+    "city": "Cairo",
+    "neighborhood": "Heliopolis",
+    "distance_km": null,
+    "price_per_night": 53.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "1920s Boutique Hotel and Restaurants",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 72.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Prime Boutique Hotel Heliopolis Terrace",
+    "city": "Cairo",
+    "neighborhood": "Heliopolis",
+    "distance_km": null,
+    "price_per_night": 37.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Brassbell Zamalek High ceiling studios",
+    "city": "Cairo",
+    "neighborhood": "Zamalek",
+    "distance_km": null,
+    "price_per_night": 74.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Museum Plaza",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 43.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "City Hostel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 9.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Sheraton Cairo Hotel & Casino",
+    "city": "Cairo",
+    "neighborhood": "Al Duqqi",
+    "distance_km": null,
+    "price_per_night": 169.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Triumph Luxury Hotel",
+    "city": "Cairo",
+    "neighborhood": "New Cairo",
+    "distance_km": null,
+    "price_per_night": 128.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pyramids sunshine view",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 20.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pyramids Sunrise Inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 83.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Royal Great Pyramid INN",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 81.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "King of Pharaohs Pyramids View",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 25.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Royal Inn Residence New Cairo",
+    "city": "Cairo",
+    "neighborhood": "New Cairo",
+    "distance_km": null,
+    "price_per_night": 50.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "MARQUIS PYRAMIDS HOTEL",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 20.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included",
+      "Pool",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Tuya Pyramids Inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 28.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "voco Cairo Arabella Plaza by IHG",
+    "city": "Cairo",
+    "neighborhood": "The 5th Settlement",
+    "distance_km": null,
+    "price_per_night": 157.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Remal Pyramids Hotel",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 38.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "3 Pyramids View Inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 27.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Cairo Marriott Hotel",
+    "city": "Cairo",
+    "neighborhood": "Zamalek",
+    "distance_km": null,
+    "price_per_night": 161.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hilton Cairo Heliopolis",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 147.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Cairo Plaza Prime Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 21.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Imperial Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 20.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Olivia Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 22.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Sofitel Cairo Nile El Gezirah",
+    "city": "Cairo",
+    "neighborhood": "Gezira",
+    "distance_km": null,
+    "price_per_night": 183.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Radisson Residences Cairo Heliopolis",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 123.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Osiris Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 35.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Downtown Inn",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 15.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Victoria Cairo Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 22.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "CASTELLO HOTEL CAIRO",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 19.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Sky light hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 23.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Brassbell l Zamalek Daoud Studios D",
+    "city": "Cairo",
+    "neighborhood": "Zamalek",
+    "distance_km": null,
+    "price_per_night": 46.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Dahab hostel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 9.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Dusit Thani LakeView Cairo",
+    "city": "Cairo",
+    "neighborhood": "New Cairo",
+    "distance_km": null,
+    "price_per_night": 209.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Giza Pyramids View Inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 37.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Kempinski Palace Cairo",
+    "city": "Cairo",
+    "neighborhood": "New Cairo",
+    "distance_km": null,
+    "price_per_night": 230.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Capital Of Pyramids Hotel",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 10.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Steigenberger Pyramids Cairo",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 211.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Saray Pyramids & Museum View Hotel",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 35.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Giza Pyramids Inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 23.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The St. Regis New Capital, Cairo",
+    "city": "Cairo",
+    "neighborhood": "New Capital",
+    "distance_km": null,
+    "price_per_night": 210.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Malek Pyramids Guest House",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 12.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Eyes Of Egypt Pyramids View Boutique Hotel",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 44.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "JAZ Pyramids Resort",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 61.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "King Cheops Inn",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 37.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "R Tower Pyramids View",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 17.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pyramids Hotel",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 8.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Blue Pyramids Eyes Hotel",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 20.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The President Hotel Cairo",
+    "city": "Cairo",
+    "neighborhood": "Zamalek",
+    "distance_km": null,
+    "price_per_night": 63.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Viaje Hotel Downtown Cairo",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 59.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hilton Cairo Zamalek Residences",
+    "city": "Cairo",
+    "neighborhood": "Zamalek",
+    "distance_km": null,
+    "price_per_night": 141.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Holiday Inn Cairo Maadi by IHG",
+    "city": "Cairo",
+    "neighborhood": "Maadi",
+    "distance_km": null,
+    "price_per_night": 114.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The Location Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 17.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Flamingo Cairo Airport Hotel & Free Airport Pickup",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 105.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The Guard Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 60.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pearl Hotel",
+    "city": "Cairo",
+    "neighborhood": "Maadi",
+    "distance_km": null,
+    "price_per_night": 56.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Cairo Plaza Luxe Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 22.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Downtown Antique Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 42.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": " ALRashedy Hotel Powered by Boutique",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 17.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Centro Citta Cairo Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 18.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Dior Hotel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 25.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Isis Hostel 2",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 11.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Welcome Arabesque Hostel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 13.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Meramees Hostel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 16.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Lucky Hostel",
+    "city": "Cairo",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 12.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Comfort Giza",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 17.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The View Delta Hotel",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 57.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pyramids Valley",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 31.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Egypt Pyramids Inn",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 65.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pyramids On The Spot View",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 20.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included",
+      "Airport shuttle included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "pyramids Yard Hotel",
+    "city": "Cairo",
+    "neighborhood": "Al Haram",
+    "distance_km": null,
+    "price_per_night": 44.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included",
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Pyramid Edge Hotel & Exclusive Pyramids View Rooftop",
+    "city": "Cairo",
+    "neighborhood": "Giza",
+    "distance_km": null,
+    "price_per_night": 72.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Urbana, A Tribute Portfolio Hotel",
+    "city": "Rome",
+    "neighborhood": "Monti",
+    "distance_km": null,
+    "price_per_night": 323.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Maalot Roma",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 1093.0,
+    "rating": 5.0,
+    "review_count": 292,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Rocco Forte Hotel de la Ville",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 1604.0,
+    "rating": 5.0,
+    "review_count": 63,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "master Trevi",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 304.0,
+    "rating": 5.0,
+    "review_count": 94,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Vilòn",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 1366.0,
+    "rating": 5.0,
+    "review_count": 161,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Fontart Tritone ",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 233.0,
+    "rating": 5.0,
+    "review_count": 37,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Corinthia Rome",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 907.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Room Mate Gran Filippo II, Roma – Fontana Di Trevi",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 277.0,
+    "rating": 5.0,
+    "review_count": 2,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Urban Vatican Rooms 2",
+    "city": "Rome",
+    "neighborhood": "Prati",
+    "distance_km": null,
+    "price_per_night": 100.0,
+    "rating": 5.0,
+    "review_count": 2,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The Fourth Dimension by Domidea",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 171.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [
+      "Breakfast included",
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Foro Italico Guesthouse",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 182.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Barocci Home",
+    "city": "Rome",
+    "neighborhood": "Tuscolano",
+    "distance_km": null,
+    "price_per_night": 65.0,
+    "rating": 5.0,
+    "review_count": 3,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Artemide",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 226.0,
+    "rating": 4.9,
+    "review_count": 1019,
+    "amenities": [
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "iQ Hotel Roma",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 236.0,
+    "rating": 4.9,
+    "review_count": 1328,
+    "amenities": [
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Bob W Rome Testaccio",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 91.0,
+    "rating": 4.9,
+    "review_count": 72,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The Liberty Boutique Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 240.0,
+    "rating": 4.9,
+    "review_count": 1001,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Locarno",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 516.0,
+    "rating": 4.9,
+    "review_count": 562,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Room Mate Collection Filippo, Rome-Fontana di Trevi",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 177.0,
+    "rating": 4.9,
+    "review_count": 284,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "art'otel Rome Via Veneto",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 314.0,
+    "rating": 4.9,
+    "review_count": 99,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The Spotlight Boutique Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 207.0,
+    "rating": 4.9,
+    "review_count": 179,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Eden - Dorchester Collection",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 1262.0,
+    "rating": 4.9,
+    "review_count": 103,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Arpinelli Relais",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 163.0,
+    "rating": 4.9,
+    "review_count": 972,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Umiltà 36 - Preferred Hotels & Resorts",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 526.0,
+    "rating": 4.9,
+    "review_count": 177,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The First Dolce - Preferred Hotels & Resorts",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 497.0,
+    "rating": 4.9,
+    "review_count": 227,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Palazzo Ripetta",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 618.0,
+    "rating": 4.9,
+    "review_count": 144,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Palazzo Velabro, a Member of Design Hotels",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 305.0,
+    "rating": 4.9,
+    "review_count": 77,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Trame",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 535.0,
+    "rating": 4.9,
+    "review_count": 22,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Palazzo Roma - The Leading Hotels of the World",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 936.0,
+    "rating": 4.9,
+    "review_count": 146,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Monastero dei Santi",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 312.0,
+    "rating": 4.9,
+    "review_count": 31,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Orient Express La Minerva",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 1189.0,
+    "rating": 4.9,
+    "review_count": 19,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Aria Palace by OMNIA Hotels",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 184.0,
+    "rating": 4.8,
+    "review_count": 185,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Nazionale",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 219.0,
+    "rating": 4.8,
+    "review_count": 1135,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Abruzzi",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 220.0,
+    "rating": 4.8,
+    "review_count": 1000,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Barocco",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 307.0,
+    "rating": 4.8,
+    "review_count": 1013,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Chapter Roma",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 252.0,
+    "rating": 4.8,
+    "review_count": 870,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "citizenM Rome Isola Tiberina",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 122.0,
+    "rating": 4.8,
+    "review_count": 943,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Martis Palace Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 411.0,
+    "rating": 4.8,
+    "review_count": 543,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Elizabeth Unique Rome - a Member of Design Hotels",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 582.0,
+    "rating": 4.8,
+    "review_count": 288,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Six Senses Rome",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 1062.0,
+    "rating": 4.8,
+    "review_count": 84,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Martius Private Suites Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 470.0,
+    "rating": 4.8,
+    "review_count": 433,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Palazzo 4 Fontane 12",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 140.0,
+    "rating": 4.8,
+    "review_count": 36,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "InterContinental Rome Ambasciatori Palace by IHG",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 582.0,
+    "rating": 4.8,
+    "review_count": 201,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Sant' Anna",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 184.0,
+    "rating": 4.8,
+    "review_count": 354,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel d'Inghilterra Roma - Starhotels Collezione",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 675.0,
+    "rating": 4.8,
+    "review_count": 104,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Relais Vittoria Colonna",
+    "city": "Rome",
+    "neighborhood": "Prati",
+    "distance_km": null,
+    "price_per_night": 126.0,
+    "rating": 4.8,
+    "review_count": 911,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The Goethe Hotel - Small Luxury Hotels of the World",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 462.0,
+    "rating": 4.8,
+    "review_count": 88,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Teichnersuite",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 212.0,
+    "rating": 4.8,
+    "review_count": 306,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Margutta 19 - Small Luxury Hotels of the World",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 565.0,
+    "rating": 4.8,
+    "review_count": 242,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Vino e Oli Residenze",
+    "city": "Rome",
+    "neighborhood": "Prati",
+    "distance_km": null,
+    "price_per_night": 151.0,
+    "rating": 4.8,
+    "review_count": 340,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Efes Hôtellerie",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 143.0,
+    "rating": 4.8,
+    "review_count": 81,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Passepartout",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 113.0,
+    "rating": 4.8,
+    "review_count": 366,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Cassiodoro 19",
+    "city": "Rome",
+    "neighborhood": "Prati",
+    "distance_km": null,
+    "price_per_night": 111.0,
+    "rating": 4.8,
+    "review_count": 551,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The First Musica - Preferred Hotels & Resorts",
+    "city": "Rome",
+    "neighborhood": "Prati",
+    "distance_km": null,
+    "price_per_night": 372.0,
+    "rating": 4.8,
+    "review_count": 131,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Via Veneto Prestige Rooms",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 129.0,
+    "rating": 4.8,
+    "review_count": 297,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Ripetta 25",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 122.0,
+    "rating": 4.8,
+    "review_count": 495,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Smart Guesthouse",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 119.0,
+    "rating": 4.8,
+    "review_count": 123,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "At Home Gaeta Guest House",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 94.0,
+    "rating": 4.8,
+    "review_count": 30,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "AT FORTY ONE",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 230.0,
+    "rating": 4.8,
+    "review_count": 103,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Gasometer Urban Suites",
+    "city": "Rome",
+    "neighborhood": "Ostiense",
+    "distance_km": null,
+    "price_per_night": 124.0,
+    "rating": 4.8,
+    "review_count": 299,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Palazzo Gambirasi Luxury Suite Roma",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 223.0,
+    "rating": 4.8,
+    "review_count": 14,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Navona Residenza de Charme",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 298.0,
+    "rating": 4.8,
+    "review_count": 182,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hassler Roma",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 1532.0,
+    "rating": 4.8,
+    "review_count": 157,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Bocca di Leone Luxury Suite",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 266.0,
+    "rating": 4.8,
+    "review_count": 119,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Barberini 16 Boutique Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 210.0,
+    "rating": 4.8,
+    "review_count": 5,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Dimora Galeno",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 111.0,
+    "rating": 4.8,
+    "review_count": 4,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The Hoxton, Rome",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 148.0,
+    "rating": 4.7,
+    "review_count": 593,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Splendide Royal - The Leading Hotels of the World",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 379.0,
+    "rating": 4.7,
+    "review_count": 1008,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Ruby Giulia Hotel Rome",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 200.0,
+    "rating": 4.7,
+    "review_count": 327,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Isa",
+    "city": "Rome",
+    "neighborhood": "Prati",
+    "distance_km": null,
+    "price_per_night": 216.0,
+    "rating": 4.7,
+    "review_count": 1007,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Donna Camilla Savelli – VRetreats",
+    "city": "Rome",
+    "neighborhood": "Trastevere",
+    "distance_km": null,
+    "price_per_night": 175.0,
+    "rating": 4.7,
+    "review_count": 1001,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Diocleziano",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 132.0,
+    "rating": 4.7,
+    "review_count": 1001,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "nhow Roma Vittorio Veneto",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 176.0,
+    "rating": 4.7,
+    "review_count": 147,
+    "amenities": [
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Argentina Residenza Style Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 289.0,
+    "rating": 4.7,
+    "review_count": 1014,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Imperiale by OMNIA hotels ",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 197.0,
+    "rating": 4.7,
+    "review_count": 285,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Canada, BW Premier Collection",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 140.0,
+    "rating": 4.7,
+    "review_count": 1001,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Room Mate Collection Mia, Rome Colosseum",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 241.0,
+    "rating": 4.7,
+    "review_count": 1007,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Scalinata di Spagna",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 223.0,
+    "rating": 4.7,
+    "review_count": 1001,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Albergo Santa Chiara Hotel Rome",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 100.0,
+    "rating": 4.7,
+    "review_count": 929,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Adesso Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 97.0,
+    "rating": 4.7,
+    "review_count": 807,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Maison Roma Piazza di Spagna | UNA Esperienze",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 171.0,
+    "rating": 4.7,
+    "review_count": 359,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Radisson Collection Hotel, Roma Antica",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 698.0,
+    "rating": 4.7,
+    "review_count": 230,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Otivm Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 185.0,
+    "rating": 4.7,
+    "review_count": 808,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Lunetta Hotel & SPA",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 248.0,
+    "rating": 4.7,
+    "review_count": 925,
+    "amenities": [
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Babuino 181 – Small Luxury Hotels of the World",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 262.0,
+    "rating": 4.7,
+    "review_count": 441,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Vatican Style",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 124.0,
+    "rating": 4.7,
+    "review_count": 1003,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Residenza Piranesi Boutique Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 165.0,
+    "rating": 4.7,
+    "review_count": 118,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Palazzo Navona",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 288.0,
+    "rating": 4.7,
+    "review_count": 1001,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Trianon Borgo Pio",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 303.0,
+    "rating": 4.7,
+    "review_count": 1540,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel degli Artisti",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 187.0,
+    "rating": 4.7,
+    "review_count": 880,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Palazzo Nainer",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 382.0,
+    "rating": 4.7,
+    "review_count": 247,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "NYX Hotel Rome by Leonardo Hotels",
+    "city": "Rome",
+    "neighborhood": "Prati",
+    "distance_km": null,
+    "price_per_night": 149.0,
+    "rating": 4.7,
+    "review_count": 48,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "NH Collection Roma Fori Imperiali",
+    "city": "Rome",
+    "neighborhood": "Monti",
+    "distance_km": null,
+    "price_per_night": 603.0,
+    "rating": 4.7,
+    "review_count": 231,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Casa San Giuseppe",
+    "city": "Rome",
+    "neighborhood": "San Giovanni",
+    "distance_km": null,
+    "price_per_night": 113.0,
+    "rating": 4.7,
+    "review_count": 229,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Aleph Rome Hotel Curio Collection by Hilton",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 503.0,
+    "rating": 4.7,
+    "review_count": 501,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel The Haven Roma",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 208.0,
+    "rating": 4.7,
+    "review_count": 43,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Consoli Romani Vatican Rooms",
+    "city": "Rome",
+    "neighborhood": "Prati",
+    "distance_km": null,
+    "price_per_night": 120.0,
+    "rating": 4.7,
+    "review_count": 127,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The St. Regis Rome",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 1332.0,
+    "rating": 4.7,
+    "review_count": 490,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Sourire Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 113.0,
+    "rating": 4.7,
+    "review_count": 90,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Seven Suites",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 117.0,
+    "rating": 4.7,
+    "review_count": 368,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "W Rome",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 714.0,
+    "rating": 4.7,
+    "review_count": 234,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Relais Piazza Del Popolo - Aminta Collection Luxury Rooms",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 156.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "TB Place Roma",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 312.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The Regency, Rome, A Tribute Portfolio Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 206.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Museum Hospitality - Vatican Apartments",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 75.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "New Design St. Peter",
+    "city": "Rome",
+    "neighborhood": "Prati",
+    "distance_km": null,
+    "price_per_night": 167.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "StarHome NAVONA",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 129.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Barberini Retreat Boutique Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 123.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Magica Luna Boutique Hotel Roma",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 145.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The First Arte - Preferred Hotels & Resorts",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 523.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "A.Roma Lifestyle Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 158.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "UNA Hotels Decò Roma",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 245.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The Social Hub Rome",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 117.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Marcella Royal Hotel - Rooftop Garden",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 183.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Villa Pamphili Roma",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 205.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included",
+      "Pool",
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The Hive Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 196.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel San Giovanni Roma",
+    "city": "Rome",
+    "neighborhood": "San Giovanni",
+    "distance_km": null,
+    "price_per_night": 84.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Manfredi Suite in Rome",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 229.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The Republic Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 158.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Ponte Sisto",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 234.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": " Divina Luxury Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 280.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Golden",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 134.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Aparthotel Colombo Roma",
+    "city": "Rome",
+    "neighborhood": "Ostiense",
+    "distance_km": null,
+    "price_per_night": 67.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Oceania",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 110.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "47 Boutique Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 294.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Best Western Plus Hotel Universo",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 166.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Columbia",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 148.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The Glam",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 239.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included",
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Cardo Roma, Autograph Hotel",
+    "city": "Rome",
+    "neighborhood": "Ostiense",
+    "distance_km": null,
+    "price_per_night": 152.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Residenza Paolo VI",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 281.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Indigo Rome - St. George by IHG",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 340.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The Spring House Hotel Rome Vatican, Tapestry Collection Hilton",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 160.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "SUITE SISTINA FOR BRAVE LOVERS",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 182.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Terrace Pantheon Relais",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 267.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Monti Palace Hotel",
+    "city": "Rome",
+    "neighborhood": "Monti",
+    "distance_km": null,
+    "price_per_night": 814.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Sofitel Rome Villa Borghese",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 449.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "THE STEPS Hotel - by Eitch Collection",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 179.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Rose Garden Palace by OMNIA hotels",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 188.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The Independent Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 204.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Triviho Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 280.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Barberini",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 176.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Stendhal Luxury Suites",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 161.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "VELVET GREY BOUTIQUE HOTEL ROMA",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 151.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "DOM Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 324.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Relais de l'Opera",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 106.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "THE ONE Boutique Hotel & Private SPA Roma",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 172.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Luxury on the River",
+    "city": "Rome",
+    "neighborhood": "Prati",
+    "distance_km": null,
+    "price_per_night": 154.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The Tribune, part of JdV by Hyatt",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 279.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Monte Cenci",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 253.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Mercure Roma Piazza Bologna",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 87.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Villa Agrippina Gran Meliá - The Leading Hotels of the World",
+    "city": "Rome",
+    "neighborhood": "Trastevere",
+    "distance_km": null,
+    "price_per_night": 758.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Villa Pirandello",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 100.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Anantara Palazzo Naiadi Rome Hotel - A Leading Hotel of the World",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 762.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "River Château Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 104.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "AC Hotel by Marriott Clodio Roma",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 187.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Rome Cavalieri, A Waldorf Astoria Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 507.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Villa Laetitia",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 203.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Roma Vespahouse",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 95.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Villa Angelina",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 97.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "PARIOLI CUBE HOTEL",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 89.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The B Place Cola Guesthouse",
+    "city": "Rome",
+    "neighborhood": "Prati",
+    "distance_km": null,
+    "price_per_night": 98.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The Pantheon Iconic Rome Hotel, Autograph Collection",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 643.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Numa Rome Vici",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 124.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Quirinale Luxury Rooms",
+    "city": "Rome",
+    "neighborhood": "Monti",
+    "distance_km": null,
+    "price_per_night": 158.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Rocco Forte Hotel De Russie",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 1745.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Starhotels Michelangelo",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 179.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Numa Rome Trastevere",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 88.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Palazzetto Symphony",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 144.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Piazza di Spagna Suite de Charme",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 235.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Unica Suites Rome",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 148.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Martina Suites",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 129.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Flaminio Collection - Luxury Suites",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 91.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Vacanze Romane srls",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 48.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "River Palace Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 156.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Starhotels Metropole",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 246.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Mama Shelter Roma ",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 215.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool",
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Leon's Place Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 97.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The Guardian Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 142.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Best Western Premier Hotel Royal Santina",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 175.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Condotti Boutique Hotel",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 137.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel La Rovere",
+    "city": "Rome",
+    "neighborhood": "Trastevere",
+    "distance_km": null,
+    "price_per_night": 136.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "B&B Hotel Roma San Lorenzo Termini",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 90.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Parco dei Principi Grand Hotel & SPA - Preferred Hotels & Resorts",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 398.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool",
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Britannia",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 160.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Dharma Style Hotel & Spa",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 168.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Palazzo Cardinal Cesi",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 146.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Trevi Palace Hotel",
+    "city": "Rome",
+    "neighborhood": "Monti",
+    "distance_km": null,
+    "price_per_night": 148.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Castellino Roma",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 138.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "HOTEL NOVA DOMUS AURELIA",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 92.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Palazzo Caruso",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 291.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "NH Collection Roma Palazzo Cinquecento",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 330.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Baglioni Hotel Regina - The Leading Hotels of the World",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 479.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Villa Zaccardi",
+    "city": "Rome",
+    "neighborhood": "Monteverde",
+    "distance_km": null,
+    "price_per_night": 90.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "The Boutique Hotel",
+    "city": "Rome",
+    "neighborhood": "Prati",
+    "distance_km": null,
+    "price_per_night": 144.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Mercure Roma Cinecittà ",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 63.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Piazza Di Spagna",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 149.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Loly Boutique Hotel",
+    "city": "Rome",
+    "neighborhood": "Trastevere",
+    "distance_km": null,
+    "price_per_night": 214.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Rhinoceros",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 320.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "FlaviaDesign City Suites Rome by Halldis",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 95.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Aca Hotel Viminale",
+    "city": "Rome",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 112.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Residenza Cavour",
+    "city": "Rome",
+    "neighborhood": "Prati",
+    "distance_km": null,
+    "price_per_night": 144.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": " Bus Palladium",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 282.0,
+    "rating": 5.0,
+    "review_count": 9,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "HIGHSTAY - Luxury Serviced Apartments - North Marais 2",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 482.0,
+    "rating": 5.0,
+    "review_count": 7,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Haussmann Opera Penthouse130M2 Exclusive full 4floors Stone Balcony (4 bedrooms) ",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 519.0,
+    "rating": 5.0,
+    "review_count": 5,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "HIGHSTAY - Luxury Serviced Apartments - Pyramides",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 1252.0,
+    "rating": 5.0,
+    "review_count": 3,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "HIGHSTAY - Luxury Serviced Apartments - Le Marais",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 1273.0,
+    "rating": 5.0,
+    "review_count": 2,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Splendid Duplex - 1br/2p - Notre-dame/ile St-louis",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 168.0,
+    "rating": 5.0,
+    "review_count": 1,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Atlas",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 127.0,
+    "rating": 5.0,
+    "review_count": 2,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Des Arts Paris Montmartre",
+    "city": "Paris",
+    "neighborhood": "Montmartre",
+    "distance_km": null,
+    "price_per_night": 157.0,
+    "rating": 4.9,
+    "review_count": 1022,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Eiffel Yard Hotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 200.0,
+    "rating": 4.9,
+    "review_count": 54,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Maison La Bohème Montmartre - Studios & Apartments",
+    "city": "Paris",
+    "neighborhood": "Montmartre",
+    "distance_km": null,
+    "price_per_night": 666.0,
+    "rating": 4.9,
+    "review_count": 109,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Goralska Résidences Hotel Paris Bastille",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 348.0,
+    "rating": 4.9,
+    "review_count": 214,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Mode Paris Aparthotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 406.0,
+    "rating": 4.9,
+    "review_count": 205,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Maison Proust, Hotel & Spa La Mer",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 969.0,
+    "rating": 4.9,
+    "review_count": 30,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Château Voltaire",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 454.0,
+    "rating": 4.9,
+    "review_count": 97,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "BOHEM Sacré Coeur",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 117.0,
+    "rating": 4.9,
+    "review_count": 30,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Monge",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 226.0,
+    "rating": 4.9,
+    "review_count": 761,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Astra Opéra - Astotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 354.0,
+    "rating": 4.9,
+    "review_count": 308,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Fabric",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 247.0,
+    "rating": 4.9,
+    "review_count": 1002,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Le Narcisse Blanc & Spa",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 538.0,
+    "rating": 4.9,
+    "review_count": 473,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "L'Opale Noire",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 239.0,
+    "rating": 4.9,
+    "review_count": 74,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Millésime Hôtel",
+    "city": "Paris",
+    "neighborhood": "Saint-Germain-des-Prés",
+    "distance_km": null,
+    "price_per_night": 319.0,
+    "rating": 4.9,
+    "review_count": 545,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Eldorado Paris",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 206.0,
+    "rating": 4.9,
+    "review_count": 133,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Moderniste",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 134.0,
+    "rating": 4.9,
+    "review_count": 215,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Bristol Paris - Oetker Hotels",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 1619.0,
+    "rating": 4.9,
+    "review_count": 203,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Habituel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 139.0,
+    "rating": 4.9,
+    "review_count": 26,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Les Suites Tour Eiffel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 228.0,
+    "rating": 4.9,
+    "review_count": 76,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "La Fantaisie",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 398.0,
+    "rating": 4.9,
+    "review_count": 128,
+    "amenities": [
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Terrass'' Hotel",
+    "city": "Paris",
+    "neighborhood": "Montmartre",
+    "distance_km": null,
+    "price_per_night": 188.0,
+    "rating": 4.8,
+    "review_count": 1008,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Le 123 Sébastopol - Astotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 228.0,
+    "rating": 4.8,
+    "review_count": 1006,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Tsuba Hotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 159.0,
+    "rating": 4.8,
+    "review_count": 1000,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Miss Fuller",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 165.0,
+    "rating": 4.8,
+    "review_count": 353,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Dadou Paris",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 222.0,
+    "rating": 4.8,
+    "review_count": 897,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Malte - Astotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 186.0,
+    "rating": 4.8,
+    "review_count": 1017,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Duminy Vendome",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 281.0,
+    "rating": 4.8,
+    "review_count": 1013,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Grands Boulevards Experimental",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 193.0,
+    "rating": 4.8,
+    "review_count": 462,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel de la Tamise",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 251.0,
+    "rating": 4.8,
+    "review_count": 546,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "La Maison Favart",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 265.0,
+    "rating": 4.8,
+    "review_count": 1001,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Moliere",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 216.0,
+    "rating": 4.8,
+    "review_count": 709,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Jules & Jim",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 270.0,
+    "rating": 4.8,
+    "review_count": 363,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Padam Hôtel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 197.0,
+    "rating": 4.8,
+    "review_count": 270,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Pavillon de la Reine & Spa, Place des Vosges",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 822.0,
+    "rating": 4.8,
+    "review_count": 713,
+    "amenities": [
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Madame Rêve",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 566.0,
+    "rating": 4.8,
+    "review_count": 223,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel du Sentier",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 274.0,
+    "rating": 4.8,
+    "review_count": 107,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "My Maison In Paris - Invalides",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 169.0,
+    "rating": 4.8,
+    "review_count": 563,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Nolinski Paris - Evok Collection",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 732.0,
+    "rating": 4.8,
+    "review_count": 428,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Grand Hotel du Palais Royal",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 686.0,
+    "rating": 4.8,
+    "review_count": 665,
+    "amenities": [
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Le Grand Mazarin",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 670.0,
+    "rating": 4.8,
+    "review_count": 141,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Roi de Sicile Rivoli",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 350.0,
+    "rating": 4.8,
+    "review_count": 303,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Apartments du Louvre - St-Honoré",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 274.0,
+    "rating": 4.8,
+    "review_count": 415,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Montmartre Residence",
+    "city": "Paris",
+    "neighborhood": "Montmartre",
+    "distance_km": null,
+    "price_per_night": 435.0,
+    "rating": 4.8,
+    "review_count": 224,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Victoria Palace Hotel Paris",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 202.0,
+    "rating": 4.8,
+    "review_count": 960,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "HIGHSTAY - Luxury Serviced Apartments - Bourse",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 416.0,
+    "rating": 4.8,
+    "review_count": 7,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Drawing House",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 140.0,
+    "rating": 4.8,
+    "review_count": 688,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Opéra Richepanse",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 263.0,
+    "rating": 4.8,
+    "review_count": 858,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "B Montmartre",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 238.0,
+    "rating": 4.8,
+    "review_count": 1002,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "West End Hotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 358.0,
+    "rating": 4.8,
+    "review_count": 1003,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Duc de Saint-Simon",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 236.0,
+    "rating": 4.8,
+    "review_count": 600,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Maison Mère",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 185.0,
+    "rating": 4.8,
+    "review_count": 622,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel d'Orsay",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 259.0,
+    "rating": 4.8,
+    "review_count": 686,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Adèle & Jules",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 227.0,
+    "rating": 4.8,
+    "review_count": 727,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Monsieur George Hotel & Spa – Champs Elysées",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 341.0,
+    "rating": 4.8,
+    "review_count": 290,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Luxembourg Parc",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 393.0,
+    "rating": 4.8,
+    "review_count": 458,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "La Demeure Montaigne",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 442.0,
+    "rating": 4.8,
+    "review_count": 359,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel de Lille",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 220.0,
+    "rating": 4.8,
+    "review_count": 361,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Bonsoir Madame",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 275.0,
+    "rating": 4.8,
+    "review_count": 258,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Barnett Paris",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 140.0,
+    "rating": 4.8,
+    "review_count": 66,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "La Villa Haussmann",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 333.0,
+    "rating": 4.8,
+    "review_count": 731,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Splendide Royal Paris - Relais & Châteaux",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 808.0,
+    "rating": 4.8,
+    "review_count": 256,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Maison Souquet, Hotel & Spa",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 434.0,
+    "rating": 4.8,
+    "review_count": 297,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Floride Etoile",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 143.0,
+    "rating": 4.7,
+    "review_count": 1000,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Grand Hotel Leveque",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 216.0,
+    "rating": 4.7,
+    "review_count": 1023,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "citizenM Paris Opera",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 156.0,
+    "rating": 4.7,
+    "review_count": 844,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "L'Empire Paris",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 365.0,
+    "rating": 4.7,
+    "review_count": 1002,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Joyce - Astotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 128.0,
+    "rating": 4.7,
+    "review_count": 842,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Joke - Astotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 128.0,
+    "rating": 4.7,
+    "review_count": 862,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Relais Montmartre",
+    "city": "Paris",
+    "neighborhood": "Montmartre",
+    "distance_km": null,
+    "price_per_night": 102.0,
+    "rating": 4.7,
+    "review_count": 1000,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Regent's Garden - Astotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 147.0,
+    "rating": 4.7,
+    "review_count": 1003,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "9Confidentiel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 309.0,
+    "rating": 4.7,
+    "review_count": 583,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Relais Saint Honoré",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 219.0,
+    "rating": 4.7,
+    "review_count": 732,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Chamar",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 202.0,
+    "rating": 4.7,
+    "review_count": 204,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Regina Louvre",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 562.0,
+    "rating": 4.7,
+    "review_count": 1000,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Les Bains Paris",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 442.0,
+    "rating": 4.7,
+    "review_count": 565,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel National Arts et Métiers",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 389.0,
+    "rating": 4.7,
+    "review_count": 445,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Monsieur Aristide",
+    "city": "Paris",
+    "neighborhood": "Montmartre",
+    "distance_km": null,
+    "price_per_night": 165.0,
+    "rating": 4.7,
+    "review_count": 256,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Bourg Tibourg - Paris Marais",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 335.0,
+    "rating": 4.7,
+    "review_count": 204,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "SO/ Paris Hotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 517.0,
+    "rating": 4.7,
+    "review_count": 359,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hoy Paris - Home of YOGA",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 202.0,
+    "rating": 4.7,
+    "review_count": 84,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Maison Armance",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 283.0,
+    "rating": 4.7,
+    "review_count": 113,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Alberte Hotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 191.0,
+    "rating": 4.7,
+    "review_count": 224,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Burgundy Paris",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 719.0,
+    "rating": 4.7,
+    "review_count": 597,
+    "amenities": [
+      "Pool",
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Shangri-La Paris",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 2069.0,
+    "rating": 4.7,
+    "review_count": 344,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Hana",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 419.0,
+    "rating": 4.7,
+    "review_count": 49,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Manolita Paris",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 455.0,
+    "rating": 4.7,
+    "review_count": 43,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Maison Barrière Vendôme",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 4357.0,
+    "rating": 4.7,
+    "review_count": 32,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Maison Barnes Paris Trocadero",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 588.0,
+    "rating": 4.7,
+    "review_count": 33,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Jardin De Verre by Locke",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 208.0,
+    "rating": 4.7,
+    "review_count": 443,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Saint Germain",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 302.0,
+    "rating": 4.7,
+    "review_count": 1000,
+    "amenities": [
+      "Breakfast included"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Chambiges Elysées",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 277.0,
+    "rating": 4.7,
+    "review_count": 1003,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "citizenM Paris Champs-Élysées",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 168.0,
+    "rating": 4.7,
+    "review_count": 1006,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Appart'City Collection Paris Gare de Lyon",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 135.0,
+    "rating": 4.7,
+    "review_count": 330,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Le 123 Elysées - Astotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 163.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Pas De Calais",
+    "city": "Paris",
+    "neighborhood": "Saint-Germain-des-Prés",
+    "distance_km": null,
+    "price_per_night": 281.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel des Grands Voyageurs",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 191.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel R de Paris",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 195.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Fouquet's Paris",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 1641.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool",
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel de l'Abbaye Saint Germain",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 697.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Bleu de Grenelle - Tour Eiffel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 164.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Plaza Athénée - Dorchester Collection",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 2021.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Dame des Arts",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 457.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Pilgrim",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 253.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Saint Paul Rive Gauche",
+    "city": "Paris",
+    "neighborhood": "Saint-Germain-des-Prés",
+    "distance_km": null,
+    "price_per_night": 284.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Le Cardinal",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 132.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Aparthotel Quartier Libre Opéra",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 231.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel du Rond-Point des Champs-Élysées",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 221.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Des Champs Elysees",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 235.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Petit Oberkampf Hotel & Spa",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 184.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Canopy by Hilton Paris Eiffel Tower",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 438.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hyatt Regency Paris Etoile",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 253.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Palais De Chaillot",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 140.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Garden Elysées",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 217.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "La Dépendance",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 183.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Régence Etoile",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 257.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Louvre Sainte Anne",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 190.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Petit Beaumarchais Hotel & Spa",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 206.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Pigalle, a Member of Design Hotels",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 158.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Archétype Etoile",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 107.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Artemisia Montmartre ",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 140.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": " Hôtel Le Tourville by Inwood Hotels",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 224.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel le Pavillon",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 194.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Maison Hamelin Paris - Handwritten Collection",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 194.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Edouard 7 Paris Opéra",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 291.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Westminster",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 403.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Le Derby Alma by Inwood Hotels",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 251.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Bachaumont",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 237.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel L de Lutèce - Notre-Dame",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 263.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Cinq Codet",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 323.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Le Temple de Jeanne",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 152.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Maison Albar - Le Pont-Neuf",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 389.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool",
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "La Clef Louvre Paris by The Crest Collection",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 449.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Kimpton St Honore Paris by IHG",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 586.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "My Maison In Paris - Sentier",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 161.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Kitchen"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Cour des Vosges - Evok Collection",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 680.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Grand Quartier",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 142.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel 34B - Astotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 128.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Ares Eiffel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 217.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Atmospheres",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 202.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Rochester Champs Elysées",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 234.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Montalembert",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 429.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Bel Ami",
+    "city": "Paris",
+    "neighborhood": "Saint-Germain-des-Prés",
+    "distance_km": null,
+    "price_per_night": 391.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Bradford Elysées – Astotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 181.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Grey Hotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 150.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Parisianer",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 152.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel La Perle",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 198.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Odéon Hôtel ",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 171.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Villa Romantic & SPA",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 127.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool",
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Observatoire Luxembourg",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 214.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Etoile Maillot",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 192.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Madison",
+    "city": "Paris",
+    "neighborhood": "Saint-Germain-des-Prés",
+    "distance_km": null,
+    "price_per_night": 287.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Lord Byron",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 339.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Marignan Champs - Elysées",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 428.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Mama Shelter Paris West",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 138.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Whistler",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 121.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Bowmann, a Small Luxury Hotel of the World",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 375.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool",
+      "Hot tub"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Boutet Bastille Hotel Paris - MGallery Collection",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 228.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Paris Marriott Champs Elysees Hotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 755.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Molitor Hotel & Spa Paris - MGallery Collection",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 373.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Damantin Hôtel & Spa",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 400.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Indigo Paris - Opera by IHG",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 432.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Artus",
+    "city": "Paris",
+    "neighborhood": "Saint-Germain-des-Prés",
+    "distance_km": null,
+    "price_per_night": 287.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Villa Nicolo - Tour Eiffel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 113.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Villa M",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 175.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Perpetual",
+    "city": "Paris",
+    "neighborhood": "8th Arrondissement",
+    "distance_km": null,
+    "price_per_night": 340.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel de l'Arcade",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 176.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Monterosa - Astotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 117.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "The Hoxton, Paris",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 293.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel George - Astotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 262.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Chalgrin Boutique Hotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 152.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Normandy Le Chantier",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 264.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Princesse Caroline",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 145.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Horset Opéra, BW Premier Collection",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 186.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel de La Paix Tour Eiffel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 124.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Star Champs Elysées",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 145.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [
+      "Pool"
+    ],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Le Walt by Inwood Hotels",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 217.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Mercure Paris Butte Montmartre Basilique",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 135.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel de la Place du Louvre",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 222.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Castille Paris - Starhotels Collezione",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 407.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hotel Thoumieux",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 201.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Charles V",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 263.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Les Jardins de La Villa",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 118.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel Mansart",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 302.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Belmont Paris",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 236.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Stendhal - Vendôme",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 240.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Renaissance Paris Arc de Triomphe Hotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 363.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Hôtel des Deux-Iles - Notre-Dame",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 200.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Le Rayz Vendôme",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 254.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "OKKO Hotels Paris Gare de l'Est",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 130.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Pullman Paris Montparnasse Hotel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 186.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Eiffel Dream (30 mètres de la Tour Eiffel)",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 353.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Paris Blanc Manteau Residence",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 357.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  },
+  {
+    "name": "Yooma Urban Lodge Tour Eiffel",
+    "city": "Paris",
+    "neighborhood": null,
+    "distance_km": null,
+    "price_per_night": 131.0,
+    "rating": null,
+    "review_count": null,
+    "amenities": [],
+    "available_rooms": null
+  }
+]
