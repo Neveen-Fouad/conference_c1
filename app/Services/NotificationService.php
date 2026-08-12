@@ -140,4 +140,35 @@ class NotificationService
     {
         return $this->notificationRepository->markAllAsRead($clientId);
     }
+
+
+    public function sendReviewApprovedNotification(Client $client)
+{
+    $this->createNotification([
+        'client_id' => $client->id,
+        'type' => 'review_approved',
+        'description' => 'Your review has been approved.',
+    ]);
+
+    $this->sendEmail(
+        $client->email,
+        'Your Review Has Been Approved',
+        'Your review has been approved and is now visible to other users.'
+    );
+}
+
+public function sendReviewRejectedNotification(Client $client)
+{
+    $this->createNotification([
+        'client_id' => $client->id,
+        'type' => 'review_rejected',
+        'description' => 'Your review has been rejected.',
+    ]);
+
+    $this->sendEmail(
+        $client->email,
+        'Your Review Was Not Approved',
+        'Your review did not meet our guidelines and was not approved.'
+    );
+}
 }

@@ -52,7 +52,11 @@ class bookings extends Model
     {
         return $query->where('type', 'hotel');
     }
-
+  
+    public function review()
+{
+    return $this->hasOne(Review::class);
+}
   
     public function scopeFlights(Builder $query): Builder
     {

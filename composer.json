@@ -10,7 +10,7 @@
         "barryvdh/laravel-dompdf": "^3.1",
         "cloudinary-labs/cloudinary-laravel": "^3.0",
         "dedoc/scramble": "^0.13.36",
-        "laravel/framework": "^12.0",
+        "laravel/framework": "^12.66",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
         "lucianotonet/groq-laravel": "^1.0",

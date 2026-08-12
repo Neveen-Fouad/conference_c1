@@ -25,7 +25,8 @@ class StoreReviewRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'reviewable_id' => ['required','string'],
+            'client_id'      => 'required|integer|exists:clients,id',
+            'reviewable_id' => ['required','integer'],
             'type' => ['required',
             new Enum(ReviewType::class)],
             'rating' => ['required','numeric','between:0,5'],

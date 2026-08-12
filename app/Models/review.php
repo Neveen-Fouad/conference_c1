@@ -17,6 +17,7 @@ class review extends Model
         'image',
         'status',
         'reviewable_id',
+        'booking_id',
     ];
     protected $casts = [
         'type' => ReviewType::class,
