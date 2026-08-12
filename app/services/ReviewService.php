@@ -34,8 +34,7 @@ class ReviewService
     {
         return $this->reviewRepository->findById($review_id);
     }
-
-      function store(array $data)
+    public function store(array $data)
     {
         $exists = $this->reviewableExists($data['type'],$data['reviewable_id']);
         if(! $exists){
