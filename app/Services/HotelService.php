@@ -23,107 +23,11 @@ class HotelService
         $this->domain  = config('services.hotels.domain');
     }
 
-    /**
-     * Get hotels from API.
-     * If API fails or returns no hotels, use local hotel.json fallback.
-     */
-    public function getHotels(array $params = [])
-    {
-        try {
-            $response = Http::timeout(10)
-                ->withHeaders([
-                    'X-RapidAPI-Key'  => $this->apiKey,
-                    'X-RapidAPI-Host' => $this->apiHost,
-                ])
-                ->get($this->baseUrl . '/v3/hotels/search', array_merge([
-                    'page_number'   => 1,
-                    'checkin_date'  => now()->addDays(1)->format('Y-m-d'),
-                    'checkout_date' => now()->addDays(2)->format('Y-m-d'),
-                    'region_id'     => 767,
-                    'adults_number' => 1,
-                    'locale'        => $this->locale,
-                    'domain'         => $this->domain,
-                    'sort_order'    => 'REVIEW',
-                ], $params));
-
-            if ($response->successful()) {
-                $data = $response->json();
-
-                if (!empty($data['data']['properties'])) {
-                    $hotels = $data['data']['properties'];
-
-                    Cache::put(
-                        'hotels_search:' . md5(json_encode($params)),
-                        $hotels,
-                        now()->addMinutes(10)
-                    );
-
-                    return $hotels;
-                }
-
-                Log::warning(
-                    'Hotels API returned no properties. Using local fallback.'
-                );
-            } else {
-                Log::error('Hotels API request failed.', [
-                    'status' => $response->status(),
-                    'body'   => $response->body(),
-                ]);
-            }
-        } catch (\Throwable $e) {
-            Log::error('Hotels API exception. Using local fallback.', [
-                'message' => $e->getMessage(),
-            ]);
-        }
-
-        return $this->getHotelsFromJson();
-    }
-
-    /**
-     * Get hotels from local JSON fallback.
-     */
-    private function getHotelsFromJson(): array
-    {
-        $path = database_path('Data/External-APIs/hotel.json');
-
-        if (!file_exists($path)) {
-            Log::error('Hotel fallback JSON file not found.', [
-                'path' => $path,
-            ]);
-
-            return [];
-        }
-
-        try {
-            $json = file_get_contents($path);
-
-            $hotels = json_decode($json, true);
-
-            if (json_last_error() !== JSON_ERROR_NONE) {
-                Log::error('Invalid hotel.json.', [
-                    'error' => json_last_error_msg(),
-                ]);
-
-                return [];
-            }
-
-            return is_array($hotels) ? $hotels : [];
-        } catch (\Throwable $e) {
-            Log::error('Failed to read hotel fallback JSON.', [
-                'message' => $e->getMessage(),
-            ]);
-
-            return [];
-        }
-    }
-
-    /**
-     * Get hotel details.
-     */
     public function getHotelDetails(string $hotelId)
     {
         $cacheKey = "hotel:{$hotelId}";
 
+        // Keep the original caching behavior
         if (Cache::has($cacheKey)) {
             return Cache::get($cacheKey);
         }
@@ -145,11 +49,12 @@ class HotelService
                     'body'     => $response->body(),
                 ]);
 
-                return null;
+                return $this->getHotelFromJson($hotelId);
             }
 
             $hotel = $response->json();
 
+            // Keep the original API response caching
             Cache::put(
                 $cacheKey,
                 $hotel,
@@ -157,9 +62,75 @@ class HotelService
             );
 
             return $hotel;
+
         } catch (\Throwable $e) {
             Log::error(
                 'Hotels.com get hotel details threw an exception',
+                [
+                    'message' => $e->getMessage(),
+                    'hotelId' => $hotelId,
+                ]
+            );
+
+            return $this->getHotelFromJson($hotelId);
+        }
+    }
+
+    /**
+     * Get hotel details from local JSON backup.
+     */
+    private function getHotelFromJson(string $hotelId): ?array
+    {
+        $path = database_path('Data/External-APIs/hotel.json');
+
+        if (!file_exists($path)) {
+            Log::error('Hotel fallback JSON file not found.', [
+                'path' => $path,
+            ]);
+
+            return null;
+        }
+
+        try {
+            $json = file_get_contents($path);
+
+            $hotels = json_decode($json, true);
+
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                Log::error('Invalid hotel.json.', [
+                    'error' => json_last_error_msg(),
+                ]);
+
+                return null;
+            }
+
+            if (!is_array($hotels)) {
+                return null;
+            }
+
+            foreach ($hotels as $hotel) {
+                if ((string) ($hotel['id'] ?? '') === (string) $hotelId) {
+
+                    // Cache the fallback result as well
+                    Cache::put(
+                        "hotel:{$hotelId}",
+                        $hotel,
+                        now()->addHour()
+                    );
+
+                    return $hotel;
+                }
+            }
+
+            Log::warning('Hotel not found in local JSON backup.', [
+                'hotel_id' => $hotelId,
+            ]);
+
+            return null;
+
+        } catch (\Throwable $e) {
+            Log::error(
+                'Failed to retrieve hotel from local JSON backup.',
                 [
                     'message' => $e->getMessage(),
                     'hotelId' => $hotelId,
@@ -170,18 +141,16 @@ class HotelService
         }
     }
 
-    /**
-     * Get hotel offers.
-     */
     public function getHotelOffers(
         string $hotelId,
         string $checkIn,
         string $checkOut,
         int $guests
-    ) {
-        $cacheKey =
-            "hotel_offers:{$hotelId}:{$checkIn}:{$checkOut}:{$guests}";
+    )
+    {
+        $cacheKey = "hotel_offers:{$hotelId}:{$checkIn}:{$checkOut}:{$guests}";
 
+        // Keep the original caching behavior
         if (Cache::has($cacheKey)) {
             return Cache::get($cacheKey);
         }
@@ -227,6 +196,7 @@ class HotelService
             );
 
             return $offers;
+
         } catch (\Throwable $e) {
             Log::error(
                 'Hotels.com get hotel offers threw an exception',
@@ -240,5 +210,3 @@ class HotelService
         }
     }
 }
-    
-    }
