@@ -139,6 +139,7 @@ Route::get('/hotels/search', [SearchController::class, 'searchHotels']);
 Route::middleware('auth:api')->group(function () {
     Route::apiResource('/trips',TripController::class);
     Route::get('/user/trips/{userId}', [TripController::class, 'getTripsByUserId']);
+    Route::get('/trips/{trip}/tripDays', [TripController::class, 'getTripDays']);
 
     Route::post('/ai/trips', [AiTripController::class, 'generateTrip']);
 

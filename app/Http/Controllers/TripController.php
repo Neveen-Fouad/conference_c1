@@ -68,6 +68,14 @@ class TripController extends Controller
         return response()->json($trips);
     }
 
+    public function getTripDays($id){
+        $trip = $this->tripRepository->findById($id);
+        Gate::authorize('view', $trip);
+        
+        $details = $this->tripRepository->getTripDetails($id);
+        return response()->json($details);
+    }
+
     public function statistics(){
         return response()->json(
             $this->tripRepository->statistics()

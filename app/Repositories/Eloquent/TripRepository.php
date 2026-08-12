@@ -48,6 +48,11 @@ class TripRepository implements TripRepositoryInterface
     })->with('details')->get();
 }
 
+    public function getTripDetails(int $tripId)
+    {
+        return $this->findById($tripId)->details;
+    }
+
     public function statistics()
     {
         return [
