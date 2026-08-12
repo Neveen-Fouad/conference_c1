@@ -4,9 +4,8 @@ namespace App\Services;
 use App\Enum\ReviewType;
 use App\Interfaces\ReviewRepositoryInterface;
 use App\Models\trip;
-use App\Models\bookings;
-use App\Services\NotificationService;
-use App\Models\Client;
+
+
 
 
 class ReviewService
@@ -16,31 +15,17 @@ class ReviewService
     protected $restaurantService;
     protected $flightService;
 
-
-
-    protected function hasQualifyingBooking(array $data): ?bookings
-{
-    return bookings::where('client_id', $data['client_id'])
-        ->where('type', $data['type'])
-        ->where('external_reference_id', (string) $data['reviewable_id'])
-        ->whereDate('check_out_date', '<', now()) 
-        ->whereDoesntHave('review')
-        ->latest()
-        ->first();
-}
     public function __construct(
-    ReviewRepositoryInterface $reviewRepository,
-    HotelService $hotelService,
-    RestaurantService $restaurantService,
-    FlightService $flightService,
-    NotificationService $notificationService
-){
-    $this->reviewRepository = $reviewRepository;
-    $this->hotelService = $hotelService;
-    $this->restaurantService = $restaurantService;
-    $this->flightService = $flightService;
-    $this->notificationService = $notificationService;
-}
+        ReviewRepositoryInterface $reviewRepository,
+        HotelService $hotelService,
+        RestaurantService $restaurantService,
+        FlightService $flightService
+    ){
+        $this->reviewRepository = $reviewRepository;
+        $this->hotelService = $hotelService;
+        $this->restaurantService = $restaurantService;
+        $this->flightService = $flightService;
+    }
     public function index()
     {
         return $this->reviewRepository->getAll();
@@ -50,21 +35,13 @@ class ReviewService
         return $this->reviewRepository->findById($review_id);
     }
     public function store(array $data)
-{
-    $exists = $this->reviewableExists($data['type'], $data['reviewable_id']);
-    if (! $exists) {
-        throw new \InvalidArgumentException('The item being reviewed does not exist.');
+    {
+        $exists = $this->reviewableExists($data['type'],$data['reviewable_id']);
+        if(! $exists){
+            throw new \InvalidArgumentException('The item being reviewed does not exist.');
+        }
+        return $this->reviewRepository->create($data);
     }
-
-    $booking = $this->hasQualifyingBooking($data);
-    if (! $booking) {
-        throw new \InvalidArgumentException('You can only review items you have booked.');
-    }
-
-    $data['booking_id'] = $booking->id;
-
-    return $this->reviewRepository->create($data);
-}
     public function update(int $review_id , array $data)
     {
         return $this->reviewRepository->update($review_id,$data);
@@ -86,30 +63,13 @@ class ReviewService
         return $this->reviewRepository->filterReviewsByStatus($status);
     }
     public function approveReview(int $review_id)
-{
-    $review = $this->reviewRepository->approveReview($review_id);
-
-    $client = Client::find($review->client_id);
-    if ($client) {
-        $this->notificationService->sendReviewApprovedNotification($client);
+    {
+        return $this->reviewRepository->approveReview($review_id);
     }
-
-    return $review;
-}
-
-public function rejectReview(int $review_id)
-{
-    $review = $this->reviewRepository->rejectReview($review_id);
-
-    $client = Client::find($review->client_id);
-    if ($client) {
-        $this->notificationService->sendReviewRejectedNotification($client);
+    public function rejectReview(int $review_id)
+    {
+        return $this->reviewRepository->rejectReview($review_id);
     }
-
-    return $review;
-}
-
-    
     protected function reviewableExists(string $type , int $reviewable_id):bool
     {
         return match ($type){
@@ -120,8 +80,4 @@ public function rejectReview(int $review_id)
         };
 
     }
-    protected $notificationService;
-
-
-
 }
