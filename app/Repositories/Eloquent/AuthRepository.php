@@ -101,4 +101,12 @@ class AuthRepository implements AuthRepositoryInterface{
     public function refresh(){
     return JWTAuth::refresh(JWTAuth::getToken());
 }
+public function resendVerificationEmail(User $user){
+        if (!$user->hasVerifiedEmail()){
+            $user->sendEmailVerificationNotification();
+        }
+        return true;
+    }
+
+
 }

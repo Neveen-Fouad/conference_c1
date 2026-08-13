@@ -83,19 +83,19 @@ class AuthController extends Controller
         ]);
     }
 
-    // public function resendVerificationEmail(Request $request): JsonResponse{
-    //     if ($request->user()->hasVerifiedEmail()){
-    //         return response()->json([
-    //             'message' => 'Email is already verified.',
-    //         ], 400);
-    //     }
+    public function resendVerificationEmail(Request $request): JsonResponse{
+        if ($request->user()->hasVerifiedEmail()){
+            return response()->json([
+                'message' => 'Email is already verified.',
+            ], 400);
+        }
 
-    //     $this->authRepository->resendVerificationEmail($request->user());
+        $this->authRepository->resendVerificationEmail($request->user());
 
-    //     return response()->json([
-    //         'message' => 'Verification email sent successfully.',
-    //     ]);
-    // }
+        return response()->json([
+            'message' => 'Verification email sent successfully.',
+        ]);
+    }
 
     public function forgotPassword(ForgotPasswordRequest $request): JsonResponse{
         $this->authRepository->forgotPassword($request->only('email'));

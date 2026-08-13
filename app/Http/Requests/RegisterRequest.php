@@ -21,7 +21,7 @@ class RegisterRequest extends FormRequest
             'latittude' => 'required|string|max:255',
             'birth_date' => [
                     'required',
-                    // 'date_format:d/m/Y',
+                    'date_format:d/m/Y',
                     'before_or_equal:' . now()->subYears(18)->format('d/m/Y'),
             ],
             'phone' => 'required|string',
