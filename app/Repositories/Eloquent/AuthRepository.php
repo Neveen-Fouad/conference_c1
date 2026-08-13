@@ -76,6 +76,11 @@ class AuthRepository implements AuthRepositoryInterface
         return true;
     }
 
+    public function resendVerificationEmail(User $user): void
+    {
+        $user->sendEmailVerificationNotification();
+    }
+
     public function resetPassword(array $data)
     {
         return Password::reset(

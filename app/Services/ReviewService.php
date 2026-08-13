@@ -63,7 +63,7 @@ class ReviewService
         return $this->reviewRepository->getMyReviews();
     }
 
-    public function filterReviewByType(string $type, int $reviewable_id)
+    public function filterReviewByType(string $type, string $reviewable_id)
     {
         return $this->reviewRepository->filterReviewsByType($type, $reviewable_id);
     }
@@ -83,13 +83,13 @@ class ReviewService
         return $this->reviewRepository->rejectReview($review_id);
     }
 
-    protected function reviewableExists(string $type, int $reviewable_id): bool
+    protected function reviewableExists(string $type, string $reviewable_id): bool
     {
         return match ($type) {
-            ReviewType::Trip->value => Trip::find($reviewable_id) !== null,
-            ReviewType::Hotel->value => $this->hotelService->getHotelDetails((string) $reviewable_id) !== null,
-            ReviewType::Restaurant->value => $this->restaurantService->getRestaurantDetails((string) $reviewable_id) !== null,
-            ReviewType::Flight->value => $this->flightService->getFlightDetails((string) $reviewable_id) !== null,
+            ReviewType::Trip->value => ctype_digit($reviewable_id) && Trip::find((int) $reviewable_id) !== null,
+            ReviewType::Hotel->value,
+            ReviewType::Restaurant->value,
+            ReviewType::Flight->value => trim($reviewable_id) !== '',
             default => false,
         };
 

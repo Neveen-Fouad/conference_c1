@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\EmailVerificationRequest;
 use App\Http\Requests\ForgotPasswordRequest;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\ResetPasswordRequest;
 use App\Repositories\Contracts\AuthRepositoryInterface;
 use App\Services\NotificationService;
@@ -60,6 +61,31 @@ class AuthController extends Controller
         ]);
     }
 
+    public function register(RegisterRequest $request): JsonResponse
+    {
+        $user = $this->authRepository->register($request->validated());
+        $auth = $this->authRepository->login($request->only('email', 'password'));
+        if (! is_array($auth)) {
+            throw new \LogicException('The new account could not be authenticated.');
+        }
+        $client = $user->client;
+
+        return response()->json([
+            'message' => 'Account created. Please verify your email address.',
+            'data' => [
+                'token' => $auth['token'],
+                'user' => [
+                    'id' => $user->id,
+                    'client_id' => $client?->id,
+                    'first_name' => $user->first_name,
+                    'last_name' => $user->last_name,
+                    'email' => $user->email,
+                    'role' => $user->role,
+                ],
+            ],
+        ], 201);
+    }
+
     public function logout(): JsonResponse
     {
         $this->authRepository->logout();
@@ -78,19 +104,22 @@ class AuthController extends Controller
         ]);
     }
 
-    // public function resendVerificationEmail(Request $request): JsonResponse{
-    //     if ($request->user()->hasVerifiedEmail()){
-    //         return response()->json([
-    //             'message' => 'Email is already verified.',
-    //         ], 400);
-    //     }
+    public function resendVerificationEmail(Request $request): JsonResponse
+    {
+        $user = $request->user();
 
-    //     $this->authRepository->resendVerificationEmail($request->user());
+        if ($user->hasVerifiedEmail()) {
+            return response()->json([
+                'message' => 'Email is already verified.',
+            ], 409);
+        }
 
-    //     return response()->json([
-    //         'message' => 'Verification email sent successfully.',
-    //     ]);
-    // }
+        $this->authRepository->resendVerificationEmail($user);
+
+        return response()->json([
+            'message' => 'Verification email sent successfully.',
+        ]);
+    }
 
     public function forgotPassword(ForgotPasswordRequest $request): JsonResponse
     {
