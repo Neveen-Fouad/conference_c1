@@ -7,4 +7,5 @@ interface TripRepositoryInterface extends BaseRepositoryInterface{
     public function getTripDetails(int $tripId);
 
     public function getPreMadeTrips();
+    public function bookTrip(int $tripId, int $clientId);
 }

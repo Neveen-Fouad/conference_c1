@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Interfaces\TripRepositoryInterface;
 use App\Http\Requests\UpdateTripRequest;
 use App\Http\Requests\StoreTripRequest;
+use App\Models\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
@@ -106,5 +107,25 @@ class TripController extends Controller
     {
         $trips = $this->tripRepository->getPreMadeTrips();
         return response()->json($trips);
+    }
+
+    public function book($id)
+    {
+        $user = Auth::user();
+        $client = Client::where('user_id', $user->id)->first();
+        
+        if (!$client) {
+            return response()->json(['message' => 'Client profile not found for this user.'], 403);
+        }
+
+        try {
+            $booking = $this->tripRepository->bookTrip($id, $client->id);
+            return response()->json([
+                'message' => 'Trip booked successfully.',
+                'data' => $booking
+            ], 201);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error booking trip.', 'error' => $e->getMessage()], 500);
+        }
     }
 }

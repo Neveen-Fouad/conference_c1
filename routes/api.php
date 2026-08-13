@@ -129,6 +129,8 @@ Route::middleware('auth:api')->group(function () {
     Route::post('/trips/{trip}/memories', [TripMemoryController::class, 'store']);
     Route::get('/trips/{trip}/memories', [TripMemoryController::class, 'index']);
     Route::delete('/trips/{trip}/memories/{memory}', [TripMemoryController::class, 'destroy']);
+    
+    Route::post('/trips/{trip}/book', [TripController::class, 'book']);
 });
 
 
