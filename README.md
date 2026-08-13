@@ -313,6 +313,7 @@ Configure these values in `.env` without committing real secrets:
 
 - `APP_URL` must be the externally reachable backend URL used in signed links.
 - `FRONTEND_URL` must be the frontend origin, without a trailing page path.
+- `CORS_ALLOWED_ORIGINS` is a comma-separated allowlist of frontend origins. Localhost ports are the development default; production must set the deployed HTTPS frontend origin.
 - `DB_*` and `REDIS_*` configure MySQL and Redis.
 - `JWT_SECRET` is generated with `php artisan jwt:secret`.
 - `MAIL_*` configures verification and password-reset email delivery.
@@ -382,7 +383,7 @@ Accept: application/json
 - Example environment values contain placeholders only.
 - Generated Laravel cache files and Redis dumps are not versioned.
 
-Before production, restrict CORS origins to the deployed frontend and rotate any credential that was ever committed to Git history. Removing a secret from the latest file does not revoke it or erase earlier commits.
+Before production, set `CORS_ALLOWED_ORIGINS` to the deployed frontend and rotate any credential that was ever committed to Git history. Removing a secret from the latest file does not revoke it or erase earlier commits.
 
 ## Latest `mohand2` changes
 
