@@ -2,25 +2,29 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 class HotelService
 {
     protected string $baseUrl;
+
     protected string $apiKey;
+
     protected string $apiHost;
+
     protected string $locale;
+
     protected string $domain;
 
     public function __construct()
     {
         $this->baseUrl = config('services.hotels.base_url');
-        $this->apiKey  = config('services.hotels.key');
+        $this->apiKey = config('services.hotels.key');
         $this->apiHost = config('services.hotels.host');
-        $this->locale  = config('services.hotels.locale');
-        $this->domain  = config('services.hotels.domain');
+        $this->locale = config('services.hotels.locale');
+        $this->domain = config('services.hotels.domain');
     }
 
     public function getHotelDetails(string $hotelId)
@@ -34,19 +38,19 @@ class HotelService
 
         try {
             $response = Http::withHeaders([
-                'X-RapidAPI-Key'  => $this->apiKey,
+                'X-RapidAPI-Key' => $this->apiKey,
                 'X-RapidAPI-Host' => $this->apiHost,
-            ])->get($this->baseUrl . '/v2/hotels/details', [
+            ])->get($this->baseUrl.'/v2/hotels/details', [
                 'hotel_id' => $hotelId,
-                'domain'   => $this->domain,
-                'locale'   => $this->locale,
+                'domain' => $this->domain,
+                'locale' => $this->locale,
             ]);
 
             if ($response->failed()) {
                 Log::error('Failed to retrieve hotel details.', [
                     'hotel_id' => $hotelId,
-                    'status'   => $response->status(),
-                    'body'     => $response->body(),
+                    'status' => $response->status(),
+                    'body' => $response->body(),
                 ]);
 
                 return $this->getHotelFromJson($hotelId);
@@ -83,7 +87,7 @@ class HotelService
     {
         $path = database_path('Data/External-APIs/hotel.json');
 
-        if (!file_exists($path)) {
+        if (! file_exists($path)) {
             Log::error('Hotel fallback JSON file not found.', [
                 'path' => $path,
             ]);
@@ -104,7 +108,7 @@ class HotelService
                 return null;
             }
 
-            if (!is_array($hotels)) {
+            if (! is_array($hotels)) {
                 return null;
             }
 
@@ -146,8 +150,7 @@ class HotelService
         string $checkIn,
         string $checkOut,
         int $guests
-    )
-    {
+    ) {
         $cacheKey = "hotel_offers:{$hotelId}:{$checkIn}:{$checkOut}:{$guests}";
 
         // Keep the original caching behavior
@@ -156,32 +159,32 @@ class HotelService
         }
 
         Log::debug('Offers request params', [
-            'hotel_id'      => $hotelId,
-            'checkin_date'  => $checkIn,
+            'hotel_id' => $hotelId,
+            'checkin_date' => $checkIn,
             'checkout_date' => $checkOut,
             'adults_number' => $guests,
-            'domain'        => $this->domain,
-            'locale'        => $this->locale,
+            'domain' => $this->domain,
+            'locale' => $this->locale,
         ]);
 
         try {
             $response = Http::withHeaders([
-                'X-RapidAPI-Key'  => $this->apiKey,
+                'X-RapidAPI-Key' => $this->apiKey,
                 'X-RapidAPI-Host' => $this->apiHost,
-            ])->get($this->baseUrl . '/v3/hotels/offers', [
-                'hotel_id'      => $hotelId,
-                'checkin_date'  => $checkIn,
+            ])->get($this->baseUrl.'/v3/hotels/offers', [
+                'hotel_id' => $hotelId,
+                'checkin_date' => $checkIn,
                 'checkout_date' => $checkOut,
                 'adults_number' => $guests,
-                'domain'        => $this->domain,
-                'locale'        => $this->locale,
+                'domain' => $this->domain,
+                'locale' => $this->locale,
             ]);
 
             if ($response->failed()) {
                 Log::error('Failed to retrieve hotel offers.', [
                     'hotel_id' => $hotelId,
-                    'status'   => $response->status(),
-                    'body'     => $response->body(),
+                    'status' => $response->status(),
+                    'body' => $response->body(),
                 ]);
 
                 return null;

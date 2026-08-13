@@ -9,11 +9,11 @@ class NotificationsController extends Controller
 {
     public function __construct(
         private NotificationService $notificationService
-    ) {
-    }
+    ) {}
 
-    public function index(int $clientId)
+    public function index(Request $request, int $clientId)
     {
+        $this->authorizeClient($request, $clientId);
         $notifications =
             $this->notificationService->getClientNotifications($clientId);
 
@@ -41,8 +41,9 @@ class NotificationsController extends Controller
         ], 201);
     }
 
-    public function unread(int $clientId)
+    public function unread(Request $request, int $clientId)
     {
+        $this->authorizeClient($request, $clientId);
         $notifications =
             $this->notificationService->getUnreadNotifications($clientId);
 
@@ -52,8 +53,9 @@ class NotificationsController extends Controller
         ]);
     }
 
-    public function unreadCount(int $clientId)
+    public function unreadCount(Request $request, int $clientId)
     {
+        $this->authorizeClient($request, $clientId);
         $count =
             $this->notificationService->getUnreadCount($clientId);
 
@@ -63,10 +65,10 @@ class NotificationsController extends Controller
         ]);
     }
 
-    public function markAsRead(int $notificationId)
+    public function markAsRead(Request $request, int $notificationId)
     {
         $notification =
-            $this->notificationService->markAsRead($notificationId);
+            $this->notificationService->markAsRead($notificationId, $this->clientId($request));
 
         return response()->json([
             'data' => $notification,
@@ -75,8 +77,9 @@ class NotificationsController extends Controller
         ]);
     }
 
-    public function markAllAsRead(int $clientId)
+    public function markAllAsRead(Request $request, int $clientId)
     {
+        $this->authorizeClient($request, $clientId);
         $updatedCount =
             $this->notificationService->markAllAsRead($clientId);
 
@@ -85,5 +88,17 @@ class NotificationsController extends Controller
             'message' => 'All notifications marked as read',
         ]);
     }
-}
 
+    private function authorizeClient(Request $request, int $clientId): void
+    {
+        abort_unless($clientId === $this->clientId($request), 403, 'Unauthorized action.');
+    }
+
+    private function clientId(Request $request): int
+    {
+        $clientId = $request->user()?->client?->id;
+        abort_if($clientId === null, 403, 'A client profile is required.');
+
+        return $clientId;
+    }
+}

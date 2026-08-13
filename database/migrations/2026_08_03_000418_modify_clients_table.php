@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('clients', function (Blueprint $table) {
-        $table->string('long');
-        $table->string('latittude');
-        $table->date('birth_date')->change();
+            $table->string('long');
+            $table->string('latittude');
+            $table->date('birth_date')->change();
         });
     }
 
@@ -24,9 +24,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('clients', function (Blueprint $table) {
-        $table->dropColumn('long');
-        $table->dropColumn('latittude');
-        $table->dateTime('birth_date')->change();
+            $table->dropColumn('long');
+            $table->dropColumn('latittude');
+            $table->dateTime('birth_date')->change();
         });
     }
 };

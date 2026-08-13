@@ -14,18 +14,14 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId("client_id")->constrained();
-            $table->enum('type',["restaurant","hotel","flight"]);
-            $table->integer("number_of_days");
-            $table->integer("number_of_bookings");
-            $table->enum('status',["confirmed","pending","canceled"]);
+            $table->foreignId('client_id')->constrained();
+            $table->enum('type', ['restaurant', 'hotel', 'flight']);
+            $table->integer('number_of_days');
+            $table->integer('number_of_bookings');
+            $table->enum('status', ['confirmed', 'pending', 'canceled']);
 
-
-            $table->string("booking_type");
-            $table->string("provider_name");
-
-
-
+            $table->string('booking_type');
+            $table->string('provider_name');
 
         });
     }

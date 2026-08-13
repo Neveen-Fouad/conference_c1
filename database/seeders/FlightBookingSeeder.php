@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\bookings;
+use App\Models\Booking;
 use App\Models\Client;
-use Illuminate\Database\Seeder;
 use Carbon\Carbon;
+use Illuminate\Database\Seeder;
 
-class FlightbookingSeeder extends Seeder
+class FlightBookingSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,6 +18,7 @@ class FlightbookingSeeder extends Seeder
 
         if ($clientIds->isEmpty()) {
             $this->command->warn('No clients found. Seed clients before running FlightBookingSeeder.');
+
             return;
         }
 
@@ -33,7 +34,7 @@ class FlightbookingSeeder extends Seeder
 
             $provider = $providers[array_rand($providers)];
 
-            bookings::create([
+            Booking::create([
                 'client_id' => $clientIds->random(),
                 'type' => 'flight',
                 'booking_type' => 'flight',

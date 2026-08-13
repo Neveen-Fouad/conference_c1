@@ -1,6 +1,6 @@
 <?php
 
-namespace App\services;
+namespace App\Services;
 
 use Log;
 use LucianoTonet\GroqLaravel\Facades\Groq;
@@ -31,7 +31,7 @@ class GroqService
             'hotel_info' => $hotel,
             'recommended_hotel' => $recommendedHotel,
             'available_attractions' => $places,
-            'available_restaurants' => $restaurants
+            'available_restaurants' => $restaurants,
         ]);
 
         $recommendedHotelNote = $recommendedHotel
@@ -44,8 +44,8 @@ class GroqService
                 "response_format" => ["type" => "json_object"],
                 "messages" => [
                     [
-                        "role" => "system",
-                        "content" => "You are an expert travel planner. You must output your response in a good readable format with proper formatting and structure.
+                        'role' => 'system',
+                        'content' => "You are an expert travel planner. You must output your response in a good readable format with proper formatting and structure.
         Generate a daily itinerary for {$days} days to {$destination} with a budget of {$budget} and for {$guests} guests.
 
         CRITICAL RULES:
@@ -92,7 +92,7 @@ class GroqService
                 "temperature" => 0.8,
             ]);
         } catch (Throwable $e) {
-            Log::error('groq error ', ["message" => $e->getMessage()]);
+            Log::error('groq error ', ['message' => $e->getMessage()]);
             throw new \RuntimeException('Failed to generate trip plan. Please try again later.');
         }
 

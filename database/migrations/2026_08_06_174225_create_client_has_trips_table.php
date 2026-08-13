@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('client_has_trips', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId("client_id")->constrained();
-            $table->foreignId("trips_id")->constrained();
+            $table->foreignId('client_id')->constrained();
+            $table->foreignId('trips_id')->constrained();
         });
     }
 

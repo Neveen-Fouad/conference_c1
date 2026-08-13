@@ -2,57 +2,48 @@
 
 namespace App\Providers;
 
+use App\Interfaces\ComplaintRepositoryInterface;
 use App\Interfaces\FavouriteRepositoryInterface;
 use App\Interfaces\InterestRepositoryInterface;
-use App\Interfaces\ReviewRepositoryInterface;
-use App\Interfaces\TripRepositoryInterface;
-use App\Repositories\Eloquent\FavouriteRepository;
-use App\Repositories\Eloquent\ReviewRepository;
-use App\Repositories\Eloquent\TripRepository;
-
-use App\Repositories\Eloquent\InterestRepository;
-
-use App\Repositories\SettingRepository;
-use Illuminate\Support\ServiceProvider;
-
 use App\Interfaces\NotificationRepositoryInterface;
 use App\Interfaces\PaymentRepositoryInterface;
 use App\Interfaces\RevenueRepositoryInterface;
-
+use App\Interfaces\ReviewRepositoryInterface;
+use App\Interfaces\SettingRepositoryInterface;
+use App\Interfaces\TripRepositoryInterface;
+use App\Interfaces\UserRepositoryInterface;
+use App\Repositories\ComplaintRepository;
 use App\Repositories\Contracts\AuthRepositoryInterface;
-
-use App\Repositories\Eloquent\AuthRepository;
-use App\Repositories\Contracts\ProfileRepositoryInterface;
-use App\Repositories\Eloquent\ProfileRepository;
+use App\Repositories\Contracts\BookingRepositoryInterface;
+use App\Repositories\Contracts\ChatConversationRepositoryInterface;
+use App\Repositories\Contracts\ChatMessageRepositoryInterface;
+use App\Repositories\Contracts\DashboardReportRepositoryInterface;
 use App\Repositories\Contracts\DashboardRepositoryInterface;
+use App\Repositories\Contracts\FlightsRepositoryInterface;
+use App\Repositories\Contracts\ProfileRepositoryInterface;
+use App\Repositories\Eloquent\AuthRepository;
+use App\Repositories\Eloquent\BookingRepository;
+use App\Repositories\Eloquent\ChatConversationRepository;
+use App\Repositories\Eloquent\ChatMessageRepository;
+use App\Repositories\Eloquent\DashboardReportRepository;
 use App\Repositories\Eloquent\DashboardRepository;
-
+use App\Repositories\Eloquent\FavouriteRepository;
+use App\Repositories\Eloquent\FlightsRepository;
+use App\Repositories\Eloquent\InterestRepository;
+use App\Repositories\Eloquent\ProfileRepository;
+use App\Repositories\Eloquent\ReviewRepository;
+use App\Repositories\Eloquent\TripRepository;
 use App\Repositories\NotificationRepository;
 use App\Repositories\PaymentRepository;
 use App\Repositories\RevenueRepository;
-use App\Repositories\Contracts\BookingRepositoryInterface;
-use App\Repositories\Eloquent\BookingRepository;
-
-
-use App\Repositories\Contracts\FlightsRepositoryInterface;
-use App\Repositories\Eloquent\FlightsRepository;
-use App\Repositories\Contracts\ChatConversationRepositoryInterface;
-use App\Repositories\Contracts\ChatMessageRepositoryInterface;
-use App\Repositories\Eloquent\ChatConversationRepository;
-use App\Repositories\Eloquent\ChatMessageRepository;use App\Interfaces\UserRepositoryInterface;
-use App\Interfaces\ComplaintRepositoryInterface;
-use App\Interfaces\SettingRepositoryInterface;
-use App\Repositories\Contracts\DashboardReportRepositoryInterface;
-use App\Repositories\Eloquent\DashboardReportRepository;
+use App\Repositories\SettingRepository;
 use App\Repositories\UserRepository;
-use App\Repositories\ComplaintRepository;
-use App\Services\DashboardReportService;
+use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-
 
         $this->app->bind(
             PaymentRepositoryInterface::class,
@@ -87,10 +78,9 @@ class RepositoryServiceProvider extends ServiceProvider
             ReviewRepository::class,
         );
         $this->app->bind(
-          InterestRepositoryInterface::class,
-          InterestRepository::class
+            InterestRepositoryInterface::class,
+            InterestRepository::class
         );
-
 
         $this->app->bind(
             BookingRepositoryInterface::class,
@@ -125,7 +115,7 @@ class RepositoryServiceProvider extends ServiceProvider
             AuthRepository::class
         );
 
-              $this->app->bind(
+        $this->app->bind(
             UserRepositoryInterface::class,
             UserRepository::class
         );
@@ -144,20 +134,10 @@ class RepositoryServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
-           DashboardReportRepositoryInterface::class,
-           DashboardReportRepository::class
-);
+            DashboardReportRepositoryInterface::class,
+            DashboardReportRepository::class
+        );
     }
-    
-
-    
-
-
-
-
-
-
-
 
     public function boot(): void
     {

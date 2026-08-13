@@ -4,21 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTripRequest;
 use App\Models\Client;
-
+use App\Models\Trip;
 use App\Repositories\Eloquent\TripRepository;
-use App\Services\GroqService;
 use App\Services\CountryServices;
+use App\Services\GroqService;
+use App\Services\NotificationService;
 use App\Services\PlaceServices;
+use App\Services\RestaurantService;
 use App\Services\SearchService;
 use App\Services\TransportationService;
-use App\Services\RestaurantService;
 use App\Services\WeatherServices;
-use App\Services\NotificationService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
-use App\Models\trip;
 
 class AiTripController extends Controller
 {
@@ -36,16 +35,16 @@ class AiTripController extends Controller
 
     public function generateTrip(StoreTripRequest $request): JsonResponse
     {
-        Gate::authorize('createViaAi', trip::class);
+        Gate::authorize('createViaAi', Trip::class);
         $validated = $request->validated();
 
         $hotelFilters = [
             'destination' => $validated['destination'],
-            'budget'      => $validated['budget'],
-            'check_in'    => $validated['start_date'],
-            'check_out'   => $validated['end_date'],
-            'guests'      => $validated['number_of_travels'],
-            'style'       => $validated['style'],
+            'budget' => $validated['budget'],
+            'check_in' => $validated['start_date'],
+            'check_out' => $validated['end_date'],
+            'guests' => $validated['number_of_travels'],
+            'style' => $validated['style'],
         ];
         $hotelResult = $this->searchService->searchHotels($hotelFilters);
 
@@ -54,22 +53,17 @@ class AiTripController extends Controller
             $nearbyPlaces = collect($nearbyItems)->pluck('text')->implode(', ');
 
             return [
-                'name'    => data_get($h, 'summary.name', 'Unknown Hotel'),
-                'fees'    => data_get($h, 'summary.fees') ?? 'Pricing not available',
-                'address' => data_get($h, 'summary.location.address.addressLine', 'Unknown Address'),
-                'rating'  => data_get($h, 'reviewInfo.summary.overallScoreWithDescriptionA11y.value', 'No rating'),
-                'tagline' => data_get($h, 'summary.tagline', ''),
-                'nearby'  => $nearbyPlaces ?: 'No nearby places listed',
-                'lat'     => data_get($h, 'summary.location.coordinates.latitude') ?? data_get($h, 'coordinates.latitude'),
-                'lng'     => data_get($h, 'summary.location.coordinates.longitude') ?? data_get($h, 'coordinates.longitude'),
-            ];
-        })->values();
+                'name' => data_get($h, 'summary.name', 'Unknown Hotel'),
+                'fees' => data_get($h, 'summary.fees') ?? 'Pricing not available',
 
-     
-        $simplifiedHotels = $simplifiedHotels
-            ->sortByDesc(fn ($h) => is_numeric($h['rating']) ? (float) $h['rating'] : -1)
-            ->values()
-            ->toArray();
+                'address' => data_get($h, 'summary.location.address.addressLine', 'Unknown Address'),
+                'rating' => data_get($h, 'reviewInfo.summary.overallScoreWithDescriptionA11y.value', 'No rating'),
+                'tagline' => data_get($h, 'summary.tagline', ''),
+                'nearby' => $nearbyPlaces ?: 'No nearby places listed',
+                'lat' => data_get($h, 'summary.location.coordinates.latitude') ?? data_get($h, 'coordinates.latitude'),
+                'lng' => data_get($h, 'summary.location.coordinates.longitude') ?? data_get($h, 'coordinates.longitude'),
+            ];
+        })->values()->toArray();
 
         $weather = $this->weatherServices->getForecast($validated['destination']);
         $rawForecast = $weather['forecast']['forecastday'] ?? [];
@@ -86,7 +80,7 @@ class AiTripController extends Controller
                     return [
                         'time' => substr($hour['time'], -5),
                         'temp_c' => $hour['temp_c'] ?? '',
-                        'condition' => data_get($hour, 'condition.text', '')
+                        'condition' => data_get($hour, 'condition.text', ''),
                     ];
                 })->toArray();
 
@@ -94,24 +88,26 @@ class AiTripController extends Controller
                     'date' => $day['date'],
                     'daily_avg_temp_c' => data_get($day, 'day.avgtemp_c'),
                     'daily_condition' => data_get($day, 'day.condition.text'),
-                    'hourly_forecast' => $hourlyData
+                    'hourly_forecast' => $hourlyData,
                 ];
             })
             ->values()
             ->toArray();
 
         if (empty($weatherForecast)) {
-            $weatherForecast = "Weather forecast is unavailable for these dates because the trip is more than 14 days in the future. Assume standard seasonal weather for this destination.";
+            $weatherForecast = 'Weather forecast is unavailable for these dates because the trip is more than 14 days in the future. Assume standard seasonal weather for this destination.';
         }
 
         $attractionsResponse = $this->placeServices->getAttractions($validated['destination']);
-        $rawAttractions = $attractionsResponse['results'] ?? $attractionsResponse ?? [];
+
+        $rawAttractions = $attractionsResponse['results'] ?? $attractionsResponse;
 
         $simplifiedAttractions = collect($rawAttractions)->take(15)->map(function ($a) {
             return [
                 'name' => data_get($a, 'name', 'Unknown Attraction'),
                 'rating' => data_get($a, 'rating', 'No rating'),
                 'description' => substr(data_get($a, 'description', 'No description'), 0, 150),
+
                 'lat' => data_get($a, 'latitude') ?? data_get($a, 'lat'),
                 'lng' => data_get($a, 'longitude') ?? data_get($a, 'lng'),
             ];
@@ -137,11 +133,7 @@ class AiTripController extends Controller
             ];
         })->toArray();
 
-        // Travel times are always computed from the top-rated hotel (index 0
-        // after sorting above), which is also the hotel we recommend to the AI
-        // as `recommended_hotel`. This keeps route_notes consistent with
-        // whichever hotel actually ends up being used.
-        if (!empty($simplifiedHotels) && isset($simplifiedHotels[0]) && $simplifiedHotels[0]['lat'] && $simplifiedHotels[0]['lng']) {
+        if (! empty($simplifiedHotels) && isset($simplifiedHotels[0]) && $simplifiedHotels[0]['lat'] && $simplifiedHotels[0]['lng']) {
 
             $origin = ['lat' => (float) $simplifiedHotels[0]['lat'], 'lng' => (float) $simplifiedHotels[0]['lng']];
 
@@ -157,7 +149,8 @@ class AiTripController extends Controller
 
             $allDestinations = array_merge($attractionDestinations, $restaurantDestinations);
 
-            if (!empty($allDestinations)) {
+            if (! empty($allDestinations)) {
+
                 $travelTimes = $this->transportationService->getTravelTimes($origin, $allDestinations);
 
                 foreach ($simplifiedAttractions as &$attraction) {
@@ -174,50 +167,23 @@ class AiTripController extends Controller
             }
         }
 
-        $recommendedHotel = $simplifiedHotels[0]['name'] ?? null;
+        $tripData = $this->groqService->MakeTrip($validated, $weatherForecast, $simplifiedHotels, $simplifiedAttractions, $simplifiedRestaurants);
 
-        $tripData = $this->groqService->MakeTrip(
-            $validated,
-            $weatherForecast,
-            $simplifiedHotels,
-            $simplifiedAttractions,
-            $simplifiedRestaurants,
-            $recommendedHotel
-        );
-
-        // --- Validate AI output shape before touching it ---
-        if (!isset($tripData['trip']) || !is_array($tripData['trip'])) {
-            Log::error('Groq trip response missing/invalid `trip` array', ['tripData' => $tripData]);
-            throw new \RuntimeException('AI returned an incomplete trip plan. Please try again.');
-        }
-
-        // Flag (don't hard-fail on) a hallucinated hotel choice, since this is
-        // a free-text field and we'd rather log/monitor than break trip creation.
-        $validHotelNames = collect($simplifiedHotels)->pluck('name')->all();
-        if (!empty($validHotelNames) && !in_array($tripData['best_hotel'] ?? null, $validHotelNames, true)) {
-            Log::warning('AI selected a hotel not present in search results', [
-                'best_hotel' => $tripData['best_hotel'] ?? null,
-                'valid_hotels' => $validHotelNames,
-            ]);
-        }
-
-        // --- Cost calculation ---
-        // Contract: `activities_and_meals_cost_per_person` is a PER-PERSON amount
-        // as returned by the AI. This is the only place guest count is applied —
-        // do not multiply by guests anywhere else (including in the prompt).
         $strictTotalCost = 0;
         $guestsCount = (int) ($validated['number_of_travels'] ?? 1);
 
-        foreach ($tripData['trip'] as &$day) {
-            $hotelPerNight = (float) ($day['hotel_per_night'] ?? 0);
-            $perPersonMealsActivities = (float) ($day['activities_and_meals_cost_per_person'] ?? 0);
+        if (isset($tripData['trip']) && is_array($tripData['trip'])) {
+            foreach ($tripData['trip'] as &$day) {
+                $hotelPerNight = (float) ($day['hotel_per_night'] ?? 0);
+                $perPersonMealsActivities = (float) ($day['activities_and_meals_cost_per_person'] ?? 0);
 
-            $strictDailyCost = $hotelPerNight + ($perPersonMealsActivities * $guestsCount);
+                $strictDailyCost = $hotelPerNight + ($perPersonMealsActivities * $guestsCount);
 
-            $day['daily_cost'] = $strictDailyCost;
-            $strictTotalCost += $strictDailyCost;
+                $day['daily_cost'] = $strictDailyCost;
+                $strictTotalCost += $strictDailyCost;
+            }
+            unset($day);
         }
-        unset($day);
         $tripData['total_estimated_cost'] = $strictTotalCost;
 
         // --- Scale down proportionally if over budget ---
@@ -252,10 +218,10 @@ class AiTripController extends Controller
                 $day['hotel'] = $tripData['best_hotel'] ?? 'Not specified';
 
                 $tripRecord->details()->create([
-                    'day'      => $day['day'],
-                    'title'    => $day['day_title'] ?? $day['weather_note'] ?? ('Day ' . $day['day']),
+                    'day' => $day['day'],
+                    'title' => $day['day_title'] ?? $day['weather_note'] ?? ('Day '.$day['day']),
                     'expenses' => $day['daily_cost'] ?? 0,
-                    'plan'     => json_encode($day),
+                    'plan' => json_encode($day),
                 ]);
             }
 

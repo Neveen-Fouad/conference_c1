@@ -20,13 +20,14 @@ class CountryController extends Controller
             $this->countryService->getAllCountries()
         );
     }
+
     public function show(string $country): JsonResponse
     {
         $countryData = $this->countryService->getCountryInfo($country);
 
-        if (!$countryData) {
+        if (! $countryData) {
             return response()->json([
-                'message' => 'Country not found'
+                'message' => 'Country not found',
             ], 404);
         }
 

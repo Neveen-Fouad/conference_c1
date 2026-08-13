@@ -3,16 +3,17 @@
 namespace App\Repositories\Eloquent;
 
 
-use App\Models\trip;
-use App\Models\bookings;
+
+use App\Models\Booking;
 use App\Interfaces\TripRepositoryInterface;
+use App\Models\Trip;
 
 class TripRepository implements TripRepositoryInterface
 {
     /**
      * Create a new class instance.
      */
- public function __construct(protected trip $model) {}
+    public function __construct(protected Trip $model) {}
 
     public function getAll()
     {
@@ -42,12 +43,12 @@ class TripRepository implements TripRepositoryInterface
         return $this->findById($id)->delete();
     }
 
-  public function findByUserId(int $userId)
-{
-    return $this->model->whereHas('clients', function ($query) use ($userId) {
-        $query->where('clients.id', $userId);
-    })->with('details')->get();
-}
+    public function findByUserId(int $userId)
+    {
+        return $this->model->whereHas('clients', function ($query) use ($userId) {
+            $query->where('clients.user_id', $userId);
+        })->with('details')->get();
+    }
 
     public function getTripDetails(int $tripId)
     {
@@ -61,7 +62,7 @@ class TripRepository implements TripRepositoryInterface
             'monthly_trips' => $this->model->whereMonth('created_at', now()->month)->whereYear('created_at', now()->year)->count(),
             'favorite_trips' => $this->model->where('is_fav', true)->count(),
             'average_budget' => $this->model->avg('budget'),
-            'average_trip_duration' => $this->model->selectRaw('AVG(DATEDIFF(end_date, start_date)) as avg_duration')->value('avg_duration'),
+            'average_trip_duration' => $this->model->avg('number_of_days'),
         ];
     }
 
@@ -74,7 +75,7 @@ class TripRepository implements TripRepositoryInterface
     {
         $trip = $this->findById($tripId);
         
-        return bookings::create([
+        return Booking::create([
             'client_id' => $clientId,
             'type' => 'trip',
             'booking_type' => 'trip',

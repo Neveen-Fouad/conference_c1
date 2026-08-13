@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\AirportSearchRequest;
 use App\Http\Requests\FlightSearchRequest;
 use App\Services\FlightService;
 
 class FlightController extends Controller
 {
-    public function __construct(protected FlightService $flightService)
-    {
-    }
+    public function __construct(protected FlightService $flightService) {}
 
     public function searchAirports(AirportSearchRequest $request)
     {
@@ -26,16 +23,17 @@ class FlightController extends Controller
             $result = $this->flightService->searchFlights($request->validated());
         } catch (\Throwable $e) {
             report($e);
+
             return response()->json([
-                'status'  => false,
+                'status' => false,
                 'message' => 'Unable to search flights right now, please try again.',
             ], 502);
         }
 
         return response()->json([
-            'status'    => true,
+            'status' => true,
             'sessionId' => $result['sessionId'],
-            'data'      => [
+            'data' => [
                 'itineraries' => $result['itineraries'],
             ],
         ]);

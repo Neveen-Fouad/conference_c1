@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Models\Complaint;
 use App\Interfaces\ComplaintRepositoryInterface;
+use App\Models\Complaint;
 
 class ComplaintRepository extends BaseRepository implements ComplaintRepositoryInterface
 {

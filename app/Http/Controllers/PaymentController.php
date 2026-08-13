@@ -19,12 +19,11 @@ class PaymentController extends Controller
     {
         $data = $request->validate([
             'booking_id' => 'required|exists:bookings,id',
-            'client_id' => 'required|exists:clients,id',
         ]);
 
         $result = $this->paymentService
             ->createBookingPayment(
-                $data['client_id'],
+                $this->clientId($request),
                 $data['booking_id']
             );
 
@@ -35,23 +34,33 @@ class PaymentController extends Controller
         ], 201);
     }
 
-    public function show($paymentId)
+    public function show(Request $request, int $paymentId)
     {
         $payment = $this->paymentService
-            ->getPayment($paymentId);
+            ->getClientPayment($paymentId, $this->clientId($request));
 
         return response()->json([
             'data' => $payment,
         ]);
     }
 
-    public function clientPayments($clientId)
+    public function clientPayments(Request $request, int $clientId)
     {
+        abort_unless($clientId === $this->clientId($request), 403, 'Unauthorized action.');
+
         $payments = $this->paymentService
             ->getClientPayments($clientId);
 
         return response()->json([
             'data' => $payments,
         ]);
+    }
+
+    private function clientId(Request $request): int
+    {
+        $clientId = $request->user()?->client?->id;
+        abort_if($clientId === null, 403, 'A client profile is required.');
+
+        return $clientId;
     }
 }

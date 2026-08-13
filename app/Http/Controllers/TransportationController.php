@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 
 class TransportationController extends Controller
 {
-    public function __construct(protected TransportationService $transportationService)
-    {
-    }
+    public function __construct(protected TransportationService $transportationService) {}
 
     public function tips(Request $request): JsonResponse
     {
@@ -23,7 +21,6 @@ class TransportationController extends Controller
             'destinations.*.lat' => ['required', 'numeric', 'between:-90,90'],
             'destinations.*.lng' => ['required', 'numeric', 'between:-180,180'],
         ]);
-
 
         $tips = $this->transportationService->getSmartTravelTimes(
             $validated['origin'],

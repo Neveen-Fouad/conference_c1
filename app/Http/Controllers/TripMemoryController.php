@@ -32,12 +32,14 @@ class TripMemoryController extends Controller
     public function index(Trip $trip)
     {
         $this->service->assertMember($trip);
+
         return response()->json($this->service->getCapsule($trip));
     }
 
     public function destroy(Trip $trip, TripMemory $memory)
     {
-        $this->service->deleteMemory($memory);
+        $this->service->deleteMemory($trip, $memory);
+
         return response()->json(null, 204);
     }
 }

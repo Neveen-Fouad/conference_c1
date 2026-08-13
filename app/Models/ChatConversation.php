@@ -8,15 +8,17 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ChatConversation extends Model
 {
-    protected $fillable=[
-        "client_id",
-        "title",
+    protected $fillable = [
+        'client_id',
+        'title',
 
+    ];
 
-        ];
-    public function Client():belongsTo{
+    public function client(): BelongsTo
+    {
         return $this->belongsTo(Client::class);
     }
+
     public function messages(): HasMany
     {
         return $this->hasMany(ChatMessage::class, 'conversation_id');

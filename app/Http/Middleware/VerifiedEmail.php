@@ -16,10 +16,12 @@ class VerifiedEmail
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = auth('api')->userOrFail();
-        if (!$user->hasVerifiedEmail()) {
+        $user = $request->user('api');
+        abort_if($user === null, 401, 'Unauthenticated.');
+        if (! $user->hasVerifiedEmail()) {
             throw new AuthorizationException('Your email is not verified. Please verify your email first.');
         }
+
         return $next($request);
     }
 }

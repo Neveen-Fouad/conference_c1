@@ -24,7 +24,7 @@ class RestaurantListRequest extends FormRequest
     {
         return [
             'city' => 'required|string|max:255',
-            'page' => 'nullable|integer|min:1',
+            'page' => 'nullable|integer|min:0',
             'min_rating' => 'nullable|integer|in:3,4,5',
         ];
     }

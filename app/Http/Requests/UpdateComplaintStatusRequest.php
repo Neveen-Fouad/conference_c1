@@ -32,4 +32,3 @@ class UpdateComplaintStatusRequest extends FormRequest
         ];
     }
 }
-

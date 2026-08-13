@@ -2,17 +2,20 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 class TransportationService
 {
     public const PROFILE_WALKING = 'foot-walking';
+
     public const PROFILE_DRIVING = 'driving-car';
 
     protected string $baseUrl;
+
     protected ?string $apiKey;
+
     protected int $cacheTtlDays;
 
     public function __construct()
@@ -22,7 +25,6 @@ class TransportationService
         $this->cacheTtlDays = (int) config('services.ors.cache_ttl_days', 7);
     }
 
-    
     public function getSmartTravelTimes(array $origin, array $destinations): array
     {
         if (empty($destinations)) {
@@ -39,7 +41,7 @@ class TransportationService
             $walk = $walkingTimes[$id] ?? null;
             $drive = $drivingTimes[$id] ?? null;
 
-            if ($walk && !$walk['is_estimate'] && $walk['duration_minutes'] <= 15) {
+            if ($walk && ! $walk['is_estimate'] && $walk['duration_minutes'] <= 15) {
                 $smartResults[$id] = $walk;
             } elseif ($drive) {
                 $smartResults[$id] = $drive;
@@ -70,6 +72,7 @@ class TransportationService
     {
         if (empty($this->apiKey)) {
             Log::warning('TransportationService: ORS_API_KEY not configured, using haversine estimates');
+
             return $this->fallbackAll($origin, $destinations, $profile);
         }
 
@@ -83,20 +86,21 @@ class TransportationService
                 'Authorization' => $this->apiKey,
                 'Content-Type' => 'application/json',
             ])
-            ->timeout(8)
-            ->post("{$this->baseUrl}/v2/matrix/{$profile}", [
-                'locations' => $locations,
-                'sources' => [0],
-                'destinations' => range(1, count($destinations)),
-                'metrics' => ['duration', 'distance'],
-                'units' => 'm',
-            ]);
+                ->timeout(8)
+                ->post("{$this->baseUrl}/v2/matrix/{$profile}", [
+                    'locations' => $locations,
+                    'sources' => [0],
+                    'destinations' => range(1, count($destinations)),
+                    'metrics' => ['duration', 'distance'],
+                    'units' => 'm',
+                ]);
 
             if ($response->failed()) {
                 Log::warning('ORS matrix request failed, falling back to haversine estimate', [
                     'status' => $response->status(),
                     'profile' => $profile,
                 ]);
+
                 return $this->fallbackAll($origin, $destinations, $profile);
             }
 
@@ -106,6 +110,7 @@ class TransportationService
                 'message' => $e->getMessage(),
                 'profile' => $profile,
             ]);
+
             return $this->fallbackAll($origin, $destinations, $profile);
         }
     }
@@ -115,7 +120,7 @@ class TransportationService
         $durations = data_get($data, 'durations.0');
         $distances = data_get($data, 'distances.0');
 
-        if (!is_array($durations)) {
+        if (! is_array($durations)) {
             return $this->fallbackAll($origin, $destinations, $profile);
         }
 
@@ -126,6 +131,7 @@ class TransportationService
 
             if ($durationSeconds === null) {
                 $results[$dest['id']] = $this->fallbackSingle($origin, $dest, $profile);
+
                 continue;
             }
 
@@ -151,6 +157,7 @@ class TransportationService
         foreach ($destinations as $dest) {
             $results[$dest['id']] = $this->fallbackSingle($origin, $dest, $profile);
         }
+
         return $results;
     }
 
@@ -198,9 +205,9 @@ class TransportationService
 
     protected function buildCacheKey(array $origin, array $destinations, string $profile): string
     {
-        $originPart = round($origin['lat'], 5) . ',' . round($origin['lng'], 5);
+        $originPart = round($origin['lat'], 5).','.round($origin['lng'], 5);
         $destIds = collect($destinations)->pluck('id')->sort()->implode(',');
 
-        return 'ors_matrix_' . md5("{$profile}:{$originPart}:{$destIds}");
+        return 'ors_matrix_'.md5("{$profile}:{$originPart}:{$destIds}");
     }
 }

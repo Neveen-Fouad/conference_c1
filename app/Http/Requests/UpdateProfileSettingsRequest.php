@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateProfileSettingsRequest extends FormRequest
@@ -16,11 +15,11 @@ class UpdateProfileSettingsRequest extends FormRequest
     {
         return [
             'first_name' => 'sometimes|string|max:255',
-            'last_name'  => 'sometimes|string|max:255',
-            'phone'      => 'sometimes|string|max:20',
+            'last_name' => 'sometimes|string|max:255',
+            'phone' => 'sometimes|string|max:20',
             'birth_date' => 'sometimes|date',
-            'latittude'  => 'sometimes|numeric',
-            'long'       => 'sometimes|numeric',
+            'latittude' => 'sometimes|numeric',
+            'long' => 'sometimes|numeric',
         ];
     }
 }

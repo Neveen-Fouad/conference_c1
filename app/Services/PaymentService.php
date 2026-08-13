@@ -3,12 +3,13 @@
 namespace App\Services;
 
 use App\Interfaces\PaymentRepositoryInterface;
-use App\Models\Bookings;
+use App\Models\Booking;
 use Illuminate\Support\Str;
 
 class PaymentService
 {
     protected $paymentRepository;
+
     protected $paymobPaymentService;
 
     public function __construct(
@@ -21,15 +22,14 @@ class PaymentService
 
     public function createBookingPayment($clientId, $bookingId)
     {
-        $booking = Bookings::where('id', $bookingId)
+        $booking = Booking::where('id', $bookingId)
             ->where('client_id', $clientId)
             ->firstOrFail();
 
         $payment = $this->paymentRepository->create([
             'client_id' => $clientId,
             'booking_id' => $bookingId,
-            'payment_reference' =>
-                'PAY-' . Str::upper(Str::random(12)),
+            'payment_reference' => 'PAY-'.Str::upper(Str::random(12)),
             'payment_type' => 'booking',
             'amount' => $booking->total_price,
             'currency' => $booking->currency ?? 'EGP',
@@ -44,10 +44,8 @@ class PaymentService
         $payment = $this->paymentRepository->update(
             $payment->id,
             [
-                'gateway_reference' =>
-                    $paymobData['gateway_reference'],
-                'gateway_response' =>
-                    $paymobData['gateway_response'],
+                'gateway_reference' => $paymobData['gateway_reference'],
+                'gateway_response' => $paymobData['gateway_response'],
             ]
         );
 
@@ -57,10 +55,10 @@ class PaymentService
         ];
     }
 
-    public function getPayment($paymentId)
+    public function getClientPayment(int $paymentId, int $clientId)
     {
         return $this->paymentRepository
-            ->findById($paymentId);
+            ->findForClient($paymentId, $clientId);
     }
 
     public function getClientPayments($clientId)
