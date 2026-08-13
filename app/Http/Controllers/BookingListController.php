@@ -39,4 +39,31 @@ class BookingListController extends Controller
 
         return response()->json(['data' => $bookings]);
     }
+
+    public function adminAll(Request $request, int $clientId)
+    {
+        $bookings = $this->bookingRepository->findByUser($clientId);
+
+        return response()->json(['data' => $bookings]);
+    }
+
+    public function adminHotels(Request $request, int $clientId)
+    {
+        $bookings = $this->bookingRepository
+            ->findByUser($clientId)
+            ->where('type', 'hotel')
+            ->values();
+
+        return response()->json(['data' => $bookings]);
+    }
+
+    public function adminFlights(Request $request, int $clientId)
+    {
+        $bookings = $this->bookingRepository
+            ->findByUser($clientId)
+            ->where('type', 'flight')
+            ->values();
+
+        return response()->json(['data' => $bookings]);
+    }
 }
