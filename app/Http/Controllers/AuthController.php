@@ -23,6 +23,22 @@ class AuthController extends Controller
         $this->notificationService = $notificationService;
     }
 
+
+    function register(RegisterRequest $request): JsonResponse{
+        $data = $this->authRepository->register($request->validated());
+
+        $data->sendEmailVerificationNotification();
+
+        $token = auth('api')->login($data);
+
+        return response()->json([
+            'message' => 'User registered successfully. Please verify your email.',
+            'data' => [
+                'token' => $token,
+            ],
+        ], 201);
+    }
+
     public function login(LoginRequest $request): JsonResponse{
         $data = $this->authRepository->login($request->validated());
         if (!$data){
