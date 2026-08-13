@@ -23,7 +23,7 @@ return new class extends Migration
 
             $table->string('gateway')->default('paymob');
 
-            $table->enum('status', ['pending', 'paid', 'failed', 'canceled', 'refunded',])->default('pending');
+            $table->enum('status', ['pending', 'paid', 'failed', 'canceled', 'refunded'])->default('pending');
 
             $table->string('gateway_reference')->nullable()->unique();
 

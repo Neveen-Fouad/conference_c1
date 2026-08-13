@@ -59,7 +59,7 @@ class TripRepository implements TripRepositoryInterface
             'monthly_trips' => $this->model->whereMonth('created_at', now()->month)->whereYear('created_at', now()->year)->count(),
             'favorite_trips' => $this->model->where('is_fav', true)->count(),
             'average_budget' => $this->model->avg('budget'),
-            'average_trip_duration' => $this->model->selectRaw('AVG(DATEDIFF(end_date, start_date)) as avg_duration')->value('avg_duration'),
+            'average_trip_duration' => $this->model->avg('number_of_days'),
         ];
     }
 

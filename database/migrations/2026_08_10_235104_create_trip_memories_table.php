@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('trip_memories', function (Blueprint $table) {
-    $table->id();
-    $table->foreignId('trip_id')->constrained()->cascadeOnDelete();
-    $table->foreignId('client_id')->constrained()->cascadeOnDelete();
-    $table->enum('type', ['photo', 'note', 'voice']);
-    $table->string('content');
-    $table->string('caption')->nullable();
-    $table->timestamps();
-});
+            $table->id();
+            $table->foreignId('trip_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('client_id')->constrained()->cascadeOnDelete();
+            $table->enum('type', ['photo', 'note', 'voice']);
+            $table->string('content');
+            $table->string('caption')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**

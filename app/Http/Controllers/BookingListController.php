@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 
 class BookingListController extends Controller
 {
-    public function __construct(protected BookingRepositoryInterface $bookingRepository)
-    {
-    }
+    public function __construct(protected BookingRepositoryInterface $bookingRepository) {}
 
     public function all(Request $request)
     {

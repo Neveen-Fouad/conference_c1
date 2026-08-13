@@ -1,6 +1,8 @@
 <?php
+
 namespace App\Enum;
-enum FavouriteType:string
+
+enum FavouriteType: string
 {
     case Trip = 'trip';
     case Hotel = 'hotel';

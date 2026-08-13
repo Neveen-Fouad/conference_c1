@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\HotelService;
 use App\Http\Requests\HotelDetailsRequest;
+use App\Services\HotelService;
 
 class HotelController extends Controller
 {
-    public function __construct(protected HotelService $hotelService)
-    {
-    }
-
+    public function __construct(protected HotelService $hotelService) {}
 
     public function show(HotelDetailsRequest $request)
     {
@@ -19,7 +16,7 @@ class HotelController extends Controller
         return $details
             ? response()->json($details)
             : response()->json([
-                'message' => 'Not found'
+                'message' => 'Not found',
             ], 404);
     }
 }

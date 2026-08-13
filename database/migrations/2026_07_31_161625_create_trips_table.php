@@ -14,17 +14,17 @@ return new class extends Migration
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId("client_id")->constrained();
-            $table->string("classes");
-            $table->string("destination");
-            $table->integer("number_of_travels");
-            $table->decimal("estimated_expenses", 10, 2);
-            //$table->string("transport_tips");
-            $table->decimal("budget", 10, 2);
-            $table->integer("number_of_days");
-            $table->date("start_date");
-            $table->boolean("is_fav")->default(false);
-            $table->string("style");
+            $table->foreignId('client_id')->constrained();
+            $table->string('classes');
+            $table->string('destination');
+            $table->integer('number_of_travels');
+            $table->decimal('estimated_expenses', 10, 2);
+            // $table->string("transport_tips");
+            $table->decimal('budget', 10, 2);
+            $table->integer('number_of_days');
+            $table->date('start_date');
+            $table->boolean('is_fav')->default(false);
+            $table->string('style');
 
         });
     }

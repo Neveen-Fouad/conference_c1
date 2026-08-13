@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Setting extends Model
 {
     protected $fillable = [
-        "name",
-        "phone",
-        "email",
-        "slogan",
-        "logo",
-        "facebook",
-        "instagram",
+        'name',
+        'phone',
+        'email',
+        'slogan',
+        'logo',
+        'facebook',
+        'instagram',
     ];
 }

@@ -6,20 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class ClientInterest extends Model
 {
-   protected $table = 'client_has_interests';
+    protected $table = 'client_has_interests';
 
-   protected $fillable = [
-    'client_id',
-    'interests_id',
-];
+    protected $fillable = [
+        'client_id',
+        'interests_id',
+    ];
 
-public function client()
-{
-    return $this->belongsTo(Client::class);
-}
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
 
-public function interest()
-{
-    return $this->belongsTo(Interest::class, 'interests_id');
-}
+    public function interest()
+    {
+        return $this->belongsTo(Interest::class, 'interests_id');
+    }
 }

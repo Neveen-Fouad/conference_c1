@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Complaint extends Model
 {
     //
-     protected $fillable = [
-       'email',
-       'title',
-       'phone',
-       'description',
-       
+    protected $fillable = [
+        'email',
+        'title',
+        'phone',
+        'description',
+
     ];
 }

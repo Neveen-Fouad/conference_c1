@@ -8,21 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-
 class Trip extends Model
 {
     protected $fillable = [
-        "estimated_expenses",
-        "style",
-        "number_of_travels",
-        "classes",
-        "destination",
-        "start_date",
-        "end_date",
-        "budget",
-        "number_of_days",
-        "is_fav",
-        "is_ai_generated",
+        'estimated_expenses',
+        'style',
+        'number_of_travels',
+        'classes',
+        'destination',
+        'start_date',
+        'end_date',
+        'budget',
+        'number_of_days',
+        'is_fav',
+        'is_ai_generated',
     ];
 
     protected $casts = [

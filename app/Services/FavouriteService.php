@@ -57,7 +57,7 @@ class FavouriteService
     {
         $favourites->getCollection()->transform(function ($favourite) {
             $favourite->item_details = $this->getItemDetails(
-                $favourite->type,
+                $favourite->type instanceof FavouriteType ? $favourite->type->value : $favourite->type,
                 $favourite->favouriteable_id
             );
 

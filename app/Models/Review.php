@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Review extends Model
 {
     //
-    protected $fillable=[
+    protected $fillable = [
         'description',
         'client_id',
         'rating',
@@ -20,22 +20,26 @@ class Review extends Model
         'reviewable_id',
         'booking_id',
     ];
+
     protected $casts = [
         'type' => ReviewType::class,
         'status' => ReviewStatus::class,
     ];
+
     public function client(): BelongsTo
     {
         return $this->belongsTo(Client::class);
 
     }
+
     public function interest(): BelongsTo
     {
         return $this->belongsTo(Interest::class, 'interests_id');
     }
+
     public function trip(): BelongsTo
     {
         return $this->belongsTo(Trip::class, 'reviewable_id')
-        ->where('type',ReviewType::Trip->value);
+            ->where('type', ReviewType::Trip->value);
     }
 }

@@ -62,7 +62,7 @@ class AuthRepository implements AuthRepositoryInterface
 
     public function logout()
     {
-        $this->guard()->logout();
+        $this->guard()->logout(true);
 
         return true;
     }
