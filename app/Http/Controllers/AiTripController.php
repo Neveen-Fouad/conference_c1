@@ -42,7 +42,7 @@ class AiTripController extends Controller
             'destination' => $validated['destination'],
             'budget'      => $validated['budget'],
             'check_in'    => $validated['start_date'],
-            'check_out'   => $validated['end_date'],
+            'check_out'   => $validated['end_date'] = \Carbon\Carbon::parse($validated['start_date'])->addDays($validated['number_of_days'] - 1)->toDateString(),
             'guests'      => $validated['number_of_travels'],
             'style'       => $validated['style'],
         ];

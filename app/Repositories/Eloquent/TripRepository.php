@@ -60,7 +60,7 @@ class TripRepository implements TripRepositoryInterface
         return [
             'total_trips' => $this->model->count(),
             'monthly_trips' => $this->model->whereMonth('created_at', now()->month)->whereYear('created_at', now()->year)->count(),
-            'favorite_trips' => $this->model->where('is_fav', true)->count(),
+            // 'favorite_trips' => $this->model->where('is_fav', true)->count(),
             'average_budget' => $this->model->avg('budget'),
             'average_trip_duration' => $this->model->avg('number_of_days'),
         ];
@@ -86,7 +86,7 @@ class TripRepository implements TripRepositoryInterface
             'number_of_bookings' => $trip->number_of_travels ?? 1,
             'status' => 'pending',
             'check_in_date' => $trip->start_date,
-            // 'check_out_date' => ,
+            'check_out_date' => \Carbon\Carbon::parse($trip->start_date)->addDays(max(0, $trip->number_of_days - 1))->toDateString(),
             'booking_date' => now()->toDateString(),
             'total_price' => $trip->estimated_expenses ?? $trip->budget ?? 0,
             'currency' => 'USD',

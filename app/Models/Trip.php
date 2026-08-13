@@ -17,17 +17,13 @@ class Trip extends Model
         'classes',
         'destination',
         'start_date',
-        'end_date',
         'budget',
         'number_of_days',
-        'is_fav',
         'is_ai_generated',
     ];
 
     protected $casts = [
         'start_date' => 'date',
-        'end_date' => 'date',
-        'is_fav' => 'boolean',
         'is_ai_generated' => 'boolean',
     ];
 

@@ -18,9 +18,7 @@ class GroqService
 
     public function MakeTrip($TripRequest, $weatherForecast, $hotel, $places, $restaurants = [], $recommendedHotel = null)
     {
-        $StartDate = $TripRequest['start_date'] ?? $TripRequest->start_date;
-        $EndDate = $TripRequest['end_date'] ?? $TripRequest->end_date;
-        $days = (new \DateTime($EndDate))->diff(new \DateTime($StartDate))->days + 1;
+        $days = $TripRequest['number_of_days'] ?? $TripRequest->number_of_days;
         $destination = $TripRequest['destination'] ?? $TripRequest->destination;
         $budget = $TripRequest['budget'] ?? $TripRequest->budget;
         $guests = $TripRequest['number_of_travels'] ?? $TripRequest->number_of_travels;

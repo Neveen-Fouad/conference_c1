@@ -127,7 +127,6 @@ public function resendVerificationEmail(User $user ): void{
         if (!$user->hasVerifiedEmail()){
             $user->sendEmailVerificationNotification();
         }
-        return true;
     }
 
 
