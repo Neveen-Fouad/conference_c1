@@ -6,6 +6,7 @@ use App\Interfaces\TripRepositoryInterface;
 use App\Http\Requests\UpdateTripRequest;
 use App\Http\Requests\StoreTripRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use App\Models\trip;
 
@@ -35,7 +36,26 @@ class TripController extends Controller
 
     public function store(StoreTripRequest $request){
         Gate::authorize('create', trip::class);
-        $trip = $this->tripRepository->create($request->validated());
+        $validated = $request->validated();
+        
+        $trip = DB::transaction(function () use ($validated) {
+            
+            $tripRecord = $this->tripRepository->create(collect($validated)->except('details')->toArray());
+            
+            if (isset($validated['details']) && is_array($validated['details'])) {
+                foreach ($validated['details'] as $detail) {
+                    $tripRecord->details()->create([
+                        'day'      => $detail['day'],
+                        'title'    => $detail['title'],
+                        'expenses' => $detail['expenses'] ?? 0,
+                        'plan'     => is_array($detail['plan']) ? json_encode($detail['plan']) : $detail['plan'],
+                    ]);
+                }
+            }
+            
+            return $tripRecord->load('details');
+        });
+
         return response()->json($trip, 201);
     }
 

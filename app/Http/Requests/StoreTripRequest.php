@@ -30,6 +30,11 @@ class StoreTripRequest extends FormRequest
             'number_of_travels' => 'required|integer|min:1',
             'estimated_expenses' => 'required|numeric|min:0',
             'style' => 'required|string|max:255',
+            'details' => 'nullable|array',
+            'details.*.day' => 'required_with:details|integer|min:1',
+            'details.*.title' => 'required_with:details|string|max:255',
+            'details.*.expenses' => 'nullable|numeric|min:0',
+            'details.*.plan' => 'required_with:details',
         ];
     }
 }

@@ -31,11 +31,16 @@ class AuthController extends Controller
             ], 401);
         }
 
-        $this->notificationService->createNotification([
-            'client_id'   => auth('api')->id(),
-            'type'        => 'login',
-            'description' => 'A new login to your account was detected.',
-        ]);
+        $user = auth('api')->user();
+        $client = \App\Models\Client::where('user_id', $user->id)->first();
+        
+        if ($client) {
+            $this->notificationService->createNotification([
+                'client_id'   => $client->id,
+                'type'        => 'login',
+                'description' => 'A new login to your account was detected.',
+            ]);
+        }
 
         return response()->json([
             'message' => 'Login successful.',
@@ -62,19 +67,19 @@ class AuthController extends Controller
         ]);
     }
 
-    public function resendVerificationEmail(Request $request): JsonResponse{
-        if ($request->user()->hasVerifiedEmail()){
-            return response()->json([
-                'message' => 'Email is already verified.',
-            ], 400);
-        }
+    // public function resendVerificationEmail(Request $request): JsonResponse{
+    //     if ($request->user()->hasVerifiedEmail()){
+    //         return response()->json([
+    //             'message' => 'Email is already verified.',
+    //         ], 400);
+    //     }
 
-        $this->authRepository->resendVerificationEmail($request->user());
+    //     $this->authRepository->resendVerificationEmail($request->user());
 
-        return response()->json([
-            'message' => 'Verification email sent successfully.',
-        ]);
-    }
+    //     return response()->json([
+    //         'message' => 'Verification email sent successfully.',
+    //     ]);
+    // }
 
     public function forgotPassword(ForgotPasswordRequest $request): JsonResponse{
         $this->authRepository->forgotPassword($request->only('email'));
