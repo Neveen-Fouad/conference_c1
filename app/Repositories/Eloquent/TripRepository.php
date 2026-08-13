@@ -2,16 +2,15 @@
 
 namespace App\Repositories\Eloquent;
 
-
-use App\Models\trip;
 use App\Interfaces\TripRepositoryInterface;
+use App\Models\Trip;
 
 class TripRepository implements TripRepositoryInterface
 {
     /**
      * Create a new class instance.
      */
- public function __construct(protected trip $model) {}
+    public function __construct(protected Trip $model) {}
 
     public function getAll()
     {
@@ -41,12 +40,12 @@ class TripRepository implements TripRepositoryInterface
         return $this->findById($id)->delete();
     }
 
-  public function findByUserId(int $userId)
-{
-    return $this->model->whereHas('clients', function ($query) use ($userId) {
-        $query->where('clients.id', $userId);
-    })->with('details')->get();
-}
+    public function findByUserId(int $userId)
+    {
+        return $this->model->whereHas('clients', function ($query) use ($userId) {
+            $query->where('clients.user_id', $userId);
+        })->with('details')->get();
+    }
 
     public function getTripDetails(int $tripId)
     {
@@ -65,7 +64,7 @@ class TripRepository implements TripRepositoryInterface
     }
 
     public function getPreMadeTrips()
-{
-    return $this->model->doesntHave('clients')->with('details')->get();
-}
+    {
+        return $this->model->doesntHave('clients')->with('details')->get();
+    }
 }

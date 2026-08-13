@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Enum\FavouriteType;
 use Illuminate\Database\Eloquent\Model;
 
-class favourites extends Model
+class Favourite extends Model
 {
     //
     protected $fillable = [
@@ -18,11 +18,11 @@ class favourites extends Model
         'type' => FavouriteType::class,
     ];
     public function client(){
-        return $this->belongsTo(client::class);
+        return $this->belongsTo(Client::class);
     }
     public function trip()
     {
-        return $this->belongsTo(trip::class, 'favouriteable_id');
+        return $this->belongsTo(Trip::class, 'favouriteable_id');
 
     }
        

@@ -1,52 +1,56 @@
 <?php
 
 namespace App\Repositories\Eloquent;
-use App\Interfaces\FavouriteRepositoryInterface;
-use App\Models\favourites;
-use App\Repositories\BaseRepository;
 
+use App\Interfaces\FavouriteRepositoryInterface;
+use App\Models\Favourite;
+use App\Repositories\BaseRepository;
 
 class FavouriteRepository extends BaseRepository implements FavouriteRepositoryInterface
 {
-    public function __construct(favourites $model)
+    public function __construct(Favourite $model)
     {
         parent::__construct($model);
     }
+
     protected function currentClientId()
     {
         return auth('api')->user()?->client?->id;
     }
+
     public function getAll()
     {
-    
+
         return $this->model
-        ->where('client_id',$this->currentClientId())
-        ->paginate(10);
-    
+            ->where('client_id', $this->currentClientId())
+            ->paginate(10);
+
     }
 
     public function create(array $data)
     {
         $data['client_id'] = $this->currentClientId();
+
         return $this->model->create($data);
     }
 
     public function delete($id)
     {
-        $favourite=$this->model
-            ->where('client_id',$this->currentClientId())
-            ->where('id',$id)
+        $favourite = $this->model
+            ->where('client_id', $this->currentClientId())
+            ->where('id', $id)
             ->firstOrFail();
-            return $favourite->delete();
-          
+
+        return $favourite->delete();
+
     }
+
     public function filterFavouriteByType(string $type)
     {
         return $this->model
-        ->where('client_id',$this->currentClientId())
-        ->where('type',$type)
-        ->paginate(10);
-   
+            ->where('client_id', $this->currentClientId())
+            ->where('type', $type)
+            ->paginate(10);
 
     }
 }

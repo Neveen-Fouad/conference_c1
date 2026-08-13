@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class details extends Model
+class TripDetail extends Model
 {
+     protected $table = 'details';
     //
      protected $fillable = [
        'day',
@@ -16,6 +17,6 @@ class details extends Model
     
     ];
     public function trip(){
-        return $this->belongsTo(trip::class);
+        return $this->belongsTo(Trip::class);
     }
 }

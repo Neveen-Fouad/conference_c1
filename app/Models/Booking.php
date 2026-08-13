@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class bookings extends Model
+class Booking extends Model
 {
     use HasFactory;
 
@@ -42,7 +44,8 @@ class bookings extends Model
     ];
 
     
-    public function client()
+    /** @return BelongsTo<Client, $this> */
+    public function client(): BelongsTo
     {
         return $this->belongsTo(Client::class);
     }
@@ -53,10 +56,11 @@ class bookings extends Model
         return $query->where('type', 'hotel');
     }
   
-    public function review()
-{
-    return $this->hasOne(Review::class);
-}
+    /** @return HasOne<Review, $this> */
+    public function review(): HasOne
+    {
+        return $this->hasOne(Review::class);
+    }
   
     public function scopeFlights(Builder $query): Builder
     {

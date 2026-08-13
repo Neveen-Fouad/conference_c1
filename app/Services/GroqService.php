@@ -1,6 +1,6 @@
 <?php
 
-namespace App\services;
+namespace App\Services;
 
 use Log;
 use LucianoTonet\GroqLaravel\Facades\Groq;
@@ -18,31 +18,31 @@ class GroqService
 
     public function MakeTrip($TripRequest, $weatherForecast, $hotel, $places, $restaurants = [])
     {
-       
-    $StartDate = $TripRequest['start_date']?? $TripRequest->start_date;
+
+        $StartDate = $TripRequest['start_date'] ?? $TripRequest->start_date;
         $EndDate = $TripRequest['end_date'] ?? $TripRequest->end_date;
         $days = (new \DateTime($EndDate))->diff(new \DateTime($StartDate))->days + 1;
         $destination = $TripRequest['destination'] ?? $TripRequest->destination;
         $budget = $TripRequest['budget'] ?? $TripRequest->budget;
         $guests = $TripRequest['number_of_travels'] ?? $TripRequest->number_of_travels;
         $style = $TripRequest['style'] ?? $TripRequest->style;
-        
+
         $contextData = json_encode([
             // 'city' => $city,
             'weather_forecast' => $weatherForecast,
             'hotel_info' => $hotel,
             'available_attractions' => $places,
-            'available_restaurants' => $restaurants
+            'available_restaurants' => $restaurants,
         ]);
 
         try {
             $response = Groq::chat()->completions()->create([
-                "model" => config("groq.model"),
-                "response_format" => ["type" => "json_object"], 
-                "messages" => [
+                'model' => config('groq.model'),
+                'response_format' => ['type' => 'json_object'],
+                'messages' => [
                     [
-                        "role" => "system",
-                        "content" => "You are an expert travel planner. You must output your response in a good readable format with proper formatting and structure.
+                        'role' => 'system',
+                        'content' => "You are an expert travel planner. You must output your response in a good readable format with proper formatting and structure.
         Generate a daily itinerary for {$days} days to {$destination} with a budget of {$budget} and for {$guests} guests.
         
         CRITICAL RULES: 
@@ -78,30 +78,30 @@ class GroqService
     }
   ],
   \"total_estimated_cost\": 0
-}"
+}",
                     ],
                     [
-                        "role" => "user",
-                        "content" => "Plan my trip." 
-                    ]
-                ], 
-                "temperature" => 0.8, 
+                        'role' => 'user',
+                        'content' => 'Plan my trip.',
+                    ],
+                ],
+                'temperature' => 0.8,
             ]);
-            
+
         } catch (Throwable $e) {
-            Log::error('groq error ', ["message" => $e->getMessage()]);
+            Log::error('groq error ', ['message' => $e->getMessage()]);
             throw new \RuntimeException('Failed to generate trip plan. Please try again later.');
         }
         $content = $response['choices'][0]['message']['content'];
 
-$decoded = json_decode($content, true);
+        $decoded = json_decode($content, true);
 
-if (json_last_error() !== JSON_ERROR_NONE) {
-    Log::error('Groq returned invalid JSON', ['content' => $content, 'error' => json_last_error_msg()]);
-    throw new \RuntimeException('AI returned an unexpected format. Please try again.');
-}
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            Log::error('Groq returned invalid JSON', ['content' => $content, 'error' => json_last_error_msg()]);
+            throw new \RuntimeException('AI returned an unexpected format. Please try again.');
+        }
 
-return $decoded;
- 
+        return $decoded;
+
     }
 }

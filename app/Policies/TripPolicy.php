@@ -2,13 +2,12 @@
 
 namespace App\Policies;
 
-use App\Models\trip;
+use App\Models\Trip;
 use App\Models\User;
 
 class TripPolicy
 {
-
-    protected function isOwner(User $user, trip $trip): bool
+    protected function isOwner(User $user, Trip $trip): bool
     {
         return $trip->clients()
             ->where('user_id', $user->id)
@@ -20,7 +19,7 @@ class TripPolicy
         return $user->role === 'admin';
     }
 
-    public function view(User $user, trip $trip): bool
+    public function view(User $user, Trip $trip): bool
     {
         return $this->isAdmin($user) || $this->isOwner($user, $trip);
     }
@@ -32,10 +31,11 @@ class TripPolicy
 
     public function createViaAi(User $user): bool
     {
-        return true; 
+        return true;
 
     }
-    public function update(User $user, trip $trip): bool
+
+    public function update(User $user, Trip $trip): bool
     {
         if ($trip->clients()->exists()) {
             return $this->isOwner($user, $trip);
@@ -44,12 +44,12 @@ class TripPolicy
         return $this->isAdmin($user);
     }
 
-
-    public function delete(User $user, trip $trip): bool
+    public function delete(User $user, Trip $trip): bool
     {
         if ($trip->clients()->exists()) {
             return $this->isOwner($user, $trip);
         }
+
         return $this->isAdmin($user);
     }
 }

@@ -5,8 +5,9 @@ namespace App\Models;
 use App\Enum\ReviewStatus;
 use App\Enum\ReviewType;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class review extends Model
+class Review extends Model
 {
     //
     protected $fillable=[
@@ -23,15 +24,18 @@ class review extends Model
         'type' => ReviewType::class,
         'status' => ReviewStatus::class,
     ];
-    public function client(){
+    public function client(): BelongsTo
+    {
         return $this->belongsTo(Client::class);
 
     }
-    public function interest(){
-        return $this->belongsTo(interests::class,'interests_id');
+    public function interest(): BelongsTo
+    {
+        return $this->belongsTo(Interest::class, 'interests_id');
     }
-    public function trip(){
-        return $this->belongsTo(trip::class, 'reviewable_id')
+    public function trip(): BelongsTo
+    {
+        return $this->belongsTo(Trip::class, 'reviewable_id')
         ->where('type',ReviewType::Trip->value);
     }
 }

@@ -2,21 +2,10 @@
 
 namespace App\Providers;
 
-
-use App\Models\trip;
+use App\Models\Trip;
 use App\Policies\TripPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
-use App\Interfaces\UserRepositoryInterface;
-use App\Interfaces\ComplaintRepositoryInterface;
-use App\Interfaces\SettingRepositoryInterface;
-use App\Interfaces\DashboardReportServiceInterface;
-use App\Services\DashboardReportService;
-
-
-use App\Repositories\UserRepository;
-use App\Repositories\ComplaintRepository;
-use App\Repositories\SettingRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,9 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
 
-       
-
-        Gate::policy(trip::class, TripPolicy::class);
+        Gate::policy(Trip::class, TripPolicy::class);
     }
 
     /**

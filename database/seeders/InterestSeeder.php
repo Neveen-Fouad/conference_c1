@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Interests;
+use App\Models\Interest;
 use Illuminate\Database\Seeder;
 
 class InterestSeeder extends Seeder
@@ -27,7 +27,7 @@ class InterestSeeder extends Seeder
             'Relaxation',
        ];
      foreach ($interests as $interest) {
-    Interests::updateOrCreate([
+    Interest::updateOrCreate([
         'name' => $interest,
     ]);
 }

@@ -5,45 +5,52 @@ namespace App\Services;
 use App\Models\Trip;
 use App\Models\TripMemory;
 use App\Models\User;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Contracts\Filesystem\Cloud;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class TripMemoryService
 {
     public function currentClientId(): int
     {
-        /** @var User $user */
         $user = Auth::user();
-        return $user->client->id;
+        abort_unless($user instanceof User, 401, 'Unauthenticated.');
+        $clientId = $user->client?->id;
+        abort_if($clientId === null, 403, 'A client profile is required.');
+
+        return $clientId;
     }
 
     public function assertMember(Trip $trip): void
     {
         $clientId = $this->currentClientId();
         abort_unless(
-            $trip->client_id === $clientId || $trip->clients->contains($clientId),
-            403
+            $trip->clients()->whereKey($clientId)->exists(),
+            403,
+            'You are not a member of this trip.'
         );
     }
-public function addMemory(Trip $trip, string $type, ?string $note, ?UploadedFile $file, ?string $caption): TripMemory
-{
-    if ($type === 'note') {
-        $content = $note;
-    } else {
-        $path = $file->store("trip-memories/{$trip->id}", 'cloudinary');
-        /** @var \Illuminate\Contracts\Filesystem\Cloud $disk */
-        $disk = Storage::disk('cloudinary');
-        $content = $disk->url($path);
+
+    public function addMemory(Trip $trip, string $type, ?string $note, ?UploadedFile $file, ?string $caption): TripMemory
+    {
+        if ($type === 'note') {
+            $content = $note;
+        } else {
+            $path = $file->store("trip-memories/{$trip->id}", 'cloudinary');
+            /** @var Cloud $disk */
+            $disk = Storage::disk('cloudinary');
+            $content = $disk->url($path);
+        }
+
+        return $trip->memories()->create([
+            'client_id' => $this->currentClientId(),
+            'type' => $type,
+            'content' => $content,
+            'caption' => $caption,
+        ]);
     }
 
-    return $trip->memories()->create([
-        'client_id' => $this->currentClientId(),
-        'type' => $type,
-        'content' => $content,
-        'caption' => $caption,
-    ]);
-}
     public function getCapsule(Trip $trip): array
     {
         $clientId = $this->currentClientId();
@@ -62,8 +69,10 @@ public function addMemory(Trip $trip, string $type, ?string $note, ?UploadedFile
         ];
     }
 
-    public function deleteMemory(TripMemory $memory): void
+    public function deleteMemory(Trip $trip, TripMemory $memory): void
     {
+        $this->assertMember($trip);
+        abort_unless($memory->trip_id === $trip->id, 404);
         abort_unless($memory->client_id === $this->currentClientId(), 403);
         $memory->delete();
     }

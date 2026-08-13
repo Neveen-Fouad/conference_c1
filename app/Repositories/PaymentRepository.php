@@ -18,6 +18,14 @@ class PaymentRepository extends BaseRepository implements PaymentRepositoryInter
             ->where('client_id', $clientId)->latest()->get();
     }
 
+    public function findForClient(int $paymentId, int $clientId)
+    {
+        return $this->model
+            ->whereKey($paymentId)
+            ->where('client_id', $clientId)
+            ->firstOrFail();
+    }
+
     public function getByBooking($bookingId)
     {
         return $this->model->where('booking_id', $bookingId)->latest()->get();
@@ -28,6 +36,7 @@ class PaymentRepository extends BaseRepository implements PaymentRepositoryInter
         return $this->model->where('gateway_reference', $reference)->first();
 
     }
+
     public function findByPaymentReference($reference)
     {
         return $this->model->where('payment_reference', $reference)->first();

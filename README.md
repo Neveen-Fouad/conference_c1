@@ -7,7 +7,7 @@ A Laravel-based travel planning platform built as a case study for the Backend D
 - **Framework:** Laravel 12
 - **Language:** PHP 8+
 - **Database:** MySQL
-- **Auth:** Laravel Passport (`auth:api`)
+- **Auth:** JWT (`tymon/jwt-auth` with `auth:api`)
 - **Frontend:** Bootstrap 5
 - **Media Storage:** Cloudinary
 - **External APIs:** RapidAPI (hotels, restaurants, flights), Countries API, Weather API
@@ -86,7 +86,6 @@ Then:
 
 ```bash
 php artisan migrate
-php artisan passport:install
 php artisan serve
 ```
 
@@ -106,7 +105,7 @@ config/filesystems.php → includes the 'cloudinary' disk for media uploads
 
 ## Notes for Contributors
 
-- Auth middleware is `auth:api` (Passport) throughout — not Sanctum.
+- Auth middleware is `auth:api` and uses JWT. Refreshing requires a currently valid authenticated JWT.
 - Admin-only routes are additionally protected with an `isAdmin` middleware.
 - File uploads (photos/voice notes) go through the `cloudinary` filesystem disk, not local storage — use `$file->store($path, 'cloudinary')`, not `Storage::disk('public')`.
-- The `trips` table currently ties a trip to a single `client_id`; multi-participant trips (used by Time Capsule) go through the separate `client_has_trips` pivot table.
+- Trip membership, including Time Capsule access, uses the `client_has_trips` pivot table.

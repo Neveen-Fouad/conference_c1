@@ -12,8 +12,7 @@ class HotelBookingsController extends Controller
     public function __construct(
         protected BookingService $bookingService,
         protected NotificationService $notificationService
-    ) {
-    }
+    ) {}
 
     public function store(CreateBookingRequest $request)
     {
@@ -22,8 +21,8 @@ class HotelBookingsController extends Controller
             $bookings = $this->bookingService->createBooking(auth('api')->user(), $request->validated());
 
             $this->notificationService->createNotification([
-                'client_id'   => auth('api')->id(),
-                'type'        => 'hotel_booking',
+                'client_id' => $bookings->client_id,
+                'type' => 'hotel_booking',
                 'description' => 'Your hotel booking was created successfully.',
             ]);
 
@@ -31,6 +30,7 @@ class HotelBookingsController extends Controller
 
         } catch (\Exception $e) {
             Log::error('Error creating booking', ['exception' => $e]);
+
             return response()->json(['message' => 'Error creating booking.'], 500);
         }
     }

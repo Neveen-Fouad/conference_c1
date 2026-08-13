@@ -2,24 +2,24 @@
 
 namespace App\Repositories\Eloquent;
 
-use App\Repositories\Contracts\BookingRepositoryInterface;
-use App\Models\bookings;
+use App\Models\Booking;
+use App\Repositories\Contracts\FlightsRepositoryInterface;
 use Illuminate\Support\Collection;
 
-class FlightsRepository implements BookingRepositoryInterface
+class FlightsRepository implements FlightsRepositoryInterface
 {
     /*
      * Create a new booking.
      */
-    public function create(array $data): bookings
+    public function create(array $data): Booking
     {
-        return bookings::create($data);
+        return Booking::create($data);
     }
 
     /*
      * Update an existing booking.
      */
-    public function update(bookings $booking, array $data): bool
+    public function update(Booking $booking, array $data): bool
     {
         return $booking->update($data);
     }
@@ -27,17 +27,17 @@ class FlightsRepository implements BookingRepositoryInterface
     /*
      * Find booking by id.
      */
-    public function find(int $id): ?bookings
+    public function find(int $id): ?Booking
     {
-        return bookings::find($id);
+        return Booking::find($id);
     }
 
     /*
      * Find booking by booking number.
      */
-    public function findByBookingNumber(string $bookingNumber): ?bookings
+    public function findByBookingNumber(string $bookingNumber): ?Booking
     {
-        return bookings::where('booking_number', $bookingNumber)->first();
+        return Booking::where('booking_number', $bookingNumber)->first();
     }
 
     /*
@@ -45,7 +45,7 @@ class FlightsRepository implements BookingRepositoryInterface
      */
     public function findByUser(int $userId): Collection
     {
-        return bookings::where('user_id', $userId)
+        return Booking::whereHas('client', fn ($query) => $query->where('user_id', $userId))
             ->latest()
             ->get();
     }
@@ -53,7 +53,7 @@ class FlightsRepository implements BookingRepositoryInterface
     /*
      * Delete booking.
      */
-    public function delete(bookings $booking): bool
+    public function delete(Booking $booking): bool
     {
         return $booking->delete();
     }

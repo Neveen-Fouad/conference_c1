@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class client_has_interests extends Model
+class ClientInterest extends Model
 {
+   protected $table = 'client_has_interests';
+
    protected $fillable = [
     'client_id',
     'interests_id',
@@ -18,6 +20,6 @@ public function client()
 
 public function interest()
 {
-    return $this->belongsTo(interests::class, 'interests_id');
+    return $this->belongsTo(Interest::class, 'interests_id');
 }
 }
