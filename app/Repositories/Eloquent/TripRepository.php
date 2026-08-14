@@ -74,7 +74,16 @@ class TripRepository implements TripRepositoryInterface
     public function bookTrip(int $tripId, int $clientId)
     {
         $trip = $this->findById($tripId);
-        
+
+        $alreadyBooked = Booking::where('client_id', $clientId)
+            ->where('type', 'trip')
+            ->where('external_reference_id', (string) $tripId)
+            ->exists();
+
+        if ($alreadyBooked) {
+            throw new \Exception('You have already booked this trip.');
+        }
+
         return Booking::create([
             'client_id' => $clientId,
             'type' => 'trip',

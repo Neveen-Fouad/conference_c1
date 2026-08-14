@@ -8,6 +8,7 @@ use App\Models\Trip;
 use App\Repositories\Eloquent\TripRepository;
 use App\Services\CountryServices;
 use App\Services\GroqService;
+use App\Services\HotelService;
 use App\Services\NotificationService;
 use App\Services\PlaceServices;
 use App\Services\RestaurantService;
@@ -30,7 +31,8 @@ class AiTripController extends Controller
         protected TransportationService $transportationService,
         protected RestaurantService $restaurantService,
         protected NotificationService $notificationService,
-        protected TripRepository $trips
+        protected TripRepository $trips,
+        protected HotelService $hotelService
     ) {}
  
     public function generateTrip(StoreTripRequest $request): JsonResponse
@@ -48,19 +50,17 @@ class AiTripController extends Controller
         ];
         $hotelResult = $this->searchService->searchHotels($hotelFilters);
  
-        $simplifiedHotels = collect($hotelResult['hotels'] ?? [])->take(5)->map(function ($h) {
-            $nearbyItems = data_get($h, 'summary.nearbyPOIs.items', []);
-            $nearbyPlaces = collect($nearbyItems)->pluck('text')->implode(', ');
+        $simplifiedHotels = collect(data_get($hotelResult, 'hotels.properties', []))->take(5)->map(function ($h) {
+            $nearbyPlaces = collect(data_get($h, 'messages', []))->implode(', ');
  
             return [
-                'name'    => data_get($h, 'summary.name', 'Unknown Hotel'),
-                'fees'    => data_get($h, 'summary.fees') ?? 'Pricing not available',
-                'address' => data_get($h, 'summary.location.address.addressLine', 'Unknown Address'),
-                'rating'  => data_get($h, 'reviewInfo.summary.overallScoreWithDescriptionA11y.value', 'No rating'),
-                'tagline' => data_get($h, 'summary.tagline', ''),
+                'id'      => data_get($h, 'id'),
+                'name'    => data_get($h, 'name', 'Unknown Hotel'),
+                'fees'    => data_get($h, 'price.priceSummary.definition.displayPrice') ?? 'Pricing not available',
+                'address' => data_get($h, 'messages.0', 'Unknown Address'),
+                'rating'  => data_get($h, 'guestRating.rating', 'No rating'),
+                'tagline' => collect(data_get($h, 'short_amenities', []))->implode(', '),
                 'nearby'  => $nearbyPlaces ?: 'No nearby places listed',
-                'lat'     => data_get($h, 'summary.location.coordinates.latitude') ?? data_get($h, 'coordinates.latitude'),
-                'lng'     => data_get($h, 'summary.location.coordinates.longitude') ?? data_get($h, 'coordinates.longitude'),
             ];
         })->values();
  
@@ -69,6 +69,12 @@ class AiTripController extends Controller
             ->sortByDesc(fn ($h) => is_numeric($h['rating']) ? (float) $h['rating'] : -1)
             ->values()
             ->toArray();
+
+        if (!empty($simplifiedHotels) && !empty($simplifiedHotels[0]['id'])) {
+            $details = $this->hotelService->getHotelDetails($simplifiedHotels[0]['id']);
+            $simplifiedHotels[0]['lat'] = data_get($details, 'summary.location.coordinates.latitude');
+            $simplifiedHotels[0]['lng'] = data_get($details, 'summary.location.coordinates.longitude');
+        }
  
         $weather = $this->weatherServices->getForecast($validated['destination']);
         $rawForecast = $weather['forecast']['forecastday'] ?? [];
