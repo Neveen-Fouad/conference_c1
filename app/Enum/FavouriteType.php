@@ -8,5 +8,6 @@ enum FavouriteType: string
     case Hotel = 'hotel';
     case Restaurant = 'restaurant';
     case Flight = 'flight';
+    case Country = 'country';
 
 }
