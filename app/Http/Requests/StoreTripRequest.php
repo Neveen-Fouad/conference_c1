@@ -28,7 +28,7 @@ class StoreTripRequest extends FormRequest
             'budget' => 'required|numeric|min:100',
             'number_of_travels' => 'required|integer|min:1',
             'number_of_days' => 'required|integer|min:1',
-            'estimated_expenses' => 'required|numeric|min:0',
+            'estimated_expenses' => 'nullable|numeric|min:0',
             'style' => 'required|string|max:255',
             'classes' => 'sometimes|string|max:255',
             'preferences' => 'nullable|string',

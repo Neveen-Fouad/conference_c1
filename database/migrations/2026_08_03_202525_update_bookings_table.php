@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::table('bookings', function (Blueprint $table) {
             $table->enum('type', ['restaurant', 'hotel', 'flight'])->change();
-            $table->string('provider'); // e.g. rapidapi_hotels, rapidapi_flights, rapidapi_restaurants
-            $table->string('external_reference_id'); // booking/offer ID from the external API
+            $table->string('provider')->nullable(); // e.g. rapidapi_hotels, rapidapi_flights, rapidapi_restaurants
+            $table->string('external_reference_id')->nullable(); // booking/offer ID from the external API
 
             $table->integer('number_of_days')->nullable()->change(); // hotel stay length; not applicable to restaurant/flight
             $table->date('check_in_date')->nullable(); // hotel only
@@ -22,9 +22,9 @@ return new class extends Migration
             $table->date('booking_date')->nullable(); // restaurant reservation date / flight departure date; not applicable to hotel
             $table->enum('classes', ['luxury', 'standard', 'economy'])->nullable(); // flight only; not applicable to hotel/restaurant
             $table->enum('status', ['confirmed', 'pending', 'canceled'])->default('pending')->change();
-            $table->char('currency', 3); // ISO currency code, e.g. USD, EGP
+            $table->char('currency', 3)->nullable(); // ISO currency code, e.g. USD, EGP
 
-            $table->json('details'); // type-specific snapshot from the external API
+            $table->json('details')->nullable(); // type-specific snapshot from the external API
 
         });
     }
@@ -34,6 +34,17 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bookings');
+        Schema::table('bookings', function (Blueprint $table) {
+            $table->dropColumn([
+                'provider',
+                'external_reference_id',
+                'check_in_date',
+                'check_out_date',
+                'booking_date',
+                'classes',
+                'currency',
+                'details'
+            ]);
+        });
     }
 };

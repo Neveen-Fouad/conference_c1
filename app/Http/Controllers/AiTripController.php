@@ -264,4 +264,3 @@ class AiTripController extends Controller
         return response()->json($trip, 201);
     }
 }
- 
