@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateclientInterestRequest;
-use App\Models\Interests;
+use App\Models\Interest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
@@ -12,7 +12,7 @@ class InterestsController extends Controller
     public function index()
     {
         $interests = Cache::remember('interests.all', now()->addHour(), function () {
-            return Interests::select('id', 'name')->get();
+            return Interest::select('id', 'name')->get();
         });
 
         return response()->json($interests);
@@ -22,7 +22,7 @@ class InterestsController extends Controller
     {
         $client = $request->user()->client;
 
-        if (!$client) {
+        if (! $client) {
             return response()->json(['message' => 'No client profile found.'], 404);
         }
 
@@ -35,7 +35,7 @@ class InterestsController extends Controller
     {
         $client = $request->user()->client;
 
-        if (!$client) {
+        if (! $client) {
             return response()->json(['message' => 'No client profile found.'], 404);
         }
 
@@ -45,7 +45,7 @@ class InterestsController extends Controller
 
         return response()->json([
             'message' => 'Interests updated successfully.',
-            'interests' => $interests
+            'interests' => $interests,
         ]);
     }
 }

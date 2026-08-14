@@ -9,8 +9,7 @@ class ChatConversationRepository implements ChatConversationRepositoryInterface
 {
     public function __construct(
         private ChatConversation $conversation
-    ) {
-    }
+    ) {}
 
     public function getByClient(int $clientId)
     {

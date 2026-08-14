@@ -23,15 +23,15 @@ class FlightDetailsRequest extends FormRequest
     public function rules(): array
     {
         return [
-           'itineraryId'         => 'required|string',
-            'sessionId'           => 'required|string',
-            'legs'                => 'required|array|min:1',
-            'legs.*.origin'       => 'required|string',
-            'legs.*.destination'  => 'required|string',
-            'legs.*.date'         => 'required|date_format:Y-m-d',
-            'currency'            => 'nullable|string|size:3',
-            'cabinClass'          => 'nullable|in:economy,premium_economy,business,first',
-            'adults'              => 'nullable|integer|min:1|max:9',
+            'itineraryId' => 'required|string',
+            'sessionId' => 'required|string',
+            'legs' => 'required|array|min:1',
+            'legs.*.origin' => 'required|string',
+            'legs.*.destination' => 'required|string',
+            'legs.*.date' => 'required|date_format:Y-m-d',
+            'currency' => 'nullable|string|size:3',
+            'cabinClass' => 'nullable|in:economy,premium_economy,business,first',
+            'adults' => 'nullable|integer|min:1|max:9',
         ];
     }
 }

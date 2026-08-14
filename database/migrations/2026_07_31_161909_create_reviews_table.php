@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->decimal("rating", 2,1)->default(0.0);
-            $table->string("description");
-            $table->foreignId("client_id")->constrained();
-            $table->text("image");
-
+            $table->decimal('rating', 2, 1)->default(0.0);
+            $table->string('description');
+            $table->foreignId('client_id')->constrained();
+            $table->text('image');
 
         });
     }

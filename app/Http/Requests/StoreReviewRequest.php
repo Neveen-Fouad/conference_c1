@@ -25,11 +25,11 @@ class StoreReviewRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'reviewable_id' => ['required','string'],
+            'reviewable_id' => ['required', 'string', 'max:500'],
             'type' => ['required',
-            new Enum(ReviewType::class)],
-            'rating' => ['required','numeric','between:0,5'],
-            'description' => ['required','string'],
+                new Enum(ReviewType::class)],
+            'rating' => ['required', 'numeric', 'between:0,5'],
+            'description' => ['required', 'string'],
             'image' => 'sometimes|image|mimes:jpg,jpeg,png|max:2048',
 
         ];

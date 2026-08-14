@@ -3,18 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreInterestRequest;
-
 use App\Http\Requests\UpdateInterestRequest;
 use App\Interfaces\InterestRepositoryInterface;
-
 
 class AdminInterestController extends Controller
 {
     public function __construct(
         protected InterestRepositoryInterface $InterestRepository
-    ){
+    ) {
         $this->InterestRepository = $InterestRepository;
     }
+
     /**
      * Display a listing of the resource.
      */
@@ -28,35 +27,36 @@ class AdminInterestController extends Controller
      */
     public function store(StoreInterestRequest $request)
     {
-        $interest=$this->InterestRepository->create($request->validated());
-        return response()->json([
-            'message'=>'Interest created successfully',
-            'data'=>$interest
-        ],201);
-    }
+        $interest = $this->InterestRepository->create($request->validated());
 
- 
+        return response()->json([
+            'message' => 'Interest created successfully',
+            'data' => $interest,
+        ], 201);
+    }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateInterestRequest $request, string $id)
+    public function update(UpdateInterestRequest $request, int $id)
     {
-        $interest=$this->InterestRepository->update($id,$request->validated());
+        $interest = $this->InterestRepository->update($id, $request->validated());
+
         return response()->json([
-            'message'=>'Interest updated successfully',
-            'data'=>$interest
+            'message' => 'Interest updated successfully',
+            'data' => $interest,
         ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(int $id)
     {
         $this->InterestRepository->delete($id);
+
         return response()->json([
-            'message'=>'Interest deleted successfully.'
+            'message' => 'Interest deleted successfully.',
         ]);
     }
 }

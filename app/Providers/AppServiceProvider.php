@@ -2,23 +2,13 @@
 
 namespace App\Providers;
 
-
-use App\Models\trip;
+use App\Models\Trip;
+use App\Models\User;
 use App\Policies\TripPolicy;
+use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
-use App\Interfaces\UserRepositoryInterface;
-use App\Interfaces\ComplaintRepositoryInterface;
-use App\Interfaces\SettingRepositoryInterface;
-use App\Interfaces\DashboardReportServiceInterface;
-use App\Services\DashboardReportService;
-
-
-use App\Repositories\UserRepository;
-use App\Repositories\ComplaintRepository;
-use App\Repositories\SettingRepository;
-use App\Interfaces\TripRepositoryInterface;
-use App\Repositories\TripRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,9 +18,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
 
-       
-
-        Gate::policy(trip::class, TripPolicy::class);
+        Gate::policy(Trip::class, TripPolicy::class);
     }
 
     /**
@@ -38,6 +26,27 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        VerifyEmail::createUrlUsing(function (User $user): string {
+            $signedUrl = URL::temporarySignedRoute(
+                'verification.verify',
+                now()->addMinutes(60),
+                [
+                    'id' => $user->getKey(),
+                    'hash' => sha1($user->getEmailForVerification()),
+                ]
+            );
+
+            $query = [];
+            parse_str((string) parse_url($signedUrl, PHP_URL_QUERY), $query);
+
+            return rtrim((string) config('app.frontend_url'), '/')
+                .'/pages/verify-email.html?'
+                .http_build_query([
+                    'id' => $user->getKey(),
+                    'hash' => sha1($user->getEmailForVerification()),
+                    'expires' => $query['expires'] ?? null,
+                    'signature' => $query['signature'] ?? null,
+                ]);
+        });
     }
 }

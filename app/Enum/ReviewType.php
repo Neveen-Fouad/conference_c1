@@ -1,6 +1,8 @@
 <?php
+
 namespace App\Enum;
-enum ReviewType:string
+
+enum ReviewType: string
 {
     case Trip = 'trip';
     case Hotel = 'hotel';

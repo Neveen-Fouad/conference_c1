@@ -2,19 +2,18 @@
 
 namespace App\Repositories\Contracts;
 
-use App\Models\bookings;
+use App\Models\Booking;
 use Illuminate\Support\Collection;
 
 interface BookingRepositoryInterface
 {
+    public function create(array $data): Booking;
 
-    public function create(array $data): bookings;
+    public function update(Booking $booking, array $data): bool;
 
-    public function update(bookings $booking, array $data): bool;
-
-    public function find(int $id): ?bookings;
+    public function find(int $id): ?Booking;
 
     public function findByUser(int $userId): Collection;
 
-    public function delete(bookings $booking): bool;
+    public function delete(Booking $booking): bool;
 }

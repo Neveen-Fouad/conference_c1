@@ -9,9 +9,13 @@ use Illuminate\Support\Facades\Log;
 class SearchService
 {
     protected string $baseUrl;
+
     protected string $apiKey;
+
     protected string $apiHost;
+
     protected string $locale;
+
     protected string $domain;
 
     public function __construct()
@@ -28,7 +32,7 @@ class SearchService
      */
     public function resolveRegion(string $query): ?string
     {
-        $cacheKey = 'region:' . md5($query);
+        $cacheKey = 'region:'.md5($query);
 
         return Cache::remember($cacheKey, now()->addDay(), function () use ($query) {
 
@@ -36,7 +40,7 @@ class SearchService
                 $response = Http::withHeaders([
                     'x-rapidapi-key' => $this->apiKey,
                     'x-rapidapi-host' => $this->apiHost,
-                ])->get($this->baseUrl . '/v2/regions', [
+                ])->get($this->baseUrl.'/v2/regions', [
                     'query' => $query,
                     'locale' => $this->locale,
                     'domain' => $this->domain,
@@ -54,7 +58,7 @@ class SearchService
 
                 $regionId = data_get($response->json(), 'data.0.gaiaId');
 
-                if (!$regionId) {
+                if (! $regionId) {
                     Log::warning('No region found.', [
                         'query' => $query,
                         'response' => $response->json(),
@@ -81,30 +85,30 @@ class SearchService
      * Search available hotels.
      */
     public function searchHotels(array $filters): array
-{
-    $regionId = $this->resolveRegion($filters['destination']);
+    {
+        $regionId = $this->resolveRegion($filters['destination']);
 
-    if (!$regionId) {
-        return [
-            'message' => 'Unable to resolve destination.',
-            'hotels' => [],
+        if (! $regionId) {
+            return [
+                'message' => 'Unable to resolve destination.',
+                'hotels' => [],
+            ];
+        }
+
+        $requestFilters = [
+            'destination' => $filters['destination'],
+            'budget' => $filters['budget'],
+            'available_filter' => 'SHOW_AVAILABLE_ONLY',
+            'region_id' => $regionId,
+            'checkin_date' => $filters['check_in'],
+            'checkout_date' => $filters['check_out'],
+            'adults_number' => $filters['guests'],
+            'locale' => $this->locale,
+            'domain' => $this->domain,
+            'sort_order' => 'REVIEW',
         ];
-    }
 
-    $requestFilters = [
-        'destination'       => $filters['destination'],
-        'budget'            => $filters['budget'],
-        'available_filter'  => 'SHOW_AVAILABLE_ONLY',
-        'region_id'         => $regionId,
-        'checkin_date'      => $filters['check_in'],
-        'checkout_date'     => $filters['check_out'],
-        'adults_number'     => $filters['guests'],
-        'locale'            => $this->locale,
-        'domain'            => $this->domain,
-        'sort_order'        => 'REVIEW',
-    ];
-
-        $cacheKey = 'hotel_search:' . md5(json_encode($requestFilters));
+        $cacheKey = 'hotel_search:'.md5(json_encode($requestFilters));
 
         return Cache::remember($cacheKey, now()->addMinutes(15), function () use ($requestFilters, $filters, $regionId) {
 
@@ -114,7 +118,7 @@ class SearchService
                     'x-rapidapi-key' => $this->apiKey,
                     'x-rapidapi-host' => $this->apiHost,
                 ])->get(
-                    $this->baseUrl . '/v3/hotels/search',
+                    $this->baseUrl.'/v3/hotels/search',
                     $requestFilters
                 );
 
@@ -128,7 +132,7 @@ class SearchService
 
                     return [];
                 }
-                
+
                 $hotels = $response->json('data', []);
 
                 return [

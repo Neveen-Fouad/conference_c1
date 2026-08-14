@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Payment extends Model
 {
@@ -29,7 +30,8 @@ class Payment extends Model
         'paid_at' => 'datetime',
     ];
 
-    public function client()
+    /** @return BelongsTo<Client, $this> */
+    public function client(): BelongsTo
     {
         return $this->belongsTo(
             Client::class,
@@ -38,13 +40,12 @@ class Payment extends Model
 
     }
 
-
-    public function bookings()
+    /** @return BelongsTo<Booking, $this> */
+    public function booking(): BelongsTo
     {
         return $this->belongsTo(
-            Bookings::class,
+            Booking::class,
             'booking_id'
         );
     }
 }
-

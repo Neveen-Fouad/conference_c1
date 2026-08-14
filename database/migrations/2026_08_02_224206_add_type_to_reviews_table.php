@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('reviews', function (Blueprint $table) {
-            $table->enum('type', ['restaurant', 'hotel', 'flight','trip']);
+            $table->enum('type', ['restaurant', 'hotel', 'flight', 'trip']);
         });
     }
 
@@ -26,6 +26,3 @@ return new class extends Migration
         });
     }
 };
-
-    
-    

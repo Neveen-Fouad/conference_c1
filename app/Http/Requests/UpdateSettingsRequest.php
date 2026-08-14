@@ -23,9 +23,8 @@ class UpdateSettingsRequest extends FormRequest
     public function rules(): array
     {
         return [
-           
 
-        'logo' => 'sometimes|image|mimes:jpg,jpeg,png,svg|max:2048',
+            'logo' => 'sometimes|image|mimes:jpg,jpeg,png,svg|max:2048',
             'name' => 'sometimes|string|max:255',
             'phone' => 'sometimes|string|max:20',
             'slogan' => 'sometimes|string|max:255',
@@ -34,9 +33,10 @@ class UpdateSettingsRequest extends FormRequest
 
         ];
     }
-     public function messages(): array
+
+    public function messages(): array
     {
-         return [
+        return [
             'phone.required' => 'Phone number is required.',
             'phone.string' => 'Phone number must be a string.',
             'phone.max' => 'Phone number cannot exceed 20 characters.',
@@ -45,5 +45,5 @@ class UpdateSettingsRequest extends FormRequest
             'slogan.string' => 'Slogan must be a string.',
             'slogan.max' => 'Slogan cannot exceed 255 characters.',
         ];
-}
+    }
 }

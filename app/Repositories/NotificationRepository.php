@@ -35,9 +35,12 @@ class NotificationRepository extends BaseRepository implements NotificationRepos
             ->count();
     }
 
-    public function markAsRead(int $notificationId)
+    public function markAsRead(int $notificationId, int $clientId)
     {
-        $notification = $this->findById($notificationId);
+        $notification = $this->model
+            ->whereKey($notificationId)
+            ->where('client_id', $clientId)
+            ->firstOrFail();
 
         $notification->update([
             'read_at' => now(),
@@ -56,4 +59,3 @@ class NotificationRepository extends BaseRepository implements NotificationRepos
             ]);
     }
 }
-

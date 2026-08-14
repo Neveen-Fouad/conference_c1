@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\bookings;
+use App\Models\Booking;
 use App\Models\Client;
-use Illuminate\Database\Seeder;
 use Carbon\Carbon;
+use Illuminate\Database\Seeder;
 
-class FlightbookingSeeder extends Seeder
+class FlightBookingSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,11 +18,12 @@ class FlightbookingSeeder extends Seeder
 
         if ($clientIds->isEmpty()) {
             $this->command->warn('No clients found. Seed clients before running FlightBookingSeeder.');
+
             return;
         }
 
-        $cabinClasses = ['economy', 'premium_economy', 'business', 'first'];
-        $statuses = ['pending', 'confirmed', 'cancelled'];
+        $cabinClasses = ['luxury', 'standard', 'economy'];
+        $statuses = ['pending', 'confirmed', 'canceled'];
         $providers = ['Amadeus', 'Skyscanner', 'Sabre'];
 
         for ($i = 0; $i < 20; $i++) {
@@ -31,10 +32,14 @@ class FlightbookingSeeder extends Seeder
             $cabinClass = $cabinClasses[array_rand($cabinClasses)];
             $passengers = rand(1, 4);
 
-            bookings::create([
+            $provider = $providers[array_rand($providers)];
+
+            Booking::create([
                 'client_id' => $clientIds->random(),
                 'type' => 'flight',
-                'provider' => $providers[array_rand($providers)],
+                'booking_type' => 'flight',
+                'provider' => $provider,
+                'provider_name' => $provider,
                 'external_reference_id' => (string) rand(100000, 999999),
                 'number_of_days' => $departureDate->diffInDays($returnDate),
                 'check_in_date' => $departureDate,

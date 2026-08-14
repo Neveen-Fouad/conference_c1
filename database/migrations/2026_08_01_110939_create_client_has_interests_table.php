@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('client_has_interests', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId("client_id")->constrained();
-            $table->foreignId("interests_id")->constrained();
+            $table->foreignId('client_id')->constrained();
+            $table->foreignId('interests_id')->constrained();
         });
     }
 

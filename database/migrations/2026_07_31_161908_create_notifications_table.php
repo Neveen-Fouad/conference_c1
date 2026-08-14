@@ -14,10 +14,9 @@ return new class extends Migration
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("type");
-            $table->string("description");
-            $table->foreignId("client_id")->constrained();
-
+            $table->string('type');
+            $table->string('description');
+            $table->foreignId('client_id')->constrained();
 
         });
     }

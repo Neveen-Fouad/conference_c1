@@ -1,8 +1,12 @@
 <?php
+
 namespace App\Interfaces;
 
-interface UserRepositoryInterface extends BaseRepositoryInterface{
+interface UserRepositoryInterface extends BaseRepositoryInterface
+{
     public function changeStatus($id, $status);
 
     public function createAdmin(array $data);
+
+    public function statistics();
 }

@@ -13,7 +13,7 @@ class GeminiService
         $model = config('services.gemini.model');
         $baseUrl = config('services.gemini.base_url');
 
-        if (!$apiKey) {
+        if (! $apiKey) {
             throw new RuntimeException('GEMINI API KEY not defined');
         }
 
@@ -66,7 +66,7 @@ class GeminiService
             'candidates.0.content.parts.0.text'
         );
 
-        if (!$reply) {
+        if (! $reply) {
             throw new RuntimeException(
                 'Gemini did not find any content'
             );
@@ -74,6 +74,7 @@ class GeminiService
 
         return $reply;
     }
+
     private function systemPrompt(): string
     {
         return <<<'PROMPT'
@@ -157,8 +158,6 @@ Important rules:
   or sensitive payment information.
 PROMPT;
     }
-
-
 
     public function __construct()
     {

@@ -2,16 +2,14 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Interests;
+use App\Models\Interest;
 use Illuminate\Database\Seeder;
 
 class InterestSeeder extends Seeder
 {
-   
     public function run(): void
     {
-        
+
         $interests = [
             'Adventure',
             'Beach',
@@ -25,12 +23,12 @@ class InterestSeeder extends Seeder
             'Family',
             'Photography',
             'Relaxation',
-       ];
-     foreach ($interests as $interest) {
-    Interests::updateOrCreate([
-        'name' => $interest,
-    ]);
-}
+        ];
+        foreach ($interests as $interest) {
+            Interest::updateOrCreate([
+                'name' => $interest,
+            ]);
+        }
 
     }
 }
