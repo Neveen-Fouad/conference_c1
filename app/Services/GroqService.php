@@ -22,7 +22,7 @@ class GroqService
         $destination = $TripRequest['destination'] ?? $TripRequest->destination;
         $budget = $TripRequest['budget'] ?? $TripRequest->budget;
         $guests = $TripRequest['number_of_travels'] ?? $TripRequest->number_of_travels;
-        $prefernces = $TripRequest['preferences'] ?? $TripRequest->preferences;
+        $preferences = $TripRequest['preferences'] ?? $TripRequest->preferences ?? null;
 
         $contextData = json_encode([
             'weather_forecast' => $weatherForecast,
@@ -35,6 +35,10 @@ class GroqService
         $recommendedHotelNote = $recommendedHotel
             ? "The 'travel_time_from_hotel' figures in available_attractions and available_restaurants were calculated using \"{$recommendedHotel}\" as the point of origin. You SHOULD set 'best_hotel' to \"{$recommendedHotel}\" unless it is clearly unsuitable for the budget or guest count — if you pick a different hotel from hotel_info, say in 'route_notes' that travel times are approximate."
             : "No recommended hotel was pre-selected; choose the best fit from hotel_info based on budget and guest count.";
+            
+        $preferencesNote = $preferences 
+            ? "\n        9. USER PREFERENCES: The user has specified the following additional preferences for the trip: \"{$preferences}\". You MUST accommodate these preferences in your itinerary choices (such as attractions, restaurants, or specific exclusions)." 
+            : "";
 
         try {
             $response = Groq::chat()->completions()->create([
@@ -57,7 +61,7 @@ class GroqService
         5. Suggest lunch and dinner options based on the available_restaurants in the context data.
         6. You MUST explicitly use the 'travel_time_from_hotel' data provided in both the available_attractions and available_restaurants context when generating the route_notes for each day.
         7. You MUST NOT suggest any attractions, restaurants, or hotels that are NOT present in the context data (available_attractions, available_restaurants, hotel_info).
-        8. You SHOULD keep in mind the 'style' of the trip when suggesting attractions and restaurants.
+       
 
         Context Data:
         {$contextData}

@@ -31,6 +31,7 @@ class StoreTripRequest extends FormRequest
             'estimated_expenses' => 'required|numeric|min:0',
             'style' => 'required|string|max:255',
             'classes' => 'sometimes|string|max:255',
+            'preferences' => 'nullable|string',
             'details' => 'nullable|array',
             'details.*.day' => 'required_with:details|integer|min:1',
             'details.*.title' => 'required_with:details|string|max:255',
