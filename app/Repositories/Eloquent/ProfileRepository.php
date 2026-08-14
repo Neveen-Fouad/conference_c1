@@ -22,7 +22,6 @@ class ProfileRepository implements ProfileRepositoryInterface
     public function updateProfile(User $user, array $data)
     {
         $user->update($data);
-
         Cache::forget("profile_{$user->id}");
 
         return $this->withClientId($user->fresh());
@@ -36,10 +35,7 @@ class ProfileRepository implements ProfileRepositoryInterface
             ]);
         }
 
-        $user->update([
-            'password' => Hash::make($data['password']),
-        ]);
-
+        $user->update(['password' => Hash::make($data['password'])]);
         Cache::forget("profile_{$user->id}");
 
         return true;
