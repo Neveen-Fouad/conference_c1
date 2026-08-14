@@ -40,11 +40,13 @@ class AiTripController extends Controller
         Gate::authorize('createViaAi', trip::class);
         $validated = $request->validated();
  
+        $checkOutDate = \Carbon\Carbon::parse($validated['start_date'])->addDays($validated['number_of_days'] - 1)->toDateString();
+ 
         $hotelFilters = [
             'destination' => $validated['destination'],
             'budget'      => $validated['budget'],
             'check_in'    => $validated['start_date'],
-            'check_out'   => $validated['end_date'] = \Carbon\Carbon::parse($validated['start_date'])->addDays($validated['number_of_days'] - 1)->toDateString(),
+            'check_out'   => $checkOutDate,
             'guests'      => $validated['number_of_travels'],
             'style'       => $validated['style'],
         ];
@@ -80,7 +82,7 @@ class AiTripController extends Controller
         $rawForecast = $weather['forecast']['forecastday'] ?? [];
  
         $checkIn = $validated['start_date'];
-        $checkOut = $validated['end_date'];
+        $checkOut = $checkOutDate;
  
         $weatherForecast = collect($rawForecast)
             ->filter(function ($day) use ($checkIn, $checkOut) {

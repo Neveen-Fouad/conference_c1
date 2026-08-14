@@ -21,6 +21,9 @@ class TripPolicy
 
     public function view(User $user, Trip $trip): bool
     {
+        if (!$trip->clients()->exists()) {
+            return true;
+        }
         return $this->isAdmin($user) || $this->isOwner($user, $trip);
     }
 
@@ -37,19 +40,11 @@ class TripPolicy
 
     public function update(User $user, Trip $trip): bool
     {
-        if ($trip->clients()->exists()) {
-            return $this->isOwner($user, $trip);
-        }
-
         return $this->isAdmin($user);
     }
 
     public function delete(User $user, Trip $trip): bool
     {
-        if ($trip->clients()->exists()) {
-            return $this->isOwner($user, $trip);
-        }
-
-        return $this->isAdmin($user);
+        return $this->isAdmin($user) || $this->isOwner($user, $trip);
     }
 }

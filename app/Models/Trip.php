@@ -20,14 +20,10 @@ class Trip extends Model
         'budget',
         'number_of_days',
         'is_ai_generated',
-        'end_date',
-        'is_fav',
     ];
 
     protected $casts = [
         'start_date' => 'date',
-        'end_date' => 'date',
-        'is_fav' => 'boolean',
         'is_ai_generated' => 'boolean',
     ];
 
