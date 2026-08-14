@@ -116,6 +116,9 @@ class TripController extends Controller
 
     public function book($id)
     {
+        $trip = $this->tripRepository->findById($id);
+        Gate::authorize('view', $trip);
+
         $user = Auth::user();
         $client = Client::where('user_id', $user->id)->first();
 
