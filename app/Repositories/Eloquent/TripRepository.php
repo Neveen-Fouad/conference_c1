@@ -15,12 +15,12 @@ class TripRepository implements TripRepositoryInterface
 
     public function getAll()
     {
-        return $this->model->all();
+        return $this->model->with('details')->get();
     }
 
     public function findById(int $id)
     {
-        return $this->model->findOrFail($id);
+        return $this->model->with('details')->findOrFail($id);
     }
 
     public function create(array $data)
@@ -44,7 +44,7 @@ class TripRepository implements TripRepositoryInterface
   public function findByUserId(int $userId)
 {
     return $this->model->whereHas('clients', function ($query) use ($userId) {
-        $query->where('clients.id', $userId);
+        $query->where('clients.user_id', $userId);
     })->with('details')->get();
 }
 

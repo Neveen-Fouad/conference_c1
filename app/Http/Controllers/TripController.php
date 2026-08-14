@@ -8,6 +8,7 @@ use App\Http\Requests\StoreTripRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use App\Models\trip;
+use Illuminate\Support\Carbon;
 
 class TripController extends Controller
 {
@@ -35,7 +36,10 @@ class TripController extends Controller
 
     public function store(StoreTripRequest $request){
         Gate::authorize('create', trip::class);
-        $trip = $this->tripRepository->create($request->validated());
+        $data = $request->validated();
+        $data['end_date'] = $this->calculateEndDate($data);
+
+        $trip = $this->tripRepository->create($data);
         return response()->json($trip, 201);
     }
 
@@ -44,8 +48,11 @@ class TripController extends Controller
         $trip = $this->tripRepository->findById($id);
         Gate::authorize('update', $trip);
         
+        $data = $request->validated();
+        $data['end_date'] = $this->calculateEndDate($data);
+
         return response()->json(
-            $this->tripRepository->update($id, $request->validated())
+            $this->tripRepository->update($id, $data)
         );
     }
 
@@ -72,5 +79,12 @@ class TripController extends Controller
         return response()->json(
             $this->tripRepository->statistics()
         );
+    }
+
+    private function calculateEndDate(array $data): string
+    {
+        return Carbon::parse($data['start_date'])
+            ->addDays($data['number_of_days'])
+            ->toDateString();
     }
 }

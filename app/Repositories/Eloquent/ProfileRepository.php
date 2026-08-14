@@ -14,7 +14,7 @@ class ProfileRepository implements ProfileRepositoryInterface{
             now()->addMinutes(10),
 
             function () use ($user){
-                return $user;
+                return $user->load('client');
             }
         );
     }
@@ -23,7 +23,7 @@ class ProfileRepository implements ProfileRepositoryInterface{
         $user->update($data);
 
         Cache::forget("profile_{$user->id}");
-        return $user->fresh();
+        return $user->fresh()->load('client');
     }
 
     public function updatePassword(User $user, array $data){

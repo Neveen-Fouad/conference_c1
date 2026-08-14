@@ -38,7 +38,6 @@
     34 => 'Tymon\\JWTAuth\\Providers\\LaravelServiceProvider',
     35 => 'App\\Providers\\AppServiceProvider',
     36 => 'App\\Providers\\RepositoryServiceProvider',
-    37 => 'CloudinaryLabs\\CloudinaryLaravel\\CloudinaryServiceProvider',
   ),
   'eager' => 
   array (
@@ -64,7 +63,6 @@
     19 => 'Tymon\\JWTAuth\\Providers\\LaravelServiceProvider',
     20 => 'App\\Providers\\AppServiceProvider',
     21 => 'App\\Providers\\RepositoryServiceProvider',
-    22 => 'CloudinaryLabs\\CloudinaryLaravel\\CloudinaryServiceProvider',
   ),
   'deferred' => 
   array (

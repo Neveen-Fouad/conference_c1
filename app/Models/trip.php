@@ -15,17 +15,20 @@ class trip extends Model
         "estimated_expenses",
         "style",
         "number_of_travels",
+        "number_of_days",
         "classes",
         "destination",
         "start_date",
         "end_date",
         "budget",
-        "is_ai_generated"
+        "is_ai_generated",
+        "is_fav",
     ];
 
     protected $casts = [
         'start_date' => 'date',
         'end_date' => 'date',
+        'is_fav' => 'boolean',
     ];
 
     public function clients(): BelongsToMany
