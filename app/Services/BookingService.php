@@ -61,6 +61,10 @@ class BookingService
         $checkOut = Carbon::parse($data['check_out_date']);
         $number_of_days = (int) ceil($checkIn->diffInDays($checkOut));
 
+        if (! $user->client) {
+            throw new Exception('User does not have a client profile.');
+        }
+
         $booking = [
             'client_id' => $user->client->id,
             'type' => 'hotel',

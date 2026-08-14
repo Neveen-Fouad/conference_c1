@@ -36,7 +36,6 @@ class Review extends Model
 
     public function trip(): BelongsTo
     {
-        return $this->belongsTo(Trip::class, 'reviewable_id')
-            ->where('type', ReviewType::Trip->value);
+        return $this->belongsTo(Trip::class, 'reviewable_id');
     }
 }

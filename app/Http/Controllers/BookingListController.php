@@ -11,17 +11,21 @@ class BookingListController extends Controller
 
     public function all(Request $request)
     {
-        $bookings = $this->bookingRepository->findByUser(
-            auth('api')->user()->client->id
-        );
+        $clientId = auth('api')->user()->client?->id;
+        abort_unless($clientId, 403, 'User does not have a client profile.');
+
+        $bookings = $this->bookingRepository->findByUser($clientId);
 
         return response()->json(['data' => $bookings]);
     }
 
     public function hotels(Request $request)
     {
+        $clientId = auth('api')->user()->client?->id;
+        abort_unless($clientId, 403, 'User does not have a client profile.');
+
         $bookings = $this->bookingRepository
-            ->findByUser(auth('api')->user()->client->id)
+            ->findByUser($clientId)
             ->where('type', 'hotel')
             ->values();
 
@@ -30,8 +34,11 @@ class BookingListController extends Controller
 
     public function flights(Request $request)
     {
+        $clientId = auth('api')->user()->client?->id;
+        abort_unless($clientId, 403, 'User does not have a client profile.');
+
         $bookings = $this->bookingRepository
-            ->findByUser(auth('api')->user()->client->id)
+            ->findByUser($clientId)
             ->where('type', 'flight')
             ->values();
 

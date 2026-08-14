@@ -24,7 +24,8 @@ class DashboardRepository implements DashboardRepositoryInterface
 
     public function getFavouriteDestinations(int $userId)
     {
-        return Cache::remember("user_{$userId}_favourite_destinations", now()->addMinutes(30), function () use ($userId) {
+        $page = request()->get('page', 1);
+        return Cache::remember("user_{$userId}_favourite_destinations_page_{$page}", now()->addMinutes(30), function () use ($userId) {
             $client = Client::where('user_id', $userId)->first();
 
             if (! $client) {
@@ -39,7 +40,8 @@ class DashboardRepository implements DashboardRepositoryInterface
 
     public function getBookingHistory(int $userId)
     {
-        return Cache::remember("user_{$userId}_booking_history", now()->addMinutes(30), function () use ($userId) {
+        $page = request()->get('page', 1);
+        return Cache::remember("user_{$userId}_booking_history_page_{$page}", now()->addMinutes(30), function () use ($userId) {
             $client = Client::where('user_id', $userId)->first();
 
             if (! $client) {

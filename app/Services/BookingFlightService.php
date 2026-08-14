@@ -22,6 +22,10 @@ class BookingFlightService
 
         $number_of_days = $this->calculateNumberOfDays($itinerary);
 
+        if (! $user->client) {
+            throw new \Exception('User does not have a client profile.');
+        }
+
         $booking = [
             'client_id' => $user->client->id,
             'type' => 'flight',

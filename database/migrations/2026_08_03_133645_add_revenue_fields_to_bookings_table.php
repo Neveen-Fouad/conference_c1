@@ -28,9 +28,8 @@ return new class extends Migration
         Schema::table('bookings', function (Blueprint $table) {
             $table->dropColumn([
                 'total_price',
-                'commission_rate',
-                'commission_amount',
-                'currency',
+                'commisssion_rate',
+                'commisssion_amount',
                 'booked_at',
             ]);
         });
