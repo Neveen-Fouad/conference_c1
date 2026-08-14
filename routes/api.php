@@ -30,6 +30,9 @@ use App\Http\Controllers\TripController;
 use App\Http\Controllers\TripMemoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Models\User;
+
 
 // payments
 Route::middleware('auth:api')->group(function () {
@@ -47,15 +50,38 @@ Route::middleware('auth:api')->group(function () {
 
 // authentication
 Route::prefix('auth')->group(function () {
-    Route::post('/register', [AuthController::class, 'register'])->middleware('throttle:5,1');
+    Route::post('/register', [AuthController::class, 'register'])->middleware('throttle:40,1');
     Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:5,1');
     Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->middleware('throttle:5,1');
     Route::post('/reset-password', [AuthController::class, 'resetPassword'])
         ->middleware('throttle:5,1')
         ->name('password.reset');
-    Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmail'])
-        ->middleware(['signed', 'throttle:6,1'])
-        ->name('verification.verify');
+
+
+Route::get('/email/verify/{id}/{hash}', function (Request $request) {
+    if (! $request->hasValidSignature()) {
+        return response()->json(['message' => 'This verification link is invalid or has expired.'], 403);
+    }
+
+    $user = User::find($request->route('id'));
+
+    if (! $user) {
+        return response()->json(['message' => 'User not found.'], 404);
+    }
+
+    if (! hash_equals((string) $request->route('hash'), sha1($user->getEmailForVerification()))) {
+        return response()->json(['message' => 'Invalid verification link.'], 403);
+    }
+
+    if ($user->hasVerifiedEmail()) {
+        return response()->json(['message' => 'Your email is already verified.']);
+    }
+
+    $user->markEmailAsVerified();
+
+    return response()->json(['message' => 'Your email is verified. You can now sign in.']);
+})->middleware(['signed'])->name('verification.verify');
+    
     Route::post('/email/verification-notification', [AuthController::class, 'resendVerificationEmail'])
         ->middleware(['auth:api', 'throttle:6,1'])
         ->name('verification.send');
