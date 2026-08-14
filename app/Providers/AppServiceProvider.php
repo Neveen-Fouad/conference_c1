@@ -39,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
             parse_str((string) parse_url($backendUrl, PHP_URL_QUERY), $query);
 
             return rtrim((string) config('app.frontend_url'), '/')
-                .'/pages/verify-email.html?'
+                .'/pages/verify-email?'
                 .http_build_query([
                     'id' => $id,
                     'hash' => $hash,
