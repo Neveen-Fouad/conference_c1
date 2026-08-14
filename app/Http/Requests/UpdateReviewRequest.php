@@ -25,7 +25,7 @@ class UpdateReviewRequest extends FormRequest
         return [
             'rating' => ['sometimes', 'numeric', 'between:0,5'],
             'description' => ['sometimes', 'string'],
-            'image' => 'sometimes|image|mimes:jpg,jpeg,png|max:2048',
+            'image' => 'sometimes|image|mimes:jpg,jpeg,png|max:10240',
         ];
     }
 }

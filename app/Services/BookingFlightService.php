@@ -25,9 +25,7 @@ class BookingFlightService
         $booking = [
             'client_id' => $user->client->id,
             'type' => 'flight',
-            'booking_type' => 'flight',                                    // <-- ADD
             'provider' => $itinerary['legs'][0]['carriers'][0]['name'],
-            'provider_name' => $itinerary['legs'][0]['carriers'][0]['name'], // <-- ADD
             'external_reference_id' => $itinerary['id'],
             'number_of_days' => $number_of_days,
             'number_of_bookings' => $data['adults'],

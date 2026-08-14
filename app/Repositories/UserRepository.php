@@ -32,7 +32,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     public function statistics()
     {
         return [
-            'total_users' => User::count(),
+            'total_users' => User::where('role', 'user')->count(),
 
             'monthly_users' => User::whereMonth('created_at', now()->month)
                 ->whereYear('created_at', now()->year)

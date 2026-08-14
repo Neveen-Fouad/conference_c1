@@ -3,7 +3,7 @@ namespace App\Services;
 
 use App\Enum\ReviewType;
 use App\Interfaces\ReviewRepositoryInterface;
-use App\Models\trip;
+use App\Models\Trip;
 use App\Services\FlightService;
 use App\Services\HotelService;
 use App\Services\RestaurantService;
@@ -75,7 +75,7 @@ class ReviewServiceNew
     protected function reviewableExists(string $type , int $reviewable_id):bool
     {
         return match ($type){
-            ReviewType::Trip->value => trip::find($reviewable_id) !== null,
+            ReviewType::Trip->value => Trip::find($reviewable_id) !== null,
             ReviewType::Hotel->value => $this->hotelService->getHotelDetails((string) $reviewable_id) !== null,
             ReviewType::Restaurant->value => $this->restaurantService->getRestaurantDetails((string) $reviewable_id) !==null,
             ReviewType::Flight->value => $this->flightService->getFlightDetails((string) $reviewable_id) !== null,

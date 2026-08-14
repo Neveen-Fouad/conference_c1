@@ -37,9 +37,7 @@ class FlightBookingSeeder extends Seeder
             Booking::create([
                 'client_id' => $clientIds->random(),
                 'type' => 'flight',
-                'booking_type' => 'flight',
                 'provider' => $provider,
-                'provider_name' => $provider,
                 'external_reference_id' => (string) rand(100000, 999999),
                 'number_of_days' => $departureDate->diffInDays($returnDate),
                 'check_in_date' => $departureDate,

@@ -36,9 +36,7 @@ class HotelBookingSeeder extends Seeder
             Booking::create([
                 'client_id' => $clientIds->random(),
                 'type' => 'hotel',
-                'booking_type' => 'hotel',
                 'provider' => $provider,
-                'provider_name' => $provider,
                 'external_reference_id' => (string) rand(100000, 999999),
                 'number_of_days' => $checkInDate->diffInDays($checkOutDate),
                 'check_in_date' => $checkInDate,
