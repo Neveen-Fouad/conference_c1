@@ -24,7 +24,8 @@ class UpdateSettingsRequest extends FormRequest
     {
         return [
 
-            'logo' => 'sometimes|image|mimes:jpg,jpeg,png,svg|max:2048',
+            // Keep the update rule aligned with creation and allow SVG logos.
+            'logo' => 'sometimes|file|mimes:jpg,jpeg,png,svg|max:2048',
             'name' => 'sometimes|string|max:255',
             'phone' => 'sometimes|string|max:20',
             'slogan' => 'sometimes|string|max:255',

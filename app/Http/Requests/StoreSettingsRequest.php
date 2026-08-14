@@ -26,7 +26,8 @@ class StoreSettingsRequest extends FormRequest
         return [
             //
 
-            'logo' => 'required|image|mimes:jpg,jpeg,png,svg|max:2048',
+            // SVG is an allowed logo format but Laravel's `image` rule rejects it.
+            'logo' => 'required|file|mimes:jpg,jpeg,png,svg|max:2048',
             'name' => 'required|string|max:255',
             'phone' => 'required|string|max:20',
             'slogan' => 'required|string|max:255',
