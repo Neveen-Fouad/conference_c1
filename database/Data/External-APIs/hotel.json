@@ -1,5 +1,6 @@
 [
   {
+    "id": "127312573",
     "name": "white swan hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -13,6 +14,7 @@
     "available_rooms": null
   },
   {
+    "id": "126954741",
     "name": "Hazel Spaces Heliopolis",
     "city": "Cairo",
     "neighborhood": null,
@@ -24,6 +26,7 @@
     "available_rooms": null
   },
   {
+    "id": "112466305",
     "name": "GA PLUS",
     "city": "Cairo",
     "neighborhood": null,
@@ -37,6 +40,7 @@
     "available_rooms": null
   },
   {
+    "id": "122799755",
     "name": "Brassbell Downtown Maspero",
     "city": "Cairo",
     "neighborhood": "Downtown Cairo",
@@ -48,6 +52,7 @@
     "available_rooms": null
   },
   {
+    "id": "103757976",
     "name": "Prime Select One Kattameya",
     "city": "Cairo",
     "neighborhood": "Nasr City",
@@ -59,6 +64,7 @@
     "available_rooms": null
   },
   {
+    "id": "120659778",
     "name": "Cairo Soul ",
     "city": "Cairo",
     "neighborhood": null,
@@ -72,6 +78,7 @@
     "available_rooms": null
   },
   {
+    "id": "95385517",
     "name": "Hibiscus Haven Suite ",
     "city": "Cairo",
     "neighborhood": "Maadi",
@@ -85,6 +92,7 @@
     "available_rooms": null
   },
   {
+    "id": "99664378",
     "name": "Prime Select Kattameya Bavaria",
     "city": "Cairo",
     "neighborhood": null,
@@ -98,6 +106,7 @@
     "available_rooms": null
   },
   {
+    "id": "95867940",
     "name": "Champollion Hostel",
     "city": "Cairo",
     "neighborhood": null,
@@ -111,6 +120,7 @@
     "available_rooms": null
   },
   {
+    "id": "99971236",
     "name": "Cozy apartment Maadi Ring Road &smart TV",
     "city": "Cairo",
     "neighborhood": null,
@@ -124,6 +134,7 @@
     "available_rooms": null
   },
   {
+    "id": "114521198",
     "name": "Landmark Hostel Cairo",
     "city": "Cairo",
     "neighborhood": null,
@@ -137,6 +148,7 @@
     "available_rooms": null
   },
   {
+    "id": "110153272",
     "name": "paris east hostel",
     "city": "Cairo",
     "neighborhood": null,
@@ -150,6 +162,7 @@
     "available_rooms": null
   },
   {
+    "id": "109087627",
     "name": "HEAVEN HOSTEL",
     "city": "Cairo",
     "neighborhood": null,
@@ -163,6 +176,7 @@
     "available_rooms": null
   },
   {
+    "id": "124144785",
     "name": "Mazaya Pyramids View Inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -174,6 +188,7 @@
     "available_rooms": null
   },
   {
+    "id": "131695521",
     "name": "PALMERAS PYRAMIDS HOTEL",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -188,6 +203,7 @@
     "available_rooms": null
   },
   {
+    "id": "109728061",
     "name": "Night Pyramids Inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -201,6 +217,7 @@
     "available_rooms": null
   },
   {
+    "id": "101734273",
     "name": "King Pyramids View Hotel",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -214,6 +231,7 @@
     "available_rooms": null
   },
   {
+    "id": "127877925",
     "name": "NOMA New Cairo",
     "city": "Cairo",
     "neighborhood": "New Cairo",
@@ -227,6 +245,7 @@
     "available_rooms": null
   },
   {
+    "id": "112786940",
     "name": "Pyramids Land View",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -240,6 +259,7 @@
     "available_rooms": null
   },
   {
+    "id": "68340956",
     "name": "Alashrafia Smart Residence",
     "city": "Cairo",
     "neighborhood": "Al Duqqi",
@@ -253,6 +273,7 @@
     "available_rooms": null
   },
   {
+    "id": "124061840",
     "name": "Pyramids Pavilion Boutique Hotel",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -266,6 +287,7 @@
     "available_rooms": null
   },
   {
+    "id": "113897794",
     "name": "Mak Pyramids View",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -279,6 +301,7 @@
     "available_rooms": null
   },
   {
+    "id": "120081412",
     "name": "Zayed Plaza",
     "city": "Cairo",
     "neighborhood": "Sheikh Zayed City",
@@ -292,6 +315,7 @@
     "available_rooms": null
   },
   {
+    "id": "120728151",
     "name": "Pyramids On The Spot Inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -305,6 +329,7 @@
     "available_rooms": null
   },
   {
+    "id": "116132052",
     "name": "Noya By Dhara Hotels",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -318,6 +343,7 @@
     "available_rooms": null
   },
   {
+    "id": "122937131",
     "name": "Brassbell l Sheikh Zayed l Aeon Towers ",
     "city": "Cairo",
     "neighborhood": "6th of October City",
@@ -329,6 +355,7 @@
     "available_rooms": null
   },
   {
+    "id": "112237608",
     "name": "Crown Hotel ",
     "city": "Cairo",
     "neighborhood": null,
@@ -342,6 +369,7 @@
     "available_rooms": null
   },
   {
+    "id": "78320680",
     "name": "Gamaleya Boutique Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -355,6 +383,7 @@
     "available_rooms": null
   },
   {
+    "id": "83117613",
     "name": "The Kmt collection Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -368,6 +397,7 @@
     "available_rooms": null
   },
   {
+    "id": "112107666",
     "name": "Galaxy Pyramids View INN",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -381,6 +411,7 @@
     "available_rooms": null
   },
   {
+    "id": "113844983",
     "name": "Three Pyramids Boutique Hotel",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -394,6 +425,7 @@
     "available_rooms": null
   },
   {
+    "id": "22839729",
     "name": "Waldorf Astoria Cairo Heliopolis",
     "city": "Cairo",
     "neighborhood": null,
@@ -407,6 +439,7 @@
     "available_rooms": null
   },
   {
+    "id": "122669405",
     "name": "Sama Hotel Sherif Bash",
     "city": "Cairo",
     "neighborhood": null,
@@ -420,6 +453,7 @@
     "available_rooms": null
   },
   {
+    "id": "32911300",
     "name": "The St. Regis Cairo",
     "city": "Cairo",
     "neighborhood": "Downtown Cairo",
@@ -433,6 +467,7 @@
     "available_rooms": null
   },
   {
+    "id": "106332079",
     "name": "Hathor House",
     "city": "Cairo",
     "neighborhood": null,
@@ -446,6 +481,7 @@
     "available_rooms": null
   },
   {
+    "id": "114137398",
     "name": "Mazeej Balad - Boutique Hotel - Adult Only",
     "city": "Cairo",
     "neighborhood": null,
@@ -460,6 +496,7 @@
     "available_rooms": null
   },
   {
+    "id": "112837968",
     "name": "Layla Hostel",
     "city": "Cairo",
     "neighborhood": null,
@@ -473,6 +510,7 @@
     "available_rooms": null
   },
   {
+    "id": "71768797",
     "name": "Crowne Plaza West Cairo Arkan by IHG",
     "city": "Cairo",
     "neighborhood": "Sheikh Zayed City",
@@ -486,6 +524,7 @@
     "available_rooms": null
   },
   {
+    "id": "108400460",
     "name": "Topview Pyramids And Museum",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -497,6 +536,7 @@
     "available_rooms": null
   },
   {
+    "id": "91257239",
     "name": "Life Pyramids Inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -511,6 +551,7 @@
     "available_rooms": null
   },
   {
+    "id": "78217995",
     "name": "Khan Duidar Inn - Pyramids View Rooftop",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -524,6 +565,7 @@
     "available_rooms": null
   },
   {
+    "id": "103026454",
     "name": "Pyramids planet hotel",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -535,6 +577,7 @@
     "available_rooms": null
   },
   {
+    "id": "121840598",
     "name": "Brassbell  Giza l Near Saudi Embassy ",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -546,6 +589,7 @@
     "available_rooms": null
   },
   {
+    "id": "6456907",
     "name": "Le Méridien Cairo Airport",
     "city": "Cairo",
     "neighborhood": null,
@@ -559,6 +603,7 @@
     "available_rooms": null
   },
   {
+    "id": "113298868",
     "name": "Soft Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -572,6 +617,7 @@
     "available_rooms": null
   },
   {
+    "id": "109592755",
     "name": "Ocean Apartments",
     "city": "Cairo",
     "neighborhood": null,
@@ -585,6 +631,7 @@
     "available_rooms": null
   },
   {
+    "id": "105357177",
     "name": "El Otel Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -596,6 +643,7 @@
     "available_rooms": null
   },
   {
+    "id": "115844609",
     "name": "The Expert",
     "city": "Cairo",
     "neighborhood": null,
@@ -609,6 +657,7 @@
     "available_rooms": null
   },
   {
+    "id": "116880503",
     "name": "Boutique Residence Layal-Lemon Spaces",
     "city": "Cairo",
     "neighborhood": null,
@@ -622,6 +671,7 @@
     "available_rooms": null
   },
   {
+    "id": "96149886",
     "name": "Cairo Hub Hostel",
     "city": "Cairo",
     "neighborhood": null,
@@ -635,6 +685,7 @@
     "available_rooms": null
   },
   {
+    "id": "470285",
     "name": "Four Seasons Hotel Cairo at First Residence",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -648,6 +699,7 @@
     "available_rooms": null
   },
   {
+    "id": "116519740",
     "name": "Neom Pyramids Valley Boutique hotel",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -661,6 +713,7 @@
     "available_rooms": null
   },
   {
+    "id": "104396830",
     "name": "Jimmy Pyramids Hotel ",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -672,6 +725,7 @@
     "available_rooms": null
   },
   {
+    "id": "100176352",
     "name": "Gold's Pyramids Hotel",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -685,6 +739,7 @@
     "available_rooms": null
   },
   {
+    "id": "22135514",
     "name": "Royal pyramids Inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -698,6 +753,7 @@
     "available_rooms": null
   },
   {
+    "id": "20633334",
     "name": "Valencia Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -711,6 +767,7 @@
     "available_rooms": null
   },
   {
+    "id": "1083214",
     "name": "Four Seasons Hotel Cairo at Nile Plaza",
     "city": "Cairo",
     "neighborhood": "Garden City",
@@ -724,6 +781,7 @@
     "available_rooms": null
   },
   {
+    "id": "73568528",
     "name": "Veda HOTEL",
     "city": "Cairo",
     "neighborhood": null,
@@ -737,6 +795,7 @@
     "available_rooms": null
   },
   {
+    "id": "87729936",
     "name": "Hilton Cairo Nile Maadi",
     "city": "Cairo",
     "neighborhood": null,
@@ -750,6 +809,7 @@
     "available_rooms": null
   },
   {
+    "id": "113704242",
     "name": "Royal Cairo Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -763,6 +823,7 @@
     "available_rooms": null
   },
   {
+    "id": "2420381",
     "name": "Staybridge Suites Cairo Citystars by IHG",
     "city": "Cairo",
     "neighborhood": "Nasr City",
@@ -776,6 +837,7 @@
     "available_rooms": null
   },
   {
+    "id": "124498487",
     "name": "Kemet Hotel TS",
     "city": "Cairo",
     "neighborhood": null,
@@ -789,6 +851,7 @@
     "available_rooms": null
   },
   {
+    "id": "9805250",
     "name": "Villa Belle Epoque",
     "city": "Cairo",
     "neighborhood": "Maadi",
@@ -802,6 +865,7 @@
     "available_rooms": null
   },
   {
+    "id": "78283212",
     "name": "Holiday Inn Hotel & Suites Cairo Maadi by IHG",
     "city": "Cairo",
     "neighborhood": null,
@@ -815,6 +879,7 @@
     "available_rooms": null
   },
   {
+    "id": "5261",
     "name": "The Nile Ritz-Carlton, Cairo",
     "city": "Cairo",
     "neighborhood": null,
@@ -828,6 +893,7 @@
     "available_rooms": null
   },
   {
+    "id": "100176133",
     "name": "Philo Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -839,6 +905,7 @@
     "available_rooms": null
   },
   {
+    "id": "110421374",
     "name": "Prime Residence Heliopolis",
     "city": "Cairo",
     "neighborhood": null,
@@ -850,6 +917,7 @@
     "available_rooms": null
   },
   {
+    "id": "111747420",
     "name": "Atum",
     "city": "Cairo",
     "neighborhood": null,
@@ -863,6 +931,7 @@
     "available_rooms": null
   },
   {
+    "id": "40207298",
     "name": "Holy Sheet Hostel",
     "city": "Cairo",
     "neighborhood": null,
@@ -876,6 +945,7 @@
     "available_rooms": null
   },
   {
+    "id": "110674191",
     "name": "Cairo Crown Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -889,6 +959,7 @@
     "available_rooms": null
   },
   {
+    "id": "37405820",
     "name": "Heritage Hostel",
     "city": "Cairo",
     "neighborhood": null,
@@ -902,6 +973,7 @@
     "available_rooms": null
   },
   {
+    "id": "15900609",
     "name": "Great Pyramid Inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -915,6 +987,7 @@
     "available_rooms": null
   },
   {
+    "id": "57360678",
     "name": "Hyatt Regency Cairo West",
     "city": "Cairo",
     "neighborhood": "6th of October City",
@@ -928,6 +1001,7 @@
     "available_rooms": null
   },
   {
+    "id": "112387366",
     "name": "Nut Pyramids View",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -942,6 +1016,7 @@
     "available_rooms": null
   },
   {
+    "id": "17162680",
     "name": "Marriott Mena House Cairo",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -955,6 +1030,7 @@
     "available_rooms": null
   },
   {
+    "id": "109978871",
     "name": "Mazar Pyramids Hotel",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -969,6 +1045,7 @@
     "available_rooms": null
   },
   {
+    "id": "5255024",
     "name": "Pyramids View inn Bed & Breakfast",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -983,6 +1060,7 @@
     "available_rooms": null
   },
   {
+    "id": "91760603",
     "name": "Cairo Taj Hotels & Suites - Dokki",
     "city": "Cairo",
     "neighborhood": "Al Duqqi",
@@ -994,6 +1072,7 @@
     "available_rooms": null
   },
   {
+    "id": "88828301",
     "name": "A pyramids view",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -1007,6 +1086,7 @@
     "available_rooms": null
   },
   {
+    "id": "74892548",
     "name": "Prime Residence New Cairo",
     "city": "Cairo",
     "neighborhood": "New Cairo",
@@ -1020,6 +1100,7 @@
     "available_rooms": null
   },
   {
+    "id": "98101876",
     "name": "King Khafren View INN",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1034,6 +1115,7 @@
     "available_rooms": null
   },
   {
+    "id": "108987309",
     "name": "Giza Palace  Hotel & Spa – The Leading Hotels of the World",
     "city": "Cairo",
     "neighborhood": "Sheikh Zayed City",
@@ -1047,6 +1129,7 @@
     "available_rooms": null
   },
   {
+    "id": "90917681",
     "name": "New Museum Guest House Pyramids View",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -1061,6 +1144,7 @@
     "available_rooms": null
   },
   {
+    "id": "6397107",
     "name": "Guardian Guest House",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1074,6 +1158,7 @@
     "available_rooms": null
   },
   {
+    "id": "3050071",
     "name": "Kempinski Nile Hotel Cairo",
     "city": "Cairo",
     "neighborhood": "Garden City",
@@ -1087,6 +1172,7 @@
     "available_rooms": null
   },
   {
+    "id": "11590099",
     "name": "New President Hotel Cairo",
     "city": "Cairo",
     "neighborhood": "Zamalek",
@@ -1098,6 +1184,7 @@
     "available_rooms": null
   },
   {
+    "id": "109938680",
     "name": "Cairo casa inn",
     "city": "Cairo",
     "neighborhood": null,
@@ -1111,6 +1198,7 @@
     "available_rooms": null
   },
   {
+    "id": "74687878",
     "name": "Sofitel Cairo Downtown Nile",
     "city": "Cairo",
     "neighborhood": "Downtown Cairo",
@@ -1124,6 +1212,7 @@
     "available_rooms": null
   },
   {
+    "id": "106719650",
     "name": "Future Hostel ",
     "city": "Cairo",
     "neighborhood": null,
@@ -1137,6 +1226,7 @@
     "available_rooms": null
   },
   {
+    "id": "122938554",
     "name": "Brassbell | DT | Hannaux | Tahrir Sq",
     "city": "Cairo",
     "neighborhood": null,
@@ -1148,6 +1238,7 @@
     "available_rooms": null
   },
   {
+    "id": "110634497",
     "name": "YOU Cairo Nile View Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1159,6 +1250,7 @@
     "available_rooms": null
   },
   {
+    "id": "117173218",
     "name": "Nile Suites Plaza Apartments",
     "city": "Cairo",
     "neighborhood": null,
@@ -1170,6 +1262,7 @@
     "available_rooms": null
   },
   {
+    "id": "122923698",
     "name": "Longchamps Hotel",
     "city": "Cairo",
     "neighborhood": "Zamalek",
@@ -1181,6 +1274,7 @@
     "available_rooms": null
   },
   {
+    "id": "122922207",
     "name": "Brassbell Zamalek Om Kolthoom",
     "city": "Cairo",
     "neighborhood": "Zamalek",
@@ -1194,6 +1288,7 @@
     "available_rooms": null
   },
   {
+    "id": "113677403",
     "name": "jordan hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1205,6 +1300,7 @@
     "available_rooms": null
   },
   {
+    "id": "9766340",
     "name": "The Australian Hostel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1216,6 +1312,7 @@
     "available_rooms": null
   },
   {
+    "id": "108329166",
     "name": "Castle Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1229,6 +1326,7 @@
     "available_rooms": null
   },
   {
+    "id": "885378",
     "name": "JW Marriott Hotel Cairo",
     "city": "Cairo",
     "neighborhood": "New Cairo",
@@ -1243,6 +1341,7 @@
     "available_rooms": null
   },
   {
+    "id": "74898481",
     "name": "Mamlouk Pyramids Hotel ",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1256,6 +1355,7 @@
     "available_rooms": null
   },
   {
+    "id": "123223684",
     "name": "Pyramids Spiritual Gate ",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1269,6 +1369,7 @@
     "available_rooms": null
   },
   {
+    "id": "6184194",
     "name": "Renaissance Cairo Mirage City Hotel",
     "city": "Cairo",
     "neighborhood": "New Cairo",
@@ -1283,6 +1384,7 @@
     "available_rooms": null
   },
   {
+    "id": "99313670",
     "name": "The Villa 604 Powered by look ",
     "city": "Cairo",
     "neighborhood": "New Cairo",
@@ -1296,6 +1398,7 @@
     "available_rooms": null
   },
   {
+    "id": "106481788",
     "name": "Hyatt Centric Cairo West",
     "city": "Cairo",
     "neighborhood": "6th of October City",
@@ -1309,6 +1412,7 @@
     "available_rooms": null
   },
   {
+    "id": "15701233",
     "name": "The Westin Cairo Golf Resort & Spa, Katameya Dunes",
     "city": "Cairo",
     "neighborhood": "New Cairo",
@@ -1322,6 +1426,7 @@
     "available_rooms": null
   },
   {
+    "id": "89241732",
     "name": "Jasmine Pyramids Hotel ",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -1337,6 +1442,7 @@
     "available_rooms": null
   },
   {
+    "id": "100228204",
     "name": "The Palace Pyramids inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1350,6 +1456,7 @@
     "available_rooms": null
   },
   {
+    "id": "120663173",
     "name": "Royal Regency Hotel EG",
     "city": "Cairo",
     "neighborhood": "New Cairo",
@@ -1361,6 +1468,7 @@
     "available_rooms": null
   },
   {
+    "id": "110648141",
     "name": "Seven Stays Zayed",
     "city": "Cairo",
     "neighborhood": "Sheikh Zayed City",
@@ -1374,6 +1482,7 @@
     "available_rooms": null
   },
   {
+    "id": "122539604",
     "name": "Pyraking Pyramids View Inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1387,6 +1496,7 @@
     "available_rooms": null
   },
   {
+    "id": "107288299",
     "name": "solima pyramids inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1400,6 +1510,7 @@
     "available_rooms": null
   },
   {
+    "id": "44180707",
     "name": "Elite Pyramids Boutique Hotel",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -1414,6 +1525,7 @@
     "available_rooms": null
   },
   {
+    "id": "106506943",
     "name": "Prime Residence Point 90",
     "city": "Cairo",
     "neighborhood": "New Cairo",
@@ -1425,6 +1537,7 @@
     "available_rooms": null
   },
   {
+    "id": "105557605",
     "name": "pyramids gate hotel",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1438,6 +1551,7 @@
     "available_rooms": null
   },
   {
+    "id": "106688916",
     "name": "Queen of Pyramids Hotel",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1449,6 +1563,7 @@
     "available_rooms": null
   },
   {
+    "id": "111344393",
     "name": "Sky Hotel Pyramids View INN",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1462,6 +1577,7 @@
     "available_rooms": null
   },
   {
+    "id": "108810346",
     "name": "Cairo Taj Mohandessn Hotels & Suites",
     "city": "Cairo",
     "neighborhood": "Al Duqqi",
@@ -1473,6 +1589,7 @@
     "available_rooms": null
   },
   {
+    "id": "1742053",
     "name": "Le Passage Cairo Hotel & Casino",
     "city": "Cairo",
     "neighborhood": null,
@@ -1487,6 +1604,7 @@
     "available_rooms": null
   },
   {
+    "id": "15378385",
     "name": "Steigenberger Hotel El Tahrir Cairo",
     "city": "Cairo",
     "neighborhood": null,
@@ -1500,6 +1618,7 @@
     "available_rooms": null
   },
   {
+    "id": "2949575",
     "name": "Fairmont Nile City, Cairo",
     "city": "Cairo",
     "neighborhood": "Downtown Cairo",
@@ -1513,6 +1632,7 @@
     "available_rooms": null
   },
   {
+    "id": "21806",
     "name": "Concorde El Salam Cairo Hotel & Casino",
     "city": "Cairo",
     "neighborhood": null,
@@ -1527,6 +1647,7 @@
     "available_rooms": null
   },
   {
+    "id": "1147842",
     "name": "InterContinental Cairo Citystars by IHG",
     "city": "Cairo",
     "neighborhood": "Nasr City",
@@ -1540,6 +1661,7 @@
     "available_rooms": null
   },
   {
+    "id": "106111928",
     "name": "Sama hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1553,6 +1675,7 @@
     "available_rooms": null
   },
   {
+    "id": "106403025",
     "name": "el masaadya hotel ",
     "city": "Cairo",
     "neighborhood": null,
@@ -1566,6 +1689,7 @@
     "available_rooms": null
   },
   {
+    "id": "100942284",
     "name": "EL Farida Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1579,6 +1703,7 @@
     "available_rooms": null
   },
   {
+    "id": "91341559",
     "name": "Eileen Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1592,6 +1717,7 @@
     "available_rooms": null
   },
   {
+    "id": "121837555",
     "name": "Cairo Plaza Manchester Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1605,6 +1731,7 @@
     "available_rooms": null
   },
   {
+    "id": "13314847",
     "name": "Royal Maadi Hotel",
     "city": "Cairo",
     "neighborhood": "Maadi",
@@ -1616,6 +1743,7 @@
     "available_rooms": null
   },
   {
+    "id": "30362392",
     "name": "Tahrir Plaza Suites",
     "city": "Cairo",
     "neighborhood": null,
@@ -1627,6 +1755,7 @@
     "available_rooms": null
   },
   {
+    "id": "95397631",
     "name": "Central Cairo Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1638,6 +1767,7 @@
     "available_rooms": null
   },
   {
+    "id": "90786232",
     "name": "Parkside Boutique Serviced Apartments",
     "city": "Cairo",
     "neighborhood": "Heliopolis",
@@ -1651,6 +1781,7 @@
     "available_rooms": null
   },
   {
+    "id": "33001802",
     "name": "1920s Boutique Hotel and Restaurants",
     "city": "Cairo",
     "neighborhood": null,
@@ -1664,6 +1795,7 @@
     "available_rooms": null
   },
   {
+    "id": "123520329",
     "name": "Prime Boutique Hotel Heliopolis Terrace",
     "city": "Cairo",
     "neighborhood": "Heliopolis",
@@ -1675,6 +1807,7 @@
     "available_rooms": null
   },
   {
+    "id": "122924379",
     "name": "Brassbell Zamalek High ceiling studios",
     "city": "Cairo",
     "neighborhood": "Zamalek",
@@ -1686,6 +1819,7 @@
     "available_rooms": null
   },
   {
+    "id": "68637000",
     "name": "Museum Plaza",
     "city": "Cairo",
     "neighborhood": null,
@@ -1699,6 +1833,7 @@
     "available_rooms": null
   },
   {
+    "id": "28990780",
     "name": "City Hostel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1712,6 +1847,7 @@
     "available_rooms": null
   },
   {
+    "id": "2030",
     "name": "Sheraton Cairo Hotel & Casino",
     "city": "Cairo",
     "neighborhood": "Al Duqqi",
@@ -1725,6 +1861,7 @@
     "available_rooms": null
   },
   {
+    "id": "32142338",
     "name": "Triumph Luxury Hotel",
     "city": "Cairo",
     "neighborhood": "New Cairo",
@@ -1738,6 +1875,7 @@
     "available_rooms": null
   },
   {
+    "id": "107188614",
     "name": "Pyramids sunshine view",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1751,6 +1889,7 @@
     "available_rooms": null
   },
   {
+    "id": "93037892",
     "name": "Pyramids Sunrise Inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1764,6 +1903,7 @@
     "available_rooms": null
   },
   {
+    "id": "95165225",
     "name": "Royal Great Pyramid INN",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -1778,6 +1918,7 @@
     "available_rooms": null
   },
   {
+    "id": "104076390",
     "name": "King of Pharaohs Pyramids View",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1791,6 +1932,7 @@
     "available_rooms": null
   },
   {
+    "id": "105448236",
     "name": "Royal Inn Residence New Cairo",
     "city": "Cairo",
     "neighborhood": "New Cairo",
@@ -1802,6 +1944,7 @@
     "available_rooms": null
   },
   {
+    "id": "124393857",
     "name": "MARQUIS PYRAMIDS HOTEL",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1817,6 +1960,7 @@
     "available_rooms": null
   },
   {
+    "id": "110700555",
     "name": "Tuya Pyramids Inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1830,6 +1974,7 @@
     "available_rooms": null
   },
   {
+    "id": "122732238",
     "name": "voco Cairo Arabella Plaza by IHG",
     "city": "Cairo",
     "neighborhood": "The 5th Settlement",
@@ -1843,6 +1988,7 @@
     "available_rooms": null
   },
   {
+    "id": "111399410",
     "name": "Remal Pyramids Hotel",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1857,6 +2003,7 @@
     "available_rooms": null
   },
   {
+    "id": "21341545",
     "name": "3 Pyramids View Inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -1870,6 +2017,7 @@
     "available_rooms": null
   },
   {
+    "id": "6661",
     "name": "Cairo Marriott Hotel",
     "city": "Cairo",
     "neighborhood": "Zamalek",
@@ -1883,6 +2031,7 @@
     "available_rooms": null
   },
   {
+    "id": "22840340",
     "name": "Hilton Cairo Heliopolis",
     "city": "Cairo",
     "neighborhood": null,
@@ -1896,6 +2045,7 @@
     "available_rooms": null
   },
   {
+    "id": "114318853",
     "name": "Cairo Plaza Prime Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1909,6 +2059,7 @@
     "available_rooms": null
   },
   {
+    "id": "113303195",
     "name": "Imperial Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1923,6 +2074,7 @@
     "available_rooms": null
   },
   {
+    "id": "109541721",
     "name": "Olivia Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1936,6 +2088,7 @@
     "available_rooms": null
   },
   {
+    "id": "11072",
     "name": "Sofitel Cairo Nile El Gezirah",
     "city": "Cairo",
     "neighborhood": "Gezira",
@@ -1949,6 +2102,7 @@
     "available_rooms": null
   },
   {
+    "id": "102026597",
     "name": "Radisson Residences Cairo Heliopolis",
     "city": "Cairo",
     "neighborhood": null,
@@ -1962,6 +2116,7 @@
     "available_rooms": null
   },
   {
+    "id": "10038771",
     "name": "Osiris Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1973,6 +2128,7 @@
     "available_rooms": null
   },
   {
+    "id": "23242617",
     "name": "Downtown Inn",
     "city": "Cairo",
     "neighborhood": null,
@@ -1986,6 +2142,7 @@
     "available_rooms": null
   },
   {
+    "id": "108578487",
     "name": "Victoria Cairo Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -1999,6 +2156,7 @@
     "available_rooms": null
   },
   {
+    "id": "108443394",
     "name": "CASTELLO HOTEL CAIRO",
     "city": "Cairo",
     "neighborhood": null,
@@ -2010,6 +2168,7 @@
     "available_rooms": null
   },
   {
+    "id": "113134207",
     "name": "Sky light hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -2023,6 +2182,7 @@
     "available_rooms": null
   },
   {
+    "id": "122924569",
     "name": "Brassbell l Zamalek Daoud Studios D",
     "city": "Cairo",
     "neighborhood": "Zamalek",
@@ -2034,6 +2194,7 @@
     "available_rooms": null
   },
   {
+    "id": "36926500",
     "name": "Dahab hostel",
     "city": "Cairo",
     "neighborhood": null,
@@ -2045,6 +2206,7 @@
     "available_rooms": null
   },
   {
+    "id": "2073749",
     "name": "Dusit Thani LakeView Cairo",
     "city": "Cairo",
     "neighborhood": "New Cairo",
@@ -2059,6 +2221,7 @@
     "available_rooms": null
   },
   {
+    "id": "36055404",
     "name": "Giza Pyramids View Inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -2072,6 +2235,7 @@
     "available_rooms": null
   },
   {
+    "id": "12305374",
     "name": "Kempinski Palace Cairo",
     "city": "Cairo",
     "neighborhood": "New Cairo",
@@ -2085,6 +2249,7 @@
     "available_rooms": null
   },
   {
+    "id": "101084299",
     "name": "Capital Of Pyramids Hotel",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -2096,6 +2261,7 @@
     "available_rooms": null
   },
   {
+    "id": "36021864",
     "name": "Steigenberger Pyramids Cairo",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -2109,6 +2275,7 @@
     "available_rooms": null
   },
   {
+    "id": "101973766",
     "name": "Saray Pyramids & Museum View Hotel",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -2120,6 +2287,7 @@
     "available_rooms": null
   },
   {
+    "id": "19767471",
     "name": "Giza Pyramids Inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -2133,6 +2301,7 @@
     "available_rooms": null
   },
   {
+    "id": "22582255",
     "name": "The St. Regis New Capital, Cairo",
     "city": "Cairo",
     "neighborhood": "New Capital",
@@ -2146,6 +2315,7 @@
     "available_rooms": null
   },
   {
+    "id": "102412663",
     "name": "Malek Pyramids Guest House",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -2159,6 +2329,7 @@
     "available_rooms": null
   },
   {
+    "id": "111622628",
     "name": "Eyes Of Egypt Pyramids View Boutique Hotel",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -2173,6 +2344,7 @@
     "available_rooms": null
   },
   {
+    "id": "7831",
     "name": "JAZ Pyramids Resort",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -2186,6 +2358,7 @@
     "available_rooms": null
   },
   {
+    "id": "93107608",
     "name": "King Cheops Inn",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -2199,6 +2372,7 @@
     "available_rooms": null
   },
   {
+    "id": "111830508",
     "name": "R Tower Pyramids View",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -2212,6 +2386,7 @@
     "available_rooms": null
   },
   {
+    "id": "102624530",
     "name": "Pyramids Hotel",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -2223,6 +2398,7 @@
     "available_rooms": null
   },
   {
+    "id": "101826612",
     "name": "Blue Pyramids Eyes Hotel",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -2234,6 +2410,7 @@
     "available_rooms": null
   },
   {
+    "id": "1315900",
     "name": "The President Hotel Cairo",
     "city": "Cairo",
     "neighborhood": "Zamalek",
@@ -2245,6 +2422,7 @@
     "available_rooms": null
   },
   {
+    "id": "118216161",
     "name": "Viaje Hotel Downtown Cairo",
     "city": "Cairo",
     "neighborhood": null,
@@ -2258,6 +2436,7 @@
     "available_rooms": null
   },
   {
+    "id": "520987",
     "name": "Hilton Cairo Zamalek Residences",
     "city": "Cairo",
     "neighborhood": "Zamalek",
@@ -2271,6 +2450,7 @@
     "available_rooms": null
   },
   {
+    "id": "186572",
     "name": "Holiday Inn Cairo Maadi by IHG",
     "city": "Cairo",
     "neighborhood": "Maadi",
@@ -2284,6 +2464,7 @@
     "available_rooms": null
   },
   {
+    "id": "44802534",
     "name": "The Location Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -2297,6 +2478,7 @@
     "available_rooms": null
   },
   {
+    "id": "125157712",
     "name": "Flamingo Cairo Airport Hotel & Free Airport Pickup",
     "city": "Cairo",
     "neighborhood": null,
@@ -2310,6 +2492,7 @@
     "available_rooms": null
   },
   {
+    "id": "23029094",
     "name": "The Guard Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -2323,6 +2506,7 @@
     "available_rooms": null
   },
   {
+    "id": "13259926",
     "name": "Pearl Hotel",
     "city": "Cairo",
     "neighborhood": "Maadi",
@@ -2334,6 +2518,7 @@
     "available_rooms": null
   },
   {
+    "id": "116416870",
     "name": "Cairo Plaza Luxe Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -2347,6 +2532,7 @@
     "available_rooms": null
   },
   {
+    "id": "117376035",
     "name": "Downtown Antique Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -2360,6 +2546,7 @@
     "available_rooms": null
   },
   {
+    "id": "118809126",
     "name": " ALRashedy Hotel Powered by Boutique",
     "city": "Cairo",
     "neighborhood": null,
@@ -2371,6 +2558,7 @@
     "available_rooms": null
   },
   {
+    "id": "100344164",
     "name": "Centro Citta Cairo Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -2384,6 +2572,7 @@
     "available_rooms": null
   },
   {
+    "id": "108197723",
     "name": "Dior Hotel",
     "city": "Cairo",
     "neighborhood": null,
@@ -2397,6 +2586,7 @@
     "available_rooms": null
   },
   {
+    "id": "6406409",
     "name": "Isis Hostel 2",
     "city": "Cairo",
     "neighborhood": null,
@@ -2408,6 +2598,7 @@
     "available_rooms": null
   },
   {
+    "id": "38648763",
     "name": "Welcome Arabesque Hostel",
     "city": "Cairo",
     "neighborhood": null,
@@ -2421,6 +2612,7 @@
     "available_rooms": null
   },
   {
+    "id": "4521364",
     "name": "Meramees Hostel",
     "city": "Cairo",
     "neighborhood": null,
@@ -2434,6 +2626,7 @@
     "available_rooms": null
   },
   {
+    "id": "95230622",
     "name": "Lucky Hostel",
     "city": "Cairo",
     "neighborhood": null,
@@ -2447,6 +2640,7 @@
     "available_rooms": null
   },
   {
+    "id": "131693336",
     "name": "Hotel Comfort Giza",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -2460,6 +2654,7 @@
     "available_rooms": null
   },
   {
+    "id": "91391850",
     "name": "The View Delta Hotel",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -2474,6 +2669,7 @@
     "available_rooms": null
   },
   {
+    "id": "21939197",
     "name": "Pyramids Valley",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -2487,6 +2683,7 @@
     "available_rooms": null
   },
   {
+    "id": "38297848",
     "name": "Egypt Pyramids Inn",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -2500,6 +2697,7 @@
     "available_rooms": null
   },
   {
+    "id": "109826904",
     "name": "Pyramids On The Spot View",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -2514,6 +2712,7 @@
     "available_rooms": null
   },
   {
+    "id": "116479176",
     "name": "pyramids Yard Hotel",
     "city": "Cairo",
     "neighborhood": "Al Haram",
@@ -2528,6 +2727,7 @@
     "available_rooms": null
   },
   {
+    "id": "42701798",
     "name": "Pyramid Edge Hotel & Exclusive Pyramids View Rooftop",
     "city": "Cairo",
     "neighborhood": "Giza",
@@ -2539,6 +2739,7 @@
     "available_rooms": null
   },
   {
+    "id": "130603153",
     "name": "Hotel Urbana, A Tribute Portfolio Hotel",
     "city": "Rome",
     "neighborhood": "Monti",
@@ -2550,6 +2751,7 @@
     "available_rooms": null
   },
   {
+    "id": "67387151",
     "name": "Maalot Roma",
     "city": "Rome",
     "neighborhood": null,
@@ -2561,6 +2763,7 @@
     "available_rooms": null
   },
   {
+    "id": "36991846",
     "name": "Rocco Forte Hotel de la Ville",
     "city": "Rome",
     "neighborhood": null,
@@ -2572,6 +2775,7 @@
     "available_rooms": null
   },
   {
+    "id": "109284627",
     "name": "master Trevi",
     "city": "Rome",
     "neighborhood": null,
@@ -2583,6 +2787,7 @@
     "available_rooms": null
   },
   {
+    "id": "18236516",
     "name": "Hotel Vilòn",
     "city": "Rome",
     "neighborhood": null,
@@ -2594,6 +2799,7 @@
     "available_rooms": null
   },
   {
+    "id": "118717472",
     "name": "Fontart Tritone ",
     "city": "Rome",
     "neighborhood": null,
@@ -2605,6 +2811,7 @@
     "available_rooms": null
   },
   {
+    "id": "125070427",
     "name": "Corinthia Rome",
     "city": "Rome",
     "neighborhood": null,
@@ -2616,6 +2823,7 @@
     "available_rooms": null
   },
   {
+    "id": "132638522",
     "name": "Room Mate Gran Filippo II, Roma – Fontana Di Trevi",
     "city": "Rome",
     "neighborhood": null,
@@ -2627,6 +2835,7 @@
     "available_rooms": null
   },
   {
+    "id": "130272219",
     "name": "Urban Vatican Rooms 2",
     "city": "Rome",
     "neighborhood": "Prati",
@@ -2638,6 +2847,7 @@
     "available_rooms": null
   },
   {
+    "id": "122938828",
     "name": "The Fourth Dimension by Domidea",
     "city": "Rome",
     "neighborhood": null,
@@ -2652,6 +2862,7 @@
     "available_rooms": null
   },
   {
+    "id": "124041151",
     "name": "Foro Italico Guesthouse",
     "city": "Rome",
     "neighborhood": null,
@@ -2663,6 +2874,7 @@
     "available_rooms": null
   },
   {
+    "id": "124117379",
     "name": "Barocci Home",
     "city": "Rome",
     "neighborhood": "Tuscolano",
@@ -2674,6 +2886,7 @@
     "available_rooms": null
   },
   {
+    "id": "45856",
     "name": "Hotel Artemide",
     "city": "Rome",
     "neighborhood": null,
@@ -2687,6 +2900,7 @@
     "available_rooms": null
   },
   {
+    "id": "3546384",
     "name": "iQ Hotel Roma",
     "city": "Rome",
     "neighborhood": null,
@@ -2700,6 +2914,7 @@
     "available_rooms": null
   },
   {
+    "id": "125391651",
     "name": "Bob W Rome Testaccio",
     "city": "Rome",
     "neighborhood": null,
@@ -2711,6 +2926,7 @@
     "available_rooms": null
   },
   {
+    "id": "18902554",
     "name": "The Liberty Boutique Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -2722,6 +2938,7 @@
     "available_rooms": null
   },
   {
+    "id": "2527642",
     "name": "Hotel Locarno",
     "city": "Rome",
     "neighborhood": null,
@@ -2735,6 +2952,7 @@
     "available_rooms": null
   },
   {
+    "id": "42547943",
     "name": "Room Mate Collection Filippo, Rome-Fontana di Trevi",
     "city": "Rome",
     "neighborhood": null,
@@ -2746,6 +2964,7 @@
     "available_rooms": null
   },
   {
+    "id": "790764",
     "name": "art'otel Rome Via Veneto",
     "city": "Rome",
     "neighborhood": null,
@@ -2757,6 +2976,7 @@
     "available_rooms": null
   },
   {
+    "id": "119335765",
     "name": "The Spotlight Boutique Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -2768,6 +2988,7 @@
     "available_rooms": null
   },
   {
+    "id": "16311",
     "name": "Hotel Eden - Dorchester Collection",
     "city": "Rome",
     "neighborhood": null,
@@ -2779,6 +3000,7 @@
     "available_rooms": null
   },
   {
+    "id": "13255789",
     "name": "Arpinelli Relais",
     "city": "Rome",
     "neighborhood": null,
@@ -2790,6 +3012,7 @@
     "available_rooms": null
   },
   {
+    "id": "75633743",
     "name": "Umiltà 36 - Preferred Hotels & Resorts",
     "city": "Rome",
     "neighborhood": null,
@@ -2803,6 +3026,7 @@
     "available_rooms": null
   },
   {
+    "id": "31281636",
     "name": "The First Dolce - Preferred Hotels & Resorts",
     "city": "Rome",
     "neighborhood": null,
@@ -2814,6 +3038,7 @@
     "available_rooms": null
   },
   {
+    "id": "2912498",
     "name": "Palazzo Ripetta",
     "city": "Rome",
     "neighborhood": null,
@@ -2825,6 +3050,7 @@
     "available_rooms": null
   },
   {
+    "id": "87678971",
     "name": "Palazzo Velabro, a Member of Design Hotels",
     "city": "Rome",
     "neighborhood": null,
@@ -2836,6 +3062,7 @@
     "available_rooms": null
   },
   {
+    "id": "120432342",
     "name": "Hotel Trame",
     "city": "Rome",
     "neighborhood": null,
@@ -2847,6 +3074,7 @@
     "available_rooms": null
   },
   {
+    "id": "96484843",
     "name": "Palazzo Roma - The Leading Hotels of the World",
     "city": "Rome",
     "neighborhood": null,
@@ -2860,6 +3088,7 @@
     "available_rooms": null
   },
   {
+    "id": "49067114",
     "name": "Monastero dei Santi",
     "city": "Rome",
     "neighborhood": null,
@@ -2871,6 +3100,7 @@
     "available_rooms": null
   },
   {
+    "id": "112668120",
     "name": "Orient Express La Minerva",
     "city": "Rome",
     "neighborhood": null,
@@ -2884,6 +3114,7 @@
     "available_rooms": null
   },
   {
+    "id": "124263957",
     "name": "Aria Palace by OMNIA Hotels",
     "city": "Rome",
     "neighborhood": null,
@@ -2895,6 +3126,7 @@
     "available_rooms": null
   },
   {
+    "id": "26756",
     "name": "Hotel Nazionale",
     "city": "Rome",
     "neighborhood": null,
@@ -2906,6 +3138,7 @@
     "available_rooms": null
   },
   {
+    "id": "2529050",
     "name": "Hotel Abruzzi",
     "city": "Rome",
     "neighborhood": null,
@@ -2919,6 +3152,7 @@
     "available_rooms": null
   },
   {
+    "id": "54156",
     "name": "Hotel Barocco",
     "city": "Rome",
     "neighborhood": null,
@@ -2930,6 +3164,7 @@
     "available_rooms": null
   },
   {
+    "id": "30612220",
     "name": "Hotel Chapter Roma",
     "city": "Rome",
     "neighborhood": null,
@@ -2941,6 +3176,7 @@
     "available_rooms": null
   },
   {
+    "id": "94706900",
     "name": "citizenM Rome Isola Tiberina",
     "city": "Rome",
     "neighborhood": null,
@@ -2952,6 +3188,7 @@
     "available_rooms": null
   },
   {
+    "id": "15649767",
     "name": "Martis Palace Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -2963,6 +3200,7 @@
     "available_rooms": null
   },
   {
+    "id": "21766247",
     "name": "Elizabeth Unique Rome - a Member of Design Hotels",
     "city": "Rome",
     "neighborhood": null,
@@ -2976,6 +3214,7 @@
     "available_rooms": null
   },
   {
+    "id": "83216106",
     "name": "Six Senses Rome",
     "city": "Rome",
     "neighborhood": null,
@@ -2987,6 +3226,7 @@
     "available_rooms": null
   },
   {
+    "id": "23010868",
     "name": "Martius Private Suites Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3000,6 +3240,7 @@
     "available_rooms": null
   },
   {
+    "id": "45835",
     "name": "Palazzo 4 Fontane 12",
     "city": "Rome",
     "neighborhood": null,
@@ -3011,6 +3252,7 @@
     "available_rooms": null
   },
   {
+    "id": "14529",
     "name": "InterContinental Rome Ambasciatori Palace by IHG",
     "city": "Rome",
     "neighborhood": null,
@@ -3022,6 +3264,7 @@
     "available_rooms": null
   },
   {
+    "id": "9852866",
     "name": "Hotel Sant' Anna",
     "city": "Rome",
     "neighborhood": null,
@@ -3033,6 +3276,7 @@
     "available_rooms": null
   },
   {
+    "id": "34840",
     "name": "Hotel d'Inghilterra Roma - Starhotels Collezione",
     "city": "Rome",
     "neighborhood": null,
@@ -3044,6 +3288,7 @@
     "available_rooms": null
   },
   {
+    "id": "22184917",
     "name": "Relais Vittoria Colonna",
     "city": "Rome",
     "neighborhood": "Prati",
@@ -3055,6 +3300,7 @@
     "available_rooms": null
   },
   {
+    "id": "111522122",
     "name": "The Goethe Hotel - Small Luxury Hotels of the World",
     "city": "Rome",
     "neighborhood": null,
@@ -3068,6 +3314,7 @@
     "available_rooms": null
   },
   {
+    "id": "8429579",
     "name": "Teichnersuite",
     "city": "Rome",
     "neighborhood": null,
@@ -3081,6 +3328,7 @@
     "available_rooms": null
   },
   {
+    "id": "17793107",
     "name": "Margutta 19 - Small Luxury Hotels of the World",
     "city": "Rome",
     "neighborhood": null,
@@ -3094,6 +3342,7 @@
     "available_rooms": null
   },
   {
+    "id": "15880755",
     "name": "Vino e Oli Residenze",
     "city": "Rome",
     "neighborhood": "Prati",
@@ -3105,6 +3354,7 @@
     "available_rooms": null
   },
   {
+    "id": "119625840",
     "name": "Efes Hôtellerie",
     "city": "Rome",
     "neighborhood": null,
@@ -3116,6 +3366,7 @@
     "available_rooms": null
   },
   {
+    "id": "87474265",
     "name": "Passepartout",
     "city": "Rome",
     "neighborhood": null,
@@ -3127,6 +3378,7 @@
     "available_rooms": null
   },
   {
+    "id": "9309705",
     "name": "Cassiodoro 19",
     "city": "Rome",
     "neighborhood": "Prati",
@@ -3138,6 +3390,7 @@
     "available_rooms": null
   },
   {
+    "id": "76764503",
     "name": "The First Musica - Preferred Hotels & Resorts",
     "city": "Rome",
     "neighborhood": "Prati",
@@ -3149,6 +3402,7 @@
     "available_rooms": null
   },
   {
+    "id": "17499008",
     "name": "Via Veneto Prestige Rooms",
     "city": "Rome",
     "neighborhood": null,
@@ -3160,6 +3414,7 @@
     "available_rooms": null
   },
   {
+    "id": "2539462",
     "name": "Ripetta 25",
     "city": "Rome",
     "neighborhood": null,
@@ -3171,6 +3426,7 @@
     "available_rooms": null
   },
   {
+    "id": "91079832",
     "name": "Smart Guesthouse",
     "city": "Rome",
     "neighborhood": null,
@@ -3182,6 +3438,7 @@
     "available_rooms": null
   },
   {
+    "id": "119141708",
     "name": "At Home Gaeta Guest House",
     "city": "Rome",
     "neighborhood": null,
@@ -3193,6 +3450,7 @@
     "available_rooms": null
   },
   {
+    "id": "78416567",
     "name": "AT FORTY ONE",
     "city": "Rome",
     "neighborhood": null,
@@ -3204,6 +3462,7 @@
     "available_rooms": null
   },
   {
+    "id": "22811742",
     "name": "Gasometer Urban Suites",
     "city": "Rome",
     "neighborhood": "Ostiense",
@@ -3215,6 +3474,7 @@
     "available_rooms": null
   },
   {
+    "id": "124953974",
     "name": "Palazzo Gambirasi Luxury Suite Roma",
     "city": "Rome",
     "neighborhood": null,
@@ -3226,6 +3486,7 @@
     "available_rooms": null
   },
   {
+    "id": "19403589",
     "name": "Navona Residenza de Charme",
     "city": "Rome",
     "neighborhood": null,
@@ -3237,6 +3498,7 @@
     "available_rooms": null
   },
   {
+    "id": "24004",
     "name": "Hassler Roma",
     "city": "Rome",
     "neighborhood": null,
@@ -3248,6 +3510,7 @@
     "available_rooms": null
   },
   {
+    "id": "114954629",
     "name": "Bocca di Leone Luxury Suite",
     "city": "Rome",
     "neighborhood": null,
@@ -3261,6 +3524,7 @@
     "available_rooms": null
   },
   {
+    "id": "128978989",
     "name": "Barberini 16 Boutique Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3274,6 +3538,7 @@
     "available_rooms": null
   },
   {
+    "id": "121785600",
     "name": "Dimora Galeno",
     "city": "Rome",
     "neighborhood": null,
@@ -3285,6 +3550,7 @@
     "available_rooms": null
   },
   {
+    "id": "61603357",
     "name": "The Hoxton, Rome",
     "city": "Rome",
     "neighborhood": null,
@@ -3296,6 +3562,7 @@
     "available_rooms": null
   },
   {
+    "id": "581053",
     "name": "Hotel Splendide Royal - The Leading Hotels of the World",
     "city": "Rome",
     "neighborhood": null,
@@ -3307,6 +3574,7 @@
     "available_rooms": null
   },
   {
+    "id": "114933055",
     "name": "Ruby Giulia Hotel Rome",
     "city": "Rome",
     "neighborhood": null,
@@ -3318,6 +3586,7 @@
     "available_rooms": null
   },
   {
+    "id": "856829",
     "name": "Hotel Isa",
     "city": "Rome",
     "neighborhood": "Prati",
@@ -3329,6 +3598,7 @@
     "available_rooms": null
   },
   {
+    "id": "2113088",
     "name": "Donna Camilla Savelli – VRetreats",
     "city": "Rome",
     "neighborhood": "Trastevere",
@@ -3340,6 +3610,7 @@
     "available_rooms": null
   },
   {
+    "id": "1427955",
     "name": "Hotel Diocleziano",
     "city": "Rome",
     "neighborhood": null,
@@ -3351,6 +3622,7 @@
     "available_rooms": null
   },
   {
+    "id": "15888",
     "name": "nhow Roma Vittorio Veneto",
     "city": "Rome",
     "neighborhood": null,
@@ -3364,6 +3636,7 @@
     "available_rooms": null
   },
   {
+    "id": "8328803",
     "name": "Argentina Residenza Style Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3375,6 +3648,7 @@
     "available_rooms": null
   },
   {
+    "id": "107918",
     "name": "Hotel Imperiale by OMNIA hotels ",
     "city": "Rome",
     "neighborhood": null,
@@ -3386,6 +3660,7 @@
     "available_rooms": null
   },
   {
+    "id": "11357",
     "name": "Hotel Canada, BW Premier Collection",
     "city": "Rome",
     "neighborhood": null,
@@ -3397,6 +3672,7 @@
     "available_rooms": null
   },
   {
+    "id": "889646",
     "name": "Room Mate Collection Mia, Rome Colosseum",
     "city": "Rome",
     "neighborhood": null,
@@ -3408,6 +3684,7 @@
     "available_rooms": null
   },
   {
+    "id": "2528540",
     "name": "Hotel Scalinata di Spagna",
     "city": "Rome",
     "neighborhood": null,
@@ -3421,6 +3698,7 @@
     "available_rooms": null
   },
   {
+    "id": "1852267",
     "name": "Albergo Santa Chiara Hotel Rome",
     "city": "Rome",
     "neighborhood": null,
@@ -3432,6 +3710,7 @@
     "available_rooms": null
   },
   {
+    "id": "88439117",
     "name": "Adesso Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3443,6 +3722,7 @@
     "available_rooms": null
   },
   {
+    "id": "869324",
     "name": "Maison Roma Piazza di Spagna | UNA Esperienze",
     "city": "Rome",
     "neighborhood": null,
@@ -3454,6 +3734,7 @@
     "available_rooms": null
   },
   {
+    "id": "101129112",
     "name": "Radisson Collection Hotel, Roma Antica",
     "city": "Rome",
     "neighborhood": null,
@@ -3465,6 +3746,7 @@
     "available_rooms": null
   },
   {
+    "id": "21389240",
     "name": "Otivm Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3476,6 +3758,7 @@
     "available_rooms": null
   },
   {
+    "id": "4532533",
     "name": "Lunetta Hotel & SPA",
     "city": "Rome",
     "neighborhood": null,
@@ -3489,6 +3772,7 @@
     "available_rooms": null
   },
   {
+    "id": "3483637",
     "name": "Babuino 181 – Small Luxury Hotels of the World",
     "city": "Rome",
     "neighborhood": null,
@@ -3502,6 +3786,7 @@
     "available_rooms": null
   },
   {
+    "id": "15265012",
     "name": "Vatican Style",
     "city": "Rome",
     "neighborhood": null,
@@ -3513,6 +3798,7 @@
     "available_rooms": null
   },
   {
+    "id": "99790372",
     "name": "Residenza Piranesi Boutique Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3524,6 +3810,7 @@
     "available_rooms": null
   },
   {
+    "id": "8793880",
     "name": "Palazzo Navona",
     "city": "Rome",
     "neighborhood": null,
@@ -3535,6 +3822,7 @@
     "available_rooms": null
   },
   {
+    "id": "1443366",
     "name": "Trianon Borgo Pio",
     "city": "Rome",
     "neighborhood": null,
@@ -3548,6 +3836,7 @@
     "available_rooms": null
   },
   {
+    "id": "15172653",
     "name": "Hotel degli Artisti",
     "city": "Rome",
     "neighborhood": null,
@@ -3561,6 +3850,7 @@
     "available_rooms": null
   },
   {
+    "id": "1037845",
     "name": "Palazzo Nainer",
     "city": "Rome",
     "neighborhood": null,
@@ -3572,6 +3862,7 @@
     "available_rooms": null
   },
   {
+    "id": "22139",
     "name": "NYX Hotel Rome by Leonardo Hotels",
     "city": "Rome",
     "neighborhood": "Prati",
@@ -3583,6 +3874,7 @@
     "available_rooms": null
   },
   {
+    "id": "36872416",
     "name": "NH Collection Roma Fori Imperiali",
     "city": "Rome",
     "neighborhood": "Monti",
@@ -3594,6 +3886,7 @@
     "available_rooms": null
   },
   {
+    "id": "75698813",
     "name": "Casa San Giuseppe",
     "city": "Rome",
     "neighborhood": "San Giovanni",
@@ -3607,6 +3900,7 @@
     "available_rooms": null
   },
   {
+    "id": "905949",
     "name": "Aleph Rome Hotel Curio Collection by Hilton",
     "city": "Rome",
     "neighborhood": null,
@@ -3620,6 +3914,7 @@
     "available_rooms": null
   },
   {
+    "id": "18033670",
     "name": "Hotel The Haven Roma",
     "city": "Rome",
     "neighborhood": null,
@@ -3631,6 +3926,7 @@
     "available_rooms": null
   },
   {
+    "id": "106900275",
     "name": "Consoli Romani Vatican Rooms",
     "city": "Rome",
     "neighborhood": "Prati",
@@ -3642,6 +3938,7 @@
     "available_rooms": null
   },
   {
+    "id": "23489",
     "name": "The St. Regis Rome",
     "city": "Rome",
     "neighborhood": null,
@@ -3653,6 +3950,7 @@
     "available_rooms": null
   },
   {
+    "id": "36818089",
     "name": "Sourire Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3666,6 +3964,7 @@
     "available_rooms": null
   },
   {
+    "id": "8327747",
     "name": "Seven Suites",
     "city": "Rome",
     "neighborhood": null,
@@ -3677,6 +3976,7 @@
     "available_rooms": null
   },
   {
+    "id": "69386994",
     "name": "W Rome",
     "city": "Rome",
     "neighborhood": null,
@@ -3688,6 +3988,7 @@
     "available_rooms": null
   },
   {
+    "id": "2204760",
     "name": "Relais Piazza Del Popolo - Aminta Collection Luxury Rooms",
     "city": "Rome",
     "neighborhood": null,
@@ -3699,6 +4000,7 @@
     "available_rooms": null
   },
   {
+    "id": "96006388",
     "name": "TB Place Roma",
     "city": "Rome",
     "neighborhood": null,
@@ -3712,6 +4014,7 @@
     "available_rooms": null
   },
   {
+    "id": "48590",
     "name": "The Regency, Rome, A Tribute Portfolio Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3723,6 +4026,7 @@
     "available_rooms": null
   },
   {
+    "id": "111564515",
     "name": "Museum Hospitality - Vatican Apartments",
     "city": "Rome",
     "neighborhood": null,
@@ -3734,6 +4038,7 @@
     "available_rooms": null
   },
   {
+    "id": "12625682",
     "name": "New Design St. Peter",
     "city": "Rome",
     "neighborhood": "Prati",
@@ -3745,6 +4050,7 @@
     "available_rooms": null
   },
   {
+    "id": "24344544",
     "name": "StarHome NAVONA",
     "city": "Rome",
     "neighborhood": null,
@@ -3756,6 +4062,7 @@
     "available_rooms": null
   },
   {
+    "id": "106434346",
     "name": "Barberini Retreat Boutique Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3767,6 +4074,7 @@
     "available_rooms": null
   },
   {
+    "id": "25719020",
     "name": "Magica Luna Boutique Hotel Roma",
     "city": "Rome",
     "neighborhood": null,
@@ -3778,6 +4086,7 @@
     "available_rooms": null
   },
   {
+    "id": "4418417",
     "name": "The First Arte - Preferred Hotels & Resorts",
     "city": "Rome",
     "neighborhood": null,
@@ -3789,6 +4098,7 @@
     "available_rooms": null
   },
   {
+    "id": "11036974",
     "name": "A.Roma Lifestyle Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3802,6 +4112,7 @@
     "available_rooms": null
   },
   {
+    "id": "2222425",
     "name": "UNA Hotels Decò Roma",
     "city": "Rome",
     "neighborhood": null,
@@ -3813,6 +4124,7 @@
     "available_rooms": null
   },
   {
+    "id": "109576916",
     "name": "The Social Hub Rome",
     "city": "Rome",
     "neighborhood": null,
@@ -3826,6 +4138,7 @@
     "available_rooms": null
   },
   {
+    "id": "22201",
     "name": "Marcella Royal Hotel - Rooftop Garden",
     "city": "Rome",
     "neighborhood": null,
@@ -3837,6 +4150,7 @@
     "available_rooms": null
   },
   {
+    "id": "6064",
     "name": "Hotel Villa Pamphili Roma",
     "city": "Rome",
     "neighborhood": null,
@@ -3852,6 +4166,7 @@
     "available_rooms": null
   },
   {
+    "id": "24463268",
     "name": "The Hive Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3863,6 +4178,7 @@
     "available_rooms": null
   },
   {
+    "id": "30393800",
     "name": "Hotel San Giovanni Roma",
     "city": "Rome",
     "neighborhood": "San Giovanni",
@@ -3876,6 +4192,7 @@
     "available_rooms": null
   },
   {
+    "id": "2876091",
     "name": "Hotel Manfredi Suite in Rome",
     "city": "Rome",
     "neighborhood": null,
@@ -3887,6 +4204,7 @@
     "available_rooms": null
   },
   {
+    "id": "22268731",
     "name": "The Republic Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3900,6 +4218,7 @@
     "available_rooms": null
   },
   {
+    "id": "2589511",
     "name": "Hotel Ponte Sisto",
     "city": "Rome",
     "neighborhood": null,
@@ -3911,6 +4230,7 @@
     "available_rooms": null
   },
   {
+    "id": "4417501",
     "name": " Divina Luxury Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3924,6 +4244,7 @@
     "available_rooms": null
   },
   {
+    "id": "2542549",
     "name": "Hotel Golden",
     "city": "Rome",
     "neighborhood": null,
@@ -3935,6 +4256,7 @@
     "available_rooms": null
   },
   {
+    "id": "2541114",
     "name": "Aparthotel Colombo Roma",
     "city": "Rome",
     "neighborhood": "Ostiense",
@@ -3946,6 +4268,7 @@
     "available_rooms": null
   },
   {
+    "id": "8317570",
     "name": "Hotel Oceania",
     "city": "Rome",
     "neighborhood": null,
@@ -3957,6 +4280,7 @@
     "available_rooms": null
   },
   {
+    "id": "1063927",
     "name": "47 Boutique Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -3970,6 +4294,7 @@
     "available_rooms": null
   },
   {
+    "id": "21157",
     "name": "Best Western Plus Hotel Universo",
     "city": "Rome",
     "neighborhood": null,
@@ -3981,6 +4306,7 @@
     "available_rooms": null
   },
   {
+    "id": "112281",
     "name": "Hotel Columbia",
     "city": "Rome",
     "neighborhood": null,
@@ -3994,6 +4320,7 @@
     "available_rooms": null
   },
   {
+    "id": "15335833",
     "name": "The Glam",
     "city": "Rome",
     "neighborhood": null,
@@ -4008,6 +4335,7 @@
     "available_rooms": null
   },
   {
+    "id": "441",
     "name": "Cardo Roma, Autograph Hotel",
     "city": "Rome",
     "neighborhood": "Ostiense",
@@ -4021,6 +4349,7 @@
     "available_rooms": null
   },
   {
+    "id": "969767",
     "name": "Residenza Paolo VI",
     "city": "Rome",
     "neighborhood": null,
@@ -4034,6 +4363,7 @@
     "available_rooms": null
   },
   {
+    "id": "889923",
     "name": "Hotel Indigo Rome - St. George by IHG",
     "city": "Rome",
     "neighborhood": null,
@@ -4045,6 +4375,7 @@
     "available_rooms": null
   },
   {
+    "id": "83532",
     "name": "The Spring House Hotel Rome Vatican, Tapestry Collection Hilton",
     "city": "Rome",
     "neighborhood": null,
@@ -4056,6 +4387,7 @@
     "available_rooms": null
   },
   {
+    "id": "2534859",
     "name": "SUITE SISTINA FOR BRAVE LOVERS",
     "city": "Rome",
     "neighborhood": null,
@@ -4067,6 +4399,7 @@
     "available_rooms": null
   },
   {
+    "id": "8121103",
     "name": "Terrace Pantheon Relais",
     "city": "Rome",
     "neighborhood": null,
@@ -4078,6 +4411,7 @@
     "available_rooms": null
   },
   {
+    "id": "15813797",
     "name": "Monti Palace Hotel",
     "city": "Rome",
     "neighborhood": "Monti",
@@ -4091,6 +4425,7 @@
     "available_rooms": null
   },
   {
+    "id": "9234",
     "name": "Sofitel Rome Villa Borghese",
     "city": "Rome",
     "neighborhood": null,
@@ -4102,6 +4437,7 @@
     "available_rooms": null
   },
   {
+    "id": "97107182",
     "name": "THE STEPS Hotel - by Eitch Collection",
     "city": "Rome",
     "neighborhood": null,
@@ -4113,6 +4449,7 @@
     "available_rooms": null
   },
   {
+    "id": "792356",
     "name": "Rose Garden Palace by OMNIA hotels",
     "city": "Rome",
     "neighborhood": null,
@@ -4126,6 +4463,7 @@
     "available_rooms": null
   },
   {
+    "id": "1211478",
     "name": "The Independent Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -4137,6 +4475,7 @@
     "available_rooms": null
   },
   {
+    "id": "24943757",
     "name": "Triviho Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -4148,6 +4487,7 @@
     "available_rooms": null
   },
   {
+    "id": "527468",
     "name": "Hotel Barberini",
     "city": "Rome",
     "neighborhood": null,
@@ -4159,6 +4499,7 @@
     "available_rooms": null
   },
   {
+    "id": "11291772",
     "name": "Stendhal Luxury Suites",
     "city": "Rome",
     "neighborhood": null,
@@ -4172,6 +4513,7 @@
     "available_rooms": null
   },
   {
+    "id": "115303763",
     "name": "VELVET GREY BOUTIQUE HOTEL ROMA",
     "city": "Rome",
     "neighborhood": null,
@@ -4183,6 +4525,7 @@
     "available_rooms": null
   },
   {
+    "id": "7106251",
     "name": "DOM Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -4194,6 +4537,7 @@
     "available_rooms": null
   },
   {
+    "id": "6312398",
     "name": "Relais de l'Opera",
     "city": "Rome",
     "neighborhood": null,
@@ -4205,6 +4549,7 @@
     "available_rooms": null
   },
   {
+    "id": "27059030",
     "name": "THE ONE Boutique Hotel & Private SPA Roma",
     "city": "Rome",
     "neighborhood": null,
@@ -4216,6 +4561,7 @@
     "available_rooms": null
   },
   {
+    "id": "5614534",
     "name": "Luxury on the River",
     "city": "Rome",
     "neighborhood": "Prati",
@@ -4227,6 +4573,7 @@
     "available_rooms": null
   },
   {
+    "id": "15336024",
     "name": "The Tribune, part of JdV by Hyatt",
     "city": "Rome",
     "neighborhood": null,
@@ -4238,6 +4585,7 @@
     "available_rooms": null
   },
   {
+    "id": "15568302",
     "name": "Hotel Monte Cenci",
     "city": "Rome",
     "neighborhood": null,
@@ -4251,6 +4599,7 @@
     "available_rooms": null
   },
   {
+    "id": "920469",
     "name": "Mercure Roma Piazza Bologna",
     "city": "Rome",
     "neighborhood": null,
@@ -4262,6 +4611,7 @@
     "available_rooms": null
   },
   {
+    "id": "4464282",
     "name": "Villa Agrippina Gran Meliá - The Leading Hotels of the World",
     "city": "Rome",
     "neighborhood": "Trastevere",
@@ -4275,6 +4625,7 @@
     "available_rooms": null
   },
   {
+    "id": "4417475",
     "name": "Villa Pirandello",
     "city": "Rome",
     "neighborhood": null,
@@ -4286,6 +4637,7 @@
     "available_rooms": null
   },
   {
+    "id": "907346",
     "name": "Anantara Palazzo Naiadi Rome Hotel - A Leading Hotel of the World",
     "city": "Rome",
     "neighborhood": null,
@@ -4299,6 +4651,7 @@
     "available_rooms": null
   },
   {
+    "id": "976643",
     "name": "River Château Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -4310,6 +4663,7 @@
     "available_rooms": null
   },
   {
+    "id": "1896562",
     "name": "AC Hotel by Marriott Clodio Roma",
     "city": "Rome",
     "neighborhood": null,
@@ -4321,6 +4675,7 @@
     "available_rooms": null
   },
   {
+    "id": "14941",
     "name": "Rome Cavalieri, A Waldorf Astoria Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -4334,6 +4689,7 @@
     "available_rooms": null
   },
   {
+    "id": "1600405",
     "name": "Villa Laetitia",
     "city": "Rome",
     "neighborhood": null,
@@ -4347,6 +4703,7 @@
     "available_rooms": null
   },
   {
+    "id": "24081470",
     "name": "Roma Vespahouse",
     "city": "Rome",
     "neighborhood": null,
@@ -4358,6 +4715,7 @@
     "available_rooms": null
   },
   {
+    "id": "20305769",
     "name": "Villa Angelina",
     "city": "Rome",
     "neighborhood": null,
@@ -4369,6 +4727,7 @@
     "available_rooms": null
   },
   {
+    "id": "112603597",
     "name": "PARIOLI CUBE HOTEL",
     "city": "Rome",
     "neighborhood": null,
@@ -4380,6 +4739,7 @@
     "available_rooms": null
   },
   {
+    "id": "93170705",
     "name": "The B Place Cola Guesthouse",
     "city": "Rome",
     "neighborhood": "Prati",
@@ -4391,6 +4751,7 @@
     "available_rooms": null
   },
   {
+    "id": "23972532",
     "name": "The Pantheon Iconic Rome Hotel, Autograph Collection",
     "city": "Rome",
     "neighborhood": null,
@@ -4402,6 +4763,7 @@
     "available_rooms": null
   },
   {
+    "id": "3893967",
     "name": "Numa Rome Vici",
     "city": "Rome",
     "neighborhood": null,
@@ -4413,6 +4775,7 @@
     "available_rooms": null
   },
   {
+    "id": "2528916",
     "name": "Quirinale Luxury Rooms",
     "city": "Rome",
     "neighborhood": "Monti",
@@ -4424,6 +4787,7 @@
     "available_rooms": null
   },
   {
+    "id": "523751",
     "name": "Rocco Forte Hotel De Russie",
     "city": "Rome",
     "neighborhood": null,
@@ -4437,6 +4801,7 @@
     "available_rooms": null
   },
   {
+    "id": "176543",
     "name": "Starhotels Michelangelo",
     "city": "Rome",
     "neighborhood": null,
@@ -4448,6 +4813,7 @@
     "available_rooms": null
   },
   {
+    "id": "115377044",
     "name": "Numa Rome Trastevere",
     "city": "Rome",
     "neighborhood": null,
@@ -4459,6 +4825,7 @@
     "available_rooms": null
   },
   {
+    "id": "93391508",
     "name": "Palazzetto Symphony",
     "city": "Rome",
     "neighborhood": null,
@@ -4470,6 +4837,7 @@
     "available_rooms": null
   },
   {
+    "id": "12432769",
     "name": "Piazza di Spagna Suite de Charme",
     "city": "Rome",
     "neighborhood": null,
@@ -4481,6 +4849,7 @@
     "available_rooms": null
   },
   {
+    "id": "11948550",
     "name": "Unica Suites Rome",
     "city": "Rome",
     "neighborhood": null,
@@ -4492,6 +4861,7 @@
     "available_rooms": null
   },
   {
+    "id": "89515851",
     "name": "Martina Suites",
     "city": "Rome",
     "neighborhood": null,
@@ -4503,6 +4873,7 @@
     "available_rooms": null
   },
   {
+    "id": "128435658",
     "name": "Flaminio Collection - Luxury Suites",
     "city": "Rome",
     "neighborhood": null,
@@ -4514,6 +4885,7 @@
     "available_rooms": null
   },
   {
+    "id": "125152201",
     "name": "Vacanze Romane srls",
     "city": "Rome",
     "neighborhood": null,
@@ -4525,6 +4897,7 @@
     "available_rooms": null
   },
   {
+    "id": "889758",
     "name": "River Palace Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -4536,6 +4909,7 @@
     "available_rooms": null
   },
   {
+    "id": "10085",
     "name": "Starhotels Metropole",
     "city": "Rome",
     "neighborhood": null,
@@ -4547,6 +4921,7 @@
     "available_rooms": null
   },
   {
+    "id": "64593148",
     "name": "Mama Shelter Roma ",
     "city": "Rome",
     "neighborhood": null,
@@ -4561,6 +4936,7 @@
     "available_rooms": null
   },
   {
+    "id": "2193318",
     "name": "Leon's Place Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -4574,6 +4950,7 @@
     "available_rooms": null
   },
   {
+    "id": "15634169",
     "name": "The Guardian Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -4587,6 +4964,7 @@
     "available_rooms": null
   },
   {
+    "id": "6562",
     "name": "Best Western Premier Hotel Royal Santina",
     "city": "Rome",
     "neighborhood": null,
@@ -4598,6 +4976,7 @@
     "available_rooms": null
   },
   {
+    "id": "24627",
     "name": "Condotti Boutique Hotel",
     "city": "Rome",
     "neighborhood": null,
@@ -4609,6 +4988,7 @@
     "available_rooms": null
   },
   {
+    "id": "2527619",
     "name": "Hotel La Rovere",
     "city": "Rome",
     "neighborhood": "Trastevere",
@@ -4620,6 +5000,7 @@
     "available_rooms": null
   },
   {
+    "id": "41527108",
     "name": "B&B Hotel Roma San Lorenzo Termini",
     "city": "Rome",
     "neighborhood": null,
@@ -4631,6 +5012,7 @@
     "available_rooms": null
   },
   {
+    "id": "457839",
     "name": "Parco dei Principi Grand Hotel & SPA - Preferred Hotels & Resorts",
     "city": "Rome",
     "neighborhood": null,
@@ -4645,6 +5027,7 @@
     "available_rooms": null
   },
   {
+    "id": "20255",
     "name": "Hotel Britannia",
     "city": "Rome",
     "neighborhood": null,
@@ -4656,6 +5039,7 @@
     "available_rooms": null
   },
   {
+    "id": "789326",
     "name": "Dharma Style Hotel & Spa",
     "city": "Rome",
     "neighborhood": null,
@@ -4667,6 +5051,7 @@
     "available_rooms": null
   },
   {
+    "id": "1115407",
     "name": "Palazzo Cardinal Cesi",
     "city": "Rome",
     "neighborhood": null,
@@ -4678,6 +5063,7 @@
     "available_rooms": null
   },
   {
+    "id": "9209548",
     "name": "Trevi Palace Hotel",
     "city": "Rome",
     "neighborhood": "Monti",
@@ -4689,6 +5075,7 @@
     "available_rooms": null
   },
   {
+    "id": "1366353",
     "name": "Hotel Castellino Roma",
     "city": "Rome",
     "neighborhood": null,
@@ -4700,6 +5087,7 @@
     "available_rooms": null
   },
   {
+    "id": "83390071",
     "name": "HOTEL NOVA DOMUS AURELIA",
     "city": "Rome",
     "neighborhood": null,
@@ -4713,6 +5101,7 @@
     "available_rooms": null
   },
   {
+    "id": "22268345",
     "name": "Palazzo Caruso",
     "city": "Rome",
     "neighborhood": null,
@@ -4724,6 +5113,7 @@
     "available_rooms": null
   },
   {
+    "id": "12741260",
     "name": "NH Collection Roma Palazzo Cinquecento",
     "city": "Rome",
     "neighborhood": null,
@@ -4735,6 +5125,7 @@
     "available_rooms": null
   },
   {
+    "id": "445130",
     "name": "Baglioni Hotel Regina - The Leading Hotels of the World",
     "city": "Rome",
     "neighborhood": null,
@@ -4748,6 +5139,7 @@
     "available_rooms": null
   },
   {
+    "id": "7520484",
     "name": "Hotel Villa Zaccardi",
     "city": "Rome",
     "neighborhood": "Monteverde",
@@ -4761,6 +5153,7 @@
     "available_rooms": null
   },
   {
+    "id": "4916844",
     "name": "The Boutique Hotel",
     "city": "Rome",
     "neighborhood": "Prati",
@@ -4772,6 +5165,7 @@
     "available_rooms": null
   },
   {
+    "id": "48243439",
     "name": "Mercure Roma Cinecittà ",
     "city": "Rome",
     "neighborhood": null,
@@ -4783,6 +5177,7 @@
     "available_rooms": null
   },
   {
+    "id": "521332",
     "name": "Hotel Piazza Di Spagna",
     "city": "Rome",
     "neighborhood": null,
@@ -4794,6 +5189,7 @@
     "available_rooms": null
   },
   {
+    "id": "80932588",
     "name": "Loly Boutique Hotel",
     "city": "Rome",
     "neighborhood": "Trastevere",
@@ -4807,6 +5203,7 @@
     "available_rooms": null
   },
   {
+    "id": "30001917",
     "name": "Rhinoceros",
     "city": "Rome",
     "neighborhood": null,
@@ -4820,6 +5217,7 @@
     "available_rooms": null
   },
   {
+    "id": "123788724",
     "name": "FlaviaDesign City Suites Rome by Halldis",
     "city": "Rome",
     "neighborhood": null,
@@ -4831,6 +5229,7 @@
     "available_rooms": null
   },
   {
+    "id": "112729520",
     "name": "Aca Hotel Viminale",
     "city": "Rome",
     "neighborhood": null,
@@ -4842,6 +5241,7 @@
     "available_rooms": null
   },
   {
+    "id": "12665714",
     "name": "Residenza Cavour",
     "city": "Rome",
     "neighborhood": "Prati",
@@ -4853,6 +5253,7 @@
     "available_rooms": null
   },
   {
+    "id": "119410146",
     "name": " Bus Palladium",
     "city": "Paris",
     "neighborhood": null,
@@ -4864,6 +5265,7 @@
     "available_rooms": null
   },
   {
+    "id": "95710453",
     "name": "HIGHSTAY - Luxury Serviced Apartments - North Marais 2",
     "city": "Paris",
     "neighborhood": null,
@@ -4877,6 +5279,7 @@
     "available_rooms": null
   },
   {
+    "id": "106911591",
     "name": "Haussmann Opera Penthouse130M2 Exclusive full 4floors Stone Balcony (4 bedrooms) ",
     "city": "Paris",
     "neighborhood": null,
@@ -4890,6 +5293,7 @@
     "available_rooms": null
   },
   {
+    "id": "114517302",
     "name": "HIGHSTAY - Luxury Serviced Apartments - Pyramides",
     "city": "Paris",
     "neighborhood": null,
@@ -4903,6 +5307,7 @@
     "available_rooms": null
   },
   {
+    "id": "97063946",
     "name": "HIGHSTAY - Luxury Serviced Apartments - Le Marais",
     "city": "Paris",
     "neighborhood": null,
@@ -4916,6 +5321,7 @@
     "available_rooms": null
   },
   {
+    "id": "123312408",
     "name": "Splendid Duplex - 1br/2p - Notre-dame/ile St-louis",
     "city": "Paris",
     "neighborhood": null,
@@ -4927,6 +5333,7 @@
     "available_rooms": null
   },
   {
+    "id": "125695012",
     "name": "Hôtel Atlas",
     "city": "Paris",
     "neighborhood": null,
@@ -4938,6 +5345,7 @@
     "available_rooms": null
   },
   {
+    "id": "565298",
     "name": "Hotel Des Arts Paris Montmartre",
     "city": "Paris",
     "neighborhood": "Montmartre",
@@ -4949,6 +5357,7 @@
     "available_rooms": null
   },
   {
+    "id": "120583220",
     "name": "Eiffel Yard Hotel",
     "city": "Paris",
     "neighborhood": null,
@@ -4960,6 +5369,7 @@
     "available_rooms": null
   },
   {
+    "id": "111511305",
     "name": "Maison La Bohème Montmartre - Studios & Apartments",
     "city": "Paris",
     "neighborhood": "Montmartre",
@@ -4971,6 +5381,7 @@
     "available_rooms": null
   },
   {
+    "id": "11735534",
     "name": "Goralska Résidences Hotel Paris Bastille",
     "city": "Paris",
     "neighborhood": null,
@@ -4982,6 +5393,7 @@
     "available_rooms": null
   },
   {
+    "id": "91793100",
     "name": "Mode Paris Aparthotel",
     "city": "Paris",
     "neighborhood": null,
@@ -4995,6 +5407,7 @@
     "available_rooms": null
   },
   {
+    "id": "89993005",
     "name": "Maison Proust, Hotel & Spa La Mer",
     "city": "Paris",
     "neighborhood": null,
@@ -5008,6 +5421,7 @@
     "available_rooms": null
   },
   {
+    "id": "70012256",
     "name": "Hôtel Château Voltaire",
     "city": "Paris",
     "neighborhood": null,
@@ -5021,6 +5435,7 @@
     "available_rooms": null
   },
   {
+    "id": "125153539",
     "name": "BOHEM Sacré Coeur",
     "city": "Paris",
     "neighborhood": null,
@@ -5032,6 +5447,7 @@
     "available_rooms": null
   },
   {
+    "id": "2226815",
     "name": "Hotel Monge",
     "city": "Paris",
     "neighborhood": null,
@@ -5043,6 +5459,7 @@
     "available_rooms": null
   },
   {
+    "id": "13215",
     "name": "Hôtel Astra Opéra - Astotel",
     "city": "Paris",
     "neighborhood": null,
@@ -5056,6 +5473,7 @@
     "available_rooms": null
   },
   {
+    "id": "6224549",
     "name": "Hôtel Fabric",
     "city": "Paris",
     "neighborhood": null,
@@ -5067,6 +5485,7 @@
     "available_rooms": null
   },
   {
+    "id": "13064038",
     "name": "Hotel Le Narcisse Blanc & Spa",
     "city": "Paris",
     "neighborhood": null,
@@ -5080,6 +5499,7 @@
     "available_rooms": null
   },
   {
+    "id": "121372998",
     "name": "L'Opale Noire",
     "city": "Paris",
     "neighborhood": null,
@@ -5091,6 +5511,7 @@
     "available_rooms": null
   },
   {
+    "id": "11679782",
     "name": "Millésime Hôtel",
     "city": "Paris",
     "neighborhood": "Saint-Germain-des-Prés",
@@ -5102,6 +5523,7 @@
     "available_rooms": null
   },
   {
+    "id": "10218003",
     "name": "Hôtel Eldorado Paris",
     "city": "Paris",
     "neighborhood": null,
@@ -5113,6 +5535,7 @@
     "available_rooms": null
   },
   {
+    "id": "565106",
     "name": "Hotel Moderniste",
     "city": "Paris",
     "neighborhood": null,
@@ -5124,6 +5547,7 @@
     "available_rooms": null
   },
   {
+    "id": "2529",
     "name": "Le Bristol Paris - Oetker Hotels",
     "city": "Paris",
     "neighborhood": null,
@@ -5137,6 +5561,7 @@
     "available_rooms": null
   },
   {
+    "id": "21313353",
     "name": "Hôtel Habituel",
     "city": "Paris",
     "neighborhood": null,
@@ -5148,6 +5573,7 @@
     "available_rooms": null
   },
   {
+    "id": "120211623",
     "name": "Les Suites Tour Eiffel",
     "city": "Paris",
     "neighborhood": null,
@@ -5159,6 +5585,7 @@
     "available_rooms": null
   },
   {
+    "id": "83982005",
     "name": "La Fantaisie",
     "city": "Paris",
     "neighborhood": null,
@@ -5172,6 +5599,7 @@
     "available_rooms": null
   },
   {
+    "id": "868",
     "name": "Terrass'' Hotel",
     "city": "Paris",
     "neighborhood": "Montmartre",
@@ -5183,6 +5611,7 @@
     "available_rooms": null
   },
   {
+    "id": "6544282",
     "name": "Hôtel Le 123 Sébastopol - Astotel",
     "city": "Paris",
     "neighborhood": null,
@@ -5194,6 +5623,7 @@
     "available_rooms": null
   },
   {
+    "id": "15525855",
     "name": "Le Tsuba Hotel",
     "city": "Paris",
     "neighborhood": null,
@@ -5205,6 +5635,7 @@
     "available_rooms": null
   },
   {
+    "id": "106895400",
     "name": "Miss Fuller",
     "city": "Paris",
     "neighborhood": null,
@@ -5216,6 +5647,7 @@
     "available_rooms": null
   },
   {
+    "id": "1486880",
     "name": "Dadou Paris",
     "city": "Paris",
     "neighborhood": null,
@@ -5229,6 +5661,7 @@
     "available_rooms": null
   },
   {
+    "id": "53587",
     "name": "Hôtel Malte - Astotel",
     "city": "Paris",
     "neighborhood": null,
@@ -5240,6 +5673,7 @@
     "available_rooms": null
   },
   {
+    "id": "8972",
     "name": "Hotel Duminy Vendome",
     "city": "Paris",
     "neighborhood": null,
@@ -5251,6 +5685,7 @@
     "available_rooms": null
   },
   {
+    "id": "20030400",
     "name": "Grands Boulevards Experimental",
     "city": "Paris",
     "neighborhood": null,
@@ -5262,6 +5697,7 @@
     "available_rooms": null
   },
   {
+    "id": "2521444",
     "name": "Hotel de la Tamise",
     "city": "Paris",
     "neighborhood": null,
@@ -5273,6 +5709,7 @@
     "available_rooms": null
   },
   {
+    "id": "2521440",
     "name": "La Maison Favart",
     "city": "Paris",
     "neighborhood": null,
@@ -5286,6 +5723,7 @@
     "available_rooms": null
   },
   {
+    "id": "68493",
     "name": "Hôtel Moliere",
     "city": "Paris",
     "neighborhood": null,
@@ -5297,6 +5735,7 @@
     "available_rooms": null
   },
   {
+    "id": "15621860",
     "name": "Hotel Jules & Jim",
     "city": "Paris",
     "neighborhood": null,
@@ -5308,6 +5747,7 @@
     "available_rooms": null
   },
   {
+    "id": "83643951",
     "name": "Padam Hôtel",
     "city": "Paris",
     "neighborhood": null,
@@ -5319,6 +5759,7 @@
     "available_rooms": null
   },
   {
+    "id": "182182",
     "name": "Pavillon de la Reine & Spa, Place des Vosges",
     "city": "Paris",
     "neighborhood": null,
@@ -5332,6 +5773,7 @@
     "available_rooms": null
   },
   {
+    "id": "70047306",
     "name": "Hôtel Madame Rêve",
     "city": "Paris",
     "neighborhood": null,
@@ -5343,6 +5785,7 @@
     "available_rooms": null
   },
   {
+    "id": "60006425",
     "name": "Hotel du Sentier",
     "city": "Paris",
     "neighborhood": null,
@@ -5354,6 +5797,7 @@
     "available_rooms": null
   },
   {
+    "id": "71442828",
     "name": "My Maison In Paris - Invalides",
     "city": "Paris",
     "neighborhood": null,
@@ -5367,6 +5811,7 @@
     "available_rooms": null
   },
   {
+    "id": "13172727",
     "name": "Nolinski Paris - Evok Collection",
     "city": "Paris",
     "neighborhood": null,
@@ -5380,6 +5825,7 @@
     "available_rooms": null
   },
   {
+    "id": "5576207",
     "name": "Grand Hotel du Palais Royal",
     "city": "Paris",
     "neighborhood": null,
@@ -5393,6 +5839,7 @@
     "available_rooms": null
   },
   {
+    "id": "89589494",
     "name": "Hotel Le Grand Mazarin",
     "city": "Paris",
     "neighborhood": null,
@@ -5406,6 +5853,7 @@
     "available_rooms": null
   },
   {
+    "id": "9541968",
     "name": "Roi de Sicile Rivoli",
     "city": "Paris",
     "neighborhood": null,
@@ -5419,6 +5867,7 @@
     "available_rooms": null
   },
   {
+    "id": "17471599",
     "name": "Apartments du Louvre - St-Honoré",
     "city": "Paris",
     "neighborhood": null,
@@ -5432,6 +5881,7 @@
     "available_rooms": null
   },
   {
+    "id": "11763601",
     "name": "Montmartre Residence",
     "city": "Paris",
     "neighborhood": "Montmartre",
@@ -5445,6 +5895,7 @@
     "available_rooms": null
   },
   {
+    "id": "23124",
     "name": "Victoria Palace Hotel Paris",
     "city": "Paris",
     "neighborhood": null,
@@ -5456,6 +5907,7 @@
     "available_rooms": null
   },
   {
+    "id": "106407139",
     "name": "HIGHSTAY - Luxury Serviced Apartments - Bourse",
     "city": "Paris",
     "neighborhood": null,
@@ -5469,6 +5921,7 @@
     "available_rooms": null
   },
   {
+    "id": "74262305",
     "name": "Drawing House",
     "city": "Paris",
     "neighborhood": null,
@@ -5482,6 +5935,7 @@
     "available_rooms": null
   },
   {
+    "id": "526033",
     "name": "Hôtel Opéra Richepanse",
     "city": "Paris",
     "neighborhood": null,
@@ -5493,6 +5947,7 @@
     "available_rooms": null
   },
   {
+    "id": "1405292",
     "name": "B Montmartre",
     "city": "Paris",
     "neighborhood": null,
@@ -5504,6 +5959,7 @@
     "available_rooms": null
   },
   {
+    "id": "27977",
     "name": "West End Hotel",
     "city": "Paris",
     "neighborhood": null,
@@ -5517,6 +5973,7 @@
     "available_rooms": null
   },
   {
+    "id": "1542902",
     "name": "Duc de Saint-Simon",
     "city": "Paris",
     "neighborhood": null,
@@ -5528,6 +5985,7 @@
     "available_rooms": null
   },
   {
+    "id": "201087",
     "name": "Maison Mère",
     "city": "Paris",
     "neighborhood": null,
@@ -5539,6 +5997,7 @@
     "available_rooms": null
   },
   {
+    "id": "8090711",
     "name": "Hôtel d'Orsay",
     "city": "Paris",
     "neighborhood": null,
@@ -5550,6 +6009,7 @@
     "available_rooms": null
   },
   {
+    "id": "13330374",
     "name": "Hôtel Adèle & Jules",
     "city": "Paris",
     "neighborhood": null,
@@ -5561,6 +6021,7 @@
     "available_rooms": null
   },
   {
+    "id": "38705288",
     "name": "Monsieur George Hotel & Spa – Champs Elysées",
     "city": "Paris",
     "neighborhood": null,
@@ -5572,6 +6033,7 @@
     "available_rooms": null
   },
   {
+    "id": "1453644",
     "name": "Hotel Luxembourg Parc",
     "city": "Paris",
     "neighborhood": null,
@@ -5583,6 +6045,7 @@
     "available_rooms": null
   },
   {
+    "id": "71593758",
     "name": "La Demeure Montaigne",
     "city": "Paris",
     "neighborhood": null,
@@ -5596,6 +6059,7 @@
     "available_rooms": null
   },
   {
+    "id": "1350283",
     "name": "Hotel de Lille",
     "city": "Paris",
     "neighborhood": null,
@@ -5607,6 +6071,7 @@
     "available_rooms": null
   },
   {
+    "id": "912411",
     "name": "Hôtel Bonsoir Madame",
     "city": "Paris",
     "neighborhood": null,
@@ -5618,6 +6083,7 @@
     "available_rooms": null
   },
   {
+    "id": "119297348",
     "name": "Hôtel Barnett Paris",
     "city": "Paris",
     "neighborhood": null,
@@ -5629,6 +6095,7 @@
     "available_rooms": null
   },
   {
+    "id": "16263394",
     "name": "La Villa Haussmann",
     "city": "Paris",
     "neighborhood": null,
@@ -5642,6 +6109,7 @@
     "available_rooms": null
   },
   {
+    "id": "17324302",
     "name": "Hôtel Splendide Royal Paris - Relais & Châteaux",
     "city": "Paris",
     "neighborhood": null,
@@ -5655,6 +6123,7 @@
     "available_rooms": null
   },
   {
+    "id": "9269598",
     "name": "Maison Souquet, Hotel & Spa",
     "city": "Paris",
     "neighborhood": null,
@@ -5668,6 +6137,7 @@
     "available_rooms": null
   },
   {
+    "id": "10640",
     "name": "Hotel Floride Etoile",
     "city": "Paris",
     "neighborhood": null,
@@ -5679,6 +6149,7 @@
     "available_rooms": null
   },
   {
+    "id": "5951861",
     "name": "Grand Hotel Leveque",
     "city": "Paris",
     "neighborhood": null,
@@ -5690,6 +6161,7 @@
     "available_rooms": null
   },
   {
+    "id": "89591016",
     "name": "citizenM Paris Opera",
     "city": "Paris",
     "neighborhood": null,
@@ -5701,6 +6173,7 @@
     "available_rooms": null
   },
   {
+    "id": "1637283",
     "name": "L'Empire Paris",
     "city": "Paris",
     "neighborhood": null,
@@ -5712,6 +6185,7 @@
     "available_rooms": null
   },
   {
+    "id": "1615638",
     "name": "Hôtel Joyce - Astotel",
     "city": "Paris",
     "neighborhood": null,
@@ -5723,6 +6197,7 @@
     "available_rooms": null
   },
   {
+    "id": "10516568",
     "name": "Hôtel Joke - Astotel",
     "city": "Paris",
     "neighborhood": null,
@@ -5734,6 +6209,7 @@
     "available_rooms": null
   },
   {
+    "id": "1367360",
     "name": "Le Relais Montmartre",
     "city": "Paris",
     "neighborhood": "Montmartre",
@@ -5745,6 +6221,7 @@
     "available_rooms": null
   },
   {
+    "id": "5251",
     "name": "Hôtel Regent's Garden - Astotel",
     "city": "Paris",
     "neighborhood": null,
@@ -5756,6 +6233,7 @@
     "available_rooms": null
   },
   {
+    "id": "27541871",
     "name": "9Confidentiel",
     "city": "Paris",
     "neighborhood": null,
@@ -5767,6 +6245,7 @@
     "available_rooms": null
   },
   {
+    "id": "2687249",
     "name": "Le Relais Saint Honoré",
     "city": "Paris",
     "neighborhood": null,
@@ -5778,6 +6257,7 @@
     "available_rooms": null
   },
   {
+    "id": "1615605",
     "name": "Hôtel Chamar",
     "city": "Paris",
     "neighborhood": null,
@@ -5789,6 +6269,7 @@
     "available_rooms": null
   },
   {
+    "id": "15611",
     "name": "Hotel Regina Louvre",
     "city": "Paris",
     "neighborhood": null,
@@ -5800,6 +6281,7 @@
     "available_rooms": null
   },
   {
+    "id": "11299839",
     "name": "Les Bains Paris",
     "city": "Paris",
     "neighborhood": null,
@@ -5813,6 +6295,7 @@
     "available_rooms": null
   },
   {
+    "id": "17754301",
     "name": "Hôtel National Arts et Métiers",
     "city": "Paris",
     "neighborhood": null,
@@ -5824,6 +6307,7 @@
     "available_rooms": null
   },
   {
+    "id": "68426574",
     "name": "Hôtel Monsieur Aristide",
     "city": "Paris",
     "neighborhood": "Montmartre",
@@ -5835,6 +6319,7 @@
     "available_rooms": null
   },
   {
+    "id": "64994",
     "name": "Hôtel Bourg Tibourg - Paris Marais",
     "city": "Paris",
     "neighborhood": null,
@@ -5846,6 +6331,7 @@
     "available_rooms": null
   },
   {
+    "id": "79393779",
     "name": "SO/ Paris Hotel",
     "city": "Paris",
     "neighborhood": null,
@@ -5857,6 +6343,7 @@
     "available_rooms": null
   },
   {
+    "id": "42041464",
     "name": "Hoy Paris - Home of YOGA",
     "city": "Paris",
     "neighborhood": null,
@@ -5868,6 +6355,7 @@
     "available_rooms": null
   },
   {
+    "id": "39040118",
     "name": "Maison Armance",
     "city": "Paris",
     "neighborhood": null,
@@ -5879,6 +6367,7 @@
     "available_rooms": null
   },
   {
+    "id": "89427194",
     "name": "Alberte Hotel",
     "city": "Paris",
     "neighborhood": null,
@@ -5890,6 +6379,7 @@
     "available_rooms": null
   },
   {
+    "id": "25039",
     "name": "Le Burgundy Paris",
     "city": "Paris",
     "neighborhood": null,
@@ -5904,6 +6394,7 @@
     "available_rooms": null
   },
   {
+    "id": "4028607",
     "name": "Shangri-La Paris",
     "city": "Paris",
     "neighborhood": null,
@@ -5917,6 +6408,7 @@
     "available_rooms": null
   },
   {
+    "id": "94895976",
     "name": "Hotel Hana",
     "city": "Paris",
     "neighborhood": null,
@@ -5930,6 +6422,7 @@
     "available_rooms": null
   },
   {
+    "id": "83410266",
     "name": "Manolita Paris",
     "city": "Paris",
     "neighborhood": null,
@@ -5941,6 +6434,7 @@
     "available_rooms": null
   },
   {
+    "id": "111600623",
     "name": "Maison Barrière Vendôme",
     "city": "Paris",
     "neighborhood": null,
@@ -5952,6 +6446,7 @@
     "available_rooms": null
   },
   {
+    "id": "106605303",
     "name": "Maison Barnes Paris Trocadero",
     "city": "Paris",
     "neighborhood": null,
@@ -5965,6 +6460,7 @@
     "available_rooms": null
   },
   {
+    "id": "106641800",
     "name": "Le Jardin De Verre by Locke",
     "city": "Paris",
     "neighborhood": null,
@@ -5976,6 +6472,7 @@
     "available_rooms": null
   },
   {
+    "id": "2499405",
     "name": "Hotel Saint Germain",
     "city": "Paris",
     "neighborhood": null,
@@ -5989,6 +6486,7 @@
     "available_rooms": null
   },
   {
+    "id": "574840",
     "name": "Hotel Chambiges Elysées",
     "city": "Paris",
     "neighborhood": null,
@@ -6000,6 +6498,7 @@
     "available_rooms": null
   },
   {
+    "id": "65299565",
     "name": "citizenM Paris Champs-Élysées",
     "city": "Paris",
     "neighborhood": null,
@@ -6011,6 +6510,7 @@
     "available_rooms": null
   },
   {
+    "id": "95294798",
     "name": "Appart'City Collection Paris Gare de Lyon",
     "city": "Paris",
     "neighborhood": null,
@@ -6022,6 +6522,7 @@
     "available_rooms": null
   },
   {
+    "id": "53586",
     "name": "Hôtel Le 123 Elysées - Astotel",
     "city": "Paris",
     "neighborhood": null,
@@ -6033,6 +6534,7 @@
     "available_rooms": null
   },
   {
+    "id": "880235",
     "name": "Hotel Pas De Calais",
     "city": "Paris",
     "neighborhood": "Saint-Germain-des-Prés",
@@ -6044,6 +6546,7 @@
     "available_rooms": null
   },
   {
+    "id": "2105",
     "name": "Hôtel des Grands Voyageurs",
     "city": "Paris",
     "neighborhood": null,
@@ -6055,6 +6558,7 @@
     "available_rooms": null
   },
   {
+    "id": "565252",
     "name": "Hotel R de Paris",
     "city": "Paris",
     "neighborhood": null,
@@ -6066,6 +6570,7 @@
     "available_rooms": null
   },
   {
+    "id": "19460",
     "name": "Hôtel Fouquet's Paris",
     "city": "Paris",
     "neighborhood": null,
@@ -6080,6 +6585,7 @@
     "available_rooms": null
   },
   {
+    "id": "41913079",
     "name": "Hotel de l'Abbaye Saint Germain",
     "city": "Paris",
     "neighborhood": null,
@@ -6091,6 +6597,7 @@
     "available_rooms": null
   },
   {
+    "id": "562008",
     "name": "Hôtel Bleu de Grenelle - Tour Eiffel",
     "city": "Paris",
     "neighborhood": null,
@@ -6102,6 +6609,7 @@
     "available_rooms": null
   },
   {
+    "id": "27528",
     "name": "Hôtel Plaza Athénée - Dorchester Collection",
     "city": "Paris",
     "neighborhood": null,
@@ -6113,6 +6621,7 @@
     "available_rooms": null
   },
   {
+    "id": "3117356",
     "name": "Hotel Dame des Arts",
     "city": "Paris",
     "neighborhood": null,
@@ -6124,6 +6633,7 @@
     "available_rooms": null
   },
   {
+    "id": "99312809",
     "name": "Hôtel Pilgrim",
     "city": "Paris",
     "neighborhood": null,
@@ -6137,6 +6647,7 @@
     "available_rooms": null
   },
   {
+    "id": "189675",
     "name": "Hôtel Saint Paul Rive Gauche",
     "city": "Paris",
     "neighborhood": "Saint-Germain-des-Prés",
@@ -6148,6 +6659,7 @@
     "available_rooms": null
   },
   {
+    "id": "863813",
     "name": "Hotel Le Cardinal",
     "city": "Paris",
     "neighborhood": null,
@@ -6159,6 +6671,7 @@
     "available_rooms": null
   },
   {
+    "id": "103477575",
     "name": "Aparthotel Quartier Libre Opéra",
     "city": "Paris",
     "neighborhood": null,
@@ -6170,6 +6683,7 @@
     "available_rooms": null
   },
   {
+    "id": "4274800",
     "name": "Hôtel du Rond-Point des Champs-Élysées",
     "city": "Paris",
     "neighborhood": null,
@@ -6183,6 +6697,7 @@
     "available_rooms": null
   },
   {
+    "id": "3006128",
     "name": "Hotel Des Champs Elysees",
     "city": "Paris",
     "neighborhood": null,
@@ -6194,6 +6709,7 @@
     "available_rooms": null
   },
   {
+    "id": "1172208",
     "name": "Le Petit Oberkampf Hotel & Spa",
     "city": "Paris",
     "neighborhood": null,
@@ -6205,6 +6721,7 @@
     "available_rooms": null
   },
   {
+    "id": "58323249",
     "name": "Canopy by Hilton Paris Eiffel Tower",
     "city": "Paris",
     "neighborhood": null,
@@ -6216,6 +6733,7 @@
     "available_rooms": null
   },
   {
+    "id": "1337",
     "name": "Hyatt Regency Paris Etoile",
     "city": "Paris",
     "neighborhood": null,
@@ -6227,6 +6745,7 @@
     "available_rooms": null
   },
   {
+    "id": "562022",
     "name": "Hôtel Palais De Chaillot",
     "city": "Paris",
     "neighborhood": null,
@@ -6238,6 +6757,7 @@
     "available_rooms": null
   },
   {
+    "id": "26415",
     "name": "Hôtel Garden Elysées",
     "city": "Paris",
     "neighborhood": null,
@@ -6249,6 +6769,7 @@
     "available_rooms": null
   },
   {
+    "id": "600218",
     "name": "La Dépendance",
     "city": "Paris",
     "neighborhood": null,
@@ -6260,6 +6781,7 @@
     "available_rooms": null
   },
   {
+    "id": "1380585",
     "name": "Hôtel Régence Etoile",
     "city": "Paris",
     "neighborhood": null,
@@ -6271,6 +6793,7 @@
     "available_rooms": null
   },
   {
+    "id": "66157",
     "name": "Hôtel Louvre Sainte Anne",
     "city": "Paris",
     "neighborhood": null,
@@ -6282,6 +6805,7 @@
     "available_rooms": null
   },
   {
+    "id": "1273946",
     "name": "Le Petit Beaumarchais Hotel & Spa",
     "city": "Paris",
     "neighborhood": null,
@@ -6295,6 +6819,7 @@
     "available_rooms": null
   },
   {
+    "id": "582424",
     "name": "Le Pigalle, a Member of Design Hotels",
     "city": "Paris",
     "neighborhood": null,
@@ -6306,6 +6831,7 @@
     "available_rooms": null
   },
   {
+    "id": "11355",
     "name": "Archétype Etoile",
     "city": "Paris",
     "neighborhood": null,
@@ -6317,6 +6843,7 @@
     "available_rooms": null
   },
   {
+    "id": "1166031",
     "name": "Artemisia Montmartre ",
     "city": "Paris",
     "neighborhood": null,
@@ -6328,6 +6855,7 @@
     "available_rooms": null
   },
   {
+    "id": "564924",
     "name": " Hôtel Le Tourville by Inwood Hotels",
     "city": "Paris",
     "neighborhood": null,
@@ -6339,6 +6867,7 @@
     "available_rooms": null
   },
   {
+    "id": "1166020",
     "name": "Hotel le Pavillon",
     "city": "Paris",
     "neighborhood": null,
@@ -6350,6 +6879,7 @@
     "available_rooms": null
   },
   {
+    "id": "103804812",
     "name": "Hotel Maison Hamelin Paris - Handwritten Collection",
     "city": "Paris",
     "neighborhood": null,
@@ -6361,6 +6891,7 @@
     "available_rooms": null
   },
   {
+    "id": "3389",
     "name": "Hôtel Edouard 7 Paris Opéra",
     "city": "Paris",
     "neighborhood": null,
@@ -6372,6 +6903,7 @@
     "available_rooms": null
   },
   {
+    "id": "25780",
     "name": "Hôtel Westminster",
     "city": "Paris",
     "neighborhood": null,
@@ -6383,6 +6915,7 @@
     "available_rooms": null
   },
   {
+    "id": "874322",
     "name": "Hôtel Le Derby Alma by Inwood Hotels",
     "city": "Paris",
     "neighborhood": null,
@@ -6394,6 +6927,7 @@
     "available_rooms": null
   },
   {
+    "id": "10040266",
     "name": "Hotel Bachaumont",
     "city": "Paris",
     "neighborhood": null,
@@ -6405,6 +6939,7 @@
     "available_rooms": null
   },
   {
+    "id": "2521493",
     "name": "Hôtel L de Lutèce - Notre-Dame",
     "city": "Paris",
     "neighborhood": null,
@@ -6416,6 +6951,7 @@
     "available_rooms": null
   },
   {
+    "id": "8965758",
     "name": "Le Cinq Codet",
     "city": "Paris",
     "neighborhood": null,
@@ -6429,6 +6965,7 @@
     "available_rooms": null
   },
   {
+    "id": "560211",
     "name": "Hôtel Le Temple de Jeanne",
     "city": "Paris",
     "neighborhood": null,
@@ -6440,6 +6977,7 @@
     "available_rooms": null
   },
   {
+    "id": "16599855",
     "name": "Maison Albar - Le Pont-Neuf",
     "city": "Paris",
     "neighborhood": null,
@@ -6454,6 +6992,7 @@
     "available_rooms": null
   },
   {
+    "id": "526631",
     "name": "La Clef Louvre Paris by The Crest Collection",
     "city": "Paris",
     "neighborhood": null,
@@ -6467,6 +7006,7 @@
     "available_rooms": null
   },
   {
+    "id": "62984874",
     "name": "Kimpton St Honore Paris by IHG",
     "city": "Paris",
     "neighborhood": null,
@@ -6480,6 +7020,7 @@
     "available_rooms": null
   },
   {
+    "id": "43989512",
     "name": "My Maison In Paris - Sentier",
     "city": "Paris",
     "neighborhood": null,
@@ -6493,6 +7034,7 @@
     "available_rooms": null
   },
   {
+    "id": "39186206",
     "name": "Cour des Vosges - Evok Collection",
     "city": "Paris",
     "neighborhood": null,
@@ -6506,6 +7048,7 @@
     "available_rooms": null
   },
   {
+    "id": "39204752",
     "name": "Le Grand Quartier",
     "city": "Paris",
     "neighborhood": null,
@@ -6517,6 +7060,7 @@
     "available_rooms": null
   },
   {
+    "id": "18868",
     "name": "Hôtel 34B - Astotel",
     "city": "Paris",
     "neighborhood": null,
@@ -6528,6 +7072,7 @@
     "available_rooms": null
   },
   {
+    "id": "4086",
     "name": "Hotel Ares Eiffel",
     "city": "Paris",
     "neighborhood": null,
@@ -6539,6 +7084,7 @@
     "available_rooms": null
   },
   {
+    "id": "470866",
     "name": "Hotel Atmospheres",
     "city": "Paris",
     "neighborhood": null,
@@ -6550,6 +7096,7 @@
     "available_rooms": null
   },
   {
+    "id": "2685231",
     "name": "Hotel Rochester Champs Elysées",
     "city": "Paris",
     "neighborhood": null,
@@ -6561,6 +7108,7 @@
     "available_rooms": null
   },
   {
+    "id": "7395",
     "name": "Hotel Montalembert",
     "city": "Paris",
     "neighborhood": null,
@@ -6572,6 +7120,7 @@
     "available_rooms": null
   },
   {
+    "id": "558012",
     "name": "Hotel Bel Ami",
     "city": "Paris",
     "neighborhood": "Saint-Germain-des-Prés",
@@ -6583,6 +7132,7 @@
     "available_rooms": null
   },
   {
+    "id": "6901",
     "name": "Hôtel Bradford Elysées – Astotel",
     "city": "Paris",
     "neighborhood": null,
@@ -6594,6 +7144,7 @@
     "available_rooms": null
   },
   {
+    "id": "561997",
     "name": "Le Grey Hotel",
     "city": "Paris",
     "neighborhood": null,
@@ -6605,6 +7156,7 @@
     "available_rooms": null
   },
   {
+    "id": "34787606",
     "name": "Hotel Parisianer",
     "city": "Paris",
     "neighborhood": null,
@@ -6616,6 +7168,7 @@
     "available_rooms": null
   },
   {
+    "id": "1218048",
     "name": "Hotel La Perle",
     "city": "Paris",
     "neighborhood": null,
@@ -6627,6 +7180,7 @@
     "available_rooms": null
   },
   {
+    "id": "891932",
     "name": "Odéon Hôtel ",
     "city": "Paris",
     "neighborhood": null,
@@ -6638,6 +7192,7 @@
     "available_rooms": null
   },
   {
+    "id": "74291222",
     "name": "Hôtel Villa Romantic & SPA",
     "city": "Paris",
     "neighborhood": null,
@@ -6652,6 +7207,7 @@
     "available_rooms": null
   },
   {
+    "id": "11265",
     "name": "Hôtel Observatoire Luxembourg",
     "city": "Paris",
     "neighborhood": null,
@@ -6663,6 +7219,7 @@
     "available_rooms": null
   },
   {
+    "id": "20509",
     "name": "Hotel Etoile Maillot",
     "city": "Paris",
     "neighborhood": null,
@@ -6674,6 +7231,7 @@
     "available_rooms": null
   },
   {
+    "id": "53585",
     "name": "Hôtel Madison",
     "city": "Paris",
     "neighborhood": "Saint-Germain-des-Prés",
@@ -6685,6 +7243,7 @@
     "available_rooms": null
   },
   {
+    "id": "34201",
     "name": "Hotel Lord Byron",
     "city": "Paris",
     "neighborhood": null,
@@ -6696,6 +7255,7 @@
     "available_rooms": null
   },
   {
+    "id": "573476",
     "name": "Hotel Marignan Champs - Elysées",
     "city": "Paris",
     "neighborhood": null,
@@ -6707,6 +7267,7 @@
     "available_rooms": null
   },
   {
+    "id": "33718890",
     "name": "Mama Shelter Paris West",
     "city": "Paris",
     "neighborhood": null,
@@ -6718,6 +7279,7 @@
     "available_rooms": null
   },
   {
+    "id": "1603419",
     "name": "Hotel Whistler",
     "city": "Paris",
     "neighborhood": null,
@@ -6729,6 +7291,7 @@
     "available_rooms": null
   },
   {
+    "id": "22632950",
     "name": "Hôtel Bowmann, a Small Luxury Hotel of the World",
     "city": "Paris",
     "neighborhood": null,
@@ -6743,6 +7306,7 @@
     "available_rooms": null
   },
   {
+    "id": "12704471",
     "name": "Boutet Bastille Hotel Paris - MGallery Collection",
     "city": "Paris",
     "neighborhood": null,
@@ -6756,6 +7320,7 @@
     "available_rooms": null
   },
   {
+    "id": "63330",
     "name": "Paris Marriott Champs Elysees Hotel",
     "city": "Paris",
     "neighborhood": null,
@@ -6767,6 +7332,7 @@
     "available_rooms": null
   },
   {
+    "id": "8013591",
     "name": "Molitor Hotel & Spa Paris - MGallery Collection",
     "city": "Paris",
     "neighborhood": null,
@@ -6780,6 +7346,7 @@
     "available_rooms": null
   },
   {
+    "id": "22687451",
     "name": "Le Damantin Hôtel & Spa",
     "city": "Paris",
     "neighborhood": null,
@@ -6793,6 +7360,7 @@
     "available_rooms": null
   },
   {
+    "id": "329954",
     "name": "Hotel Indigo Paris - Opera by IHG",
     "city": "Paris",
     "neighborhood": null,
@@ -6804,6 +7372,7 @@
     "available_rooms": null
   },
   {
+    "id": "53532",
     "name": "Hôtel Artus",
     "city": "Paris",
     "neighborhood": "Saint-Germain-des-Prés",
@@ -6815,6 +7384,7 @@
     "available_rooms": null
   },
   {
+    "id": "2534803",
     "name": "Hôtel Villa Nicolo - Tour Eiffel",
     "city": "Paris",
     "neighborhood": null,
@@ -6826,6 +7396,7 @@
     "available_rooms": null
   },
   {
+    "id": "63217356",
     "name": "Villa M",
     "city": "Paris",
     "neighborhood": null,
@@ -6837,6 +7408,7 @@
     "available_rooms": null
   },
   {
+    "id": "16116921",
     "name": "Hotel Perpetual",
     "city": "Paris",
     "neighborhood": "8th Arrondissement",
@@ -6848,6 +7420,7 @@
     "available_rooms": null
   },
   {
+    "id": "114334865",
     "name": "Hôtel de l'Arcade",
     "city": "Paris",
     "neighborhood": null,
@@ -6859,6 +7432,7 @@
     "available_rooms": null
   },
   {
+    "id": "1431221",
     "name": "Hôtel Monterosa - Astotel",
     "city": "Paris",
     "neighborhood": null,
@@ -6870,6 +7444,7 @@
     "available_rooms": null
   },
   {
+    "id": "16015733",
     "name": "The Hoxton, Paris",
     "city": "Paris",
     "neighborhood": null,
@@ -6881,6 +7456,7 @@
     "available_rooms": null
   },
   {
+    "id": "870400",
     "name": "Hôtel George - Astotel",
     "city": "Paris",
     "neighborhood": null,
@@ -6892,6 +7468,7 @@
     "available_rooms": null
   },
   {
+    "id": "1769077",
     "name": "Chalgrin Boutique Hotel",
     "city": "Paris",
     "neighborhood": null,
@@ -6903,6 +7480,7 @@
     "available_rooms": null
   },
   {
+    "id": "23157",
     "name": "Normandy Le Chantier",
     "city": "Paris",
     "neighborhood": null,
@@ -6914,6 +7492,7 @@
     "available_rooms": null
   },
   {
+    "id": "1464970",
     "name": "Princesse Caroline",
     "city": "Paris",
     "neighborhood": null,
@@ -6925,6 +7504,7 @@
     "available_rooms": null
   },
   {
+    "id": "8235",
     "name": "Hôtel Horset Opéra, BW Premier Collection",
     "city": "Paris",
     "neighborhood": null,
@@ -6936,6 +7516,7 @@
     "available_rooms": null
   },
   {
+    "id": "1568520",
     "name": "Hôtel de La Paix Tour Eiffel",
     "city": "Paris",
     "neighborhood": null,
@@ -6947,6 +7528,7 @@
     "available_rooms": null
   },
   {
+    "id": "800831",
     "name": "Star Champs Elysées",
     "city": "Paris",
     "neighborhood": null,
@@ -6960,6 +7542,7 @@
     "available_rooms": null
   },
   {
+    "id": "863814",
     "name": "Hôtel Le Walt by Inwood Hotels",
     "city": "Paris",
     "neighborhood": null,
@@ -6971,6 +7554,7 @@
     "available_rooms": null
   },
   {
+    "id": "106430883",
     "name": "Mercure Paris Butte Montmartre Basilique",
     "city": "Paris",
     "neighborhood": null,
@@ -6982,6 +7566,7 @@
     "available_rooms": null
   },
   {
+    "id": "8090818",
     "name": "Hôtel de la Place du Louvre",
     "city": "Paris",
     "neighborhood": null,
@@ -6993,6 +7578,7 @@
     "available_rooms": null
   },
   {
+    "id": "562421",
     "name": "Castille Paris - Starhotels Collezione",
     "city": "Paris",
     "neighborhood": null,
@@ -7004,6 +7590,7 @@
     "available_rooms": null
   },
   {
+    "id": "2685210",
     "name": "Hotel Thoumieux",
     "city": "Paris",
     "neighborhood": null,
@@ -7015,6 +7602,7 @@
     "available_rooms": null
   },
   {
+    "id": "26587037",
     "name": "Charles V",
     "city": "Paris",
     "neighborhood": null,
@@ -7026,6 +7614,7 @@
     "available_rooms": null
   },
   {
+    "id": "3024999",
     "name": "Hôtel Les Jardins de La Villa",
     "city": "Paris",
     "neighborhood": null,
@@ -7037,6 +7626,7 @@
     "available_rooms": null
   },
   {
+    "id": "8089880",
     "name": "Hôtel Mansart",
     "city": "Paris",
     "neighborhood": null,
@@ -7048,6 +7638,7 @@
     "available_rooms": null
   },
   {
+    "id": "7673",
     "name": "Le Belmont Paris",
     "city": "Paris",
     "neighborhood": null,
@@ -7059,6 +7650,7 @@
     "available_rooms": null
   },
   {
+    "id": "562428",
     "name": "Le Stendhal - Vendôme",
     "city": "Paris",
     "neighborhood": null,
@@ -7070,6 +7662,7 @@
     "available_rooms": null
   },
   {
+    "id": "2431617",
     "name": "Renaissance Paris Arc de Triomphe Hotel",
     "city": "Paris",
     "neighborhood": null,
@@ -7081,6 +7674,7 @@
     "available_rooms": null
   },
   {
+    "id": "2522139",
     "name": "Hôtel des Deux-Iles - Notre-Dame",
     "city": "Paris",
     "neighborhood": null,
@@ -7092,6 +7686,7 @@
     "available_rooms": null
   },
   {
+    "id": "10116304",
     "name": "Le Rayz Vendôme",
     "city": "Paris",
     "neighborhood": null,
@@ -7103,6 +7698,7 @@
     "available_rooms": null
   },
   {
+    "id": "34366332",
     "name": "OKKO Hotels Paris Gare de l'Est",
     "city": "Paris",
     "neighborhood": null,
@@ -7114,6 +7710,7 @@
     "available_rooms": null
   },
   {
+    "id": "17333",
     "name": "Pullman Paris Montparnasse Hotel",
     "city": "Paris",
     "neighborhood": null,
@@ -7125,6 +7722,7 @@
     "available_rooms": null
   },
   {
+    "id": "102213251",
     "name": "Eiffel Dream (30 mètres de la Tour Eiffel)",
     "city": "Paris",
     "neighborhood": null,
@@ -7136,6 +7734,7 @@
     "available_rooms": null
   },
   {
+    "id": "111271544",
     "name": "Paris Blanc Manteau Residence",
     "city": "Paris",
     "neighborhood": null,
@@ -7147,6 +7746,7 @@
     "available_rooms": null
   },
   {
+    "id": "18172870",
     "name": "Yooma Urban Lodge Tour Eiffel",
     "city": "Paris",
     "neighborhood": null,
