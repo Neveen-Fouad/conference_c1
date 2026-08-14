@@ -2,8 +2,8 @@
 
 namespace App\Repositories\Eloquent;
 
+use App\Models\Booking;
 use App\Repositories\Contracts\BookingRepositoryInterface;
-use App\Models\bookings;
 use Illuminate\Support\Collection;
 
 class BookingRepository implements BookingRepositoryInterface
@@ -11,15 +11,15 @@ class BookingRepository implements BookingRepositoryInterface
     /*
      * Create a new booking.
      */
-    public function create(array $data): bookings
+    public function create(array $data): Booking
     {
-        return bookings::create($data);
+        return Booking::create($data);
     }
 
     /*
      * Update an existing booking.
      */
-    public function update(bookings $booking, array $data): bool
+    public function update(Booking $booking, array $data): bool
     {
         return $booking->update($data);
     }
@@ -27,18 +27,17 @@ class BookingRepository implements BookingRepositoryInterface
     /*
      * Find booking by id.
      */
-    public function find(int $id): ?bookings
+    public function find(int $id): ?Booking
     {
-        return bookings::find($id);
+        return Booking::find($id);
     }
-
 
     /*
      * Get all bookings for a user.
      */
     public function findByUser(int $clientID): Collection
     {
-        return bookings::where('client_id', $clientID)
+        return Booking::where('client_id', $clientID)
             ->latest()
             ->get();
     }
@@ -46,7 +45,7 @@ class BookingRepository implements BookingRepositoryInterface
     /*
      * Delete booking.
      */
-    public function delete(bookings $booking): bool
+    public function delete(Booking $booking): bool
     {
         return $booking->delete();
     }

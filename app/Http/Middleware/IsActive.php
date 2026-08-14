@@ -16,10 +16,12 @@ class IsActive
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = auth('api')->userOrFail();
-        if (!$user->is_active) {
+        $user = $request->user('api');
+        abort_if($user === null, 401, 'Unauthenticated.');
+        if (! $user->is_active) {
             throw new AuthorizationException('Your account is inactive.');
         }
+
         return $next($request);
     }
 }

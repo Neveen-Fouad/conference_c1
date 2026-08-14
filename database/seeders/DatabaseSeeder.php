@@ -2,14 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Database\Seeders\FlightBookingSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
     use WithoutModelEvents;
+
     public function run(): void
     {
         $this->call([
@@ -17,6 +16,7 @@ class DatabaseSeeder extends Seeder
             InterestSeeder::class,
             HotelBookingSeeder::class,
             FlightBookingSeeder::class,
+            DefaultTripSeeder::class,
         ]);
     }
 }

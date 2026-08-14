@@ -5,8 +5,7 @@ namespace App\Repositories\Eloquent;
 use App\Models\ChatMessage;
 use App\Repositories\Contracts\ChatMessageRepositoryInterface;
 
-class ChatMessageRepository implements
-    ChatMessageRepositoryInterface
+class ChatMessageRepository implements ChatMessageRepositoryInterface
 {
     public function __construct(
         private ChatMessage $message

@@ -8,33 +8,33 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-
-class trip extends Model
+class Trip extends Model
 {
     protected $fillable = [
-        "estimated_expenses",
-        "style",
-        "number_of_travels",
-        "number_of_days",
-        "classes",
-        "destination",
-        "start_date",
-        "end_date",
-        "budget",
-        "is_ai_generated",
-        "is_fav",
+        'estimated_expenses',
+        'style',
+        'number_of_travels',
+        'classes',
+        'destination',
+        'start_date',
+        'budget',
+        'number_of_days',
+        'is_ai_generated',
+        'end_date',
+        'is_fav',
     ];
 
     protected $casts = [
         'start_date' => 'date',
         'end_date' => 'date',
         'is_fav' => 'boolean',
+        'is_ai_generated' => 'boolean',
     ];
 
     public function clients(): BelongsToMany
     {
         return $this->belongsToMany(
-            client::class,
+            Client::class,
             'client_has_trips',
             'trips_id',
             'client_id'
@@ -43,26 +43,22 @@ class trip extends Model
 
     public function details(): HasMany
     {
-        return $this->hasMany(details::class);
+        return $this->hasMany(TripDetail::class);
     }
 
     public function favourites()
     {
-        return $this->hasMany(favourites::class, 'favouriteable_id')
+        return $this->hasMany(Favourite::class, 'favouriteable_id')
             ->where('type', FavouriteType::Trip->value);
     }
 
     public function reviews()
     {
-        return $this->hasMany(review::class, 'reviewable_id')
+        return $this->hasMany(Review::class, 'reviewable_id')
             ->where('type', ReviewType::Trip->value);
     }
 
-    public function participants(): BelongsToMany
-    {
-        return $this->belongsToMany(client::class, 'trip_participants');
-    }
-
+    /** @return HasMany<TripMemory, $this> */
     public function memories(): HasMany
     {
         return $this->hasMany(TripMemory::class);

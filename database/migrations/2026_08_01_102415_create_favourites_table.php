@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('favourites', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId("client_id")->constrained();
-            $table->enum('type',["resturant","hotel"/*"flight"*/]);
-            $table->string("parameter");
-            $table->string("payload");
+            $table->foreignId('client_id')->constrained();
+            $table->enum('type', ['restaurant', 'hotel'/* "flight" */]);
+            $table->string('parameter');
+            $table->string('payload');
 
         });
     }

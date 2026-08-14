@@ -2,6 +2,4 @@
 
 namespace App\Interfaces;
 
-interface SettingRepositoryInterface extends BaseRepositoryInterface
-{
-}
+interface SettingRepositoryInterface extends BaseRepositoryInterface {}

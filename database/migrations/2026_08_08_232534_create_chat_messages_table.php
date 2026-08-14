@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('conversation_id')->constrained('chat_conversations')->cascadeOnDelete();
 
-            $table->text("content");
+            $table->text('content');
             $table->enum('role', ['user', 'assistant']);
             $table->timestamps();
         });

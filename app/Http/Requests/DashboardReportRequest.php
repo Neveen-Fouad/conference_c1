@@ -25,7 +25,7 @@ class DashboardReportRequest extends FormRequest
     {
         return [
             'month' => ['sometimes', 'integer', 'between:1,12'],
-            'year'  => ['sometimes', 'integer', 'digits:4', 'between:2000,' . now()->year],
+            'year' => ['sometimes', 'integer', 'digits:4', 'between:2000,'.now()->year],
         ];
     }
 
@@ -33,7 +33,7 @@ class DashboardReportRequest extends FormRequest
     {
         return [
             'month.between' => 'Month must be between 1 and 12.',
-            'year.between'  => 'Year must be a valid year between 2000 and the current year.',
+            'year.between' => 'Year must be a valid year between 2000 and the current year.',
         ];
     }
 }

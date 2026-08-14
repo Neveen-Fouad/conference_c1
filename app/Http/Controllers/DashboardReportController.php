@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DashboardReportRequest;
 use App\Repositories\Contracts\DashboardReportRepositoryInterface;
-use App\Repositories\Contracts\DashboardRepositoryInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 
 class DashboardReportController extends Controller
 {
     public function __construct(
-        private readonly DashboardReportRepositoryInterface  $dashboardReportRepository
+        private readonly DashboardReportRepositoryInterface $dashboardReportRepository
     ) {}
 
     /**

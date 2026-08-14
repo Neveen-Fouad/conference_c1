@@ -10,15 +10,14 @@ class ChatbotController extends Controller
 {
     public function __construct(
         private ChatbotService $chatbotService
-    ) {
-    }
+    ) {}
 
     private function getClientId(Request $request): int
     {
         $clientId = $request->user()?->client?->id;
 
         abort_unless(
-            $clientId,
+            $clientId !== null,
             404,
             'Client profile not found.'
         );
@@ -66,4 +65,3 @@ class ChatbotController extends Controller
         ], 201);
     }
 }
-

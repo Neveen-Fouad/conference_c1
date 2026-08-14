@@ -1,22 +1,20 @@
 <?php
 
+use App\Http\Middleware\IsActive;
+use App\Http\Middleware\IsAdmin;
+use App\Http\Middleware\VerifiedEmail;
 use GuzzleHttp\Exception\ConnectException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
-use App\Http\Middleware\IsAdmin;
-use App\Http\Middleware\IsActive;
-use App\Http\Middleware\VerifiedEmail;
-
-
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -26,66 +24,72 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-		$middleware->alias([ 'isAdmin' => IsAdmin::class, 'IsActive' => IsActive::class , 'VerifiedEmail' => VerifiedEmail::class]);
+        $middleware->alias(['isAdmin' => IsAdmin::class, 'IsActive' => IsActive::class, 'VerifiedEmail' => VerifiedEmail::class]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        $exceptions->render(function(\Throwable $e, \Illuminate\Http\Request $request){
-            Log::error($e->getMessage(),[
-                'exception'=>$e,
+        $exceptions->render(function (Throwable $e, Request $request) {
+            Log::error($e->getMessage(), [
+                'exception' => $e,
             ]);
 
-            if ($e instanceof ValidationException){
+            if ($e instanceof ValidationException) {
                 return response()->json([
                     'message' => 'Validation failed',
-                    'error' =>$e->errors(),
-                ],422);
+                    'error' => $e->errors(),
+                ], 422);
             }
-            if ($e instanceof AuthenticationException){
+            if ($e instanceof AuthenticationException) {
                 return response()->json([
                     'message' => 'Unauthenticated',
-                    'error' =>  $e->getMessage(),
-                ],401);
+                    'error' => $e->getMessage(),
+                ], 401);
             }
-            if ($e instanceof AuthorizationException){
+            if ($e instanceof AuthorizationException) {
                 return response()->json([
                     'message' => 'Forbidden',
-                    'error' =>  $e->getMessage(),
+                    'error' => $e->getMessage(),
                 ], 403);
             }
-            if ($e instanceof ModelNotFoundException){
+            if ($e instanceof ModelNotFoundException) {
                 return response()->json([
                     'message' => 'Resource not found',
                     'error' => $e->getMessage(),
-                ],404);
+                ], 404);
             }
-            if ($e instanceof QueryException){
+            if ($e instanceof QueryException) {
                 return response()->json([
                     'message' => 'Database error',
                     'error' => $e->getMessage(),
-                ],500);
+                ], 500);
             }
-            if ($e instanceof ConnectException){
+            if ($e instanceof ConnectException) {
                 return response()->json([
                     'message' => 'External service unavailable',
-                    'error' =>  $e->getMessage(),
-                ],503);
+                    'error' => $e->getMessage(),
+                ], 503);
             }
-            if ($e instanceof RuntimeException){
+            if ($e instanceof HttpExceptionInterface) {
                 return response()->json([
-                    'message'=>'Service unavailable',
-                    'error' =>  $e->getMessage(),
-                ],503);
+                    'message' => $e->getMessage() ?: 'Request failed',
+                    'error' => [],
+                ], $e->getStatusCode());
             }
-            if( $e instanceof \InvalidArgumentException){
+            if ($e instanceof InvalidArgumentException) {
                 return response()->json([
-                    'message'=>'Bad request',
-                    'error' =>  $e->getMessage(),
-                ],400);
+                    'message' => 'Bad request',
+                    'error' => $e->getMessage(),
+                ], 400);
             }
-            $status = $e instanceof HttpExceptionInterface ? $e->getStatusCode() : 500;
+            if ($e instanceof RuntimeException) {
+                return response()->json([
+                    'message' => 'Service unavailable',
+                    'error' => $e->getMessage(),
+                ], 503);
+            }
+
             return response()->json([
-                'message' => $status === 500 ? 'Internal Server Error' : $e->getMessage(),
-                'error' =>  []
-            ], $status);
+                'message' => 'Internal Server Error',
+                'error' => [],
+            ], 500);
         });
     })->create();

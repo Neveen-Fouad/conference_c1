@@ -30,8 +30,8 @@ class BookFlightRequest extends FormRequest
             'itinerary.price' => ['required', 'array'],
             'itinerary.price.amount' => ['required', 'numeric', 'min:0'],
 
-            'itinerary.departure' => ['required', 'date','after_or_equal:today'],
-            'itinerary.arrival' => ['required', 'date','after:itinerary.departure'],
+            'itinerary.departure' => ['required', 'date', 'after_or_equal:today'],
+            'itinerary.arrival' => ['required', 'date', 'after:itinerary.departure'],
 
             'itinerary.legs' => ['required', 'array', 'min:1'],
             'itinerary.legs.0.carriers' => ['required', 'array', 'min:1'],
@@ -39,19 +39,19 @@ class BookFlightRequest extends FormRequest
 
             'cabin_class' => [
                 'required',
-                'in:economy,premium_economy,business,first'
+                'in:economy,premium_economy,business,first',
             ],
 
             'adults' => [
                 'required',
                 'integer',
-                'min:1'
+                'min:1',
             ],
 
             'currency' => [
                 'nullable',
                 'string',
-                'size:3'
+                'size:3',
             ],
         ];
     }

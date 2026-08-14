@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Interfaces\PaymentRepositoryInterface;
-use App\Models\Bookings;
+use App\Models\Booking;
 use App\Services\NotificationService;
 use Illuminate\Http\Request;
 
 class PaymobWebhookController extends Controller
 {
     protected $paymentRepository;
+
     protected $notificationService;
 
     public function __construct(
@@ -24,13 +25,13 @@ class PaymobWebhookController extends Controller
     {
         $data = $request->input('obj');
 
-        if (!$data) {
+        if (! $data) {
             return response()->json([
                 'message' => 'Invalid data',
             ], 400);
         }
 
-        if (!$this->checkHmac(
+        if (! $this->checkHmac(
             $data,
             $request->query('hmac')
         )) {
@@ -47,7 +48,7 @@ class PaymobWebhookController extends Controller
         $payment = $this->paymentRepository
             ->findByPaymentReference($reference);
 
-        if (!$payment) {
+        if (! $payment) {
             return response()->json([
                 'message' => 'Payment not found',
             ], 404);
@@ -66,8 +67,7 @@ class PaymobWebhookController extends Controller
             [
                 'status' => $status,
 
-                'gateway_transaction_id' =>
-                    $data['id'] ?? null,
+                'gateway_transaction_id' => $data['id'] ?? null,
 
                 'payment_method' => data_get(
                     $data,
@@ -118,7 +118,7 @@ class PaymobWebhookController extends Controller
     private function handleSuccessfulPayment($payment)
     {
         if ($payment->booking_id) {
-            Bookings::where(
+            Booking::where(
                 'id',
                 $payment->booking_id
             )->update([
@@ -136,7 +136,7 @@ class PaymobWebhookController extends Controller
         $data,
         $receivedHmac
     ) {
-        if (!$receivedHmac) {
+        if (! $receivedHmac) {
             return false;
         }
 

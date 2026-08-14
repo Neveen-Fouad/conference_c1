@@ -13,7 +13,7 @@ class StoreSettingsRequest extends FormRequest
     public function authorize(): bool
     {
         return true;
-         
+
     }
 
     /**
@@ -26,17 +26,16 @@ class StoreSettingsRequest extends FormRequest
         return [
             //
 
-             'logo' => 'required|image|mimes:jpg,jpeg,png,svg|max:2048',
-             'name' => 'required|string|max:255',
+            'logo' => 'required|image|mimes:jpg,jpeg,png,svg|max:2048',
+            'name' => 'required|string|max:255',
             'phone' => 'required|string|max:20',
             'slogan' => 'required|string|max:255',
             'facebook' => 'required|url|max:255',
             'instagram' => 'required|url|max:255',
 
-            
-
         ];
     }
+
     public function messages(): array
     {
         return [
@@ -45,11 +44,9 @@ class StoreSettingsRequest extends FormRequest
             'logo.mimes' => 'The logo must be a JPG, JPEG, PNG, or SVG file.',
             'logo.max' => 'The logo size must not exceed 2 MB.',
 
-
-        'name.required' => 'Site name is required.',
+            'name.required' => 'Site name is required.',
             'name.string' => 'Site name must be a string.',
             'name.max' => 'Site name cannot exceed 255 characters.',
-
 
             'phone.required' => 'Phone number is required.',
             'phone.string' => 'Phone number must be a string.',
@@ -64,7 +61,7 @@ class StoreSettingsRequest extends FormRequest
 
             'instagram.required' => 'Instagram link is required.',
             'instagram.url' => 'Please enter a valid Instagram URL.',
-        
+
         ];
     }
 }

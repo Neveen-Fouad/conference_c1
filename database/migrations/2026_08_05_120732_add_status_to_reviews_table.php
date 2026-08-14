@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('reviews', function (Blueprint $table) {
             $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
             $table->string('reviewable_id');
-            $table->unique(['client_id','type','reviewable_id']);
+            $table->unique(['client_id', 'type', 'reviewable_id']);
         });
     }
 

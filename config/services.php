@@ -15,16 +15,15 @@ return [
     */
 
     'restaurants_api' => [
-        'key' => env('RESTAURANTS_API_KEY'),
+        'key' => env('RESTAURANTS_API_KEY', ''),
         'host' => env('RESTAURANTS_API_HOST', 'tripadvisor-scraper.p.rapidapi.com'),
         'base_url' => 'https://tripadvisor-scraper.p.rapidapi.com',
     ],
     'flights_api' => [
-        'key' => env('FLIGHTS_API_KEY'),
+        'key' => env('FLIGHTS_API_KEY', ''),
         'host' => env('FLIGHTS_API_HOST', 'sky-scrapper.p.rapidapi.com'),
         'base_url' => env('FLIGHTS_API_BASE_URL', 'https://sky-scrapper.p.rapidapi.com'),
     ],
-
 
     'postmark' => [
         'key' => env('POSTMARK_API_KEY'),
@@ -49,23 +48,23 @@ return [
     // config/services.php
     'countries' => [
         'base_url' => env('REST_COUNTRIES_BASE_URL', 'https://api.restcountries.com'),
-        'api_key' => env('REST_COUNTRIES_API_KEY'),
+        'api_key' => env('REST_COUNTRIES_API_KEY', ''),
     ],
     'weatherapi' => [
         'base_url' => env('WEATHER_BASE_URL', 'https://api.weatherapi.com/v1'),
-        'key' => env('WEATHER_API_KEY'),
+        'key' => env('WEATHER_API_KEY', ''),
     ],
     'rapidapi' => [
-        'key' => env('RAPIDAPI_KEY'),
+        'key' => env('RAPIDAPI_KEY', ''),
         'host' => env('RAPIDAPI_HOST', 'booking-com15.p.rapidapi.com'),
     ],
     'hotels' => [
 
-        'base_url' => env('HOTELS_API_URL'),
+        'base_url' => env('HOTELS_API_URL', 'https://hotels-com-provider.p.rapidapi.com'),
 
-        'key' => env('HOTELS_API_KEY'),
+        'key' => env('HOTELS_API_KEY', ''),
 
-        'host' => env('HOTELS_API_HOST'),
+        'host' => env('HOTELS_API_HOST', 'hotels-com-provider.p.rapidapi.com'),
 
         'locale' => env('HOTELS_API_LOCALE', 'en_GB'),
 
@@ -93,9 +92,9 @@ return [
     ],
 
     'ors' => [
-    'base_url' => env('ORS_BASE_URL', 'https://api.openrouteservice.org'),
-    'api_key' => env('ORS_API_KEY'),
-    'cache_ttl_days' => env('ORS_CACHE_TTL_DAYS', 7),
-],
- 
+        'base_url' => env('ORS_BASE_URL', 'https://api.openrouteservice.org'),
+        'api_key' => env('ORS_API_KEY'),
+        'cache_ttl_days' => env('ORS_CACHE_TTL_DAYS', 7),
+    ],
+
 ];

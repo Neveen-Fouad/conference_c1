@@ -12,8 +12,7 @@ class ChatbotService
         private ChatConversationRepositoryInterface $conversationRepository,
         private ChatMessageRepositoryInterface $messageRepository,
         private GeminiService $geminiService
-    ) {
-    }
+    ) {}
 
     public function getClientConversations(int $clientId)
     {
@@ -73,6 +72,7 @@ class ChatbotService
             'role' => 'assistant',
             'content' => $reply,
         ]);
+
         return [
             'conversation_id' => $conversation->id,
             'user_message' => $userMessage,
