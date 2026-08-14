@@ -113,8 +113,8 @@ class DashboardRepository implements DashboardRepositoryInterface
 
         return [
             'total_trips' => $client->trips()->count(),
-            'favorite_trips' => $client->trips()
-                ->where('is_fav', true)
+            'favorite_trips' => Favourite::where('client_id', $client->id)
+                ->where('type', \App\Enum\FavouriteType::Trip->value)
                 ->count(),
 
             'total_bookings' => Booking::where('client_id', $client->id)->count(),

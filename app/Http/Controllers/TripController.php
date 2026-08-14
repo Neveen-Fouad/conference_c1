@@ -45,7 +45,6 @@ class TripController extends Controller
 
         $validated = $request->validated();
         $validated['classes'] ??= 'economy';
-        $validated['end_date'] = $this->calculateEndDate($validated);
 
         $trip = DB::transaction(function () use ($validated) {
             $tripRecord = $this->tripRepository->create(
@@ -75,7 +74,6 @@ class TripController extends Controller
         Gate::authorize('update', $trip);
 
         $data = $request->validated();
-        $data['end_date'] = $this->calculateEndDate($data);
 
         return response()->json($this->tripRepository->update($id, $data));
     }
@@ -140,10 +138,5 @@ class TripController extends Controller
         }
     }
 
-    private function calculateEndDate(array $data): string
-    {
-        return Carbon::parse($data['start_date'])
-            ->addDays($data['number_of_days'])
-            ->toDateString();
-    }
+
 }

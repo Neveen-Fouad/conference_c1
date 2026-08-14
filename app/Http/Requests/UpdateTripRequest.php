@@ -22,7 +22,7 @@ class UpdateTripRequest extends FormRequest
             'number_of_days' => 'required|integer|min:1',
             'start_date' => 'required|date',
             'style' => 'required|string|max:255',
-            'is_fav' => 'sometimes|boolean',
+
         ];
     }
 
