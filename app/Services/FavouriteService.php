@@ -5,6 +5,11 @@ namespace App\Services;
 use App\Enum\FavouriteType;
 use App\Interfaces\FavouriteRepositoryInterface;
 use App\Models\Trip;
+use App\Services\FlightService;
+use App\Services\HotelService;
+use App\Services\RestaurantService;
+use App\Services\CountryServices;
+
 
 class FavouriteService
 {
@@ -15,17 +20,20 @@ class FavouriteService
     protected $restaurantService;
 
     protected $flightService;
+    protected $countryService;
 
     public function __construct(
         FavouriteRepositoryInterface $favouriteRepository,
         HotelService $hotelService,
         RestaurantService $restaurantService,
-        FlightService $flightService
-    ) {
+        FlightService $flightService,
+        CountryServices $countryService
+    ){
         $this->favouriteRepository = $favouriteRepository;
         $this->hotelService = $hotelService;
         $this->restaurantService = $restaurantService;
         $this->flightService = $flightService;
+        $this->countryService = $countryService;
     }
 
     public function index()
@@ -74,6 +82,7 @@ class FavouriteService
             FavouriteType::Hotel->value => $this->hotelService->getHotelDetails((string) $favouriteable_id) ,
             FavouriteType::Restaurant->value => $this->restaurantService->getRestaurantDetails((string) $favouriteable_id) ,
             FavouriteType::Flight->value => $this->flightService->getFlightDetails((string) $favouriteable_id) ,
+            FavouriteType::Country->value => $this->countryService->getCountryInfo((string) $favouriteable_id) ,
             default => null,
         };
 

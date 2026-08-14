@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreReviewRequest;
 use App\Http\Requests\UpdateReviewRequest;
 use App\Services\NotificationService;
-use App\Services\ReviewService;
+use App\Services\ReviewServiceNew;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -14,7 +14,7 @@ class ReviewController extends Controller
 
     protected $notificationService;
 
-    public function __construct(ReviewService $reviewService, NotificationService $notificationService)
+    public function __construct(ReviewServiceNew $reviewService, NotificationService $notificationService)
     {
         $this->reviewService = $reviewService;
         $this->notificationService = $notificationService;
