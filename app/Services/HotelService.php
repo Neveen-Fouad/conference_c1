@@ -81,6 +81,34 @@ class HotelService
     }
 
     /**
+     * Normalized details used for favourites (and similar card contexts).
+     */
+    public function favouriteDetails(string $hotelId): ?array
+    {
+        $hotel = $this->getHotelDetails($hotelId);
+
+        if (is_array($hotel) && array_key_exists(0, $hotel)) {
+            $hotel = $hotel[0];
+        }
+
+        if (! is_array($hotel) || empty($hotel)) {
+            return null;
+        }
+
+        $summary = $hotel['summary'] ?? $hotel;
+        $address = $summary['location']['address'] ?? [];
+
+        return [
+            'name' => $summary['name'] ?? $hotel['name'] ?? $hotel['hotel_name'] ?? null,
+            'description' => $summary['tagline'] ?? $hotel['description'] ?? null,
+            'image' => $hotel['propertyGallery']['images'][0]['image']['url'] ?? null,
+            'location' => $address['addressLine'] ?? $address['city'] ?? $summary['location']['city'] ?? null,
+            'rating' => $hotel['reviewInfo']['summary']['overallScoreWithDescriptionA11y']['value']
+                ?? $summary['overview']['propertyRating']['rating'] ?? null,
+        ];
+    }
+
+    /**
      * Get hotel details from local JSON backup.
      */
     private function getHotelFromJson(string $hotelId): ?array

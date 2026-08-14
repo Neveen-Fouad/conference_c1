@@ -59,4 +59,21 @@ class Trip extends Model
     {
         return $this->hasMany(TripMemory::class);
     }
+
+    /**
+     * Normalized details used for favourites (and similar card contexts).
+     */
+    public function toFavouriteDetails(): array
+    {
+        return [
+            'name' => $this->destination ?? 'Trip',
+            'description' => $this->style ?? null,
+            'image' => null,
+            'location' => $this->destination ?? null,
+            'rating' => null,
+            'start_date' => $this->start_date?->toDateString(),
+            'number_of_days' => $this->number_of_days,
+            'budget' => $this->budget,
+        ];
+    }
 }
