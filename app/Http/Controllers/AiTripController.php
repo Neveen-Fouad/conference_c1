@@ -50,18 +50,27 @@ class AiTripController extends Controller
 
         $simplifiedHotels = collect($hotelResult['hotels'] ?? [])->take(5)->map(function ($h) {
             $nearbyItems = data_get($h, 'summary.nearbyPOIs.items', []);
-            $nearbyPlaces = collect($nearbyItems)->pluck('text')->implode(', ');
+            $nearbyPlaces = collect($nearbyItems)->pluck('text')->implode(', ')
+                ?: collect(data_get($h, 'messages', []))->implode(', ');
 
             return [
-                'name' => data_get($h, 'summary.name', 'Unknown Hotel'),
-                'fees' => data_get($h, 'summary.fees') ?? 'Pricing not available',
-
-                'address' => data_get($h, 'summary.location.address.addressLine', 'Unknown Address'),
-                'rating' => data_get($h, 'reviewInfo.summary.overallScoreWithDescriptionA11y.value', 'No rating'),
-                'tagline' => data_get($h, 'summary.tagline', ''),
+                'name' => data_get($h, 'name') ?? data_get($h, 'summary.name', 'Unknown Hotel'),
+                'fees' => data_get($h, 'price.priceSummary.definition.displayPrice')
+                    ?? data_get($h, 'summary.fees')
+                    ?? 'Pricing not available',
+                'address' => data_get($h, 'messages.0')
+                    ?? data_get($h, 'summary.location.address.addressLine', 'Unknown Address'),
+                'rating' => data_get($h, 'guestRating.rating')
+                    ?? data_get($h, 'reviewInfo.summary.overallScoreWithDescriptionA11y.value', 'No rating'),
+                'tagline' => collect(data_get($h, 'short_amenities', []))->implode(', ')
+                    ?: data_get($h, 'summary.tagline', ''),
                 'nearby' => $nearbyPlaces ?: 'No nearby places listed',
-                'lat' => data_get($h, 'summary.location.coordinates.latitude') ?? data_get($h, 'coordinates.latitude'),
-                'lng' => data_get($h, 'summary.location.coordinates.longitude') ?? data_get($h, 'coordinates.longitude'),
+                'lat' => data_get($h, 'latitude')
+                    ?? data_get($h, 'summary.location.coordinates.latitude')
+                    ?? data_get($h, 'coordinates.latitude'),
+                'lng' => data_get($h, 'longitude')
+                    ?? data_get($h, 'summary.location.coordinates.longitude')
+                    ?? data_get($h, 'coordinates.longitude'),
             ];
         })->values()->toArray();
 

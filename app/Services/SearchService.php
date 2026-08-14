@@ -108,13 +108,15 @@ class SearchService
             'sort_order' => 'REVIEW',
         ];
 
-        $cacheKey = 'hotel_search:'.md5(json_encode($requestFilters));
+        // Version the cache key because earlier responses stored the provider's
+        // enclosing object instead of the list of properties.
+        $cacheKey = 'hotel_search:v3:'.md5(json_encode($requestFilters));
 
         return Cache::remember($cacheKey, now()->addMinutes(15), function () use ($requestFilters, $filters, $regionId) {
 
             try {
 
-                $response = Http::withHeaders([
+                $response = Http::connectTimeout(10)->timeout(60)->withHeaders([
                     'x-rapidapi-key' => $this->apiKey,
                     'x-rapidapi-host' => $this->apiHost,
                 ])->get(
@@ -133,7 +135,7 @@ class SearchService
                     return [];
                 }
 
-                $hotels = $response->json('data', []);
+                $hotels = $response->json('data.properties', []);
 
                 return [
                     'destination' => $filters['destination'],
@@ -142,7 +144,7 @@ class SearchService
                     'check_out' => $filters['check_out'],
                     'guests' => $filters['guests'],
                     'budget' => $filters['budget'],
-                    'count' => $response->json('data.count', 0),
+                    'count' => count($hotels),
                     'hotels' => $hotels,
                 ];
 
