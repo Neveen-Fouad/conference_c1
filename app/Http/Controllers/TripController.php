@@ -56,9 +56,7 @@ class TripController extends Controller
                     'day' => $detail['day'],
                     'title' => $detail['title'],
                     'expenses' => $detail['expenses'] ?? 0,
-                    'plan' => is_array($detail['plan'])
-                        ? json_encode($detail['plan'])
-                        : $detail['plan'],
+                    'plan' => $detail['plan'],
                 ]);
             }
 
