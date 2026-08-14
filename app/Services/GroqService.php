@@ -22,7 +22,7 @@ class GroqService
         $destination = $TripRequest['destination'] ?? $TripRequest->destination;
         $budget = $TripRequest['budget'] ?? $TripRequest->budget;
         $guests = $TripRequest['number_of_travels'] ?? $TripRequest->number_of_travels;
-        $style = $TripRequest['style'] ?? $TripRequest->style;
+        $prefernces = $TripRequest['preferences'] ?? $TripRequest->preferences;
 
         $contextData = json_encode([
             'weather_forecast' => $weatherForecast,
