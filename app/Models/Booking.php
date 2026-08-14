@@ -15,9 +15,7 @@ class Booking extends Model
     protected $fillable = [
         'client_id',
         'type',
-        'booking_type',
         'provider',
-        'provider_name',
         'external_reference_id',
         'number_of_days',
         'check_in_date',
@@ -31,7 +29,6 @@ class Booking extends Model
         'details',
         'commisssion_rate',
         'commisssion_amount',
-        'booked_at',
     ];
 
     protected $casts = [

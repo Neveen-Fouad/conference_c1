@@ -87,9 +87,7 @@ class TripRepository implements TripRepositoryInterface
         return Booking::create([
             'client_id' => $clientId,
             'type' => 'trip',
-            'booking_type' => 'trip',
             'provider' => 'Journovo',
-            'provider_name' => 'Journovo Trips',
             'external_reference_id' => (string) $trip->id,
             'number_of_days' => $trip->number_of_days,
             'number_of_bookings' => $trip->number_of_travels ?? 1,

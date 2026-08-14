@@ -64,9 +64,7 @@ class BookingService
         $booking = [
             'client_id' => $user->client->id,
             'type' => 'hotel',
-            'booking_type' => 'hotel',
             'provider' => 'hotels_com',
-            'provider_name' => 'hotels_com',
             'external_reference_id' => $data['hotel_id'],
             'number_of_days' => $number_of_days,
             'number_of_bookings' => $data['rooms'],
