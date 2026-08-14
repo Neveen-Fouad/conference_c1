@@ -51,9 +51,9 @@ class ReviewController extends Controller
     public function store(StoreReviewRequest $request)
     {
         $validated = $request->validated();
-        // if ($request->hasFile('image')) {
-        //     $validated['image'] = $request->file('image')->store('reviews', 'public');
-        // }
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('reviews', 'public');
+        }
         try {
             $review = $this->reviewService->store($validated);
 

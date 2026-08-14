@@ -30,7 +30,7 @@ class StoreReviewRequest extends FormRequest
                 new Enum(ReviewType::class)],
             'rating' => ['required', 'numeric', 'between:0,5'],
             'description' => ['required', 'string'],
-            'image' => 'sometimes|image|mimes:jpg,jpeg,png|max:2048',
+            'image' => 'sometimes|image|mimes:jpg,jpeg,png|max:10240',
 
         ];
     }
