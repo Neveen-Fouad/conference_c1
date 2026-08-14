@@ -32,10 +32,7 @@ class Review extends Model
 
     }
 
-    public function interest(): BelongsTo
-    {
-        return $this->belongsTo(Interest::class, 'interests_id');
-    }
+
 
     public function trip(): BelongsTo
     {

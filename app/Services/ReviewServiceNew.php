@@ -4,6 +4,9 @@ namespace App\Services;
 use App\Enum\ReviewType;
 use App\Interfaces\ReviewRepositoryInterface;
 use App\Models\trip;
+use App\Services\FlightService;
+use App\Services\HotelService;
+use App\Services\RestaurantService;
 
 
 
