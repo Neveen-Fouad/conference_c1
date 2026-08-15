@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Trip;
 use App\Policies\TripPolicy;
+use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Facades\Gate;
@@ -56,5 +57,15 @@ class AppServiceProvider extends ServiceProvider
                     'user' => $notifiable,
                 ]);
         });
+
+
+        ResetPassword::createUrlUsing(function (object $notifiable, string $token): string {
+    return rtrim((string) config('app.frontend_url'), '/')
+        .'/pages/reset-password?'
+        .http_build_query([
+            'token' => $token,
+            'email' => $notifiable->getEmailForPasswordReset(),
+        ]);
+});
     }
 }

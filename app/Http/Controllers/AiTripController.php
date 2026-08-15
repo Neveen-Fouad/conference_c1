@@ -254,7 +254,7 @@ class AiTripController extends Controller
                     'day'      => $day['day'],
                     'title'    => $day['day_title'] ?? $day['weather_note'] ?? ('Day ' . $day['day']),
                     'expenses' => $day['daily_cost'] ?? 0,
-                    'plan'     => json_encode($day),
+                    'plan'     => $day,
                 ]);
             }
  
