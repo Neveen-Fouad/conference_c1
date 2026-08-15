@@ -60,7 +60,7 @@ class GroqService
         4. Suggest attractions based on the available attractions in the context data.
         5. Suggest lunch and dinner options based on the available_restaurants in the context data.
         6. You MUST explicitly use the 'travel_time_from_hotel' data provided in both the available_attractions and available_restaurants context when generating the route_notes for each day.
-        7. You MUST NOT suggest any attractions, restaurants, or hotels that are NOT present in the context data (available_attractions, available_restaurants, hotel_info).
+        7. You MUST NOT suggest any attractions, restaurants, or hotels that are NOT present in the context data (available_attractions, available_restaurants, hotel_info). And Do Not repeat the same suggestion multiple times.
        
 
         Context Data:

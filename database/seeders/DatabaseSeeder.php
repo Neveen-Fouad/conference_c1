@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             ClientSeeder::class,
             InterestSeeder::class,
             DefaultTripSeeder::class,
+            TripDetailSeeder::class,
             HotelBookingSeeder::class,
             FlightBookingSeeder::class,
             ReviewSeeder::class,

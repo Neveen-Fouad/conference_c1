@@ -59,4 +59,15 @@ class Trip extends Model
     {
         return $this->hasMany(TripMemory::class);
     }
+
+    protected static function booted()
+    {
+        static::deleting(function (Trip $trip) {
+            $trip->clients()->detach();
+            $trip->details()->delete();
+            $trip->favourites()->delete();
+            $trip->reviews()->delete();
+            $trip->memories()->delete();
+        });
+    }
 }
