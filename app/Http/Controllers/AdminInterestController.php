@@ -38,9 +38,9 @@ class AdminInterestController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateInterestRequest $request, int $id)
+    public function update(UpdateInterestRequest $request, int $interest_id)
     {
-        $interest = $this->InterestRepository->update($id, $request->validated());
+        $interest = $this->InterestRepository->update($interest_id, $request->validated());
 
         return response()->json([
             'message' => 'Interest updated successfully',
@@ -51,9 +51,9 @@ class AdminInterestController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(int $id)
+    public function destroy(int $interest_id)
     {
-        $this->InterestRepository->delete($id);
+        $this->InterestRepository->delete($interest_id);
 
         return response()->json([
             'message' => 'Interest deleted successfully.',

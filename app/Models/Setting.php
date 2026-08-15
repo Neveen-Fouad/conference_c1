@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
 {
+    protected $appends = ['logo_url'];
+
     protected $fillable = [
         'name',
         'phone',
@@ -15,4 +17,9 @@ class Setting extends Model
         'facebook',
         'instagram',
     ];
+
+    public function getLogoUrlAttribute(): ?string
+    {
+        return $this->logo ? url('/storage/' . ltrim($this->logo, '/')) : null;
+    }
 }

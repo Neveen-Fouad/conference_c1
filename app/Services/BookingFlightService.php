@@ -18,6 +18,12 @@ class BookingFlightService
      */
     public function createBooking(User $user, array $data)
     {
+        $client = $user->client;
+
+        if (! $client) {
+            throw new \DomainException('A client profile is required to create a booking.');
+        }
+
         $itinerary = $data['itinerary'];
 
         $number_of_days = $this->calculateNumberOfDays($itinerary);
@@ -27,7 +33,7 @@ class BookingFlightService
         }
 
         $booking = [
-            'client_id' => $user->client->id,
+            'client_id' => $client->id,
             'type' => 'flight',
             'provider' => $itinerary['legs'][0]['carriers'][0]['name'],
             'external_reference_id' => $itinerary['id'],
@@ -49,7 +55,7 @@ class BookingFlightService
                     'first_name' => $user->first_name,
                     'last_name' => $user->last_name,
                     'email' => $user->email,
-                    'phone' => $user->client->phone,
+                    'phone' => $client->phone,
                 ],
                 'passengers' => $data['adults'],
             ],

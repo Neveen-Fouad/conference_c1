@@ -12,6 +12,7 @@ use App\Services\NotificationService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
+use Tymon\JWTAuth\JWTGuard;
 
 class AuthController extends Controller
 {
@@ -29,7 +30,12 @@ class AuthController extends Controller
     public function register(RegisterRequest $request): JsonResponse{
         $data = $this->authRepository->register($request->validated());
 
-        $token = auth('api')->login($data);
+        $guard = auth('api');
+        if (! $guard instanceof JWTGuard) {
+            throw new \LogicException('The api guard must use the JWT driver.');
+        }
+
+        $token = $guard->login($data);
 
         return response()->json([
             'message' => 'User registered successfully. Please verify your email.',
@@ -39,7 +45,7 @@ class AuthController extends Controller
         ], 201);
     }
 
-  
+
     public function login(LoginRequest $request): JsonResponse
     {
         $data = $this->authRepository->login($request->validated());
@@ -76,7 +82,7 @@ class AuthController extends Controller
         ]);
     }
 
-  
+
 
     public function logout(): JsonResponse
     {

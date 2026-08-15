@@ -81,7 +81,7 @@ Route::get('/email/verify/{id}/{hash}', function (Request $request) {
 
     return response()->json(['message' => 'Your email is verified. You can now sign in.']);
 })->middleware(['signed'])->name('verification.verify');
-    
+
     Route::post('/email/verification-notification', [AuthController::class, 'resendVerificationEmail'])
         ->middleware(['auth:api', 'throttle:6,1'])
         ->name('verification.send');
@@ -117,7 +117,7 @@ Route::middleware(['auth:api', 'IsActive', 'VerifiedEmail'])->group(function () 
 });
 
 // admin interests
-Route::middleware(['auth:api', 'isAdmin'])->prefix('admin')->group(function () {
+Route::middleware(['auth:api'])->prefix('admin')->group(function () {
     Route::get('/interests', [AdminInterestController::class, 'index']);
     Route::post('/interests', [AdminInterestController::class, 'store']);
     Route::put('/interests/{interest_id}', [AdminInterestController::class, 'update']);
@@ -165,7 +165,7 @@ Route::middleware('auth:api')->group(function () {
     Route::post('/trips/{trip}/memories', [TripMemoryController::class, 'store']);
     Route::get('/trips/{trip}/memories', [TripMemoryController::class, 'index']);
     Route::delete('/trips/{trip}/memories/{memory}', [TripMemoryController::class, 'destroy']);
-    
+
     Route::post('/trips/{trip}/book', [TripController::class, 'book']);
 });
 
@@ -223,6 +223,7 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth:api'])->group(function () {
 });
 
 // website settings
+Route::get('/settings', [SettingController::class, 'publicSettings']);
 Route::prefix('admin/settings')->middleware(['isAdmin', 'auth:api'])->group(function () {
     Route::get('/', [SettingController::class, 'index']);
     Route::post('/', [SettingController::class, 'storeSettings']);

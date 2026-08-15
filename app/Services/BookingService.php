@@ -19,6 +19,12 @@ class BookingService
      */
     public function createBooking(User $user, array $data)
     {
+        $client = $user->client;
+
+        if (! $client) {
+            throw new \DomainException('A client profile is required to create a booking.');
+        }
+
         $hotel = $this->hotelService->getHotelDetails($data['hotel_id']);
 
         if (! $hotel) {
@@ -66,7 +72,7 @@ class BookingService
         }
 
         $booking = [
-            'client_id' => $user->client->id,
+            'client_id' => $client->id,
             'type' => 'hotel',
             'provider' => 'hotels_com',
             'external_reference_id' => $data['hotel_id'],
@@ -91,7 +97,7 @@ class BookingService
                     'first_name' => $user->first_name,
                     'last_name' => $user->last_name,
                     'email' => $user->email,
-                    'phone' => $user->client->phone,
+                    'phone' => $client->phone,
                 ],
                 'rooms' => $data['rooms'],
                 'guests' => $data['guests'],
