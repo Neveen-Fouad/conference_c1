@@ -78,13 +78,12 @@ class FavouriteService
     protected function getItemDetails(string $type, string $favouriteable_id): mixed
     {
         return match ($type) {
-            FavouriteType::Trip->value => Trip::find($favouriteable_id),
-            FavouriteType::Hotel->value => $this->hotelService->getHotelDetails((string) $favouriteable_id) ,
-            FavouriteType::Restaurant->value => $this->restaurantService->getRestaurantDetails((string) $favouriteable_id) ,
-            FavouriteType::Flight->value => $this->flightService->getFlightDetails((string) $favouriteable_id) ,
-            FavouriteType::Country->value => $this->countryService->getCountryInfo((string) $favouriteable_id) ,
+            FavouriteType::Trip->value => Trip::find((int) $favouriteable_id)?->toFavouriteDetails(),
+            FavouriteType::Hotel->value => $this->hotelService->favouriteDetails($favouriteable_id),
+            FavouriteType::Restaurant->value => $this->restaurantService->favouriteDetails($favouriteable_id),
+            FavouriteType::Flight->value => $this->flightService->favouriteDetails($favouriteable_id),
+            FavouriteType::Country->value => $this->countryService->favouriteDetails($favouriteable_id),
             default => null,
         };
-
     }
 }

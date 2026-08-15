@@ -130,6 +130,33 @@ class FlightService
     }
 
     /**
+     * Normalized details used for favourites (and similar card contexts).
+     */
+    public function favouriteDetails(string $compositeId): ?array
+    {
+        $flight = $this->getFlightDetails($compositeId);
+
+        if (! $flight) {
+            return null;
+        }
+
+        $leg = $flight['legs'][0] ?? $flight;
+        $carrier = $leg['carriers'][0]['name'] ?? null;
+        $origin = $flight['origin']['name'] ?? $leg['origin']['name'] ?? '';
+        $destination = $flight['destination']['name'] ?? $leg['destination']['name'] ?? '';
+        $route = trim($origin.' → '.$destination, ' →');
+
+        return [
+            'name' => $carrier ? $carrier.' flight' : 'Flight',
+            'description' => $route ?: null,
+            'image' => null,
+            'location' => $route ?: null,
+            'rating' => null,
+            'price' => $flight['price']['amount'] ?? null,
+        ];
+    }
+
+    /**
      * Find a single itinerary by id from a fresh search — used as a
      * "details" fallback since getFlightDetails isn't usable.
      */

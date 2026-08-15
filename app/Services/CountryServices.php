@@ -92,6 +92,28 @@ class CountryServices
         );
     }
 
+    /**
+     * Normalized details used for favourites (and similar card contexts).
+     */
+    public function favouriteDetails(string $countryName): ?array
+    {
+        $country = $this->getCountryInfo($countryName);
+
+        if (! $country) {
+            return null;
+        }
+
+        return [
+            'name' => $country['name'] ?? $countryName,
+            'description' => isset($country['capital']) ? 'Capital: '.$country['capital'] : null,
+            'image' => null,
+            'location' => $country['name'] ?? null,
+            'rating' => null,
+            'flag' => $country['flag'] ?? null,
+            'code' => $country['code2'] ?? $country['code'] ?? null,
+        ];
+    }
+
     private function getCountryFromBackup(string $countryName): ?array
     {
         $backup = $this->loadBackup();
