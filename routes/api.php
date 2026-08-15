@@ -83,7 +83,7 @@ Route::get('/email/verify/{id}/{hash}', function (Request $request) {
 })->middleware(['signed'])->name('verification.verify');
     
     Route::post('/email/verification-notification', [AuthController::class, 'resendVerificationEmail'])
-        ->middleware(['auth:api', 'throttle:6,1'])
+        ->middleware('throttle:60,1')
         ->name('verification.send');
     Route::middleware('auth:api')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
